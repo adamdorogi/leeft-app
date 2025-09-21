@@ -1,0 +1,6 @@
+{
+  "appTitle": "Leeft",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

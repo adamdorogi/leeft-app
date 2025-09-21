@@ -1,6 +1,6 @@
 name: leeft
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
 
 dev_dependencies:
@@ -17,3 +19,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true

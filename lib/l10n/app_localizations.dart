@@ -94,11 +94,23 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
-  /// The title of the application
+  /// No description provided for @routines.
   ///
   /// In en, this message translates to:
-  /// **'Leeft'**
-  String get appTitle;
+  /// **'Routines'**
+  String get routines;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
 }
 
 class _AppLocalizationsDelegate

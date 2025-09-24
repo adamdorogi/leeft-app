@@ -1,6 +1,5 @@
 {
-  "appTitle": "Leeft",
-  "@appTitle": {
-    "description": "The title of the application"
-  }
+  "routines": "Routines",
+  "profile": "Profile",
+  "settings": "Settings"
 }

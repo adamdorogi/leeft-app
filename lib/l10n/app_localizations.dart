@@ -111,6 +111,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
+
+  /// No description provided for @createRoutine.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Routine'**
+  String get createRoutine;
+
+  /// No description provided for @addExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Exercises'**
+  String get addExercises;
 }
 
 class _AppLocalizationsDelegate

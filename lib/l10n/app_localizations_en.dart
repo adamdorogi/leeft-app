@@ -16,4 +16,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings => 'Settings';
+
+  @override
+  String get createRoutine => 'Create Routine';
+
+  @override
+  String get addExercises => 'Add Exercises';
 }

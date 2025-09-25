@@ -1,5 +1,7 @@
 {
   "routines": "Routines",
   "profile": "Profile",
-  "settings": "Settings"
+  "settings": "Settings",
+  "createRoutine": "Create Routine",
+  "addExercises": "Add Exercises"
 }

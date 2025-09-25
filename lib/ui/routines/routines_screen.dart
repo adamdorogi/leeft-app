@@ -12,7 +12,7 @@ class RoutinesScreen extends StatelessWidget {
       appBar: AppBar(title: Text(AppLocalizations.of(context)!.routines)),
       body: Center(
         child: ElevatedButton.icon(
-          icon: Icon(Icons.add),
+          icon: const Icon(Icons.add),
           label: Text(AppLocalizations.of(context)!.createRoutine),
           onPressed: () => Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(

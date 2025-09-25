@@ -12,12 +12,12 @@ class CreateRoutineScreen extends StatelessWidget {
       appBar: AppBar(title: Text(AppLocalizations.of(context)!.createRoutine)),
       body: Center(
         child: ElevatedButton.icon(
-          icon: Icon(Icons.add),
+          icon: const Icon(Icons.add),
           label: Text(AppLocalizations.of(context)!.addExercises),
           onPressed: () => Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(
               fullscreenDialog: true,
-              builder: (_) => AddExercisesScreen(),
+              builder: (_) => const AddExercisesScreen(),
             ),
           ),
         ),

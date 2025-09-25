@@ -15,11 +15,11 @@ class NavigationScreen extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
         destinations: [
           NavigationDestination(
-            icon: Icon(Icons.fitness_center),
+            icon: const Icon(Icons.fitness_center),
             label: AppLocalizations.of(context)!.routines,
           ),
           NavigationDestination(
-            icon: Icon(Icons.account_circle),
+            icon: const Icon(Icons.account_circle),
             label: AppLocalizations.of(context)!.profile,
           ),
         ],

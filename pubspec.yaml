@@ -12,6 +12,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   go_router: ^16.2.2
+  result_dart: ^2.1.1
 
 dev_dependencies:
   flutter_test:

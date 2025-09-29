@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_screen.dart';
+import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
 
 class CreateRoutineScreen extends StatelessWidget {
   const CreateRoutineScreen({super.key});
@@ -17,7 +19,11 @@ class CreateRoutineScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(
               fullscreenDialog: true,
-              builder: (_) => const AddExercisesScreen(),
+              builder: (context) => AddExercisesScreen(
+                viewModel: AddExercisesViewModel(
+                  exerciseRepository: context.read(),
+                ),
+              ),
             ),
           ),
         ),

@@ -1,9 +1,11 @@
+import 'dart:collection';
+
 import 'package:flutter/foundation.dart';
+import 'package:result_command/result_command.dart';
+import 'package:result_dart/result_dart.dart';
 
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:result_command/result_command.dart';
-import 'package:result_dart/result_dart.dart';
 
 class AddExercisesViewModel extends ChangeNotifier {
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
@@ -15,7 +17,13 @@ class AddExercisesViewModel extends ChangeNotifier {
 
   List<Exercise> _exercises = [];
 
-  List<Exercise> get exercises => _exercises;
+  UnmodifiableListView<Exercise> get exercises =>
+      UnmodifiableListView(_exercises);
+
+  final Set<String> _selectedExerciseIds = {};
+
+  UnmodifiableSetView<String> get selectedExerciseIds =>
+      UnmodifiableSetView(_selectedExerciseIds);
 
   late Command0<Unit> load;
 
@@ -29,5 +37,13 @@ class AddExercisesViewModel extends ChangeNotifier {
         final exception = result.exceptionOrNull();
         return Failure(exception);
     }
+  }
+
+  void toggleExerciseIdSelection(String exerciseId) {
+    _selectedExerciseIds.contains(exerciseId)
+        ? _selectedExerciseIds.remove(exerciseId)
+        : _selectedExerciseIds.add(exerciseId);
+
+    notifyListeners();
   }
 }

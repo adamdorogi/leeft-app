@@ -28,8 +28,15 @@ class AddExercisesScreen extends StatelessWidget {
         child: ListenableBuilder(
           listenable: viewModel,
           builder: (_, _) => ListView.builder(
-            itemBuilder: (_, index) =>
-                ListTile(title: Text(viewModel.exercises[index].name)),
+            itemBuilder: (_, index) {
+              final exercise = viewModel.exercises[index];
+              return CheckboxListTile(
+                title: Text(exercise.name),
+                value: viewModel.selectedExerciseIds.contains(exercise.id),
+                onChanged: (_) =>
+                    viewModel.toggleExerciseIdSelection(exercise.id),
+              );
+            },
             itemCount: viewModel.exercises.length,
           ),
         ),

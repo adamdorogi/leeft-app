@@ -11,7 +11,16 @@ class AddExercisesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.addExercises)),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.addExercises),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.done),
+            onPressed: () =>
+                Navigator.of(context).pop(viewModel.selectedExerciseIds),
+          ),
+        ],
+      ),
       body: ListenableBuilder(
         listenable: viewModel.load,
         builder: (_, child) {

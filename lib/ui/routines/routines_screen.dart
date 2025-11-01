@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/create_routine/create_routine_screen.dart';
+import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
 
 class RoutinesScreen extends StatelessWidget {
   const RoutinesScreen({super.key});
@@ -17,7 +18,8 @@ class RoutinesScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(
               fullscreenDialog: true,
-              builder: (_) => const CreateRoutineScreen(),
+              builder: (_) =>
+                  CreateRoutineScreen(viewModel: CreateRoutineViewModel()),
             ),
           ),
         ),

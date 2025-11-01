@@ -11,7 +11,5 @@ class ExerciseRepositoryLocal extends ExerciseRepository {
   final LocalDataService _localDataService;
 
   @override
-  AsyncResult<List<Exercise>> get exercises {
-    return _localDataService.exercises;
-  }
+  AsyncResult<List<Exercise>> get exercises => _localDataService.exercises;
 }

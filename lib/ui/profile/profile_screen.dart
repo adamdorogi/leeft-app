@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/routing/routes.dart';
 
+/// A screen for the user profile.
 class ProfileScreen extends StatelessWidget {
+  /// Creates a [ProfileScreen].
   const ProfileScreen({super.key});
 
   @override
@@ -13,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.profile),
         actions: [
+          // Link to Settings page.
           IconButton(
             onPressed: () => context.go(Routes.settings),
             icon: const Icon(Icons.settings),

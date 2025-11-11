@@ -3,8 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'exercise.freezed.dart';
 part 'exercise.g.dart';
 
+/// An exercise.
 @freezed
 abstract class Exercise with _$Exercise {
+  /// Creates an [Exercise].
   const factory Exercise({
     required String id,
     required String name,
@@ -15,6 +17,7 @@ abstract class Exercise with _$Exercise {
     required List<String> instructions,
   }) = _Exercise;
 
+  /// The [Exercise] created from [json].
   factory Exercise.fromJson(Map<String, dynamic> json) =>
       _$ExerciseFromJson(json);
 }

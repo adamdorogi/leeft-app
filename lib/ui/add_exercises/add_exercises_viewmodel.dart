@@ -7,7 +7,11 @@ import 'package:result_dart/result_dart.dart';
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
 
+/// A view model for managing the UI state of the Add Exercises screen.
 class AddExercisesViewModel extends ChangeNotifier {
+  /// Creates an [AddExercisesViewModel].
+  ///
+  /// The [exerciseRepository] is used to manage exercise data.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository {
     load = Command0(_load)..execute();
@@ -15,16 +19,17 @@ class AddExercisesViewModel extends ChangeNotifier {
 
   final ExerciseRepository _exerciseRepository;
 
-  List<Exercise> _exercises = [];
-
+  /// The exercises shown on this view model's screen.
   UnmodifiableListView<Exercise> get exercises =>
       UnmodifiableListView(_exercises);
+  List<Exercise> _exercises = [];
 
-  final Set<String> _selectedExerciseIds = {};
-
+  /// The IDs of the selected exercises.
   UnmodifiableSetView<String> get selectedExerciseIds =>
       UnmodifiableSetView(_selectedExerciseIds);
+  final Set<String> _selectedExerciseIds = {};
 
+  /// Load the exercise data from the exercise repository.
   late Command0<Unit> load;
 
   AsyncResult<Unit> _load() async {
@@ -39,6 +44,7 @@ class AddExercisesViewModel extends ChangeNotifier {
     }
   }
 
+  /// Selects or unselects the exercise with the given [exerciseId].
   void toggleExerciseIdSelection(String exerciseId) {
     _selectedExerciseIds.contains(exerciseId)
         ? _selectedExerciseIds.remove(exerciseId)

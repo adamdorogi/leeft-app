@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 
+/// A screen for application settings.
 class SettingsScreen extends StatelessWidget {
+  /// Creates a [SettingsScreen].
   const SettingsScreen({super.key});
 
   @override

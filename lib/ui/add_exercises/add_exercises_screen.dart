@@ -20,7 +20,7 @@ class AddExercisesScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.done),
             onPressed: () =>
-                Navigator.of(context).pop(viewModel.selectedExerciseIds),
+                Navigator.of(context).pop(viewModel.selectedExercises),
           ),
         ],
       ),
@@ -45,15 +45,13 @@ class AddExercisesScreen extends StatelessWidget {
                   listenable: viewModel,
                   builder: (_, _) => ListView.builder(
                     itemBuilder: (_, index) {
-                      // Display the currently selected exercises.
+                      // Display the list of exercises.
                       final exercise = viewModel.exercises[index];
                       return CheckboxListTile(
                         title: Text(exercise.name),
-                        value: viewModel.selectedExerciseIds.contains(
-                          exercise.id,
-                        ),
+                        value: viewModel.selectedExercises.contains(exercise),
                         onChanged: (_) =>
-                            viewModel.toggleExerciseIdSelection(exercise.id),
+                            viewModel.toggleExerciseSelection(exercise),
                       );
                     },
                     itemCount: viewModel.exercises.length,

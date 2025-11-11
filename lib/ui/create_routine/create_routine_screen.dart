@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_screen.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
@@ -26,13 +27,15 @@ class CreateRoutineScreen extends StatelessWidget {
             listenable: viewModel,
             builder: (_, child) => ListView.builder(
               itemBuilder: (_, index) {
-                if (index == viewModel.addedExerciseIds.length) {
+                if (index == viewModel.addedExercises.length) {
                   return child;
                 }
 
-                return ListTile(title: Text(viewModel.addedExerciseIds[index]));
+                return ListTile(
+                  title: Text(viewModel.addedExercises[index].name),
+                );
               },
-              itemCount: viewModel.addedExerciseIds.length + 1,
+              itemCount: viewModel.addedExercises.length + 1,
             ),
             child:
                 // Add Exercises button, built only once.
@@ -45,7 +48,7 @@ class CreateRoutineScreen extends StatelessWidget {
                         await Navigator.of(
                           context,
                           rootNavigator: true,
-                        ).push<UnmodifiableSetView<String>>(
+                        ).push<UnmodifiableSetView<Exercise>>(
                           MaterialPageRoute(
                             fullscreenDialog: true,
                             builder: (context) => AddExercisesScreen(
@@ -55,7 +58,7 @@ class CreateRoutineScreen extends StatelessWidget {
                             ),
                           ),
                         );
-                    viewModel.addExerciseIds(exercises);
+                    viewModel.addExercises(exercises);
                   },
                 ),
           ),

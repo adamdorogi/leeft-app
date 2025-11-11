@@ -2,23 +2,24 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 
+import 'package:leeft/domain/models/exercise/exercise.dart';
+
 /// A view model for managing the UI state of the Create Routine screen.
 class CreateRoutineViewModel extends ChangeNotifier {
   /// Creates a [CreateRoutineViewModel].
   CreateRoutineViewModel();
 
   /// The exercises added to this view model's screen.
-  UnmodifiableListView<String> get addedExerciseIds =>
-      UnmodifiableListView(_addedExerciseIds);
-  final List<String> _addedExerciseIds = [];
+  UnmodifiableListView<Exercise> get addedExercises =>
+      UnmodifiableListView(_addedExercises);
+  final List<Exercise> _addedExercises = [];
 
-  /// Add the exercises with the given [exerciseIds] to this view model's
-  /// screen.
-  void addExerciseIds(UnmodifiableSetView<String>? exerciseIds) {
-    if (exerciseIds == null) {
+  /// Adds the [exercises] to this view model's screen.
+  void addExercises(UnmodifiableSetView<Exercise>? exercises) {
+    if (exercises == null) {
       return;
     }
-    _addedExerciseIds.addAll(exerciseIds);
+    _addedExercises.addAll(exercises);
     notifyListeners();
   }
 }

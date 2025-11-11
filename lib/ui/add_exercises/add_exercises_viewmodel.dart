@@ -24,10 +24,10 @@ class AddExercisesViewModel extends ChangeNotifier {
       UnmodifiableListView(_exercises);
   List<Exercise> _exercises = [];
 
-  /// The IDs of the selected exercises.
-  UnmodifiableSetView<String> get selectedExerciseIds =>
-      UnmodifiableSetView(_selectedExerciseIds);
-  final Set<String> _selectedExerciseIds = {};
+  /// The selected exercises.
+  UnmodifiableSetView<Exercise> get selectedExercises =>
+      UnmodifiableSetView(_selectedExercises);
+  final Set<Exercise> _selectedExercises = {};
 
   /// Load the exercise data from the exercise repository.
   late Command0<Unit> load;
@@ -44,12 +44,11 @@ class AddExercisesViewModel extends ChangeNotifier {
     }
   }
 
-  /// Selects or unselects the exercise with the given [exerciseId].
-  void toggleExerciseIdSelection(String exerciseId) {
-    _selectedExerciseIds.contains(exerciseId)
-        ? _selectedExerciseIds.remove(exerciseId)
-        : _selectedExerciseIds.add(exerciseId);
-
+  /// Selects or unselects the [exercise].
+  void toggleExerciseSelection(Exercise exercise) {
+    _selectedExercises.contains(exercise)
+        ? _selectedExercises.remove(exercise)
+        : _selectedExercises.add(exercise);
     notifyListeners();
   }
 }

@@ -27,15 +27,17 @@ class CreateRoutineScreen extends StatelessWidget {
             listenable: viewModel,
             builder: (_, child) => ListView.builder(
               itemBuilder: (_, index) {
-                if (index == viewModel.addedExercises.length) {
+                if (index == viewModel.routine.routineExercises.length) {
                   return child;
                 }
 
                 return ListTile(
-                  title: Text(viewModel.addedExercises[index].name),
+                  title: Text(
+                    viewModel.routine.routineExercises[index].exercise.name,
+                  ),
                 );
               },
-              itemCount: viewModel.addedExercises.length + 1,
+              itemCount: viewModel.routine.routineExercises.length + 1,
             ),
             child:
                 // Add Exercises button, built only once.
@@ -44,7 +46,7 @@ class CreateRoutineScreen extends StatelessWidget {
                   label: Text(AppLocalizations.of(context)!.addExercises),
                   onPressed: () async {
                     // Get the selected exercises from the Add Exercises screen.
-                    final exercises =
+                    final selectedExercises =
                         await Navigator.of(
                           context,
                           rootNavigator: true,
@@ -58,7 +60,7 @@ class CreateRoutineScreen extends StatelessWidget {
                             ),
                           ),
                         );
-                    viewModel.addExercises(exercises);
+                    viewModel.addExercises(selectedExercises);
                   },
                 ),
           ),

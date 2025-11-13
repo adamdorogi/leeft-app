@@ -19,7 +19,7 @@ class AddExercisesViewModel extends ChangeNotifier {
 
   final ExerciseRepository _exerciseRepository;
 
-  /// The exercises shown on this view model's screen.
+  /// The exercise options.
   UnmodifiableListView<Exercise> get exercises =>
       UnmodifiableListView(_exercises);
   List<Exercise> _exercises = [];

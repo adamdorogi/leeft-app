@@ -14,6 +14,32 @@ class ExerciseRepositoryLocal extends ExerciseRepository {
 
   final LocalDataService _localDataService;
 
+  // Keep track of cached and inflight exercises, so we can prevent duplicate
+  // requests when invoked by multiple view models concurrently.
+  List<Exercise>? _cachedExercises;
+  AsyncResult<List<Exercise>>? _inflightExercises;
+
   @override
-  AsyncResult<List<Exercise>> get exercises => _localDataService.exercises;
+  AsyncResult<List<Exercise>> get exercises async {
+    // If we have cached exercises, return those.
+    if (_cachedExercises != null) {
+      return Success(_cachedExercises!);
+    }
+
+    // If exercises are already being fetched, return their future.
+    // This prevents duplicate requests.
+    if (_inflightExercises != null) {
+      return _inflightExercises!;
+    }
+
+    // First time fetching exercises, store their future.
+    _inflightExercises = _localDataService.exercises;
+    final exercisesResult = await _inflightExercises!;
+
+    // Cache the exercises if successful, and clear the inflight exercises.
+    _cachedExercises = exercisesResult.getOrNull();
+    _inflightExercises = null;
+
+    return exercisesResult;
+  }
 }

@@ -2,6 +2,8 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
+    discarded_futures: true
     lines_longer_than_80_chars: true
     prefer_const_constructors: true
     public_member_api_docs: true
+    unawaited_futures: true

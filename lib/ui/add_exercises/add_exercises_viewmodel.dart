@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
@@ -14,7 +15,8 @@ class AddExercisesViewModel extends ChangeNotifier {
   /// The [exerciseRepository] is used to manage exercise data.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository {
-    load = Command0(_load)..execute();
+    load = Command0(_load);
+    unawaited(load.execute());
   }
 
   final ExerciseRepository _exerciseRepository;
@@ -33,15 +35,9 @@ class AddExercisesViewModel extends ChangeNotifier {
   late Command0<Unit> load;
 
   AsyncResult<Unit> _load() async {
-    final result = await _exerciseRepository.exercises;
-    switch (result) {
-      case Success():
-        _exercises = result.getOrNull();
-        return const Success(unit);
-      case Failure():
-        final exception = result.exceptionOrNull();
-        return Failure(exception);
-    }
+    final exercisesResult = await _exerciseRepository.exercises;
+    _exercises = exercisesResult.getOrDefault(_exercises);
+    return exercisesResult.pure(unit);
   }
 
   /// Selects or unselects the [exercise].

@@ -10,7 +10,11 @@ class ExerciseRepositoryLocal extends ExerciseRepository {
   ///
   /// The [localDataService] is used to retrieve assets from the asset bundle.
   ExerciseRepositoryLocal({required LocalDataService localDataService})
-    : _localDataService = localDataService;
+    : _localDataService = localDataService {
+    // Prefetch exercises, fire-and-forget.
+    // ignore: discarded_futures
+    exercises;
+  }
 
   final LocalDataService _localDataService;
 

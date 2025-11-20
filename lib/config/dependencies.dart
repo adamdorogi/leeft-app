@@ -12,6 +12,8 @@ final providersLocal = <SingleChildWidget>[
   Provider(create: (_) => LocalDataService()),
   // Expose repositories so they can be injected into view models as needed.
   Provider(
+    // Create provider immediately to allow prefetching.
+    lazy: false,
     create: (context) =>
         ExerciseRepositoryLocal(localDataService: context.read())
             as ExerciseRepository,

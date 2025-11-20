@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
@@ -15,8 +14,8 @@ class AddExercisesViewModel extends ChangeNotifier {
   /// The [exerciseRepository] is used to manage exercise data.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository {
-    load = Command0(_load);
-    unawaited(load.execute());
+    // ignore: discarded_futures
+    load = Command0(_load)..execute();
   }
 
   final ExerciseRepository _exerciseRepository;

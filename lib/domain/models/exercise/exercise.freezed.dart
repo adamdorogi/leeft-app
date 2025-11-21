@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Exercise {
 
- String get id; String get name; String get bodyPart; String get target; String get equipment; List<String> get secondaryMuscles; List<String> get instructions;
+ String get id; String get title; int get priority; String get muscleGroup; List<String> get otherMuscles; String get exerciseType; String? get equipment; String? get mediaUrl; String? get thumbnailUrl; List<String> get tags;
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ExerciseCopyWith<Exercise> get copyWith => _$ExerciseCopyWithImpl<Exercise>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.bodyPart, bodyPart) || other.bodyPart == bodyPart)&&(identical(other.target, target) || other.target == target)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&const DeepCollectionEquality().equals(other.secondaryMuscles, secondaryMuscles)&&const DeepCollectionEquality().equals(other.instructions, instructions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other.otherMuscles, otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&const DeepCollectionEquality().equals(other.tags, tags));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,bodyPart,target,equipment,const DeepCollectionEquality().hash(secondaryMuscles),const DeepCollectionEquality().hash(instructions));
+int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,const DeepCollectionEquality().hash(tags));
 
 @override
 String toString() {
-  return 'Exercise(id: $id, name: $name, bodyPart: $bodyPart, target: $target, equipment: $equipment, secondaryMuscles: $secondaryMuscles, instructions: $instructions)';
+  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, tags: $tags)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ExerciseCopyWith<$Res>  {
   factory $ExerciseCopyWith(Exercise value, $Res Function(Exercise) _then) = _$ExerciseCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String bodyPart, String target, String equipment, List<String> secondaryMuscles, List<String> instructions
+ String id, String title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, List<String> tags
 });
 
 
@@ -65,15 +65,18 @@ class _$ExerciseCopyWithImpl<$Res>
 
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? bodyPart = null,Object? target = null,Object? equipment = null,Object? secondaryMuscles = null,Object? instructions = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? tags = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,bodyPart: null == bodyPart ? _self.bodyPart : bodyPart // ignore: cast_nullable_to_non_nullable
-as String,target: null == target ? _self.target : target // ignore: cast_nullable_to_non_nullable
-as String,equipment: null == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
-as String,secondaryMuscles: null == secondaryMuscles ? _self.secondaryMuscles : secondaryMuscles // ignore: cast_nullable_to_non_nullable
-as List<String>,instructions: null == instructions ? _self.instructions : instructions // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
+as int,muscleGroup: null == muscleGroup ? _self.muscleGroup : muscleGroup // ignore: cast_nullable_to_non_nullable
+as String,otherMuscles: null == otherMuscles ? _self.otherMuscles : otherMuscles // ignore: cast_nullable_to_non_nullable
+as List<String>,exerciseType: null == exerciseType ? _self.exerciseType : exerciseType // ignore: cast_nullable_to_non_nullable
+as String,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
+as String?,mediaUrl: freezed == mediaUrl ? _self.mediaUrl : mediaUrl // ignore: cast_nullable_to_non_nullable
+as String?,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+as String?,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -159,10 +162,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String bodyPart,  String target,  String equipment,  List<String> secondaryMuscles,  List<String> instructions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Exercise() when $default != null:
-return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,_that.secondaryMuscles,_that.instructions);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
   return orElse();
 
 }
@@ -180,10 +183,10 @@ return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String bodyPart,  String target,  String equipment,  List<String> secondaryMuscles,  List<String> instructions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)  $default,) {final _that = this;
 switch (_that) {
 case _Exercise():
-return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,_that.secondaryMuscles,_that.instructions);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +203,10 @@ return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String bodyPart,  String target,  String equipment,  List<String> secondaryMuscles,  List<String> instructions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)?  $default,) {final _that = this;
 switch (_that) {
 case _Exercise() when $default != null:
-return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,_that.secondaryMuscles,_that.instructions);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
   return null;
 
 }
@@ -215,26 +218,29 @@ return $default(_that.id,_that.name,_that.bodyPart,_that.target,_that.equipment,
 @JsonSerializable()
 
 class _Exercise implements Exercise {
-  const _Exercise({required this.id, required this.name, required this.bodyPart, required this.target, required this.equipment, required final  List<String> secondaryMuscles, required final  List<String> instructions}): _secondaryMuscles = secondaryMuscles,_instructions = instructions;
+  const _Exercise({required this.id, required this.title, required this.priority, required this.muscleGroup, required final  List<String> otherMuscles, required this.exerciseType, required this.equipment, required this.mediaUrl, required this.thumbnailUrl, required final  List<String> tags}): _otherMuscles = otherMuscles,_tags = tags;
   factory _Exercise.fromJson(Map<String, dynamic> json) => _$ExerciseFromJson(json);
 
 @override final  String id;
-@override final  String name;
-@override final  String bodyPart;
-@override final  String target;
-@override final  String equipment;
- final  List<String> _secondaryMuscles;
-@override List<String> get secondaryMuscles {
-  if (_secondaryMuscles is EqualUnmodifiableListView) return _secondaryMuscles;
+@override final  String title;
+@override final  int priority;
+@override final  String muscleGroup;
+ final  List<String> _otherMuscles;
+@override List<String> get otherMuscles {
+  if (_otherMuscles is EqualUnmodifiableListView) return _otherMuscles;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_secondaryMuscles);
+  return EqualUnmodifiableListView(_otherMuscles);
 }
 
- final  List<String> _instructions;
-@override List<String> get instructions {
-  if (_instructions is EqualUnmodifiableListView) return _instructions;
+@override final  String exerciseType;
+@override final  String? equipment;
+@override final  String? mediaUrl;
+@override final  String? thumbnailUrl;
+ final  List<String> _tags;
+@override List<String> get tags {
+  if (_tags is EqualUnmodifiableListView) return _tags;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_instructions);
+  return EqualUnmodifiableListView(_tags);
 }
 
 
@@ -251,16 +257,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.bodyPart, bodyPart) || other.bodyPart == bodyPart)&&(identical(other.target, target) || other.target == target)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&const DeepCollectionEquality().equals(other._secondaryMuscles, _secondaryMuscles)&&const DeepCollectionEquality().equals(other._instructions, _instructions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other._otherMuscles, _otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&const DeepCollectionEquality().equals(other._tags, _tags));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,bodyPart,target,equipment,const DeepCollectionEquality().hash(_secondaryMuscles),const DeepCollectionEquality().hash(_instructions));
+int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(_otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,const DeepCollectionEquality().hash(_tags));
 
 @override
 String toString() {
-  return 'Exercise(id: $id, name: $name, bodyPart: $bodyPart, target: $target, equipment: $equipment, secondaryMuscles: $secondaryMuscles, instructions: $instructions)';
+  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, tags: $tags)';
 }
 
 
@@ -271,7 +277,7 @@ abstract mixin class _$ExerciseCopyWith<$Res> implements $ExerciseCopyWith<$Res>
   factory _$ExerciseCopyWith(_Exercise value, $Res Function(_Exercise) _then) = __$ExerciseCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String bodyPart, String target, String equipment, List<String> secondaryMuscles, List<String> instructions
+ String id, String title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, List<String> tags
 });
 
 
@@ -288,15 +294,18 @@ class __$ExerciseCopyWithImpl<$Res>
 
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? bodyPart = null,Object? target = null,Object? equipment = null,Object? secondaryMuscles = null,Object? instructions = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? tags = null,}) {
   return _then(_Exercise(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,bodyPart: null == bodyPart ? _self.bodyPart : bodyPart // ignore: cast_nullable_to_non_nullable
-as String,target: null == target ? _self.target : target // ignore: cast_nullable_to_non_nullable
-as String,equipment: null == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
-as String,secondaryMuscles: null == secondaryMuscles ? _self._secondaryMuscles : secondaryMuscles // ignore: cast_nullable_to_non_nullable
-as List<String>,instructions: null == instructions ? _self._instructions : instructions // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
+as int,muscleGroup: null == muscleGroup ? _self.muscleGroup : muscleGroup // ignore: cast_nullable_to_non_nullable
+as String,otherMuscles: null == otherMuscles ? _self._otherMuscles : otherMuscles // ignore: cast_nullable_to_non_nullable
+as List<String>,exerciseType: null == exerciseType ? _self.exerciseType : exerciseType // ignore: cast_nullable_to_non_nullable
+as String,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
+as String?,mediaUrl: freezed == mediaUrl ? _self.mediaUrl : mediaUrl // ignore: cast_nullable_to_non_nullable
+as String?,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+as String?,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }

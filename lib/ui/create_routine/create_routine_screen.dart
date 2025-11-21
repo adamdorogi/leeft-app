@@ -33,7 +33,7 @@ class CreateRoutineScreen extends StatelessWidget {
 
                 return ListTile(
                   title: Text(
-                    viewModel.routine.routineExercises[index].exercise.name,
+                    viewModel.routine.routineExercises[index].exercise.title,
                   ),
                 );
               },

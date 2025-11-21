@@ -48,7 +48,7 @@ class AddExercisesScreen extends StatelessWidget {
                       // Display the list of exercises.
                       final exercise = viewModel.exercises[index];
                       return CheckboxListTile(
-                        title: Text(exercise.name),
+                        title: Text(exercise.title),
                         value: viewModel.selectedExercises.contains(exercise),
                         onChanged: (_) =>
                             viewModel.toggleExerciseSelection(exercise),

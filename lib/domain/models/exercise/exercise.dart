@@ -9,12 +9,15 @@ abstract class Exercise with _$Exercise {
   /// Creates an [Exercise].
   const factory Exercise({
     required String id,
-    required String name,
-    required String bodyPart,
-    required String target,
-    required String equipment,
-    required List<String> secondaryMuscles,
-    required List<String> instructions,
+    required String title,
+    required int priority,
+    required String muscleGroup,
+    required List<String> otherMuscles,
+    required String exerciseType,
+    required String? equipment,
+    required String? mediaUrl,
+    required String? thumbnailUrl,
+    required List<String> tags,
   }) = _Exercise;
 
   /// The [Exercise] created from [json].

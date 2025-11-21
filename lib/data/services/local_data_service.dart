@@ -15,8 +15,8 @@ class LocalDataService {
       final json = List<Map<String, dynamic>>.from(jsonDecode(localData));
       final exercises = json.map(Exercise.fromJson).toList();
       return Success(exercises);
-    } on Exception catch (exception) {
-      return Failure(exception);
+    } catch (e) {
+      return Failure(e is Exception ? e : Exception(e));
     }
   }
 }

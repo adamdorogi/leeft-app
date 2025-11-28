@@ -30,13 +30,32 @@ class AddExercisesViewModel extends ChangeNotifier {
       UnmodifiableSetView(_selectedExercises);
   final Set<Exercise> _selectedExercises = {};
 
+  /// The exercise IDs mapped to thumbnails.
+  UnmodifiableMapView<String, Uint8List> get thumbnails =>
+      UnmodifiableMapView(_thumbnails);
+  final Map<String, Uint8List> _thumbnails = {};
+
   /// Load the exercise data from the exercise repository.
   late Command0<Unit> load;
 
   AsyncResult<Unit> _load() async {
     final exercisesResult = await _exerciseRepository.exercises;
-    _exercises = exercisesResult.getOrDefault(_exercises);
+    if (exercisesResult.isSuccess()) {
+      _exercises = exercisesResult.getOrNull()!;
+      notifyListeners();
+      for (final exercise in _exercises) {
+        _loadThumbnailFor(exercise.id);
+      }
+    }
     return exercisesResult.pure(unit);
+  }
+
+  void _loadThumbnailFor(String exerciseId) async {
+    final thumbnailResult = await _exerciseRepository.thumbnailFor(exerciseId);
+    if (thumbnailResult.isSuccess()) {
+      _thumbnails[exerciseId] = thumbnailResult.getOrNull()!;
+      notifyListeners();
+    }
   }
 
   /// Selects or unselects the [exercise].

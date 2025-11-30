@@ -29,11 +29,11 @@ class AddExercisesScreen extends StatelessWidget {
           ListenableBuilder(
             listenable: viewModel.load,
             builder: (_, child) {
-              if (viewModel.load.value.isFailure) {
+              if (viewModel.load.isFailure) {
                 return const Center(child: Text('Error'));
               }
 
-              if (viewModel.load.value.isRunning) {
+              if (viewModel.load.isRunning) {
                 return const Center(child: Text('Loading'));
               }
 

@@ -1,4 +1,4 @@
-import 'package:result_dart/result_dart.dart';
+import 'package:leeft/utils/result.dart';
 
 /// A class for making asynchronous calls and memoizing their results in
 /// memory.
@@ -21,19 +21,19 @@ abstract class MemoizedResult<T, A> {
 
 /// A [MemoizedResult] with no arguments and result type of [T].
 class MemoizedResult0<T extends Object>
-    extends MemoizedResult<T?, AsyncResult<T>?> {
+    extends MemoizedResult<T?, Future<Result<T>>?> {
   /// Creates a [MemoizedResult0].
   ///
-  /// Takes an [_action] to be memoized.
+  /// Takes an action to be memoized.
   MemoizedResult0(this._action) : super(null, null);
 
-  final AsyncResult<T> Function() _action;
+  final Future<Result<T>> Function() _action;
 
-  /// Invoke the [_action].
-  AsyncResult<T> invoke() async {
+  /// Invoke the action.
+  Future<Result<T>> invoke() async {
     // Check if the result has been cached.
     if (_cached != null) {
-      return Success(_cached!);
+      return Result.success(_cached!);
     }
 
     // Check if the action is already inflight.
@@ -45,7 +45,11 @@ class MemoizedResult0<T extends Object>
     // cache and inflight accordingly.
     _inflight = _action();
     final result = await _inflight!;
-    _cached = result.getOrNull();
+    switch (result) {
+      case Success():
+        _cached = result.value;
+      case Failure():
+    }
     _inflight = null;
 
     return result;
@@ -61,19 +65,19 @@ class MemoizedResult0<T extends Object>
 /// A [MemoizedResult] with one argument, result of type [T], and parameter of
 /// type [A].
 class MemoizedResult1<T extends Object, A>
-    extends MemoizedResult<Map<A, T>, Map<A, AsyncResult<T>>> {
+    extends MemoizedResult<Map<A, T>, Map<A, Future<Result<T>>>> {
   /// Creates a [MemoizedResult1].
   ///
-  /// Takes an [_action] to be memoized.
+  /// Takes an action to be memoized.
   MemoizedResult1(this._action) : super({}, {});
 
-  final AsyncResult<T> Function(A) _action;
+  final Future<Result<T>> Function(A) _action;
 
-  /// Invoke the [_action].
-  AsyncResult<T> invoke(A param) async {
+  /// Invoke the action.
+  Future<Result<T>> invoke(A param) async {
     // Check if the result has been cached.
     if (_cached[param] != null) {
-      return Success(_cached[param]!);
+      return Result.success(_cached[param]!);
     }
 
     // Check if the action is already inflight.
@@ -85,8 +89,10 @@ class MemoizedResult1<T extends Object, A>
     // cache and inflight accordingly.
     _inflight[param] = _action(param);
     final result = await _inflight[param]!;
-    if (result.isSuccess()) {
-      _cached[param] = result.getOrNull()!;
+    switch (result) {
+      case Success():
+        _cached[param] = result.value;
+      case Failure():
     }
     await _inflight.remove(param);
 

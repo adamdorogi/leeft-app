@@ -1,11 +1,11 @@
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
-import 'package:result_command/result_command.dart';
-import 'package:result_dart/result_dart.dart';
 
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
+import 'package:leeft/utils/command.dart';
+import 'package:leeft/utils/result.dart';
 
 /// A view model for managing the UI state of the Add Exercises screen.
 class AddExercisesViewModel extends ChangeNotifier {
@@ -36,25 +36,30 @@ class AddExercisesViewModel extends ChangeNotifier {
   final Map<String, Uint8List> _thumbnails = {};
 
   /// Load the exercise data from the exercise repository.
-  late Command0<Unit> load;
+  late Command0<Null> load;
 
-  AsyncResult<Unit> _load() async {
+  Future<Result<Null>> _load() async {
     final exercisesResult = await _exerciseRepository.exercises;
-    if (exercisesResult.isSuccess()) {
-      _exercises = exercisesResult.getOrNull()!;
-      notifyListeners();
-      for (final exercise in _exercises) {
-        _loadThumbnailFor(exercise.id);
-      }
+    switch (exercisesResult) {
+      case Success():
+        _exercises = exercisesResult.value;
+        notifyListeners();
+        for (final exercise in _exercises) {
+          _loadThumbnailFor(exercise.id);
+        }
+        return Result.success(null);
+      case Failure():
+        return Result.failure(exercisesResult.error);
     }
-    return exercisesResult.pure(unit);
   }
 
   void _loadThumbnailFor(String exerciseId) async {
     final thumbnailResult = await _exerciseRepository.thumbnailFor(exerciseId);
-    if (thumbnailResult.isSuccess()) {
-      _thumbnails[exerciseId] = thumbnailResult.getOrNull()!;
-      notifyListeners();
+    switch (thumbnailResult) {
+      case Success():
+        _thumbnails[exerciseId] = thumbnailResult.value;
+        notifyListeners();
+      case Failure():
     }
   }
 

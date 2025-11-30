@@ -1,12 +1,11 @@
 import 'dart:typed_data';
 
-import 'package:result_dart/result_dart.dart';
-
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/data/services/local_data_service.dart';
 import 'package:leeft/data/services/remote_data_service.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/utils/memoized_result.dart';
+import 'package:leeft/utils/result.dart';
 
 /// A repository for managing exercise data locally.
 class ExerciseRepositoryLocal extends ExerciseRepository {
@@ -29,35 +28,42 @@ class ExerciseRepositoryLocal extends ExerciseRepository {
   late MemoizedResult1<Uint8List, String> _memoizedThumbnails;
 
   @override
-  AsyncResult<List<Exercise>> get exercises => _memoizedExercises.invoke();
+  Future<Result<List<Exercise>>> get exercises => _memoizedExercises.invoke();
 
-  AsyncResult<List<Exercise>> _getExercises() => _localDataService.exercises;
+  Future<Result<List<Exercise>>> _getExercises() => _localDataService.exercises;
 
   @override
-  AsyncResult<Uint8List> thumbnailFor(String exerciseId) =>
+  Future<Result<Uint8List>> thumbnailFor(String exerciseId) =>
       _memoizedThumbnails.invoke(exerciseId);
 
-  AsyncResult<Uint8List> _thumbnailFor(String exerciseId) async {
+  Future<Result<Uint8List>> _thumbnailFor(String exerciseId) async {
     final exerciseResult = await _exerciseWith(exerciseId);
-    if (exerciseResult.isSuccess()) {
-      final exercise = exerciseResult.getOrNull()!;
-      if (exercise.thumbnailUrl != null) {
-        return _remoteDataService.bytesAt(exercise.thumbnailUrl!);
-      }
+    switch (exerciseResult) {
+      case Success():
+        final exercise = exerciseResult.value;
+        if (exercise.thumbnailUrl != null) {
+          return _remoteDataService.bytesAt(exercise.thumbnailUrl!);
+        }
+        return Result.failure(Exception('Exercise has no thumbnail.'));
+      case Failure():
+        return Result.failure(exerciseResult.error);
     }
-
-    return Failure(Exception('Failed to get exercise thumbnail.'));
   }
 
-  AsyncResult<Exercise> _exerciseWith(String exerciseId) async {
+  Future<Result<Exercise>> _exerciseWith(String exerciseId) async {
     final exercisesResult = await exercises;
-    if (exercisesResult.isSuccess()) {
-      for (final exercise in exercisesResult.getOrNull()!) {
-        if (exercise.id == exerciseId) {
-          return Success(exercise);
+    switch (exercisesResult) {
+      case Success():
+        for (final exercise in exercisesResult.value) {
+          if (exercise.id == exerciseId) {
+            return Result.success(exercise);
+          }
         }
-      }
+        return Result.failure(
+          Exception('Cannot find exercise with ID $exerciseId.'),
+        );
+      case Failure():
+        return Result.failure(exercisesResult.error);
     }
-    return Failure(Exception('Cannot find exercise with ID $exerciseId.'));
   }
 }

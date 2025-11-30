@@ -5,6 +5,7 @@ import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/data/repositories/exercise/exercise_repository_local.dart';
 import 'package:leeft/data/services/local_data_service.dart';
 import 'package:leeft/data/services/remote_data_service.dart';
+import 'package:leeft/utils/result.dart';
 
 /// The providers for local data.
 final providersLocal = <SingleChildWidget>[
@@ -28,12 +29,14 @@ final providersLocal = <SingleChildWidget>[
       // ignore: discarded_futures
       (() async {
         final exercisesResult = await repo.exercises;
-        if (exercisesResult.isSuccess()) {
-          final exercises = exercisesResult.getOrNull()!;
-          for (final exercise in exercises) {
-            // ignore: unawaited_futures
-            repo.thumbnailFor(exercise.id);
-          }
+        switch (exercisesResult) {
+          case Success():
+            final exercises = exercisesResult.value;
+            for (final exercise in exercises) {
+              // ignore: unawaited_futures
+              repo.thumbnailFor(exercise.id);
+            }
+          case Failure():
         }
       })();
 

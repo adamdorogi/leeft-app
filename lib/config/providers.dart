@@ -8,7 +8,7 @@ import 'package:leeft/data/services/remote_data_service.dart';
 import 'package:leeft/utils/result.dart';
 
 /// The providers for local data.
-final providersLocal = <SingleChildWidget>[
+final List<SingleChildWidget> providersLocal = [
   // Expose services so they can immediately be injected into repositories via
   // the [BuildContext.read] method from [provider].
   Provider(create: (_) => LocalDataService()),

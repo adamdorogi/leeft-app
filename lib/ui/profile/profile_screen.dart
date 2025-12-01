@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
-import 'package:leeft/routing/routes.dart';
+import 'package:leeft/router/routes.dart';
 
 /// A screen for the user profile.
 class ProfileScreen extends StatelessWidget {

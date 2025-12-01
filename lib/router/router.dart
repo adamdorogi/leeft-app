@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import 'package:leeft/routing/routes.dart';
+import 'package:leeft/router/routes.dart';
 import 'package:leeft/ui/navigation/navigation_screen.dart';
 import 'package:leeft/ui/profile/profile_screen.dart';
 import 'package:leeft/ui/routines/routines_screen.dart';

@@ -6,7 +6,7 @@ import 'package:leeft/ui/profile/profile_screen.dart';
 import 'package:leeft/ui/routines/routines_screen.dart';
 import 'package:leeft/ui/settings/settings_screen.dart';
 
-/// The router configuration for defining routes and navigation.
+/// The router configuration defining routes and navigation.
 final router = GoRouter(
   initialLocation: Routes.routines,
   routes: [
@@ -14,7 +14,7 @@ final router = GoRouter(
       builder: (_, _, navigationShell) =>
           NavigationScreen(navigationShell: navigationShell),
       branches: [
-        // Routines screen.
+        // The routines screen.
         StatefulShellBranch(
           routes: [
             GoRoute(
@@ -23,14 +23,14 @@ final router = GoRouter(
             ),
           ],
         ),
-        // Profile screen.
+        // The profile screen.
         StatefulShellBranch(
           routes: [
             GoRoute(
               path: Routes.profile,
               builder: (_, _) => const ProfileScreen(),
               routes: [
-                // Settings screen.
+                // The settings screen.
                 GoRoute(
                   path: Routes.settingsRelative,
                   builder: (_, _) => const SettingsScreen(),

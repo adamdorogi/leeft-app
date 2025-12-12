@@ -1,26 +1,23 @@
-import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
-
+import 'package:leeft/data/repositories/exercise/exercise_development_repository.dart';
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
-import 'package:leeft/data/repositories/exercise/exercise_repository_local.dart';
-import 'package:leeft/data/services/local_data_service.dart';
+import 'package:leeft/data/services/asset_bundle_service.dart';
 import 'package:leeft/data/services/remote_data_service.dart';
 import 'package:leeft/utils/result.dart';
 
-/// The providers for local data.
-final List<SingleChildWidget> providersLocal = [
-  // Expose services so they can immediately be injected into repositories via
-  // the [BuildContext.read] method from [provider].
-  Provider(create: (_) => LocalDataService()),
+import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
+
+/// The providers exposing services and repositories used during development.
+final List<SingleChildWidget> developmentProviders = [
+  Provider(create: (_) => AssetBundleService()),
   Provider(create: (_) => RemoteDataService()),
-  // Expose repositories so they can be injected into view models as needed.
   Provider(
     // Create provider immediately to allow prefetching.
     lazy: false,
     create: (context) {
       final repo =
-          ExerciseRepositoryLocal(
-                localDataService: context.read(),
+          ExerciseDevelopmentRepository(
+                assetBundleService: context.read(),
                 remoteDataService: context.read(),
               )
               as ExerciseRepository;
@@ -30,11 +27,11 @@ final List<SingleChildWidget> providersLocal = [
       (() async {
         final exercisesResult = await repo.exercises;
         switch (exercisesResult) {
-          case Success():
-            final exercises = exercisesResult.value;
+          case Success(value: final exercises):
             for (final exercise in exercises) {
+              // Don't need the result, just prefetching.
               // ignore: unawaited_futures
-              repo.thumbnailFor(exercise.id);
+              repo.thumbnailBytesFor(exercise.id);
             }
           case Failure():
         }

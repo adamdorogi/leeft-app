@@ -1,13 +1,15 @@
-/// A [Result], which can either be [Success] or [Failure].
+/// A result that can either be a [Success] or a [Failure].
 sealed class Result<T> {
   const Result();
 
+  /// Creates a [Success] with a [value].
   factory Result.success(T value) = Success._;
 
+  /// Creates a [Failure] with an [error].
   factory Result.failure(Exception error) = Failure._;
 }
 
-/// A [Success] [Result] with a [value].
+/// A successful [Result] with a [value].
 class Success<T> extends Result<T> {
   const Success._(this.value);
 
@@ -15,7 +17,7 @@ class Success<T> extends Result<T> {
   final T value;
 }
 
-/// A [Failure] [Result] with an [error].
+/// A failed [Result] with an [error].
 class Failure<T> extends Result<T> {
   const Failure._(this.error);
 

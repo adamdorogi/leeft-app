@@ -8,6 +8,9 @@ abstract class ExerciseRepository {
   /// The exercises.
   Future<Result<List<Exercise>>> get exercises;
 
-  /// The thumbnail for the exercise with the [exerciseId].
-  Future<Result<Uint8List>> thumbnailFor(String exerciseId);
+  /// The exercise with the [exerciseId].
+  Future<Result<Exercise>> exerciseWith(String exerciseId);
+
+  /// The thumbnail bytes for the exercise with the [exerciseId].
+  Future<Result<Uint8List>> thumbnailBytesFor(String exerciseId);
 }

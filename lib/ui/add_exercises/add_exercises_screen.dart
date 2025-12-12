@@ -2,64 +2,77 @@ import 'package:flutter/material.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:leeft/utils/result.dart';
 
 /// A screen for adding exercises to a routine during routine creation.
 class AddExercisesScreen extends StatelessWidget {
-  /// Creates an [AddExercisesScreen].
-  const AddExercisesScreen({super.key, required this.viewModel});
+  /// Creates an [AddExercisesScreen] with a [viewModel].
+  ///
+  /// The [viewModel] manages the UI state of this screen.
+  const AddExercisesScreen({
+    required AddExercisesViewModel viewModel,
+    super.key,
+  }) : _viewModel = viewModel;
 
-  /// The view model for managing the UI state of this screen.
-  final AddExercisesViewModel viewModel;
+  final AddExercisesViewModel _viewModel;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.addExercises),
+        title: Text(AppLocalizations.of(context).addExercises),
         actions: [
           IconButton(
             icon: const Icon(Icons.done),
             onPressed: () =>
-                Navigator.of(context).pop(viewModel.selectedExercises),
+                // Return the selected exercise IDs on pop.
+                Navigator.of(context).pop(_viewModel.selectedExerciseIds),
           ),
         ],
       ),
       body:
           // Listen to the view model's load command.
           ListenableBuilder(
-            listenable: viewModel.load,
+            listenable: _viewModel.load,
             builder: (_, child) {
-              if (viewModel.load.isFailure) {
-                return const Center(child: Text('Error'));
-              }
-
-              if (viewModel.load.isRunning) {
+              // View model is loading.
+              if (_viewModel.load.isRunning) {
                 return const Center(child: Text('Loading'));
               }
 
+              // View model failed to load.
+              final loadResult = _viewModel.load.result;
+              if (loadResult is Failure<Null>) {
+                return Center(child: Text('Error: ${loadResult.error}'));
+              }
+
+              // View model has loaded successfully.
               return child!;
             },
             child:
-                // Listen for state changes in the view model, built only once.
+                // Listen to the view model for changes in selection.
                 ListenableBuilder(
-                  listenable: viewModel,
-                  builder: (_, _) => ListView.builder(
-                    itemBuilder: (_, index) {
+                  listenable: _viewModel,
+                  builder: (_, _) =>
                       // Display the list of exercises.
-                      final exercise = viewModel.exercises[index];
-                      final image = viewModel.thumbnails[exercise.id];
-                      return CheckboxListTile(
-                        title: Text(exercise.title),
-                        value: viewModel.selectedExercises.contains(exercise),
-                        onChanged: (_) =>
-                            viewModel.toggleExerciseSelection(exercise),
-                        secondary: image != null
-                            ? Image.memory(image)
-                            : const CircularProgressIndicator(),
-                      );
-                    },
-                    itemCount: viewModel.exercises.length,
-                  ),
+                      ListView.builder(
+                        itemBuilder: (_, index) {
+                          final exercise = _viewModel.exercises[index];
+                          final thumbnailBytes =
+                              _viewModel.thumbnailBytes[exercise.id];
+
+                          return CheckboxListTile(
+                            title: Text(exercise.title),
+                            value: _viewModel.isSelected(exercise.id),
+                            onChanged: (_) =>
+                                _viewModel.toggleSelectionFor(exercise.id),
+                            secondary: thumbnailBytes != null
+                                ? Image.memory(thumbnailBytes)
+                                : const Icon(Icons.error),
+                          );
+                        },
+                        itemCount: _viewModel.exercises.length,
+                      ),
                 ),
           ),
     );

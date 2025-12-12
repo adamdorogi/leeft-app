@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:go_router/go_router.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 
-/// A screen with a bottom navigation bar for encapsulating a custom navigation
-/// shell.
+/// A screen with a bottom navigation bar encapsulating a navigation shell.
 class NavigationScreen extends StatelessWidget {
-  /// Creates a [NavigationScreen].
-  const NavigationScreen({super.key, required this.navigationShell});
+  /// Creates a [NavigationScreen] with a [navigationShell].
+  ///
+  /// The [navigationShell] contains the parallel navigation trees for this
+  /// screen's bottom navigation bar.
+  const NavigationScreen({required this.navigationShell, super.key});
 
-  /// The container of parallel navigation trees, typically created by a
-  /// [StatefulShellRoute].
+  /// The navigation shell.
+  ///
+  /// Contains the parallel navigation trees for this screen's bottom navigation
+  /// bar.
   final StatefulNavigationShell navigationShell;
 
   @override
@@ -19,15 +24,15 @@ class NavigationScreen extends StatelessWidget {
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         destinations: [
-          // Routines tab.
+          // The routines tab.
           NavigationDestination(
             icon: const Icon(Icons.fitness_center),
-            label: AppLocalizations.of(context)!.routines,
+            label: AppLocalizations.of(context).routines,
           ),
-          // Profile tab.
+          // The profile tab.
           NavigationDestination(
             icon: const Icon(Icons.account_circle),
-            label: AppLocalizations.of(context)!.profile,
+            label: AppLocalizations.of(context).profile,
           ),
         ],
         selectedIndex: navigationShell.currentIndex,

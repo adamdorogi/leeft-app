@@ -7,67 +7,66 @@ import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/utils/command.dart';
 import 'package:leeft/utils/result.dart';
 
-/// A view model for managing the UI state of the Add Exercises screen.
+/// A view model for managing the UI state of the exercise addition screen.
 class AddExercisesViewModel extends ChangeNotifier {
-  /// Creates an [AddExercisesViewModel].
+  /// Creates an [AddExercisesViewModel] with an [exerciseRepository].
   ///
-  /// The [exerciseRepository] is used to manage exercise data.
+  /// The [exerciseRepository] retrieves the exercises and exercise thumbnail
+  /// bytes.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
-    : _exerciseRepository = exerciseRepository {
-    // ignore: discarded_futures
-    load = Command0(_load)..execute();
-  }
+    : _exerciseRepository = exerciseRepository;
 
   final ExerciseRepository _exerciseRepository;
 
-  /// The exercise options.
+  /// The exercises.
   UnmodifiableListView<Exercise> get exercises =>
       UnmodifiableListView(_exercises);
   List<Exercise> _exercises = [];
 
-  /// The selected exercises.
-  UnmodifiableSetView<Exercise> get selectedExercises =>
-      UnmodifiableSetView(_selectedExercises);
-  final Set<Exercise> _selectedExercises = {};
+  /// The map of exercise IDs to exercise thumbnail bytes.
+  UnmodifiableMapView<String, Uint8List?> get thumbnailBytes =>
+      UnmodifiableMapView(_thumbnailBytes);
+  Map<String, Uint8List?> _thumbnailBytes = {};
 
-  /// The exercise IDs mapped to thumbnails.
-  UnmodifiableMapView<String, Uint8List> get thumbnails =>
-      UnmodifiableMapView(_thumbnails);
-  final Map<String, Uint8List> _thumbnails = {};
-
-  /// Load the exercise data from the exercise repository.
-  late Command0<Null> load;
-
+  /// The command to load the exercises and exercise thumbnail bytes from the
+  /// exercise repository.
+  late final Command0<Null> load = Command0(
+    _load,
+  );
   Future<Result<Null>> _load() async {
     final exercisesResult = await _exerciseRepository.exercises;
     switch (exercisesResult) {
-      case Success():
-        _exercises = exercisesResult.value;
-        notifyListeners();
-        for (final exercise in _exercises) {
-          _loadThumbnailFor(exercise.id);
-        }
+      case Success(value: final exercises):
+        _exercises = exercises;
+        final exerciseIds = exercises.map((exercise) => exercise.id);
+        final thumbnailBytesFutures = exercises.map(
+          (exercise) => _exerciseRepository.thumbnailBytesFor(exercise.id),
+        );
+        final thumbnailBytesResult = await Future.wait(thumbnailBytesFutures);
+        final thumbnailBytes = thumbnailBytesResult.map(
+          (result) => result is Success<Uint8List> ? result.value : null,
+        );
+        _thumbnailBytes = Map.fromIterables(exerciseIds, thumbnailBytes);
         return Result.success(null);
-      case Failure():
-        return Result.failure(exercisesResult.error);
+      case Failure(:final error):
+        return Result.failure(error);
     }
   }
 
-  void _loadThumbnailFor(String exerciseId) async {
-    final thumbnailResult = await _exerciseRepository.thumbnailFor(exerciseId);
-    switch (thumbnailResult) {
-      case Success():
-        _thumbnails[exerciseId] = thumbnailResult.value;
-        notifyListeners();
-      case Failure():
-    }
-  }
+  /// The selected exercises' IDs.
+  UnmodifiableSetView<String> get selectedExerciseIds =>
+      UnmodifiableSetView(_selectedExerciseIds);
+  final Set<String> _selectedExerciseIds = {};
 
-  /// Selects or unselects the [exercise].
-  void toggleExerciseSelection(Exercise exercise) {
-    _selectedExercises.contains(exercise)
-        ? _selectedExercises.remove(exercise)
-        : _selectedExercises.add(exercise);
+  /// Selects or unselects the [exerciseId].
+  void toggleSelectionFor(String exerciseId) {
+    isSelected(exerciseId)
+        ? _selectedExerciseIds.remove(exerciseId)
+        : _selectedExerciseIds.add(exerciseId);
     notifyListeners();
   }
+
+  /// Whether the [exerciseId] is selected.
+  bool isSelected(String exerciseId) =>
+      _selectedExerciseIds.contains(exerciseId);
 }

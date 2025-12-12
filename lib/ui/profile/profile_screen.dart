@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:go_router/go_router.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/router/routes.dart';
 
-/// A screen for the user profile.
+/// A screen displaying the user profile.
 class ProfileScreen extends StatelessWidget {
   /// Creates a [ProfileScreen].
   const ProfileScreen({super.key});
@@ -13,9 +14,9 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.profile),
+        title: Text(AppLocalizations.of(context).profile),
         actions: [
-          // Link to Settings page.
+          // Link to settings page.
           IconButton(
             onPressed: () => context.go(Routes.settings),
             icon: const Icon(Icons.settings),

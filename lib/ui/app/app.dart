@@ -5,7 +5,7 @@ import 'package:leeft/router/router.dart';
 
 /// A Flutter application for tracking gym workouts.
 class App extends StatelessWidget {
-  /// Creates a [App].
+  /// Creates an [App].
   const App({super.key});
 
   @override

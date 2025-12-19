@@ -7,6 +7,8 @@ import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/utils/command.dart';
 import 'package:leeft/utils/result.dart';
 
+import 'package:logging/logging.dart';
+
 /// A view model for managing the UI state of the exercise addition screen.
 class AddExercisesViewModel extends ChangeNotifier {
   /// Creates an [AddExercisesViewModel] with an [exerciseRepository].
@@ -17,6 +19,8 @@ class AddExercisesViewModel extends ChangeNotifier {
     : _exerciseRepository = exerciseRepository;
 
   final ExerciseRepository _exerciseRepository;
+
+  final _log = Logger((AddExercisesViewModel).toString());
 
   /// The exercises.
   UnmodifiableListView<Exercise> get exercises =>
@@ -34,6 +38,7 @@ class AddExercisesViewModel extends ChangeNotifier {
     _load,
   );
   Future<Result<Null>> _load() async {
+    _log.info('Loading view model...');
     final exercisesResult = await _exerciseRepository.exercises;
     switch (exercisesResult) {
       case Success(value: final exercises):
@@ -47,8 +52,10 @@ class AddExercisesViewModel extends ChangeNotifier {
           (result) => result is Success<Uint8List> ? result.value : null,
         );
         _thumbnailBytes = Map.fromIterables(exerciseIds, thumbnailBytes);
+        _log.info('Successfully loaded view model.');
         return Result.success(null);
       case Failure(:final error):
+        _log.info('Failed to load view model: $error');
         return Result.failure(error);
     }
   }

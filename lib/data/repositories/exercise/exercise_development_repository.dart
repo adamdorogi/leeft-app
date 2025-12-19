@@ -7,6 +7,8 @@ import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/utils/memoizer.dart';
 import 'package:leeft/utils/result.dart';
 
+import 'package:logging/logging.dart';
+
 /// An [ExerciseRepository] for development.
 class ExerciseDevelopmentRepository extends ExerciseRepository {
   /// Creates a [ExerciseDevelopmentRepository] with an [assetBundleService] and
@@ -22,17 +24,22 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
   }) : _assetBundleService = assetBundleService,
        _remoteDataService = remoteDataService;
 
+  final _log = Logger((ExerciseDevelopmentRepository).toString());
+
   final AssetBundleService _assetBundleService;
   final RemoteDataService _remoteDataService;
 
   @override
   Future<Result<List<Exercise>>> get exercises async {
+    _log.info('Retrieving exercises...');
     final exercisesMapResult = await _exercisesMemoizer.run();
 
     switch (exercisesMapResult) {
       case Success(value: final exercisesMap):
+        _log.info('Successfully retrieved ${exercisesMap.length} exercises.');
         return Result.success(exercisesMap.values.toList());
       case Failure(:final error):
+        _log.warning('Failed to retrieve exercises: $error');
         return Result.failure(error);
     }
   }
@@ -56,25 +63,49 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
 
   @override
   Future<Result<Exercise>> exerciseWith(String exerciseId) async {
+    _log.info('Retrieving exercise $exerciseId...');
     final exercisesMapResult = await _exercisesMemoizer.run();
 
     switch (exercisesMapResult) {
       case Success(value: final exercisesMap):
         final exercise = exercisesMap[exerciseId];
         if (exercise == null) {
+          _log.warning(
+            'Failed to retrieve exercise $exerciseId: No exercise with ID '
+            '$exerciseId.',
+          );
           return Result.failure(
-            FormatException('No exercise found with ID $exercise.'),
+            FormatException('No exercise with ID $exerciseId.'),
           );
         }
+        _log.info('Successfully retrieved exercise $exerciseId.');
         return Result.success(exercise);
       case Failure(:final error):
+        _log.warning('Failed to retrieve exercise $exerciseId: $error');
         return Result.failure(error);
     }
   }
 
   @override
-  Future<Result<Uint8List>> thumbnailBytesFor(String exerciseId) =>
-      _thumbnailBytesMemoizer.run(exerciseId);
+  Future<Result<Uint8List>> thumbnailBytesFor(String exerciseId) async {
+    _log.info(
+      'Retrieving thumbnail bytes for exercise $exerciseId...',
+    );
+    final thumbnailBytesResult = await _thumbnailBytesMemoizer.run(exerciseId);
+
+    switch (thumbnailBytesResult) {
+      case Success(value: final thumbnailBytes):
+        _log.info(
+          'Successfully retrieved thumbnail bytes for exercise $exerciseId.',
+        );
+        return Result.success(thumbnailBytes);
+      case Failure(:final error):
+        _log.warning(
+          'Failed to retrieve thumbnail bytes for exercise $exerciseId: $error',
+        );
+        return Result.failure(error);
+    }
+  }
 
   late final Memoizer1<Uint8List, String> _thumbnailBytesMemoizer = Memoizer1(
     _downloadThumbnailBytesFor,
@@ -90,7 +121,7 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
         final thumbnailUrl = exercise.thumbnailUrl;
         if (thumbnailUrl == null) {
           return Result.failure(
-            FormatException('No thumbnail for exercise with ID $exercise.'),
+            FormatException('No thumbnail URL for exercise $exerciseId.'),
           );
         }
         return _remoteDataService.downloadBytesFrom(thumbnailUrl);

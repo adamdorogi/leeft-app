@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Exercise {
 
- String get id; String get title; int get priority; String get muscleGroup; List<String> get otherMuscles; String get exerciseType; String? get equipment; String? get mediaUrl; String? get thumbnailUrl; List<String> get tags;
+ String get id; LocalizedField<String> get title; int get priority; String get muscleGroup; List<String> get otherMuscles; String get exerciseType; String? get equipment; String? get mediaUrl; String? get thumbnailUrl; LocalizedField<List<String>> get instructions; List<String> get tags;
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ExerciseCopyWith<Exercise> get copyWith => _$ExerciseCopyWithImpl<Exercise>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other.otherMuscles, otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&const DeepCollectionEquality().equals(other.tags, tags));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other.otherMuscles, otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&(identical(other.instructions, instructions) || other.instructions == instructions)&&const DeepCollectionEquality().equals(other.tags, tags));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,const DeepCollectionEquality().hash(tags));
+int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,instructions,const DeepCollectionEquality().hash(tags));
 
 @override
 String toString() {
-  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, tags: $tags)';
+  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, instructions: $instructions, tags: $tags)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $ExerciseCopyWith<$Res>  {
   factory $ExerciseCopyWith(Exercise value, $Res Function(Exercise) _then) = _$ExerciseCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, List<String> tags
+ String id, LocalizedField<String> title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, LocalizedField<List<String>> instructions, List<String> tags
 });
 
 
-
+$LocalizedFieldCopyWith<String, $Res> get title;$LocalizedFieldCopyWith<List<String>, $Res> get instructions;
 
 }
 /// @nodoc
@@ -65,22 +65,41 @@ class _$ExerciseCopyWithImpl<$Res>
 
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? tags = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? instructions = null,Object? tags = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
+as LocalizedField<String>,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
 as int,muscleGroup: null == muscleGroup ? _self.muscleGroup : muscleGroup // ignore: cast_nullable_to_non_nullable
 as String,otherMuscles: null == otherMuscles ? _self.otherMuscles : otherMuscles // ignore: cast_nullable_to_non_nullable
 as List<String>,exerciseType: null == exerciseType ? _self.exerciseType : exerciseType // ignore: cast_nullable_to_non_nullable
 as String,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
 as String?,mediaUrl: freezed == mediaUrl ? _self.mediaUrl : mediaUrl // ignore: cast_nullable_to_non_nullable
 as String?,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-as String?,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
+as String?,instructions: null == instructions ? _self.instructions : instructions // ignore: cast_nullable_to_non_nullable
+as LocalizedField<List<String>>,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
-
+/// Create a copy of Exercise
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedFieldCopyWith<String, $Res> get title {
+  
+  return $LocalizedFieldCopyWith<String, $Res>(_self.title, (value) {
+    return _then(_self.copyWith(title: value));
+  });
+}/// Create a copy of Exercise
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedFieldCopyWith<List<String>, $Res> get instructions {
+  
+  return $LocalizedFieldCopyWith<List<String>, $Res>(_self.instructions, (value) {
+    return _then(_self.copyWith(instructions: value));
+  });
+}
 }
 
 
@@ -162,10 +181,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedField<String> title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  LocalizedField<List<String>> instructions,  List<String> tags)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Exercise() when $default != null:
-return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.instructions,_that.tags);case _:
   return orElse();
 
 }
@@ -183,10 +202,10 @@ return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.othe
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedField<String> title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  LocalizedField<List<String>> instructions,  List<String> tags)  $default,) {final _that = this;
 switch (_that) {
 case _Exercise():
-return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.instructions,_that.tags);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -203,10 +222,10 @@ return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.othe
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  List<String> tags)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedField<String> title,  int priority,  String muscleGroup,  List<String> otherMuscles,  String exerciseType,  String? equipment,  String? mediaUrl,  String? thumbnailUrl,  LocalizedField<List<String>> instructions,  List<String> tags)?  $default,) {final _that = this;
 switch (_that) {
 case _Exercise() when $default != null:
-return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.tags);case _:
+return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.otherMuscles,_that.exerciseType,_that.equipment,_that.mediaUrl,_that.thumbnailUrl,_that.instructions,_that.tags);case _:
   return null;
 
 }
@@ -218,11 +237,11 @@ return $default(_that.id,_that.title,_that.priority,_that.muscleGroup,_that.othe
 @JsonSerializable()
 
 class _Exercise implements Exercise {
-  const _Exercise({required this.id, required this.title, required this.priority, required this.muscleGroup, required final  List<String> otherMuscles, required this.exerciseType, required this.equipment, required this.mediaUrl, required this.thumbnailUrl, required final  List<String> tags}): _otherMuscles = otherMuscles,_tags = tags;
+  const _Exercise({required this.id, required this.title, required this.priority, required this.muscleGroup, required final  List<String> otherMuscles, required this.exerciseType, required this.equipment, required this.mediaUrl, required this.thumbnailUrl, required this.instructions, required final  List<String> tags}): _otherMuscles = otherMuscles,_tags = tags;
   factory _Exercise.fromJson(Map<String, dynamic> json) => _$ExerciseFromJson(json);
 
 @override final  String id;
-@override final  String title;
+@override final  LocalizedField<String> title;
 @override final  int priority;
 @override final  String muscleGroup;
  final  List<String> _otherMuscles;
@@ -236,6 +255,7 @@ class _Exercise implements Exercise {
 @override final  String? equipment;
 @override final  String? mediaUrl;
 @override final  String? thumbnailUrl;
+@override final  LocalizedField<List<String>> instructions;
  final  List<String> _tags;
 @override List<String> get tags {
   if (_tags is EqualUnmodifiableListView) return _tags;
@@ -257,16 +277,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other._otherMuscles, _otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&const DeepCollectionEquality().equals(other._tags, _tags));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Exercise&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.priority, priority) || other.priority == priority)&&(identical(other.muscleGroup, muscleGroup) || other.muscleGroup == muscleGroup)&&const DeepCollectionEquality().equals(other._otherMuscles, _otherMuscles)&&(identical(other.exerciseType, exerciseType) || other.exerciseType == exerciseType)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.mediaUrl, mediaUrl) || other.mediaUrl == mediaUrl)&&(identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl)&&(identical(other.instructions, instructions) || other.instructions == instructions)&&const DeepCollectionEquality().equals(other._tags, _tags));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(_otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,const DeepCollectionEquality().hash(_tags));
+int get hashCode => Object.hash(runtimeType,id,title,priority,muscleGroup,const DeepCollectionEquality().hash(_otherMuscles),exerciseType,equipment,mediaUrl,thumbnailUrl,instructions,const DeepCollectionEquality().hash(_tags));
 
 @override
 String toString() {
-  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, tags: $tags)';
+  return 'Exercise(id: $id, title: $title, priority: $priority, muscleGroup: $muscleGroup, otherMuscles: $otherMuscles, exerciseType: $exerciseType, equipment: $equipment, mediaUrl: $mediaUrl, thumbnailUrl: $thumbnailUrl, instructions: $instructions, tags: $tags)';
 }
 
 
@@ -277,11 +297,11 @@ abstract mixin class _$ExerciseCopyWith<$Res> implements $ExerciseCopyWith<$Res>
   factory _$ExerciseCopyWith(_Exercise value, $Res Function(_Exercise) _then) = __$ExerciseCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, List<String> tags
+ String id, LocalizedField<String> title, int priority, String muscleGroup, List<String> otherMuscles, String exerciseType, String? equipment, String? mediaUrl, String? thumbnailUrl, LocalizedField<List<String>> instructions, List<String> tags
 });
 
 
-
+@override $LocalizedFieldCopyWith<String, $Res> get title;@override $LocalizedFieldCopyWith<List<String>, $Res> get instructions;
 
 }
 /// @nodoc
@@ -294,23 +314,42 @@ class __$ExerciseCopyWithImpl<$Res>
 
 /// Create a copy of Exercise
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? tags = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? priority = null,Object? muscleGroup = null,Object? otherMuscles = null,Object? exerciseType = null,Object? equipment = freezed,Object? mediaUrl = freezed,Object? thumbnailUrl = freezed,Object? instructions = null,Object? tags = null,}) {
   return _then(_Exercise(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
+as LocalizedField<String>,priority: null == priority ? _self.priority : priority // ignore: cast_nullable_to_non_nullable
 as int,muscleGroup: null == muscleGroup ? _self.muscleGroup : muscleGroup // ignore: cast_nullable_to_non_nullable
 as String,otherMuscles: null == otherMuscles ? _self._otherMuscles : otherMuscles // ignore: cast_nullable_to_non_nullable
 as List<String>,exerciseType: null == exerciseType ? _self.exerciseType : exerciseType // ignore: cast_nullable_to_non_nullable
 as String,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
 as String?,mediaUrl: freezed == mediaUrl ? _self.mediaUrl : mediaUrl // ignore: cast_nullable_to_non_nullable
 as String?,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-as String?,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
+as String?,instructions: null == instructions ? _self.instructions : instructions // ignore: cast_nullable_to_non_nullable
+as LocalizedField<List<String>>,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
 
-
+/// Create a copy of Exercise
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedFieldCopyWith<String, $Res> get title {
+  
+  return $LocalizedFieldCopyWith<String, $Res>(_self.title, (value) {
+    return _then(_self.copyWith(title: value));
+  });
+}/// Create a copy of Exercise
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedFieldCopyWith<List<String>, $Res> get instructions {
+  
+  return $LocalizedFieldCopyWith<List<String>, $Res>(_self.instructions, (value) {
+    return _then(_self.copyWith(instructions: value));
+  });
+}
 }
 
 // dart format on

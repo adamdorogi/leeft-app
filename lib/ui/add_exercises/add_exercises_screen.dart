@@ -47,7 +47,11 @@ class AddExercisesScreen extends StatelessWidget {
                         _viewModel.thumbnailBytes[exercise.id];
 
                     return ListTile(
-                      title: Text(exercise.title),
+                      title: Text(
+                        exercise.title.forLocale(
+                          AppLocalizations.of(context).localeName,
+                        ),
+                      ),
                       selected: _viewModel.isSelected(exercise.id),
                       onTap: () => _viewModel.toggleSelectionFor(exercise.id),
                       selectedTileColor: Theme.of(context).highlightColor,

@@ -4,6 +4,8 @@ import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
 import 'package:leeft/utils/result.dart';
 
+import 'package:shimmer/shimmer.dart';
+
 /// A screen for adding exercises to a routine during routine creation.
 class AddExercisesScreen extends StatelessWidget {
   /// Creates an [AddExercisesScreen] with a [viewModel].
@@ -31,49 +33,59 @@ class AddExercisesScreen extends StatelessWidget {
         ],
       ),
       body:
-          // Listen to the view model's load command.
+          // Listen to the view model and its load command.
           ListenableBuilder(
-            listenable: _viewModel.load,
+            listenable: Listenable.merge([_viewModel, _viewModel.load]),
             builder: (_, child) {
-              // View model is loading.
-              if (_viewModel.load.isRunning) {
-                return const Center(child: Text('Loading'));
+              if (_viewModel.load.result is Success<Null>) {
+                // View model has loaded successfully, display the list of
+                // exercises.
+                return ListView.builder(
+                  itemBuilder: (_, index) {
+                    final exercise = _viewModel.exercises[index];
+                    final thumbnailBytes =
+                        _viewModel.thumbnailBytes[exercise.id];
+
+                    return ListTile(
+                      title: Text(exercise.title),
+                      selected: _viewModel.isSelected(exercise.id),
+                      onTap: () => _viewModel.toggleSelectionFor(exercise.id),
+                      selectedTileColor: Theme.of(context).highlightColor,
+                      leading: thumbnailBytes != null
+                          ? CircleAvatar(
+                              foregroundImage: MemoryImage(thumbnailBytes),
+                            )
+                          : const Icon(Icons.error),
+                      trailing: IconButton(
+                        onPressed: () => (),
+                        icon: const Icon(Icons.info_outline),
+                      ),
+                    );
+                  },
+                  itemCount: _viewModel.exercises.length,
+                );
               }
 
-              // View model failed to load.
-              final loadResult = _viewModel.load.result;
-              if (loadResult is Failure<Null>) {
-                return Center(child: Text('Error: ${loadResult.error}'));
-              }
-
-              // View model has loaded successfully.
+              // View model is loading or has failed to load, display
+              // skeletonized list.
               return child!;
             },
-            child:
-                // Listen to the view model for changes in selection.
-                ListenableBuilder(
-                  listenable: _viewModel,
-                  builder: (_, _) =>
-                      // Display the list of exercises.
-                      ListView.builder(
-                        itemBuilder: (_, index) {
-                          final exercise = _viewModel.exercises[index];
-                          final thumbnailBytes =
-                              _viewModel.thumbnailBytes[exercise.id];
-
-                          return CheckboxListTile(
-                            title: Text(exercise.title),
-                            value: _viewModel.isSelected(exercise.id),
-                            onChanged: (_) =>
-                                _viewModel.toggleSelectionFor(exercise.id),
-                            secondary: thumbnailBytes != null
-                                ? Image.memory(thumbnailBytes)
-                                : const Icon(Icons.error),
-                          );
-                        },
-                        itemCount: _viewModel.exercises.length,
-                      ),
+            child: ListView.builder(
+              itemBuilder: (_, _) => Shimmer.fromColors(
+                baseColor: Theme.of(context).highlightColor,
+                highlightColor: Theme.of(context).splashColor,
+                child: ListTile(
+                  title: DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: .circular(8),
+                      color: Colors.white,
+                    ),
+                    child: const SizedBox(height: 16),
+                  ),
+                  leading: const CircleAvatar(),
                 ),
+              ),
+            ),
           ),
     );
   }

@@ -59,7 +59,9 @@ class AddExercisesScreen extends StatelessWidget {
                           ? CircleAvatar(
                               foregroundImage: MemoryImage(thumbnailBytes),
                             )
-                          : const Icon(Icons.error),
+                          : const CircleAvatar(
+                              child: Icon(Icons.fitness_center),
+                            ),
                       trailing: IconButton(
                         onPressed: () => (),
                         icon: const Icon(Icons.info_outline),

@@ -40,6 +40,7 @@ class AddExercisesViewModel extends ChangeNotifier {
   Future<Result<Null>> _load() async {
     _log.info('Loading view model...');
     final exercisesResult = await _exerciseRepository.exercises;
+
     switch (exercisesResult) {
       case Success(value: final exercises):
         _exercises = exercises;

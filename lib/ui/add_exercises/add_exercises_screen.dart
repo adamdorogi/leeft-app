@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:leeft/ui/exercise_details/exercise_details_screen.dart';
+import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:leeft/utils/result.dart';
 
+import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 /// A screen for adding exercises to a routine during routine creation.
@@ -63,7 +66,23 @@ class AddExercisesScreen extends StatelessWidget {
                               child: Icon(Icons.fitness_center),
                             ),
                       trailing: IconButton(
-                        onPressed: () => (),
+                        onPressed: () async {
+                          await Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (context) {
+                                final viewModel = ExerciseDetailsViewModel(
+                                  exerciseRepository: context.read(),
+                                );
+                                // No need to wait for load command to finish.
+                                // ignore: discarded_futures
+                                viewModel.load.run(exercise.id);
+                                return ExerciseDetailsScreen(
+                                  viewModel: viewModel,
+                                );
+                              },
+                            ),
+                          );
+                        },
                         icon: const Icon(Icons.info_outline),
                       ),
                     );

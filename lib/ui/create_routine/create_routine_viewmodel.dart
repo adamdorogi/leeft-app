@@ -19,9 +19,9 @@ class CreateRoutineViewModel extends ChangeNotifier {
   CreateRoutineViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository;
 
-  final _log = Logger((CreateRoutineViewModel).toString());
-
   final ExerciseRepository _exerciseRepository;
+
+  final _log = Logger((CreateRoutineViewModel).toString());
 
   /// The routine being created.
   Routine get routine => _routine;

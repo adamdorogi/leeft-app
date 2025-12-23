@@ -3,5 +3,21 @@
   "profile": "Profile",
   "settings": "Settings",
   "createRoutine": "Create Routine",
-  "addExercises": "Add Exercises"
+  "addExercises": "Add Exercises",
+  "muscleGroup": "{muscleGroup, select, lowerBack{Lower Back} hamstrings{Hamstrings} glutes{Glutes} chest{Chest} triceps{Triceps} shoulders{Shoulders} upperBack{Upper Back} lats{Lats} biceps{Biceps} forearms{Forearms} abdominals{Abdominals} quadriceps{Quadriceps} traps{Traps} calves{Calves} cardio{Cardio} neck{Neck} adductors{Adductors} fullBody{Full Body} abductors{Abductors} other{Other}}",
+  "@muscleGroup": {
+    "placeholders": {
+      "muscleGroup": {
+        "type": "String"
+      }
+    }
+  },
+  "equipment": "{equipment, select, machine{Machine} barbell{Barbell} dumbbell{Dumbbell}  resistanceBand{Resistance Band} suspension{Suspension} kettlebell{Kettlebell} plate{Plate} other{Other}}",
+  "@equipment": {
+    "placeholders": {
+      "equipment": {
+        "type": "String"
+      }
+    }
+  }
 }

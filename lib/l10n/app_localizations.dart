@@ -123,6 +123,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add Exercises'**
   String get addExercises;
+
+  /// No description provided for @muscleGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'{muscleGroup, select, lowerBack{Lower Back} hamstrings{Hamstrings} glutes{Glutes} chest{Chest} triceps{Triceps} shoulders{Shoulders} upperBack{Upper Back} lats{Lats} biceps{Biceps} forearms{Forearms} abdominals{Abdominals} quadriceps{Quadriceps} traps{Traps} calves{Calves} cardio{Cardio} neck{Neck} adductors{Adductors} fullBody{Full Body} abductors{Abductors} other{Other}}'**
+  String muscleGroup(String muscleGroup);
+
+  /// No description provided for @equipment.
+  ///
+  /// In en, this message translates to:
+  /// **'{equipment, select, machine{Machine} barbell{Barbell} dumbbell{Dumbbell}  resistanceBand{Resistance Band} suspension{Suspension} kettlebell{Kettlebell} plate{Plate} other{Other}}'**
+  String equipment(String equipment);
 }
 
 class _AppLocalizationsDelegate

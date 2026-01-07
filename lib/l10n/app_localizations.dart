@@ -124,17 +124,35 @@ abstract class AppLocalizations {
   /// **'Add Exercises'**
   String get addExercises;
 
-  /// No description provided for @muscleGroup.
+  /// No description provided for @muscleGroupNameFor.
   ///
   /// In en, this message translates to:
   /// **'{muscleGroup, select, lowerBack{Lower Back} hamstrings{Hamstrings} glutes{Glutes} chest{Chest} triceps{Triceps} shoulders{Shoulders} upperBack{Upper Back} lats{Lats} biceps{Biceps} forearms{Forearms} abdominals{Abdominals} quadriceps{Quadriceps} traps{Traps} calves{Calves} cardio{Cardio} neck{Neck} adductors{Adductors} fullBody{Full Body} abductors{Abductors} other{Other}}'**
-  String muscleGroup(String muscleGroup);
+  String muscleGroupNameFor(String muscleGroup);
+
+  /// No description provided for @equipmentNameFor.
+  ///
+  /// In en, this message translates to:
+  /// **'{equipment, select, machine{Machine} barbell{Barbell} dumbbell{Dumbbell}  resistanceBand{Resistance Band} suspension{Suspension} kettlebell{Kettlebell} plate{Plate} none{None} other{Other}}'**
+  String equipmentNameFor(String equipment);
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
 
   /// No description provided for @equipment.
   ///
   /// In en, this message translates to:
-  /// **'{equipment, select, machine{Machine} barbell{Barbell} dumbbell{Dumbbell}  resistanceBand{Resistance Band} suspension{Suspension} kettlebell{Kettlebell} plate{Plate} other{Other}}'**
-  String equipment(String equipment);
+  /// **'Equipment'**
+  String get equipment;
+
+  /// No description provided for @muscleGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Muscle Groups'**
+  String get muscleGroups;
 }
 
 class _AppLocalizationsDelegate

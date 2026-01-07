@@ -24,7 +24,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addExercises => 'Add Exercises';
 
   @override
-  String muscleGroup(String muscleGroup) {
+  String muscleGroupNameFor(String muscleGroup) {
     String _temp0 = intl.Intl.selectLogic(
       muscleGroup,
       {
@@ -54,7 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String equipment(String equipment) {
+  String equipmentNameFor(String equipment) {
     String _temp0 = intl.Intl.selectLogic(
       equipment,
       {
@@ -65,9 +65,19 @@ class AppLocalizationsEn extends AppLocalizations {
         'suspension': 'Suspension',
         'kettlebell': 'Kettlebell',
         'plate': 'Plate',
+        'none': 'None',
         'other': 'Other',
       },
     );
     return '$_temp0';
   }
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get equipment => 'Equipment';
+
+  @override
+  String get muscleGroups => 'Muscle Groups';
 }

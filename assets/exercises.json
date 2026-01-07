@@ -1,6 +1,6 @@
 [
   {
-    "id": "7c27c3a4-70da-4488-8d4f-4c34869e5546",
+    "id": "869202a3-acfd-4579-83cb-1e38da62ce64",
     "title": {
       "en": "Back Extension (Hyperextension)"
     },
@@ -21,7 +21,7 @@
     "tags": ["hyper", "extension"]
   },
   {
-    "id": "fe699916-8d68-4e68-8b00-bc0a27689ec5",
+    "id": "56ba3436-9a7d-4e57-b3ff-ab0804c06d2a",
     "title": {
       "en": "Bench Press (Barbell)"
     },
@@ -42,7 +42,7 @@
     "tags": ["chest", "bb"]
   },
   {
-    "id": "4eb4648a-3e39-4b65-9adc-dd8be26a3bf4",
+    "id": "aed27c2b-a2e8-4511-ac35-09a19e39329a",
     "title": {
       "en": "Bent Over Row (Barbell)"
     },
@@ -63,7 +63,7 @@
     "tags": ["bb"]
   },
   {
-    "id": "4e943c46-5d8e-40c3-9fab-5b59cd8681d7",
+    "id": "7c010086-8e97-42f5-a3bf-dc5c6dd9e024",
     "title": {
       "en": "Bicep Curl (Barbell)"
     },
@@ -84,7 +84,7 @@
     "tags": ["curls", "biceps", "standing", "bb"]
   },
   {
-    "id": "937404a6-db84-477f-94e5-d86c8e55e93d",
+    "id": "928eb50c-6937-43e7-9745-4888f6542446",
     "title": {
       "en": "Chest Supported Reverse Fly (Dumbbell)"
     },
@@ -105,7 +105,7 @@
     "tags": ["db", "chest", "supported", "rear", "delt"]
   },
   {
-    "id": "a38fe5c2-f19d-47a6-b951-3d1bb705b620",
+    "id": "aa5acf19-a747-4c8b-a988-203672248a17",
     "title": {
       "en": "Crunch"
     },
@@ -113,7 +113,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Crunch.",
@@ -126,7 +126,7 @@
     "tags": ["situps", "abs", "crunches", "core"]
   },
   {
-    "id": "7daefab8-25a3-4290-8a39-c84ea3a460a3",
+    "id": "7406b47c-04aa-4512-a863-b9ccf538e62d",
     "title": {
       "en": "Deadlift (Barbell)"
     },
@@ -154,7 +154,7 @@
     "tags": ["bb", "dl"]
   },
   {
-    "id": "4b4440f1-2b57-4131-a69e-716a3576a672",
+    "id": "52873a85-f233-4471-8539-a2207f7273ca",
     "title": {
       "en": "Dumbbell Row"
     },
@@ -175,7 +175,7 @@
     "tags": ["bent", "over", "one", "arm", "single", "db"]
   },
   {
-    "id": "24af6321-2cd5-403e-856f-1c29ad11d9ad",
+    "id": "0da46077-e081-43c0-9747-9226d0ab50f6",
     "title": {
       "en": "Face Pull"
     },
@@ -196,7 +196,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "4cf92d66-fbc7-4bd9-a13f-00cceab73bac",
+    "id": "f682cddc-5301-493f-ac3a-1151b2968da8",
     "title": {
       "en": "Front Raise (Dumbbell)"
     },
@@ -217,7 +217,7 @@
     "tags": ["db", "standing"]
   },
   {
-    "id": "7ef4a8b4-15eb-418c-81fd-d994c38254b5",
+    "id": "78e3c402-bc7c-4230-bfde-08f36226a9cb",
     "title": {
       "en": "Hammer Curl (Dumbbell)"
     },
@@ -238,7 +238,7 @@
     "tags": ["curls", "db", "standing"]
   },
   {
-    "id": "f5c10ac4-9fe8-4412-bc8b-e2393ef6d11d",
+    "id": "a4b734c9-4492-4f93-b136-10eb97c8bcbe",
     "title": {
       "en": "Incline Bench Press (Dumbbell)"
     },
@@ -259,7 +259,7 @@
     "tags": ["db", "chest", "seated"]
   },
   {
-    "id": "ce6d61f7-e560-453d-bfa3-c401fe928e6d",
+    "id": "4e84bacf-84f9-4f5e-9a6d-6e7c8738b107",
     "title": {
       "en": "Lat Pulldown (Cable)"
     },
@@ -280,7 +280,7 @@
     "tags": ["front", "seated", "lats", "pullover", "wide", "grip", "neutral"]
   },
   {
-    "id": "e2404ab9-447f-41be-858f-9a1416fc2d9f",
+    "id": "b80e9dec-6531-43a0-9f26-1abedf438b3e",
     "title": {
       "en": "Lateral Raise (Dumbbell)"
     },
@@ -301,7 +301,7 @@
     "tags": ["side", "db", "standing"]
   },
   {
-    "id": "fff3a05f-98d1-413e-8682-1e0919092be5",
+    "id": "2ba83697-e447-4b39-a457-e43d81d90ab0",
     "title": {
       "en": "Leg Extension (Machine)"
     },
@@ -322,7 +322,7 @@
     "tags": ["seated"]
   },
   {
-    "id": "2d3b962b-7f26-4698-ad76-5ffc616cc7bd",
+    "id": "86bfd9ec-c15c-4da3-83a2-45f2aa426ec4",
     "title": {
       "en": "Leg Press Horizontal (Machine)"
     },
@@ -343,7 +343,7 @@
     "tags": ["seated"]
   },
   {
-    "id": "df24f831-39f4-47ff-8623-33d223e66264",
+    "id": "8c80d384-5502-49ab-9d27-fdf0297de6aa",
     "title": {
       "en": "Lying Leg Curl (Machine)"
     },
@@ -364,7 +364,7 @@
     "tags": ["hamstrings", "ham", "curls"]
   },
   {
-    "id": "a16880ef-9e21-47de-8754-60d9553c7c53",
+    "id": "540325da-9cdb-4b86-b4ed-3c880e49ea35",
     "title": {
       "en": "Overhead Press (Barbell)"
     },
@@ -385,7 +385,7 @@
     "tags": ["military", "shoulder", "standing", "bb", "ohp"]
   },
   {
-    "id": "f422d830-92b2-456f-8463-2212015152b9",
+    "id": "39e52661-9830-4601-b490-40f869127bf9",
     "title": {
       "en": "Pull Up"
     },
@@ -406,7 +406,7 @@
     "tags": ["chinup", "pullups"]
   },
   {
-    "id": "a31dcd6b-f6a1-4fd9-be6a-39322a92da81",
+    "id": "e0141bc1-86ff-46f4-b646-c8ac8039c022",
     "title": {
       "en": "Push Up"
     },
@@ -414,7 +414,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["triceps", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Push Up.",
@@ -427,7 +427,7 @@
     "tags": ["pushups", "pressups"]
   },
   {
-    "id": "495bae2e-18d7-4b6e-a0be-8b1ec231fdaf",
+    "id": "987e6a10-f4f5-4cb5-bedc-7d335f2c99bc",
     "title": {
       "en": "Running"
     },
@@ -435,7 +435,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "distanceDuration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Running.",
@@ -448,7 +448,7 @@
     "tags": ["jogging", "sprints"]
   },
   {
-    "id": "ffd96379-8220-4a7c-b83c-d37f2326ebf4",
+    "id": "c72953c7-291e-40f6-8047-c267b7fcc87c",
     "title": {
       "en": "Seated Cable Row - Bar Grip"
     },
@@ -469,7 +469,7 @@
     "tags": ["low", "row"]
   },
   {
-    "id": "57a10c74-40d9-4ee1-b43b-bcdb4cbbff96",
+    "id": "c7f99c7d-90ed-431f-b4a8-c0f1f3d4e50a",
     "title": {
       "en": "Shoulder Press (Dumbbell)"
     },
@@ -490,7 +490,7 @@
     "tags": ["db", "seated", "overhead", "ohp"]
   },
   {
-    "id": "aba4c7df-46db-45ec-a03b-0b3fd46ce7af",
+    "id": "48ca8d77-e26f-4c40-8349-5d4428d8acc9",
     "title": {
       "en": "Shrug (Dumbbell)"
     },
@@ -511,7 +511,7 @@
     "tags": ["db", "shoulders", "shrugs", "standing", "neck"]
   },
   {
-    "id": "77788168-6877-4528-8c28-41d51977f0a9",
+    "id": "c2ca7818-418e-4fe5-afcc-5f10dc802569",
     "title": {
       "en": "Sit Up"
     },
@@ -519,7 +519,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Sit Up.",
@@ -532,7 +532,7 @@
     "tags": ["crunch", "situps", "core"]
   },
   {
-    "id": "0496ce2f-d962-4b77-b12d-d9bf6be48639",
+    "id": "b998edbf-e0ac-4dc7-a5b6-213e4e66587c",
     "title": {
       "en": "Sit Up (Weighted)"
     },
@@ -540,7 +540,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "weightedReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Sit Up (Weighted).",
@@ -553,7 +553,7 @@
     "tags": ["crunch", "abs", "situps", "core"]
   },
   {
-    "id": "85cc5908-9c5e-4fd6-a791-82c873a476f4",
+    "id": "1cea4e7d-dd41-4c54-8a56-77b1447271d0",
     "title": {
       "en": "Skullcrusher (Barbell)"
     },
@@ -574,7 +574,7 @@
     "tags": ["lying", "bb"]
   },
   {
-    "id": "e028acf3-4918-4b7c-a8fe-8ae954bd156b",
+    "id": "635a846a-1b92-4798-ba13-853ce9e923be",
     "title": {
       "en": "Squat (Barbell)"
     },
@@ -595,7 +595,7 @@
     "tags": ["squats", "back", "bb"]
   },
   {
-    "id": "1f0b0be9-9d1d-49d5-91ec-18487008e109",
+    "id": "2b55d015-c3a6-4456-9cb6-8112164cb91c",
     "title": {
       "en": "Stair Machine (Floors)"
     },
@@ -616,7 +616,7 @@
     "tags": ["master", "stepper", "climber", "stairs"]
   },
   {
-    "id": "8dfbab03-6879-4226-b1d0-64f5f3ba1bb7",
+    "id": "102ea8c2-bcb8-4e64-8b66-9887eb4039a8",
     "title": {
       "en": "Stair Machine (Steps)"
     },
@@ -637,7 +637,7 @@
     "tags": ["master", "stepper", "climber", "stairs"]
   },
   {
-    "id": "6cf74d8b-c43c-470d-a4bf-5b7a846dc8d2",
+    "id": "185af83f-ddf1-4bb2-bd73-14ebc21a1ea2",
     "title": {
       "en": "Triceps Pushdown"
     },
@@ -658,7 +658,7 @@
     "tags": ["pulldown", "tricep", "standing", "cable"]
   },
   {
-    "id": "f7e090eb-fa5b-43bf-95a9-04b20817e743",
+    "id": "1720f174-d578-4651-9af1-09b80a09279c",
     "title": {
       "en": "Triceps Rope Pushdown"
     },
@@ -679,7 +679,7 @@
     "tags": ["pulldown", "tricep", "standing", "cable"]
   },
   {
-    "id": "1381d95e-3f61-46b6-baf8-5ddce19dc59b",
+    "id": "299a9797-ab88-463b-b1cf-1f994fcbe3a1",
     "title": {
       "en": "Walking"
     },
@@ -687,7 +687,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "distanceDuration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Walking.",
@@ -700,7 +700,7 @@
     "tags": []
   },
   {
-    "id": "0d93a8c1-894b-4257-84d3-b313729a644e",
+    "id": "8b5f9bc5-b622-406c-9e3e-cb617f9ef56c",
     "title": {
       "en": "Back Extension (Weighted Hyperextension)"
     },
@@ -721,7 +721,7 @@
     "tags": ["hyper", "extension"]
   },
   {
-    "id": "371e9f07-24b3-4539-8eca-cc37aafbd1e9",
+    "id": "bb1b58ac-bc55-4c80-9d7a-b4df0b22e5b2",
     "title": {
       "en": "Bench Press (Dumbbell)"
     },
@@ -742,7 +742,7 @@
     "tags": ["db", "chest"]
   },
   {
-    "id": "ac0a6789-1ead-4352-b0df-111a70f96718",
+    "id": "d2547ed4-f147-4faa-a67b-7727c7dc7910",
     "title": {
       "en": "Bicep Curl (Dumbbell)"
     },
@@ -763,7 +763,7 @@
     "tags": ["arm", "curls", "db", "biceps", "standing"]
   },
   {
-    "id": "1a7de588-b5f3-4e10-b5bf-9eae955bcc0c",
+    "id": "1b56787e-1af4-4a5e-9774-8d9bcfa44567",
     "title": {
       "en": "Cable Fly Crossovers"
     },
@@ -784,7 +784,7 @@
     "tags": ["chest", "flys", "flyes", "flies", "standing", "cross-Overs"]
   },
   {
-    "id": "e268d949-8f51-4973-a483-04223339551f",
+    "id": "65a799c3-0907-4f23-a951-cc8cfb21bf43",
     "title": {
       "en": "Chest Press (Machine)"
     },
@@ -805,7 +805,7 @@
     "tags": ["seated", "bench"]
   },
   {
-    "id": "6c04649b-c0d1-43a2-b29e-7523f30102d5",
+    "id": "0820b627-b2b4-4574-b8a6-17e0b8384a5c",
     "title": {
       "en": "Chest Supported Incline Row (Dumbbell)"
     },
@@ -826,7 +826,7 @@
     "tags": ["db"]
   },
   {
-    "id": "1187b06e-7d93-4709-a11f-36591107fdeb",
+    "id": "9fd936ff-5817-42da-9699-5fbe7500c197",
     "title": {
       "en": "Chin Up"
     },
@@ -847,7 +847,7 @@
     "tags": ["chinups"]
   },
   {
-    "id": "bf99ddb7-0713-4fb1-8c69-0177ba9d1aca",
+    "id": "a16e88b4-5f37-4d7e-bf5e-30b89fa6bee0",
     "title": {
       "en": "Chin Up (Weighted)"
     },
@@ -868,7 +868,7 @@
     "tags": ["chinups"]
   },
   {
-    "id": "4fe314c6-c326-4129-accc-d9214c11adc7",
+    "id": "6121739b-ad0d-4e36-a143-c705240970a9",
     "title": {
       "en": "Crunch (Weighted)"
     },
@@ -876,7 +876,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "weightedReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Crunch (Weighted).",
@@ -889,7 +889,7 @@
     "tags": ["situps", "abs", "crunches", "core"]
   },
   {
-    "id": "58bf1d9a-8483-4e6d-a620-1c8eb8c1f1c2",
+    "id": "54eb5ace-a3e5-4101-8b1f-4f7f2d773921",
     "title": {
       "en": "Decline Crunch"
     },
@@ -897,7 +897,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Decline Crunch.",
@@ -910,7 +910,7 @@
     "tags": ["ab", "abs", "core"]
   },
   {
-    "id": "6b135b63-27fa-4ecf-95e1-5006e6819539",
+    "id": "8998a33a-a550-4725-9c7b-83fe882f4e7f",
     "title": {
       "en": "Decline Crunch (Weighted)"
     },
@@ -918,7 +918,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "weightedReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Decline Crunch (Weighted).",
@@ -931,7 +931,7 @@
     "tags": ["ab", "abs", "core"]
   },
   {
-    "id": "fc2051b4-5847-448b-aa0d-2340205f4ff1",
+    "id": "f05d2e89-7cf4-4146-8a14-ded5879e9823",
     "title": {
       "en": "EZ Bar Biceps Curl"
     },
@@ -952,7 +952,7 @@
     "tags": ["bicep"]
   },
   {
-    "id": "9ec96231-f4c2-4bea-8893-302f7e20902c",
+    "id": "0f41c828-b7e4-441e-9ddb-5ac9cf4cb707",
     "title": {
       "en": "Heel Taps"
     },
@@ -960,7 +960,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Heel Taps.",
@@ -973,7 +973,7 @@
     "tags": ["touches", "toe", "core"]
   },
   {
-    "id": "9adae130-4f66-4542-8265-6cf53f3a7bad",
+    "id": "57cf4fec-822c-44b1-9378-1f0c3b10da51",
     "title": {
       "en": "Hip Thrust (Barbell)"
     },
@@ -994,7 +994,7 @@
     "tags": ["butt", "ass", "glutes", "weighted", "bb"]
   },
   {
-    "id": "89ce9538-c427-4697-8d5e-3ea11e9fcb50",
+    "id": "a9759d99-170f-479c-a748-08e30556ac8e",
     "title": {
       "en": "Incline Bench Press (Barbell)"
     },
@@ -1015,7 +1015,7 @@
     "tags": ["chest", "bb"]
   },
   {
-    "id": "ac67d5b2-76ae-4fb8-8ffc-7dd370e21415",
+    "id": "55e815c5-ed8a-45c2-bb67-729e630b3739",
     "title": {
       "en": "Incline Chest Fly (Dumbbell)"
     },
@@ -1036,7 +1036,7 @@
     "tags": ["db", "seated"]
   },
   {
-    "id": "f388c1ec-3b92-47ac-9651-996ea9871254",
+    "id": "5224c6c8-fad3-486a-9e9d-c374902a1b33",
     "title": {
       "en": "Incline Push Ups"
     },
@@ -1044,7 +1044,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["shoulders", "triceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Incline Push Ups.",
@@ -1057,7 +1057,7 @@
     "tags": ["pushups", "push-Ups", "pressups"]
   },
   {
-    "id": "147e58a8-ea3b-4843-a8a6-4c5a5b6bda60",
+    "id": "32624fdd-7cc8-45b3-842b-d784ee4a0a1b",
     "title": {
       "en": "L-Sit Hold"
     },
@@ -1065,7 +1065,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": ["triceps"],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for L-Sit Hold.",
@@ -1078,7 +1078,7 @@
     "tags": ["l-Sits", "lsits", "core"]
   },
   {
-    "id": "303506e9-975d-41f7-86b2-8eb75fae666e",
+    "id": "b1f7c6fe-295c-44ce-9856-af72d3763d17",
     "title": {
       "en": "Lat Pulldown (Machine)"
     },
@@ -1107,7 +1107,7 @@
     ]
   },
   {
-    "id": "e5d01f51-beaa-4002-bdfc-2e8592773336",
+    "id": "a9dedb55-451c-47ec-ae6a-f19c1b30deaa",
     "title": {
       "en": "Leg Press (Machine)"
     },
@@ -1128,7 +1128,7 @@
     "tags": ["seated", "incline"]
   },
   {
-    "id": "d2940977-ed9c-4fcb-8695-79daafbea192",
+    "id": "aaa7d319-bb20-4932-9c7f-272a5781d495",
     "title": {
       "en": "Overhead Press (Dumbbell)"
     },
@@ -1149,7 +1149,7 @@
     "tags": ["military", "db", "shoulder", "standing", "ohp"]
   },
   {
-    "id": "f2b9e2ce-04cf-4246-b491-983cebf8b6c9",
+    "id": "a7353d30-12a0-4c16-ad75-53526c53ba70",
     "title": {
       "en": "Pull Up (Weighted)"
     },
@@ -1170,7 +1170,7 @@
     "tags": ["chinup", "pullups"]
   },
   {
-    "id": "2eb541d5-b019-41dc-900f-4ef2a5aae2ce",
+    "id": "9773ddfb-8d66-494d-b2f5-65264165c10b",
     "title": {
       "en": "Seated Row (Machine)"
     },
@@ -1191,7 +1191,7 @@
     "tags": ["back"]
   },
   {
-    "id": "960d064a-23e7-4b5a-9834-b6ab3c40ec3a",
+    "id": "0af29cd1-cb23-48ac-9bf3-5f267c93c569",
     "title": {
       "en": "Side Bend (Dumbbell)"
     },
@@ -1212,7 +1212,7 @@
     "tags": ["lateral", "core", "db"]
   },
   {
-    "id": "1f0ac03e-606b-4fd8-8c5c-c300cdd74ecf",
+    "id": "98131c26-d921-4a0e-b027-d85148153ff9",
     "title": {
       "en": "Single Arm Tricep Extension (Dumbbell)"
     },
@@ -1233,7 +1233,7 @@
     "tags": ["db", "single", "seated", "triceps", "unilateral", "overhead"]
   },
   {
-    "id": "3906edf4-102e-41af-8fe4-56a58dd390d8",
+    "id": "2daf95c1-8327-409a-a10a-d1e740e4f03a",
     "title": {
       "en": "Squat (Bodyweight)"
     },
@@ -1241,7 +1241,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Squat (Bodyweight).",
@@ -1254,7 +1254,7 @@
     "tags": ["squats", "bw"]
   },
   {
-    "id": "e4ba9f1d-522a-48bf-b287-763c3709209f",
+    "id": "dcfad60c-4941-40f3-aff1-4de5e90b5d7d",
     "title": {
       "en": "Squat (Dumbbell)"
     },
@@ -1275,7 +1275,7 @@
     "tags": ["squats", "db", "weighted"]
   },
   {
-    "id": "6c466b63-e2d2-4a0d-9060-afceb3a8dbbb",
+    "id": "3c49bb60-ecdc-494a-8da1-fb350b2aa4e9",
     "title": {
       "en": "Sumo Squat (Barbell)"
     },
@@ -1296,7 +1296,7 @@
     "tags": ["squats", "bb"]
   },
   {
-    "id": "61145407-8e6e-4061-acd0-8f97306eeb1c",
+    "id": "427791e1-3226-4a74-b185-3a6808e253aa",
     "title": {
       "en": "Treadmill"
     },
@@ -1317,7 +1317,7 @@
     "tags": ["running", "jogging"]
   },
   {
-    "id": "0dad4d3a-5dcc-4d68-b052-594c16d68715",
+    "id": "c06d7269-3beb-41e3-8685-8b4046fe5fa9",
     "title": {
       "en": "Triceps Extension (Dumbbell)"
     },
@@ -1338,7 +1338,7 @@
     "tags": ["overhead", "tricep", "db", "standing"]
   },
   {
-    "id": "6f75a804-99fb-40f3-ae9d-1087e7c85635",
+    "id": "bbe5988c-346e-46be-9685-f9114f09fd45",
     "title": {
       "en": "Arnold Press (Dumbbell)"
     },
@@ -1359,7 +1359,7 @@
     "tags": ["db", "seated", "shoulder", "overhead"]
   },
   {
-    "id": "b958316e-64f9-4a53-a4d5-6e214d64a113",
+    "id": "bb5c8e58-d31e-438b-9049-02b521c8a850",
     "title": {
       "en": "Bent Over Row (Dumbbell)"
     },
@@ -1380,7 +1380,7 @@
     "tags": ["db"]
   },
   {
-    "id": "a3547a49-1908-4e5a-b870-e52ff34e341f",
+    "id": "317a5aed-2945-4ea4-8ee7-a42296b27328",
     "title": {
       "en": "Chest Fly (Dumbbell)"
     },
@@ -1401,7 +1401,7 @@
     "tags": ["flies", "db", "lying"]
   },
   {
-    "id": "caca1b7c-c5b4-4d29-918c-68b133959c60",
+    "id": "d9fd2b43-cc62-4d79-a1ac-db55eab390d1",
     "title": {
       "en": "Deadlift (Dumbbell)"
     },
@@ -1429,7 +1429,7 @@
     "tags": ["db", "dl"]
   },
   {
-    "id": "5166678c-3842-487b-94dc-e0e43470a46e",
+    "id": "5b512f36-86c9-4b11-8e5d-c858fa15df27",
     "title": {
       "en": "Decline Bench Press (Barbell)"
     },
@@ -1450,7 +1450,7 @@
     "tags": ["chest", "bb"]
   },
   {
-    "id": "b55c8a22-d5d3-4c1a-989e-1eec48c66e83",
+    "id": "df30aba0-bdc1-41fe-8320-c21090ad3707",
     "title": {
       "en": "Decline Chest Fly (Dumbbell)"
     },
@@ -1471,7 +1471,7 @@
     "tags": ["db", "flys", "flyes", "flies"]
   },
   {
-    "id": "7ea1c61c-4123-46f2-924a-49237ba75681",
+    "id": "d2de2b30-0901-413e-9dbb-034f84225d37",
     "title": {
       "en": "Elliptical Trainer"
     },
@@ -1492,7 +1492,7 @@
     "tags": ["eliptical", "machine"]
   },
   {
-    "id": "89863a24-7c69-44a7-b3c5-8703f686940f",
+    "id": "90f756d7-0ac2-4247-a12a-0f2b0e3e6401",
     "title": {
       "en": "Lying Leg Raise"
     },
@@ -1500,7 +1500,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lying Leg Raise.",
@@ -1513,7 +1513,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "be0d9e54-9079-49c8-a847-2350eb47f944",
+    "id": "894b97a6-d6b3-48f1-b402-4d4a2f8949cf",
     "title": {
       "en": "Preacher Curl (Barbell)"
     },
@@ -1534,7 +1534,7 @@
     "tags": ["curls", "seated", "bb"]
   },
   {
-    "id": "6842d2ab-c4e0-4fea-9453-0c361b14b837",
+    "id": "a95bf8c7-2c52-4765-b9ed-cc3ed9b7c70d",
     "title": {
       "en": "Push Up (Weighted)"
     },
@@ -1542,7 +1542,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["triceps", "shoulders"],
     "exerciseType": "weightedReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Push Up (Weighted).",
@@ -1555,7 +1555,7 @@
     "tags": ["pushups", "pressups"]
   },
   {
-    "id": "8f7ae184-441e-4523-8568-361c567c248e",
+    "id": "2cb7fd92-0163-4a73-903b-f5b01f426332",
     "title": {
       "en": "Rear Delt Reverse Fly (Dumbbell)"
     },
@@ -1588,7 +1588,7 @@
     ]
   },
   {
-    "id": "d79e67d2-4044-42f3-a1da-bffb253f1bed",
+    "id": "00004056-4482-44bc-b783-2f414039a36e",
     "title": {
       "en": "Rear Delt Reverse Fly (Machine)"
     },
@@ -1609,7 +1609,7 @@
     "tags": ["seated", "crucifixo", "inverso"]
   },
   {
-    "id": "7733c15c-75a0-4313-a7f9-e3283e0b0f72",
+    "id": "873bfb11-8867-4868-b838-1b8c0eb65af4",
     "title": {
       "en": "Reverse Grip Lat Pulldown (Cable)"
     },
@@ -1630,7 +1630,7 @@
     "tags": ["supinated", "underhand"]
   },
   {
-    "id": "b1422f34-4ff5-4fc7-89f4-2b0cebcb7004",
+    "id": "16d14204-3c97-41db-b1de-fd09bbd5ca04",
     "title": {
       "en": "Rowing Machine"
     },
@@ -1651,7 +1651,7 @@
     "tags": []
   },
   {
-    "id": "815f63c1-eaa2-4207-bc36-98b298029040",
+    "id": "d00945b4-43af-41bb-a57f-cbeeb7f0a2b4",
     "title": {
       "en": "Seated Calf Raise"
     },
@@ -1672,7 +1672,7 @@
     "tags": ["machine"]
   },
   {
-    "id": "0350c98d-c134-475a-99e5-f6df2d3ab950",
+    "id": "c6251e40-a6ec-4104-be24-8a30270fd51f",
     "title": {
       "en": "Triceps Kickback (Dumbbell)"
     },
@@ -1693,7 +1693,7 @@
     "tags": ["tricep", "db", "kneeling", "dumbbell"]
   },
   {
-    "id": "c19ce3ec-f85d-4e0b-b6c0-6adce0b96dbb",
+    "id": "f0ae30c5-dc24-4fe4-a7fc-34d3a7fe1beb",
     "title": {
       "en": "Bicep Curl (Cable)"
     },
@@ -1714,7 +1714,7 @@
     "tags": ["curls", "biceps", "standing"]
   },
   {
-    "id": "f7facf51-208c-4ef9-88be-7f62da892ac5",
+    "id": "92a20495-a47c-496b-8f2c-789936ccb2dd",
     "title": {
       "en": "Triceps Dip"
     },
@@ -1735,7 +1735,7 @@
     "tags": ["tricep", "dips"]
   },
   {
-    "id": "501b7e1e-6e71-4c58-b5e9-9544bf2ddedc",
+    "id": "52e72b4a-0f2d-4005-a725-3b3df4081d2f",
     "title": {
       "en": "Triceps Dip (Weighted)"
     },
@@ -1756,7 +1756,7 @@
     "tags": ["tricep", "dips"]
   },
   {
-    "id": "921758dd-f69f-412c-85fe-ccb93e1a20b5",
+    "id": "045b7792-867d-4aab-9398-052d8e1e11f7",
     "title": {
       "en": "Decline Push Up"
     },
@@ -1777,7 +1777,7 @@
     "tags": ["elevated", "pushups", "pressups"]
   },
   {
-    "id": "03766f3a-2043-4701-9f18-8e1b4a0f803a",
+    "id": "47fd92a2-d0c5-4958-ac52-9b488c65d456",
     "title": {
       "en": "Diamond Push Up"
     },
@@ -1785,7 +1785,7 @@
     "muscleGroup": "triceps",
     "otherMuscles": ["chest", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Diamond Push Up.",
@@ -1798,7 +1798,7 @@
     "tags": ["close", "grip", "pushups", "pressups"]
   },
   {
-    "id": "58c62ada-90ec-449d-8ce0-dc3a6a693d74",
+    "id": "d5b04000-16e4-4f78-a225-1717fe32ce16",
     "title": {
       "en": "Kneeling Push Up"
     },
@@ -1806,7 +1806,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["triceps", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Kneeling Push Up.",
@@ -1819,7 +1819,7 @@
     "tags": ["pushups", "knee", "pressups"]
   },
   {
-    "id": "d0ffd44f-fe29-4aaf-9c23-ddeb2663bebf",
+    "id": "3bb05763-639d-4395-be28-f922e60abc39",
     "title": {
       "en": "21s Bicep Curl"
     },
@@ -1840,7 +1840,7 @@
     "tags": ["21'S", "biceps", "curls", "7-7-7"]
   },
   {
-    "id": "f9695569-9422-4350-846c-c4131dd390ac",
+    "id": "9ca8b189-b8ea-4554-8802-0c9a8ef6ca6b",
     "title": {
       "en": "Ab Scissors"
     },
@@ -1848,7 +1848,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Ab Scissors.",
@@ -1861,7 +1861,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "30288a58-5bab-46d1-9c82-6fe3748ed968",
+    "id": "d771d0d2-c03f-4533-858b-caafe6855ef0",
     "title": {
       "en": "Ab Wheel"
     },
@@ -1882,7 +1882,7 @@
     "tags": ["abs", "roller", "rollout", "roll", "out", "core"]
   },
   {
-    "id": "0422ffb9-4303-4381-a33e-c8fa02884776",
+    "id": "b8bd2df3-9240-43fe-af17-09b1c5473ae9",
     "title": {
       "en": "Aerobics"
     },
@@ -1890,7 +1890,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Aerobics.",
@@ -1903,7 +1903,7 @@
     "tags": []
   },
   {
-    "id": "8dbc5154-7a64-43b5-bd9c-7344d568a362",
+    "id": "ec8db2d0-cb83-4408-8f7a-dd9b55da8494",
     "title": {
       "en": "Air Bike"
     },
@@ -1924,7 +1924,7 @@
     "tags": ["assault", "fan"]
   },
   {
-    "id": "27acb203-3a8c-4b8e-9ee1-d20bde92ac91",
+    "id": "63510818-5dc7-409e-94ba-0c453cc0040c",
     "title": {
       "en": "Around The World"
     },
@@ -1945,7 +1945,7 @@
     "tags": ["db", "dumbbell"]
   },
   {
-    "id": "800ee479-2b23-4923-9ea1-da4ce1a275f5",
+    "id": "745959d0-c74f-4df4-9881-496e708903e8",
     "title": {
       "en": "Assisted Pistol Squats"
     },
@@ -1953,7 +1953,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Assisted Pistol Squats.",
@@ -1966,7 +1966,7 @@
     "tags": []
   },
   {
-    "id": "c312a31f-7e50-4101-b5b6-ec6b463cdd39",
+    "id": "de019bcb-dffc-4e83-98a4-3fcbebb73d5d",
     "title": {
       "en": "Back Extension (Machine)"
     },
@@ -1987,7 +1987,7 @@
     "tags": ["seated"]
   },
   {
-    "id": "7bb6f233-3b67-4e3f-900d-d280fa0a24cb",
+    "id": "4550ef94-aad5-4415-b492-2fe158335ba6",
     "title": {
       "en": "Ball Slams"
     },
@@ -2008,7 +2008,7 @@
     "tags": []
   },
   {
-    "id": "4affc0cb-f207-447f-8ef4-4f9177a52ff0",
+    "id": "6ec834b3-b1d2-4c43-be68-31d0b5fabe23",
     "title": {
       "en": "Band Pullaparts"
     },
@@ -2029,7 +2029,7 @@
     "tags": ["resistance", "standing", "cable"]
   },
   {
-    "id": "980351e2-d5b5-4cd7-857c-2b434cb2a35d",
+    "id": "2936b9f4-87ba-4f04-8de7-ce8cec87bd41",
     "title": {
       "en": "Battle Ropes"
     },
@@ -2050,7 +2050,7 @@
     "tags": ["battling"]
   },
   {
-    "id": "2ec00fda-d6bf-4282-9f29-ccc51080d31b",
+    "id": "e472508a-4bf3-44c5-8503-861e3f13cec6",
     "title": {
       "en": "Behind the Back Bicep Wrist Curl (Barbell)"
     },
@@ -2071,7 +2071,7 @@
     "tags": ["biceps", "standing", "curls"]
   },
   {
-    "id": "6cf3cc4d-c752-4353-9176-d710e5759367",
+    "id": "6c611f63-4ef4-4d75-b43c-757c9b506c19",
     "title": {
       "en": "Behind the Back Curl (Cable)"
     },
@@ -2092,7 +2092,7 @@
     "tags": ["face", "away", "bayesian", "standing"]
   },
   {
-    "id": "53617aa5-8495-49c2-a80c-28b9a25b7913",
+    "id": "3f9e58a9-9615-437f-a574-849c1d12dfc9",
     "title": {
       "en": "Belt Squat (Machine)"
     },
@@ -2113,7 +2113,7 @@
     "tags": ["hip"]
   },
   {
-    "id": "1d2f8d97-114f-4465-a633-a820106cd86e",
+    "id": "ce422df8-9129-4222-bac0-578ce97effa9",
     "title": {
       "en": "Bench Dip"
     },
@@ -2134,7 +2134,7 @@
     "tags": ["dips", "chair", "triceps"]
   },
   {
-    "id": "360f12f7-bb18-4ba6-842f-6b07648571b8",
+    "id": "f6bbfa9f-ac57-41a0-809e-7bc6419bacb1",
     "title": {
       "en": "Bench Press - Close Grip (Barbell)"
     },
@@ -2155,7 +2155,7 @@
     "tags": ["chest", "bb"]
   },
   {
-    "id": "5cc77e80-8b67-468a-a3bc-a460c7c5e99f",
+    "id": "c62864e2-2367-4e50-b258-f47028ec4b58",
     "title": {
       "en": "Bench Press - Wide Grip (Barbell)"
     },
@@ -2176,7 +2176,7 @@
     "tags": ["chest", "bb"]
   },
   {
-    "id": "53ff6758-f95c-419a-ab52-7b07a116ec0e",
+    "id": "e16eb563-edee-4f95-a458-48a6faf91740",
     "title": {
       "en": "Bench Press (Cable)"
     },
@@ -2197,7 +2197,7 @@
     "tags": ["chest"]
   },
   {
-    "id": "b7d0e1f6-8ed3-4c34-a0db-1b03e22b74b9",
+    "id": "c5389e93-c585-4fd6-8ef5-af39aceb11d4",
     "title": {
       "en": "Bench Press (Smith Machine)"
     },
@@ -2218,7 +2218,7 @@
     "tags": ["chest"]
   },
   {
-    "id": "c7101d3e-05d0-4d40-bb98-745c36303eb4",
+    "id": "e7b9f159-2444-4be9-9efa-182e42e6809c",
     "title": {
       "en": "Bent Over Row (Band)"
     },
@@ -2239,7 +2239,7 @@
     "tags": ["resistance"]
   },
   {
-    "id": "f007cdb3-eb4f-443b-8a01-bfe6f47c26c5",
+    "id": "8454daf0-e836-4165-b1b8-9975e1a6f5a8",
     "title": {
       "en": "Bicep Curl (Machine)"
     },
@@ -2260,7 +2260,7 @@
     "tags": ["curls", "biceps", "machine"]
   },
   {
-    "id": "94a47c36-7ed0-4c24-be4f-0d82b6e545f3",
+    "id": "db7e32e1-d645-4b62-844b-c7870cf0e51c",
     "title": {
       "en": "Bicep Curl (Suspension)"
     },
@@ -2281,7 +2281,7 @@
     "tags": ["trx", "band", "biceps", "standing"]
   },
   {
-    "id": "5298b99d-910c-4f73-b23e-9ffd12b18b84",
+    "id": "11589c9d-43b8-4eb4-a10e-1c4470caf8c4",
     "title": {
       "en": "Bicycle Crunch"
     },
@@ -2289,7 +2289,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Bicycle Crunch.",
@@ -2302,7 +2302,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "d0d943bf-ded3-4b62-9563-c952509d8d3c",
+    "id": "d4fbde17-4996-4535-acca-3113bfd29e00",
     "title": {
       "en": "Bicycle Crunch Raised Legs"
     },
@@ -2310,7 +2310,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Bicycle Crunch Raised Legs.",
@@ -2323,7 +2323,7 @@
     "tags": ["ab", "crossovers", "core"]
   },
   {
-    "id": "ed95d473-577d-4466-8009-5a34fd83fc53",
+    "id": "f6631fcc-d5b8-4c17-9412-769fe4b78e18",
     "title": {
       "en": "Bird Dog"
     },
@@ -2331,7 +2331,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Bird Dog.",
@@ -2344,7 +2344,7 @@
     "tags": []
   },
   {
-    "id": "f9e6ba84-380b-4f8b-904f-99f95ab196b4",
+    "id": "679c2123-86b3-474a-a03e-a67be797b9f8",
     "title": {
       "en": "Box Jump"
     },
@@ -2365,7 +2365,7 @@
     "tags": []
   },
   {
-    "id": "6b74bbf0-7897-4f68-93fe-15e1ece24b2a",
+    "id": "925bf936-5de4-4bf1-9d83-0adfb2b5111a",
     "title": {
       "en": "Box Squat (Barbell)"
     },
@@ -2386,7 +2386,7 @@
     "tags": ["back", "bb"]
   },
   {
-    "id": "e33eb9ab-c768-45e6-b2cb-e9984dfba8b4",
+    "id": "3b3ac220-74f1-4b82-8c45-618c77d0cc26",
     "title": {
       "en": "Boxing"
     },
@@ -2394,7 +2394,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Boxing.",
@@ -2407,7 +2407,7 @@
     "tags": []
   },
   {
-    "id": "bf310188-6d85-43e4-902a-3d52dc285d90",
+    "id": "37c4b26a-4938-462f-9cbc-108350663b48",
     "title": {
       "en": "Bulgarian Split Squat"
     },
@@ -2428,7 +2428,7 @@
     "tags": ["db", "dumbbell", "back", "rear", "foot", "elevated", "weighted"]
   },
   {
-    "id": "ddf87bdd-6210-4eb8-a5f9-556531852252",
+    "id": "c7a99d19-f048-45f7-a472-810799209a53",
     "title": {
       "en": "Burpee"
     },
@@ -2436,7 +2436,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Burpee.",
@@ -2449,7 +2449,7 @@
     "tags": ["burpees"]
   },
   {
-    "id": "84c7560a-fa5e-4575-a6b5-b3951e39edc5",
+    "id": "7ec36d04-ea76-4b61-a3e4-b21a8d8b10f5",
     "title": {
       "en": "Burpee Over the Bar"
     },
@@ -2457,7 +2457,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Burpee Over the Bar.",
@@ -2470,7 +2470,7 @@
     "tags": []
   },
   {
-    "id": "dd2d6e6c-afd8-4e1f-83ac-b5079697cc78",
+    "id": "2f38ae99-9d27-4139-afad-76494f19b303",
     "title": {
       "en": "Butterfly (Pec Deck)"
     },
@@ -2491,7 +2491,7 @@
     "tags": ["peck", "chest", "fly", "flyes", "flies", "seated"]
   },
   {
-    "id": "f9e8ae6d-ab3d-4928-97a2-a7a3dc2be024",
+    "id": "a0a21f8f-a9ec-4708-892b-81b40d61da5f",
     "title": {
       "en": "Cable Core Palloff Press"
     },
@@ -2512,7 +2512,7 @@
     "tags": ["abs", "standing", "core"]
   },
   {
-    "id": "52888b6f-0b32-49d6-b8ff-e16b56f48734",
+    "id": "fe29bf33-ea0a-46ae-8f50-061e77793011",
     "title": {
       "en": "Cable Crunch"
     },
@@ -2533,7 +2533,7 @@
     "tags": ["abs", "kneeling", "core"]
   },
   {
-    "id": "2a87d452-2a1b-4277-be28-6babc1635152",
+    "id": "5256b7c4-d72c-42de-b3aa-a3efbaacebdb",
     "title": {
       "en": "Cable Pull Through"
     },
@@ -2554,7 +2554,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "825f3d9b-f7f8-4ec5-9ac0-65b2e6d39ce5",
+    "id": "928a1278-4bc7-43cf-a6d0-e9794e33eb77",
     "title": {
       "en": "Cable Twist (Down to up)"
     },
@@ -2575,7 +2575,7 @@
     "tags": ["abs", "standing", "core", "woodchop"]
   },
   {
-    "id": "6a1bc742-411d-4736-96e9-eaf3e1b25140",
+    "id": "4e09e04c-2945-4420-8898-5ed8ec0dd1ea",
     "title": {
       "en": "Cable Twist (Up to down)"
     },
@@ -2596,7 +2596,7 @@
     "tags": ["abs", "standing", "core", "woodchop"]
   },
   {
-    "id": "efecaaa0-f5d8-4845-bee1-422bb993fad6",
+    "id": "49224e6f-5a08-4d69-bfeb-3a055665fbe5",
     "title": {
       "en": "Calf Extension (Machine)"
     },
@@ -2617,7 +2617,7 @@
     "tags": ["calve"]
   },
   {
-    "id": "fa00a2cd-7d2e-402a-8c59-9fdf4adc81aa",
+    "id": "54bd25d4-6550-40f7-939a-4bf0c6a327fc",
     "title": {
       "en": "Calf Press (Machine)"
     },
@@ -2638,7 +2638,7 @@
     "tags": ["calfs", "seated", "raises", "extensions", "leg", "press", "calve"]
   },
   {
-    "id": "7608edc9-00dc-49a6-9e5c-e53ec3e3bca3",
+    "id": "de26438e-93b5-41a1-be13-516d41750e02",
     "title": {
       "en": "Chest Dip"
     },
@@ -2659,7 +2659,7 @@
     "tags": ["dips"]
   },
   {
-    "id": "6e0b096f-593a-4ff5-8723-8011b3f520b1",
+    "id": "08cc42b0-2a94-4152-9568-c5b7f1a34baa",
     "title": {
       "en": "Chest Dip (Assisted)"
     },
@@ -2680,7 +2680,7 @@
     "tags": ["dips"]
   },
   {
-    "id": "9b5a8b4b-a795-4ab6-9efe-c26fd6dee930",
+    "id": "0d9a7ebc-fec7-4f4e-b377-e865a114f1af",
     "title": {
       "en": "Chest Dip (Weighted)"
     },
@@ -2701,7 +2701,7 @@
     "tags": ["dips"]
   },
   {
-    "id": "5c182615-19ca-48cb-876c-ae74aed7cb3c",
+    "id": "bee330ba-71be-4ca6-9787-6fceab2d44e0",
     "title": {
       "en": "Chest Fly (Band)"
     },
@@ -2722,7 +2722,7 @@
     "tags": ["resistance", "flies", "band", "standing"]
   },
   {
-    "id": "e9ed07c5-14e9-45d9-b51d-d73dcd0cfe59",
+    "id": "7513cf9e-28c5-4c19-835c-960a3bb2e128",
     "title": {
       "en": "Chest Fly (Machine)"
     },
@@ -2743,7 +2743,7 @@
     "tags": ["flies", "flyes", "flys", "seated"]
   },
   {
-    "id": "46e94f90-58b2-403f-b918-c20c1ca77608",
+    "id": "e75609af-9773-413c-9a85-5b0a29eaa9f8",
     "title": {
       "en": "Chest Fly (Suspension)"
     },
@@ -2764,7 +2764,7 @@
     "tags": ["trx", "band"]
   },
   {
-    "id": "7107fa75-7b65-4c17-8773-0a7e00736c9e",
+    "id": "4bea01dd-f285-4e0f-9852-cc6c98b4087e",
     "title": {
       "en": "Chest Press (Band)"
     },
@@ -2785,7 +2785,7 @@
     "tags": ["resistance", "bench", "standing"]
   },
   {
-    "id": "385b3acc-4627-4f4b-b3c0-6e1c9483a6bd",
+    "id": "45c3f7c3-aa93-43fe-bec1-02cd03976188",
     "title": {
       "en": "Chest Supported Y Raise (Dumbbell)"
     },
@@ -2806,7 +2806,7 @@
     "tags": ["db"]
   },
   {
-    "id": "5d3e15f9-daf5-4305-a37d-d83310be0200",
+    "id": "d2e362c0-31b5-4bc5-89a0-d3b9876062f6",
     "title": {
       "en": "Chin Up (Assisted)"
     },
@@ -2827,7 +2827,7 @@
     "tags": ["chinups"]
   },
   {
-    "id": "74850f9e-3c8c-41fb-a641-a51bb585c0b1",
+    "id": "f15c46f9-b913-4555-9b66-46a2fbb752cf",
     "title": {
       "en": "Clamshell"
     },
@@ -2848,7 +2848,7 @@
     "tags": ["clam", "shells"]
   },
   {
-    "id": "7bebb3aa-81e6-4dc5-9058-dc04673f5552",
+    "id": "71d9c071-2ccd-4f51-b748-cfe154fbcff7",
     "title": {
       "en": "Clap Push Ups"
     },
@@ -2856,7 +2856,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["triceps", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Clap Push Ups.",
@@ -2869,7 +2869,7 @@
     "tags": ["pushups", "pressups"]
   },
   {
-    "id": "2b3c0a47-2508-493d-a75a-e3008ac9b8d9",
+    "id": "31397d29-3171-4ffd-b01e-4b3dff21e045",
     "title": {
       "en": "Clean"
     },
@@ -2890,7 +2890,7 @@
     "tags": ["squat", "olympic"]
   },
   {
-    "id": "6cf1dc23-c609-4664-bc3e-c5790213a06b",
+    "id": "5bfe4e9d-2af1-4dec-84b1-e0eab6539b59",
     "title": {
       "en": "Clean and Jerk"
     },
@@ -2911,7 +2911,7 @@
     "tags": ["olympic", "&", "+"]
   },
   {
-    "id": "96bf8f55-c018-4724-9b77-f341a3fe646b",
+    "id": "b4172431-30a4-4fcf-a051-e5342f35f817",
     "title": {
       "en": "Clean and Press"
     },
@@ -2932,7 +2932,7 @@
     "tags": ["&", "+"]
   },
   {
-    "id": "7b542b97-b5d7-4457-ad18-63caea2705f2",
+    "id": "c42fdeb9-dcf3-4eba-afba-a041316e728a",
     "title": {
       "en": "Clean Pull"
     },
@@ -2953,7 +2953,7 @@
     "tags": []
   },
   {
-    "id": "f023ca36-bc65-4d8f-a0a6-fcebdfd9d237",
+    "id": "c9480142-c81d-40c9-bb86-4cb54ac264ec",
     "title": {
       "en": "Climbing"
     },
@@ -2961,7 +2961,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Climbing.",
@@ -2974,7 +2974,7 @@
     "tags": []
   },
   {
-    "id": "5f35e026-f8cd-4c10-b5c3-fc65faffec25",
+    "id": "f2008c99-b7ca-4138-bd83-3fedada9e48d",
     "title": {
       "en": "Concentration Curl"
     },
@@ -2995,7 +2995,7 @@
     "tags": ["curls", "db", "seated", "dumbbell"]
   },
   {
-    "id": "3eadde1a-3687-4a22-acff-b252ee626733",
+    "id": "2985ce5f-0853-466a-8e3c-be05f2136485",
     "title": {
       "en": "Cross Body Hammer Curl"
     },
@@ -3016,7 +3016,7 @@
     "tags": ["biceps", "db"]
   },
   {
-    "id": "803830f1-d7c8-434b-95c2-cc31bee9f90e",
+    "id": "efd57688-2ffd-4f14-9608-2e517ea31a6c",
     "title": {
       "en": "Crunch (Machine)"
     },
@@ -3037,7 +3037,7 @@
     "tags": ["abs", "seated", "core"]
   },
   {
-    "id": "ec49d3af-c68c-4570-afb0-d6c90ad0c113",
+    "id": "1c3053b3-466a-4773-adb4-e87e9eab2ddc",
     "title": {
       "en": "Curtsy Lunge (Dumbbell)"
     },
@@ -3058,7 +3058,7 @@
     "tags": ["curtesy", "lunges", "passada", "db", "weighted"]
   },
   {
-    "id": "5f719294-b957-4b68-8493-4ef46815c2af",
+    "id": "9fe22da1-f11e-490e-9778-9d673f9d3e50",
     "title": {
       "en": "Cycling"
     },
@@ -3079,7 +3079,7 @@
     "tags": ["bicycle", "spinning", "bike", "biking", "cycle"]
   },
   {
-    "id": "d78e3cdc-e780-42a6-9b08-480481aa9263",
+    "id": "ee90caef-9be7-487a-a349-ac0e5e666835",
     "title": {
       "en": "Dead Bug"
     },
@@ -3087,7 +3087,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Dead Bug.",
@@ -3100,7 +3100,7 @@
     "tags": ["core"]
   },
   {
-    "id": "05cfc44e-ae4d-4eeb-ad1d-db27f3922bcc",
+    "id": "63a233e7-bb62-46be-9fd8-747e461f6e16",
     "title": {
       "en": "Dead Hang"
     },
@@ -3108,7 +3108,7 @@
     "muscleGroup": "upperBack",
     "otherMuscles": ["lats", "forearms"],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Dead Hang.",
@@ -3121,7 +3121,7 @@
     "tags": ["hangs", "hanging"]
   },
   {
-    "id": "ac2e4db6-02c4-4b14-9b7c-226fced16ece",
+    "id": "31936d14-ff90-417a-a471-783767669b8c",
     "title": {
       "en": "Deadlift (Band)"
     },
@@ -3149,7 +3149,7 @@
     "tags": ["resistance"]
   },
   {
-    "id": "4b1693bb-7114-46d6-8fc9-5ec3f86886b2",
+    "id": "1734e3fb-50ec-4e80-aea9-88623a0c05b7",
     "title": {
       "en": "Deadlift (Smith Machine)"
     },
@@ -3177,7 +3177,7 @@
     "tags": ["dl"]
   },
   {
-    "id": "47362531-1a71-4752-bdae-c7711d36c7b3",
+    "id": "636fe261-8da9-41c6-b3c0-e9d0cea99604",
     "title": {
       "en": "Deadlift (Trap bar)"
     },
@@ -3205,7 +3205,7 @@
     "tags": ["dl"]
   },
   {
-    "id": "620028b7-d47a-4b4f-a206-e1986155edbe",
+    "id": "f9ab9dc3-83d4-4c85-90ac-a356bef26886",
     "title": {
       "en": "Deadlift High Pull"
     },
@@ -3226,7 +3226,7 @@
     "tags": ["olympic", "dl"]
   },
   {
-    "id": "c8d7f163-70cd-4f50-a0ef-b1e927c088b7",
+    "id": "1ad418fb-9b63-4fb4-a40e-a498fc702573",
     "title": {
       "en": "Decline Bench Press (Dumbbell)"
     },
@@ -3247,7 +3247,7 @@
     "tags": ["db", "chest"]
   },
   {
-    "id": "fa534003-9650-4b2d-b1a0-2f8079018592",
+    "id": "20ed9ac2-6147-4b06-8f7d-0d1917dc0ad1",
     "title": {
       "en": "Decline Bench Press (Machine)"
     },
@@ -3268,7 +3268,7 @@
     "tags": ["chest"]
   },
   {
-    "id": "8cbd0e06-cac2-4f1a-ae9c-7560b69c424f",
+    "id": "cadf8096-587c-4142-a7af-872cde6d8505",
     "title": {
       "en": "Decline Bench Press (Smith Machine)"
     },
@@ -3289,7 +3289,7 @@
     "tags": ["chest"]
   },
   {
-    "id": "043948b6-96e3-452e-8cba-8757d451eb56",
+    "id": "562f71e1-da6a-48e8-9e12-dcda16eba4a1",
     "title": {
       "en": "Downward Dog"
     },
@@ -3297,7 +3297,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Downward Dog.",
@@ -3310,7 +3310,7 @@
     "tags": []
   },
   {
-    "id": "b8122287-ceaf-4339-9165-521683c6ef1e",
+    "id": "3aca7eda-5e37-4739-8f0c-1feeb3349c62",
     "title": {
       "en": "Drag Curl"
     },
@@ -3331,7 +3331,7 @@
     "tags": ["drags", "curls", "standing"]
   },
   {
-    "id": "9d4b20cd-1e91-4c98-a4c4-a3cdbd221385",
+    "id": "a4f89265-031f-43ea-aaaf-a279108bfee0",
     "title": {
       "en": "Dragon Flag"
     },
@@ -3339,7 +3339,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Dragon Flag.",
@@ -3352,7 +3352,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "79b7a285-274d-4cb7-89d8-a2aa5cf53a2f",
+    "id": "5c7b9c24-9dc2-4824-8e0a-9bf159361aab",
     "title": {
       "en": "Dragonfly"
     },
@@ -3360,7 +3360,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Dragonfly.",
@@ -3373,7 +3373,7 @@
     "tags": ["dragonflyes", "dragonflys", "dragonflies", "core"]
   },
   {
-    "id": "3b670613-2bed-40a2-b0f3-1a3860fc4232",
+    "id": "171f0c05-ee82-4883-9323-42839725ee04",
     "title": {
       "en": "Dumbbell Snatch"
     },
@@ -3394,7 +3394,7 @@
     "tags": ["db"]
   },
   {
-    "id": "87cfb643-f376-4dc6-827c-c5cd48535c65",
+    "id": "ebe11490-7708-47a8-87b6-6dff21bb81c8",
     "title": {
       "en": "Dumbbell Squeeze Press"
     },
@@ -3415,7 +3415,7 @@
     "tags": ["db"]
   },
   {
-    "id": "5fbe83f7-f65b-4195-866b-23ddfcc3b96e",
+    "id": "67793c8c-5450-427d-a4f8-118da5b625ba",
     "title": {
       "en": "Dumbbell Step Up"
     },
@@ -3436,7 +3436,7 @@
     "tags": ["db", "weighted"]
   },
   {
-    "id": "6f93c1dd-8f2c-4709-b26e-e771e7788b86",
+    "id": "079d2915-60f1-44a2-871c-51b4d25d5105",
     "title": {
       "en": "Elbow to Knee"
     },
@@ -3444,7 +3444,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Elbow to Knee.",
@@ -3457,7 +3457,7 @@
     "tags": ["abs", "core", "crunch"]
   },
   {
-    "id": "ef34b79b-faf8-46d4-acfa-9be85d41b2cf",
+    "id": "96a871a6-b51f-4efc-afcf-760273db9cce",
     "title": {
       "en": "Farmers Walk"
     },
@@ -3478,7 +3478,7 @@
     "tags": ["carry", "farmer", "carries", "farmer'S"]
   },
   {
-    "id": "853ccc5b-279b-4e13-9d77-410c9938315b",
+    "id": "99778e3a-863d-48e9-bd87-ab70beffeea8",
     "title": {
       "en": "Feet Up Bench Press (Barbell)"
     },
@@ -3499,7 +3499,7 @@
     "tags": ["larsen", "bb", "chest"]
   },
   {
-    "id": "37c11b13-1df7-47c5-bc39-2c4a89db8072",
+    "id": "06b22c58-03b8-4064-a133-27d6bdc2d5b5",
     "title": {
       "en": "Fire Hydrants"
     },
@@ -3507,7 +3507,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Fire Hydrants.",
@@ -3520,7 +3520,7 @@
     "tags": []
   },
   {
-    "id": "d8fce2a1-2c05-442e-8837-3dd7a4d35811",
+    "id": "6a23bce0-2e92-442b-9d98-da452b4b222e",
     "title": {
       "en": "Floor Press (Barbell)"
     },
@@ -3541,7 +3541,7 @@
     "tags": ["bb", "chest"]
   },
   {
-    "id": "7cddd710-e2cc-4a7f-a040-5e1ac2550b8a",
+    "id": "26cacff4-0bb5-4bc7-8669-c01e36a391ec",
     "title": {
       "en": "Floor Press (Dumbbell)"
     },
@@ -3562,7 +3562,7 @@
     "tags": ["chest", "db"]
   },
   {
-    "id": "0e14fa99-03e8-4967-a71a-ea8f6cb4d5a7",
+    "id": "30be2da7-a3ee-4a44-a58d-80763f94ff51",
     "title": {
       "en": "Floor Triceps Dip"
     },
@@ -3570,7 +3570,7 @@
     "muscleGroup": "triceps",
     "otherMuscles": ["shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Floor Triceps Dip.",
@@ -3583,7 +3583,7 @@
     "tags": ["tricep", "dips"]
   },
   {
-    "id": "d853312e-e125-4643-854f-614676f37cec",
+    "id": "f65f267e-78e8-4af1-afda-349c55c4671f",
     "title": {
       "en": "Flutter Kicks"
     },
@@ -3591,7 +3591,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Flutter Kicks.",
@@ -3604,7 +3604,7 @@
     "tags": ["lying", "core"]
   },
   {
-    "id": "2610c009-a97c-43a2-8471-a5ca08f2c08f",
+    "id": "d6a3f0a4-516d-4095-b610-22fa09050b52",
     "title": {
       "en": "Frog Jumps"
     },
@@ -3612,7 +3612,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["glutes", "hamstrings", "calves"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Frog Jumps.",
@@ -3625,7 +3625,7 @@
     "tags": []
   },
   {
-    "id": "06637584-6de6-4727-8849-5006dd0b4978",
+    "id": "5e0037b2-7f3e-41d0-a6c2-e42add701416",
     "title": {
       "en": "Frog Pumps (Dumbbell)"
     },
@@ -3646,7 +3646,7 @@
     "tags": ["db"]
   },
   {
-    "id": "8a347e10-24af-4849-9cb8-bb6011eab56e",
+    "id": "6217ed33-fd2a-43e4-999f-f2ab58ebcae2",
     "title": {
       "en": "Front Lever Hold"
     },
@@ -3654,7 +3654,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Front Lever Hold.",
@@ -3667,7 +3667,7 @@
     "tags": ["fl", "core"]
   },
   {
-    "id": "2b3bbcf4-586a-47cd-b081-34ecc58b9f46",
+    "id": "89d241ea-212a-41ba-90c5-adaec2e28f64",
     "title": {
       "en": "Front Lever Raise"
     },
@@ -3675,7 +3675,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "bodyweightReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Front Lever Raise.",
@@ -3688,7 +3688,7 @@
     "tags": ["fl", "core"]
   },
   {
-    "id": "1688286e-0bc3-46e0-b678-7adfee4f845a",
+    "id": "7a2bf894-dd72-4e91-8bdd-307785dca730",
     "title": {
       "en": "Front Raise (Band)"
     },
@@ -3709,7 +3709,7 @@
     "tags": ["resistance", "standing"]
   },
   {
-    "id": "10b57009-ff25-443d-beb9-d63298c455d7",
+    "id": "bd83e2e7-8c94-486e-b57c-8132b8f6536e",
     "title": {
       "en": "Front Raise (Barbell)"
     },
@@ -3730,7 +3730,7 @@
     "tags": ["standing", "bb"]
   },
   {
-    "id": "a90f58fc-7541-44eb-8198-faebd788bab8",
+    "id": "dec0b548-42de-498b-934a-5396b70232e9",
     "title": {
       "en": "Front Raise (Cable)"
     },
@@ -3751,7 +3751,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "78495a75-fef4-4a1a-aaec-d9346759710d",
+    "id": "b1460dee-07cc-41a2-8631-c8564f935d77",
     "title": {
       "en": "Front Raise (Suspension)"
     },
@@ -3772,7 +3772,7 @@
     "tags": ["trx", "band", "standing"]
   },
   {
-    "id": "1c42083f-9098-4f56-b41c-919a1928b029",
+    "id": "641e14a3-9e67-4c11-9447-b5c2aea24e25",
     "title": {
       "en": "Front Squat"
     },
@@ -3793,7 +3793,7 @@
     "tags": ["squats", "barbell", "bb"]
   },
   {
-    "id": "9d5db6a1-decb-4f9f-bf46-3bc97a6ea7a2",
+    "id": "205e8405-e63e-4b23-835d-018c9bc104a6",
     "title": {
       "en": "Full Squat"
     },
@@ -3814,7 +3814,7 @@
     "tags": ["squats", "barbell", "bb"]
   },
   {
-    "id": "c1d0646b-a8ce-49e3-aeb1-b1db896eb020",
+    "id": "49d851b5-0f87-4064-868e-3981d2f5b57f",
     "title": {
       "en": "Glute Bridge"
     },
@@ -3822,7 +3822,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings", "quadriceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Glute Bridge.",
@@ -3835,7 +3835,7 @@
     "tags": ["butt", "ass", "hip", "raise"]
   },
   {
-    "id": "873f93ad-85d8-4a37-a8d6-9c6518d33085",
+    "id": "7f6fc0d6-436b-442f-bd55-c9af750dc85d",
     "title": {
       "en": "Glute Ham Raise"
     },
@@ -3856,7 +3856,7 @@
     "tags": ["ghd", "hamstring"]
   },
   {
-    "id": "7a615e27-611a-42f1-9a79-ead337163c51",
+    "id": "b7e30dcd-6759-481b-90bb-af9f385a400d",
     "title": {
       "en": "Glute Kickback (Machine)"
     },
@@ -3877,7 +3877,7 @@
     "tags": ["butt", "ass", "kickbacks", "standing"]
   },
   {
-    "id": "76892691-d725-4ed1-8089-41f18c9b7f7b",
+    "id": "244b796a-0163-40c0-a6af-e1e36a3822b0",
     "title": {
       "en": "Glute Kickback on Floor"
     },
@@ -3885,7 +3885,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Glute Kickback on Floor.",
@@ -3898,7 +3898,7 @@
     "tags": ["butt", "ass", "hip", "donkey", "kicks"]
   },
   {
-    "id": "3d5c4dc6-8a02-45c9-9a63-4b26e4102ab8",
+    "id": "70248c49-c781-4663-b22b-49204486c08e",
     "title": {
       "en": "Goblet Squat"
     },
@@ -3919,7 +3919,7 @@
     "tags": ["sumo", "db", "weighted"]
   },
   {
-    "id": "661feb20-9c3a-4fb5-8680-c5a5ace4ffb9",
+    "id": "60126a10-4ecc-4f59-8aa0-1accb3304acb",
     "title": {
       "en": "Good Morning (Barbell)"
     },
@@ -3940,7 +3940,7 @@
     "tags": ["bb"]
   },
   {
-    "id": "9f72fd91-db2f-44d5-b84f-ef8896e62dfc",
+    "id": "086b4821-439b-4054-8a6f-52d2bff83160",
     "title": {
       "en": "Gorilla Row (Kettlebell)"
     },
@@ -3961,7 +3961,7 @@
     "tags": ["kb"]
   },
   {
-    "id": "ef6317e1-8ba1-4170-a6b4-768a8b658ef1",
+    "id": "116e48cd-fceb-458c-ae0a-570158fec6e5",
     "title": {
       "en": "Hack Squat"
     },
@@ -3982,7 +3982,7 @@
     "tags": ["barbell", "bb"]
   },
   {
-    "id": "11fa63a4-63fa-4e8d-abda-6d98fb780b2b",
+    "id": "d0ccea24-cb54-4b05-a95a-b5bfc69d0a90",
     "title": {
       "en": "Hack Squat (Machine)"
     },
@@ -4003,7 +4003,7 @@
     "tags": []
   },
   {
-    "id": "96142c08-27fe-466d-86f3-bc16affe86dc",
+    "id": "e5cc5759-b010-4092-b710-e41bedd8fd17",
     "title": {
       "en": "Hammer Curl (Band)"
     },
@@ -4024,7 +4024,7 @@
     "tags": ["resistance", "curls", "standing"]
   },
   {
-    "id": "a06c7b61-63f0-486b-8828-abdd093e9e2f",
+    "id": "c9f21ae6-b130-4a87-9a78-85d7e3f2d852",
     "title": {
       "en": "Hammer Curl (Cable)"
     },
@@ -4045,7 +4045,7 @@
     "tags": ["curls", "standing"]
   },
   {
-    "id": "f38d0c4e-4502-4285-8772-6e3d81249584",
+    "id": "1ff34ac4-8213-47e4-bd64-eefc171e12d4",
     "title": {
       "en": "Handstand Hold"
     },
@@ -4053,7 +4053,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Handstand Hold.",
@@ -4066,7 +4066,7 @@
     "tags": []
   },
   {
-    "id": "a974b122-fec3-4964-ba0b-89b6bc24fb04",
+    "id": "4e496607-aab0-478f-9f59-a9270962acdc",
     "title": {
       "en": "Handstand Push Up"
     },
@@ -4074,7 +4074,7 @@
     "muscleGroup": "shoulders",
     "otherMuscles": ["chest", "triceps"],
     "exerciseType": "bodyweightReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Handstand Push Up.",
@@ -4087,7 +4087,7 @@
     "tags": ["pushups", "pressups"]
   },
   {
-    "id": "2abab9ec-19d2-49c1-b5ba-032713c1fbde",
+    "id": "890fbf3c-6502-40cb-a43e-f37ac76d6ba7",
     "title": {
       "en": "Hang Clean"
     },
@@ -4108,7 +4108,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "6bc1dc7f-4db2-4335-8c65-951b4eb983b0",
+    "id": "7f001175-d899-40bd-b6ec-f77e482432b8",
     "title": {
       "en": "Hang Snatch"
     },
@@ -4129,7 +4129,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "d52d736c-5a93-4f22-a9ca-da2018b301de",
+    "id": "fac4da06-20a8-4561-95b3-75a7f9b1c769",
     "title": {
       "en": "Hanging Knee Raise"
     },
@@ -4137,7 +4137,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": ["forearms"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Hanging Knee Raise.",
@@ -4150,7 +4150,7 @@
     "tags": ["abs", "knees", "core"]
   },
   {
-    "id": "59ecadc6-de28-40f7-9822-82bd870e9791",
+    "id": "b9a107e8-29dd-4f94-a3af-5101f2f917fa",
     "title": {
       "en": "Hanging Leg Raise"
     },
@@ -4158,7 +4158,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": ["forearms"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Hanging Leg Raise.",
@@ -4171,7 +4171,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "4fbef823-9f38-4229-96df-77b1d57ad87f",
+    "id": "2cbb3950-ae09-4c25-a7ea-074804706c94",
     "title": {
       "en": "Hex Press (Dumbbell)"
     },
@@ -4192,7 +4192,7 @@
     "tags": ["squeeze", "close", "grip", "db"]
   },
   {
-    "id": "794bc900-c3c6-430e-9697-bfc020e19d57",
+    "id": "c8d5ad68-9b5b-4186-a9c1-9208f8420a64",
     "title": {
       "en": "High Knee Skips"
     },
@@ -4200,7 +4200,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for High Knee Skips.",
@@ -4213,7 +4213,7 @@
     "tags": []
   },
   {
-    "id": "c737575c-dd2c-4d33-923d-11eabb8fe767",
+    "id": "e9e92544-74d6-4b06-8000-4813bf0f334a",
     "title": {
       "en": "High Knees"
     },
@@ -4221,7 +4221,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for High Knees.",
@@ -4234,7 +4234,7 @@
     "tags": []
   },
   {
-    "id": "6c354a58-380c-4108-b98e-537e0dee86ab",
+    "id": "10f8f10a-4df9-4fee-980e-efc40bc35947",
     "title": {
       "en": "HIIT"
     },
@@ -4242,7 +4242,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for HIIT.",
@@ -4255,7 +4255,7 @@
     "tags": []
   },
   {
-    "id": "64f9e0ca-c6f9-436f-a641-f48dc535b535",
+    "id": "2f3b9640-6567-4dcc-85ba-c77ed4e73f93",
     "title": {
       "en": "Hiking"
     },
@@ -4263,7 +4263,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "distanceDuration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Hiking.",
@@ -4276,7 +4276,7 @@
     "tags": []
   },
   {
-    "id": "ba588f98-8de8-4705-90b5-c29d0d0cb1cc",
+    "id": "abf9c91a-efbf-4ae1-87f2-c531a5346a1d",
     "title": {
       "en": "Hip Abduction (Machine)"
     },
@@ -4297,7 +4297,7 @@
     "tags": ["abductors", "seated"]
   },
   {
-    "id": "cd635161-bfa8-4444-97e0-85606fb2abcd",
+    "id": "d90759e5-18f4-4554-82ad-45333be44e7a",
     "title": {
       "en": "Hip Adduction (Machine)"
     },
@@ -4318,7 +4318,7 @@
     "tags": ["adductors", "seated"]
   },
   {
-    "id": "80d52d88-a81d-4f90-b19f-aee964899db6",
+    "id": "ed9c88a1-2774-4a07-a3a5-aedbd0caad12",
     "title": {
       "en": "Hip Thrust"
     },
@@ -4326,7 +4326,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings", "quadriceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Hip Thrust.",
@@ -4339,7 +4339,7 @@
     "tags": ["butt", "ass", "seated", "glutes"]
   },
   {
-    "id": "d6ea70e3-2ead-4d5e-a859-3ad85b474019",
+    "id": "c52c7c59-2f81-4006-aa9a-d7d87980b180",
     "title": {
       "en": "Hip Thrust (Machine)"
     },
@@ -4360,7 +4360,7 @@
     "tags": []
   },
   {
-    "id": "c3599559-2e20-4a71-8c87-e8534346b429",
+    "id": "d7abbb00-c136-4d6d-bd4b-3aa46747799a",
     "title": {
       "en": "Hip Thrust (Smith Machine)"
     },
@@ -4381,7 +4381,7 @@
     "tags": ["butt", "glutes", "weighted"]
   },
   {
-    "id": "649942dc-33d3-4719-a347-46d2947c4d56",
+    "id": "28faa2fc-a48c-4d12-a769-f8991eefd499",
     "title": {
       "en": "Hollow Rock"
     },
@@ -4389,7 +4389,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Hollow Rock.",
@@ -4402,7 +4402,7 @@
     "tags": ["hold", "body", "core"]
   },
   {
-    "id": "a7490315-4028-448d-8566-36499728b918",
+    "id": "314cfd10-7365-4d90-afb2-d003a85080ee",
     "title": {
       "en": "Incline Bench Press (Smith Machine)"
     },
@@ -4423,7 +4423,7 @@
     "tags": ["chest", "seated"]
   },
   {
-    "id": "08b226b1-b435-45d7-b370-ce0c701ceb8f",
+    "id": "2f7a0080-2f8d-4236-9e11-84a89fbe6270",
     "title": {
       "en": "Incline Chest Press (Machine)"
     },
@@ -4444,7 +4444,7 @@
     "tags": ["seated", "bench"]
   },
   {
-    "id": "90f3cc23-f15b-450e-b668-2980d268a356",
+    "id": "2515dcb7-3720-42f6-9aef-f49faba17af9",
     "title": {
       "en": "Inverted Row"
     },
@@ -4465,7 +4465,7 @@
     "tags": ["australian", "pullups", "bodyweight"]
   },
   {
-    "id": "faeb3874-c81e-48c9-bb74-d5925a2a82fe",
+    "id": "00493f5c-f5f1-4e1e-a703-0a0dc7c5b9a5",
     "title": {
       "en": "Iso-Lateral Chest Press (Machine)"
     },
@@ -4486,7 +4486,7 @@
     "tags": ["seated", "bench"]
   },
   {
-    "id": "d76f6e16-5e42-41a7-ad0a-d09a1fc277b4",
+    "id": "74918d72-0ca5-4a30-93cd-d59e4453f750",
     "title": {
       "en": "Iso-Lateral High Row (Machine)"
     },
@@ -4507,7 +4507,7 @@
     "tags": ["seated"]
   },
   {
-    "id": "9b889eb6-0266-45b3-ab9e-3be95eaad5ea",
+    "id": "28709ff4-4a3c-4ec1-bb69-7f3259c27150",
     "title": {
       "en": "Iso-Lateral Low Row"
     },
@@ -4528,7 +4528,7 @@
     "tags": []
   },
   {
-    "id": "91d8b98f-c5d1-4e2f-8c86-c0058a25b864",
+    "id": "4eb995ae-0ba8-4aa2-88f0-de34885074be",
     "title": {
       "en": "Iso-Lateral Row (Machine)"
     },
@@ -4549,7 +4549,7 @@
     "tags": ["seated"]
   },
   {
-    "id": "62060ec9-c76f-42c3-a1f7-950a4e7e918f",
+    "id": "2d531ac3-e266-4558-8679-7823c39734f5",
     "title": {
       "en": "Jack Knife (Suspension)"
     },
@@ -4570,7 +4570,7 @@
     "tags": ["trx", "band", "core"]
   },
   {
-    "id": "25d66b3b-6555-4361-9d44-a77a817c205b",
+    "id": "4d601837-20d2-4df3-b1bc-1a7cbccd4a91",
     "title": {
       "en": "Jackknife Sit Up"
     },
@@ -4578,7 +4578,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Jackknife Sit Up.",
@@ -4591,7 +4591,7 @@
     "tags": ["abs", "situps", "core"]
   },
   {
-    "id": "fa42ae60-d5a8-43d7-a8a1-7883a56b0896",
+    "id": "d9eb27aa-b4c0-4bd1-844a-24d7630fe751",
     "title": {
       "en": "JM Press (Barbell)"
     },
@@ -4612,7 +4612,7 @@
     "tags": ["bb"]
   },
   {
-    "id": "72a03df5-a124-4eb1-8766-eb40d8101f5c",
+    "id": "53bdd85a-7af2-4941-8288-4a6e6ed8e4e4",
     "title": {
       "en": "Jump Rope"
     },
@@ -4633,7 +4633,7 @@
     "tags": ["jumping"]
   },
   {
-    "id": "6ef20ba0-b6a2-41ff-9b1f-6736b0a2d927",
+    "id": "c47ea0ca-8b20-49cb-b411-04cd24af6e13",
     "title": {
       "en": "Jump Shrug"
     },
@@ -4654,7 +4654,7 @@
     "tags": ["olympic", "bb"]
   },
   {
-    "id": "4235d290-a138-45ed-ae50-d3954bc70b9a",
+    "id": "624168b2-b02d-4dac-ab62-f343ac569159",
     "title": {
       "en": "Jump Squat"
     },
@@ -4662,7 +4662,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes", "calves"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Jump Squat.",
@@ -4675,7 +4675,7 @@
     "tags": ["jumping"]
   },
   {
-    "id": "7dca9cc0-83f7-4d48-a260-840c7931e1df",
+    "id": "8cccbc29-4c0d-4026-8ffc-e892d7b101f5",
     "title": {
       "en": "Jumping Jack"
     },
@@ -4683,7 +4683,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Jumping Jack.",
@@ -4696,7 +4696,7 @@
     "tags": []
   },
   {
-    "id": "eafa2e37-58ab-4f94-b2b3-02520a63ed7d",
+    "id": "1249434a-773c-49b6-b1bd-b28d57ab8f7a",
     "title": {
       "en": "Jumping Lunge"
     },
@@ -4704,7 +4704,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes", "calves"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Jumping Lunge.",
@@ -4717,7 +4717,7 @@
     "tags": ["jump", "passada"]
   },
   {
-    "id": "bff81d16-6720-42e3-a64a-5b6394e6af78",
+    "id": "375682f1-cade-4c65-8666-d61c3d66f3dd",
     "title": {
       "en": "Kettlebell Around the World"
     },
@@ -4738,7 +4738,7 @@
     "tags": ["circles", "slingshot", "rotation", "kb"]
   },
   {
-    "id": "2a2a671d-6b54-41bf-9742-bb116de65529",
+    "id": "c642d2dc-3a59-442c-a57b-2b527e3966eb",
     "title": {
       "en": "Kettlebell Clean"
     },
@@ -4759,7 +4759,7 @@
     "tags": ["kb"]
   },
   {
-    "id": "41a7db19-0731-4a16-90bb-581c727e9259",
+    "id": "509d5e75-9e15-49a7-b935-25ffd2d15252",
     "title": {
       "en": "Kettlebell Curl"
     },
@@ -4780,7 +4780,7 @@
     "tags": ["biceps", "kb"]
   },
   {
-    "id": "7a0ff5b1-f4a2-4c41-9e01-94bf407525a0",
+    "id": "d70d5892-1faf-45c5-9a30-6b362ffa11f0",
     "title": {
       "en": "Kettlebell Goblet Squat"
     },
@@ -4801,7 +4801,7 @@
     "tags": ["kb", "weighted"]
   },
   {
-    "id": "2fe3264d-99af-4fb5-8dbb-ae831a69f22b",
+    "id": "8bc64741-eec1-4434-b7c5-39878f4b2a29",
     "title": {
       "en": "Kettlebell Halo"
     },
@@ -4822,7 +4822,7 @@
     "tags": ["kb", "circles", "rotation"]
   },
   {
-    "id": "320f19ea-7336-403e-9ffa-4113ac416327",
+    "id": "25c1838c-2b2f-4009-9dd9-8e066c9f2f03",
     "title": {
       "en": "Kettlebell High Pull"
     },
@@ -4843,7 +4843,7 @@
     "tags": ["pulls", "kb"]
   },
   {
-    "id": "4bd591e8-6e1f-4312-9c43-5d3567e60daa",
+    "id": "b6574adb-c61b-4bb6-97ad-4fd14d7b136a",
     "title": {
       "en": "Kettlebell Shoulder Press"
     },
@@ -4864,7 +4864,7 @@
     "tags": ["standing", "kb", "ohp"]
   },
   {
-    "id": "0a62c7e9-6a19-46fe-9926-058abaac1c0c",
+    "id": "df4093c3-8707-470f-9000-543ff6838d5f",
     "title": {
       "en": "Kettlebell Snatch"
     },
@@ -4885,7 +4885,7 @@
     "tags": ["kb"]
   },
   {
-    "id": "e67c59c2-4977-4c3e-9db3-b32205892a08",
+    "id": "5dc3bc2d-4d1d-4be7-820a-9df8e8265a0e",
     "title": {
       "en": "Kettlebell Swing"
     },
@@ -4906,7 +4906,7 @@
     "tags": ["kb", "russian"]
   },
   {
-    "id": "b09ff044-e09b-4dc8-822c-7adc5bb2eb30",
+    "id": "c61bc343-08aa-4525-a9fc-5e6e11d9f72a",
     "title": {
       "en": "Kettlebell Turkish Get Up"
     },
@@ -4927,7 +4927,7 @@
     "tags": ["kb"]
   },
   {
-    "id": "2bba9ba0-82f3-465a-9dec-fd8f46e6eb38",
+    "id": "d8794bc8-4965-4c43-9e68-25eff5f3b383",
     "title": {
       "en": "Kipping Pull Up"
     },
@@ -4948,7 +4948,7 @@
     "tags": ["butterfly", "pullups"]
   },
   {
-    "id": "902f905a-98b0-4e1a-9e96-c8aff9e0560f",
+    "id": "3fa531b4-5f3c-4e5d-8c90-e3e3977895f2",
     "title": {
       "en": "Knee Raise Parallel Bars"
     },
@@ -4969,7 +4969,7 @@
     "tags": ["captains", "chair", "hips", "abs", "core"]
   },
   {
-    "id": "ee1ab38e-410f-461a-b9ed-3c6b5df32319",
+    "id": "0bac66ea-1221-4090-b87b-1a062abf3ea6",
     "title": {
       "en": "Kneeling Pulldown (band)"
     },
@@ -4990,7 +4990,7 @@
     "tags": ["resistance"]
   },
   {
-    "id": "128d0419-9811-4b5e-80b4-0b4591a581ec",
+    "id": "adceb0d6-a29b-49a8-a8c0-89d3de2539ec",
     "title": {
       "en": "Landmine 180"
     },
@@ -5018,7 +5018,7 @@
     "tags": ["abs", "standing", "core"]
   },
   {
-    "id": "dcc7a040-dcce-49ac-8d96-2e689beb86bc",
+    "id": "6bc19e3a-4130-4481-8b06-58907a43117b",
     "title": {
       "en": "Landmine Row"
     },
@@ -5039,7 +5039,7 @@
     "tags": []
   },
   {
-    "id": "70f35392-3cfd-449e-afd5-927f80672dbc",
+    "id": "595ac1e1-9c90-4a48-ad5b-f96849786ece",
     "title": {
       "en": "Landmine Squat and Press"
     },
@@ -5060,7 +5060,7 @@
     "tags": ["standing", "chest", "&", "+"]
   },
   {
-    "id": "0bc814ed-957f-4ed9-903e-1693e4972007",
+    "id": "3d22adbe-b749-48ec-9c0a-0d455252825b",
     "title": {
       "en": "Lat Pulldown - Close Grip (Cable)"
     },
@@ -5081,7 +5081,7 @@
     "tags": ["seated", "neutral"]
   },
   {
-    "id": "b230169f-979b-43e9-b899-488995a6c254",
+    "id": "0440ecb1-0bc6-4da2-bf13-c8623d2e0839",
     "title": {
       "en": "Lat Pulldown (Band)"
     },
@@ -5102,7 +5102,7 @@
     "tags": ["resistance", "seated"]
   },
   {
-    "id": "c20c6978-8764-4b33-bf0d-c837ac5c439b",
+    "id": "d09714fc-545e-4042-b940-71b472b0b411",
     "title": {
       "en": "Lateral Band Walks"
     },
@@ -5123,7 +5123,7 @@
     "tags": ["resistance"]
   },
   {
-    "id": "ef6390e9-7aba-4dd5-8fc5-26654ce79274",
+    "id": "80382c1c-07d0-492d-9159-ce0a2b1ec32a",
     "title": {
       "en": "Lateral Box Jump"
     },
@@ -5144,7 +5144,7 @@
     "tags": ["side"]
   },
   {
-    "id": "33236f46-0d93-4201-b3e0-ae6b459c22de",
+    "id": "0a6404fb-2f40-4f08-8928-998209c5037b",
     "title": {
       "en": "Lateral Leg Raises"
     },
@@ -5152,7 +5152,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["abductors"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lateral Leg Raises.",
@@ -5165,7 +5165,7 @@
     "tags": ["side"]
   },
   {
-    "id": "5d5fa2ce-2ef3-40cd-bf2e-eaa9e42f878f",
+    "id": "0058e6bd-d0f3-4768-9d93-ffc314751cec",
     "title": {
       "en": "Lateral Lunge"
     },
@@ -5173,7 +5173,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes", "abductors"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lateral Lunge.",
@@ -5186,7 +5186,7 @@
     "tags": ["side", "lunges", "passada"]
   },
   {
-    "id": "2132e590-db0a-4901-bf91-8498200c5084",
+    "id": "6c6efc67-848b-4b65-930c-bde2efd83a66",
     "title": {
       "en": "Lateral Raise (Band)"
     },
@@ -5207,7 +5207,7 @@
     "tags": ["side", "resistance", "standing"]
   },
   {
-    "id": "b87c1a23-d2a9-48e1-9c94-e11f1cbeb5c4",
+    "id": "c18aa265-7ad1-4f26-9b07-10ea53662474",
     "title": {
       "en": "Lateral Raise (Cable)"
     },
@@ -5228,7 +5228,7 @@
     "tags": ["side", "standing", "crossovers"]
   },
   {
-    "id": "3f7d43d0-1db2-40f3-8cba-acc5420b3068",
+    "id": "2764a6cf-a1d9-4218-a99b-74f6d0cfaa32",
     "title": {
       "en": "Lateral Raise (Machine)"
     },
@@ -5249,7 +5249,7 @@
     "tags": ["side", "seated"]
   },
   {
-    "id": "3564cb62-cade-4a96-bea4-87d2c7fa4d3f",
+    "id": "07b7d577-9bda-458d-a203-a7e359d1d2e2",
     "title": {
       "en": "Lateral Squat"
     },
@@ -5257,7 +5257,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes", "abductors"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lateral Squat.",
@@ -5270,7 +5270,7 @@
     "tags": ["side"]
   },
   {
-    "id": "009a8b2b-e926-4912-8517-77088b6c7477",
+    "id": "9d3027e4-02ca-41f5-ac8e-723d90e27d2f",
     "title": {
       "en": "Leg Raise Parallel Bars"
     },
@@ -5291,7 +5291,7 @@
     "tags": ["captains", "chair", "hips", "abs", "core"]
   },
   {
-    "id": "f72f5dc0-934d-44dd-ae79-b8862cd5ef38",
+    "id": "fa7f3362-3e59-4dda-9442-aeea76b0f934",
     "title": {
       "en": "Low Cable Fly Crossovers"
     },
@@ -5312,7 +5312,7 @@
     "tags": ["chest", "flys", "flyes", "flies", "standing", "cross-Overs"]
   },
   {
-    "id": "7cc6b3b4-a47c-4e8b-bd27-4d2565c873c1",
+    "id": "ebb92ce3-8a71-4cb5-806b-43e1644a2e79",
     "title": {
       "en": "Low Row (Suspension)"
     },
@@ -5333,7 +5333,7 @@
     "tags": ["trx", "band"]
   },
   {
-    "id": "9789a917-6a70-4d40-b31a-a5df5f6756f8",
+    "id": "fae3f56a-8b42-4998-ae4a-3a5999f0007a",
     "title": {
       "en": "Lunge"
     },
@@ -5341,7 +5341,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lunge.",
@@ -5354,7 +5354,7 @@
     "tags": ["walking", "lunges", "passada"]
   },
   {
-    "id": "c0726fcd-696f-432f-a931-cee13cd86834",
+    "id": "25ed7d8f-3b26-449f-979d-ea8f196d2d42",
     "title": {
       "en": "Lunge (Barbell)"
     },
@@ -5375,7 +5375,7 @@
     "tags": ["lunges", "passada", "bb", "weighted"]
   },
   {
-    "id": "f915f3c3-e948-4ccc-9e8b-89e2c1d2f6b5",
+    "id": "8d2b185c-67f2-439a-b324-37985eb9cbff",
     "title": {
       "en": "Lunge (Dumbbell)"
     },
@@ -5396,7 +5396,7 @@
     "tags": ["lunges", "db", "passada", "weighted"]
   },
   {
-    "id": "eba94af9-a309-4a27-b391-b978be803bd2",
+    "id": "60a1e056-1f68-4ab7-9cf9-1256ff425980",
     "title": {
       "en": "Lying Knee Raise"
     },
@@ -5404,7 +5404,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lying Knee Raise.",
@@ -5417,7 +5417,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "d6864c4f-a738-46a1-92da-d4e1902d2fc1",
+    "id": "6a60c4ac-d5e5-447c-96d3-1c5252c1db99",
     "title": {
       "en": "Lying Neck Curls"
     },
@@ -5425,7 +5425,7 @@
     "muscleGroup": "neck",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lying Neck Curls.",
@@ -5438,7 +5438,7 @@
     "tags": ["flexion", "raise"]
   },
   {
-    "id": "fd0bffd1-4977-40f9-ba61-c51c433528b0",
+    "id": "f4ed0314-988e-4258-91c8-c9fd002f5736",
     "title": {
       "en": "Lying Neck Curls (Weighted)"
     },
@@ -5459,7 +5459,7 @@
     "tags": ["flexion", "raise"]
   },
   {
-    "id": "b44806ed-1909-488d-82ac-4585a97b78bd",
+    "id": "7deb057e-1481-4ad3-9f92-1c2fd9b9a281",
     "title": {
       "en": "Lying Neck Extension"
     },
@@ -5467,7 +5467,7 @@
     "muscleGroup": "neck",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Lying Neck Extension.",
@@ -5480,7 +5480,7 @@
     "tags": ["raise"]
   },
   {
-    "id": "b7e49871-4987-4a17-8ca6-30ae84183aa0",
+    "id": "b57a9f88-2c21-45bd-9dc0-2a820dd6f7e7",
     "title": {
       "en": "Lying Neck Extension (Weighted)"
     },
@@ -5501,7 +5501,7 @@
     "tags": ["raise"]
   },
   {
-    "id": "3a483f49-f1b9-453c-bdf0-58e95b10c2a2",
+    "id": "fa6510c9-fde8-47ce-b655-81ca8dd7d612",
     "title": {
       "en": "Meadows Rows (Barbell)"
     },
@@ -5522,7 +5522,7 @@
     "tags": ["landmine"]
   },
   {
-    "id": "e7dd0771-fb35-465b-abdb-e9bbbfe4cf18",
+    "id": "dd42d4a7-d71b-4a2a-9d7f-a7639d820806",
     "title": {
       "en": "Mountain Climber"
     },
@@ -5530,7 +5530,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Mountain Climber.",
@@ -5543,7 +5543,7 @@
     "tags": []
   },
   {
-    "id": "11bba7cc-7420-47f5-806f-c79eb17509e9",
+    "id": "eb0b9648-839a-4302-9dfc-db6f8f470326",
     "title": {
       "en": "Muscle Up"
     },
@@ -5564,7 +5564,7 @@
     "tags": ["muscleups"]
   },
   {
-    "id": "d2d0d513-2e58-4f45-90f2-9a0d9897911d",
+    "id": "61cb8bd0-8fa9-48d3-b176-c8746646fac9",
     "title": {
       "en": "Negative Pull Up"
     },
@@ -5572,7 +5572,7 @@
     "muscleGroup": "lats",
     "otherMuscles": ["upperBack", "biceps", "forearms"],
     "exerciseType": "bodyweightReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Negative Pull Up.",
@@ -5585,7 +5585,7 @@
     "tags": ["pullup", "slow", "eccentric"]
   },
   {
-    "id": "6290c196-2ce6-414d-80eb-0e80c0cf5e57",
+    "id": "267c7632-117e-448b-956b-c6294ad645d7",
     "title": {
       "en": "Nordic Hamstrings Curls"
     },
@@ -5593,7 +5593,7 @@
     "muscleGroup": "hamstrings",
     "otherMuscles": ["glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Nordic Hamstrings Curls.",
@@ -5606,7 +5606,7 @@
     "tags": ["russian", "ham"]
   },
   {
-    "id": "091e448c-04f9-4173-9b95-14863e08b7d3",
+    "id": "dee30d96-831b-4478-8e3c-bda5c8b3f881",
     "title": {
       "en": "Oblique Crunch"
     },
@@ -5614,7 +5614,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Oblique Crunch.",
@@ -5627,7 +5627,7 @@
     "tags": ["abs", "side", "lateral", "core"]
   },
   {
-    "id": "c86c9fd6-51f2-4e4f-a1a0-ae2c3f3c6795",
+    "id": "6d609a1e-8d7c-4b67-9ce9-5806dbdfce16",
     "title": {
       "en": "One Arm Push Up"
     },
@@ -5635,7 +5635,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["shoulders", "triceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for One Arm Push Up.",
@@ -5648,7 +5648,7 @@
     "tags": ["single", "pushups", "pressups"]
   },
   {
-    "id": "1a6b85ce-6e6a-438f-9f3c-86a6b336e201",
+    "id": "631994ff-417e-412c-9992-2a7a813ddf26",
     "title": {
       "en": "Overhead Curl (Cable)"
     },
@@ -5669,7 +5669,7 @@
     "tags": ["curls", "standing", "crucifix"]
   },
   {
-    "id": "31417424-cf33-409d-9649-160ef71f0b13",
+    "id": "92f9443f-d938-4026-94c2-fdaeb8fef4e0",
     "title": {
       "en": "Overhead Dumbbell Lunge"
     },
@@ -5696,7 +5696,7 @@
     "tags": ["db", "passada", "weighted"]
   },
   {
-    "id": "d9538d60-8b0a-4f68-af8c-d0581ba678fc",
+    "id": "b3e3f93e-bd62-4f43-81eb-87c5eab3d747",
     "title": {
       "en": "Overhead Plate Raise"
     },
@@ -5717,7 +5717,7 @@
     "tags": ["lateral", "lu"]
   },
   {
-    "id": "dd725588-8777-49c9-9d23-9e37ccb15fd7",
+    "id": "9378332e-9466-4bf2-87ba-906bc316280d",
     "title": {
       "en": "Overhead Press (Smith Machine)"
     },
@@ -5738,7 +5738,7 @@
     "tags": ["military", "shoulder", "standing", "ohp"]
   },
   {
-    "id": "4ef55dbf-8225-4dea-9de7-8f3eab071ed0",
+    "id": "d7d96080-d19b-49c5-9127-b67d85d1b5cc",
     "title": {
       "en": "Overhead Squat"
     },
@@ -5759,7 +5759,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "76cc7c83-50cb-4411-aebe-0977d4b72fd1",
+    "id": "3e8192ca-0593-47f1-8681-bdcb6b15fc00",
     "title": {
       "en": "Overhead Triceps Extension (Cable)"
     },
@@ -5780,7 +5780,7 @@
     "tags": ["tricep", "standing", "rope"]
   },
   {
-    "id": "2956921c-68de-4879-9c4b-a9ffb2dc9ba9",
+    "id": "b9eef18d-0079-4310-881d-1ece1113269b",
     "title": {
       "en": "Partial Glute Bridge (Barbell)"
     },
@@ -5801,7 +5801,7 @@
     "tags": ["hip", "kas", "thrust", "bb"]
   },
   {
-    "id": "a86c1d55-8da8-483f-b45e-e1d61ecba846",
+    "id": "8e52388f-5952-43bd-8ab5-ed67b93987ec",
     "title": {
       "en": "Pause Squat (Barbell)"
     },
@@ -5822,7 +5822,7 @@
     "tags": ["bb", "back"]
   },
   {
-    "id": "5a5249ce-919a-4449-8e8d-593f927c12ff",
+    "id": "0514e064-8126-44ff-a40a-9bff73a446b1",
     "title": {
       "en": "Pendlay Row (Barbell)"
     },
@@ -5843,7 +5843,7 @@
     "tags": ["bent", "over", "bb", "penlay"]
   },
   {
-    "id": "4cbd16a9-d959-4333-a51a-aff12c16e33f",
+    "id": "18c1aeb1-dfbd-4e0a-a262-71d21a7116b0",
     "title": {
       "en": "Pendulum Squat (Machine)"
     },
@@ -5864,7 +5864,7 @@
     "tags": []
   },
   {
-    "id": "6b070962-75e1-40d9-8bea-02a1f714e10d",
+    "id": "1b72b75d-22a4-4803-ac28-e237f0faa968",
     "title": {
       "en": "Pike Pushup"
     },
@@ -5872,7 +5872,7 @@
     "muscleGroup": "shoulders",
     "otherMuscles": ["triceps", "chest"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Pike Pushup.",
@@ -5885,7 +5885,7 @@
     "tags": ["push", "up", "pressup"]
   },
   {
-    "id": "10e200fc-1e1e-49f5-8b96-8ecd0a0f5cb2",
+    "id": "5bcf7672-5e70-4273-8823-147df9b1562d",
     "title": {
       "en": "Pilates"
     },
@@ -5893,7 +5893,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Pilates.",
@@ -5906,7 +5906,7 @@
     "tags": []
   },
   {
-    "id": "15ebd4ef-f8ed-4cc6-8e41-83c80aa4f7ae",
+    "id": "36d798dd-f664-4b3f-a4ac-454525bdc922",
     "title": {
       "en": "Pinwheel Curl (Dumbbell)"
     },
@@ -5927,7 +5927,7 @@
     "tags": ["curls", "db", "cross", "body"]
   },
   {
-    "id": "2d6ebeaf-da60-45f7-9735-f1f77b0ef9c1",
+    "id": "f0ee9024-7f57-479c-8c15-ecc9b346130f",
     "title": {
       "en": "Pistol Squat"
     },
@@ -5935,7 +5935,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Pistol Squat.",
@@ -5948,7 +5948,7 @@
     "tags": []
   },
   {
-    "id": "40ccd9f3-b254-4610-9fa4-1fea30e6b139",
+    "id": "616549a8-6b33-416d-bb99-0e4149e4a940",
     "title": {
       "en": "Plank"
     },
@@ -5956,7 +5956,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Plank.",
@@ -5969,7 +5969,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "16fb2b56-fff2-4a17-af98-c3cd57776a0d",
+    "id": "debe3561-6565-42ef-a225-bdea8cdf9366",
     "title": {
       "en": "Plank Pushup"
     },
@@ -5977,7 +5977,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["shoulders", "triceps", "abdominals"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Plank Pushup.",
@@ -5990,7 +5990,7 @@
     "tags": ["comando", "commando", "push", "up"]
   },
   {
-    "id": "1a0ccc2e-c10e-4ebc-8115-3c42744d6196",
+    "id": "65890a7f-5aed-412b-b73c-d02d19a6021d",
     "title": {
       "en": "Plate Curl"
     },
@@ -6011,7 +6011,7 @@
     "tags": ["curls", "standing", "bicep"]
   },
   {
-    "id": "f91a08ce-e8bd-4ec3-94ba-504943e55234",
+    "id": "b5a58c35-9980-41ad-acaf-be584cb44af0",
     "title": {
       "en": "Plate Front Raise"
     },
@@ -6032,7 +6032,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "3b5dc1c2-8232-493b-aced-a5d74b27f1af",
+    "id": "d1813bbf-3536-479b-a1e2-b03faa68f1e6",
     "title": {
       "en": "Plate Press"
     },
@@ -6053,7 +6053,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "3603807b-29dd-4f4b-a99b-5b9cfbcce056",
+    "id": "5c35e4dc-8b5d-4c5d-8154-eba0a2f0c386",
     "title": {
       "en": "Plate Squeeze (Svend Press)"
     },
@@ -6074,7 +6074,7 @@
     "tags": ["plate", "pinch", "standing"]
   },
   {
-    "id": "cc25854a-eeda-4d1f-aa87-633a81333a98",
+    "id": "db7f9c80-aa58-4b6f-8640-bb01cefd3b17",
     "title": {
       "en": "Power Clean"
     },
@@ -6095,7 +6095,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "bc226c3e-fa3c-47e7-8c4d-e67519f238ac",
+    "id": "5f7ed45c-7c4a-4308-b9b3-06b19f877307",
     "title": {
       "en": "Power Snatch"
     },
@@ -6116,7 +6116,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "06d2931e-c697-4840-8aad-7df6b737e752",
+    "id": "d5c0720c-b29e-4a8b-97a0-1770a9719ac3",
     "title": {
       "en": "Preacher Curl (Dumbbell)"
     },
@@ -6137,7 +6137,7 @@
     "tags": ["curls", "db", "seated"]
   },
   {
-    "id": "2ad9b637-64ec-4ced-855e-71497b7334ec",
+    "id": "59b6b282-0b0e-46c4-a4f8-7068d76b9db1",
     "title": {
       "en": "Preacher Curl (Machine)"
     },
@@ -6158,7 +6158,7 @@
     "tags": ["curls", "seated"]
   },
   {
-    "id": "9c643c8e-63e2-4305-ad8f-9193181474cc",
+    "id": "77737788-3d0b-4b4f-bacc-6afb0ee24dbd",
     "title": {
       "en": "Press Under"
     },
@@ -6179,7 +6179,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "963efa1d-34de-4413-a5b8-d283e8606e15",
+    "id": "836078e1-4547-4661-98bc-baa1fc273f5f",
     "title": {
       "en": "Pull Up (Assisted)"
     },
@@ -6200,7 +6200,7 @@
     "tags": ["pullups"]
   },
   {
-    "id": "f60440e1-273a-45b8-aa67-291287523d47",
+    "id": "63a393c2-f794-4194-aabc-e83378447dd0",
     "title": {
       "en": "Pull Up (Band)"
     },
@@ -6221,7 +6221,7 @@
     "tags": ["resistance", "pullups"]
   },
   {
-    "id": "1db7d7b0-57a5-4e14-9a3d-c0f62a53bff9",
+    "id": "509df7c4-877b-4895-a44c-b2a2804cfa82",
     "title": {
       "en": "Pullover (Dumbbell)"
     },
@@ -6242,7 +6242,7 @@
     "tags": ["db", "lat", "pull-Over", "pull", "overs"]
   },
   {
-    "id": "79c2b4dc-90f9-46b0-8c1c-e8e4ce35dcdd",
+    "id": "071eb04a-9162-4d2f-bedf-371ea4e64d55",
     "title": {
       "en": "Pullover (Machine)"
     },
@@ -6263,7 +6263,7 @@
     "tags": ["pull-Over", "pull", "overs"]
   },
   {
-    "id": "a38ac650-1dc1-415a-931b-4a66c5a759ba",
+    "id": "01a2f8f7-14d1-4e34-860e-1e9713ea3139",
     "title": {
       "en": "Push Press"
     },
@@ -6284,7 +6284,7 @@
     "tags": ["shoulder", "overhead"]
   },
   {
-    "id": "6fd34897-a992-4e11-b64d-1d985775bde2",
+    "id": "7cbb6f49-b018-457a-b36d-69a38c6e9486",
     "title": {
       "en": "Push Up - Close Grip"
     },
@@ -6292,7 +6292,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["triceps", "shoulders"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Push Up - Close Grip.",
@@ -6305,7 +6305,7 @@
     "tags": ["pushups", "pressups"]
   },
   {
-    "id": "3cc6787b-8553-47de-9a64-22f3a34bd483",
+    "id": "115edca0-f844-4ae1-a39f-6502ea248220",
     "title": {
       "en": "Rack Pull"
     },
@@ -6326,7 +6326,7 @@
     "tags": ["deadlifts", "bb"]
   },
   {
-    "id": "ff67bf95-e01d-4b88-9eed-e0fa9ad3bcfb",
+    "id": "004e00b1-cebb-45bc-9945-034eceb2e983",
     "title": {
       "en": "Rear Delt Reverse Fly (Cable)"
     },
@@ -6347,7 +6347,7 @@
     "tags": ["standing", "rear", "delt"]
   },
   {
-    "id": "e583be89-4b79-405a-a7b7-c51ad7d85160",
+    "id": "272a7b2d-9ad0-4d85-bcd4-09ae9a064839",
     "title": {
       "en": "Rear Kick (Machine)"
     },
@@ -6368,7 +6368,7 @@
     "tags": ["glute", "kickback"]
   },
   {
-    "id": "433b3845-a7ae-4b0b-be0f-b483a5f4701a",
+    "id": "e4eb822f-212c-4eb7-bf5c-cd61f2c7680f",
     "title": {
       "en": "Renegade Row (Dumbbell)"
     },
@@ -6389,7 +6389,7 @@
     "tags": ["db", "plank"]
   },
   {
-    "id": "0eeb2107-fb1b-4a3e-9a74-20fdf2383a45",
+    "id": "1bae596f-6e22-4721-99ab-3ffbfffd5d20",
     "title": {
       "en": "Reverse Crunch"
     },
@@ -6397,7 +6397,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Reverse Crunch.",
@@ -6410,7 +6410,7 @@
     "tags": ["abs", "lying", "core"]
   },
   {
-    "id": "c8b03bb4-5c2e-46b5-87bf-4d3d9732d402",
+    "id": "19e3ba57-bc11-4772-876c-9c2a0cdbc3c3",
     "title": {
       "en": "Reverse Curl (Barbell)"
     },
@@ -6431,7 +6431,7 @@
     "tags": ["curls", "standing", "bb", "pronated"]
   },
   {
-    "id": "704398d0-a9da-4db6-93e1-8fe529d5990f",
+    "id": "da401ed6-5057-4655-950b-533f0f1ac43f",
     "title": {
       "en": "Reverse Curl (Cable)"
     },
@@ -6452,7 +6452,7 @@
     "tags": ["pronated"]
   },
   {
-    "id": "8ee60c27-9c01-42bd-87d2-59049865709c",
+    "id": "a2783d57-0bd7-4611-9f07-43907929a026",
     "title": {
       "en": "Reverse Curl (Dumbbell)"
     },
@@ -6473,7 +6473,7 @@
     "tags": ["curls", "db", "standing", "pronated"]
   },
   {
-    "id": "f2a33dbf-5070-451e-83d5-5d177d42b65b",
+    "id": "332ef9b4-6630-439d-baf0-0df613a0398f",
     "title": {
       "en": "Reverse Fly Single Arm (Cable)"
     },
@@ -6494,7 +6494,7 @@
     "tags": ["one", "unilateral", "rear", "delt"]
   },
   {
-    "id": "99206f1c-968e-4721-983c-0b0d3123ccac",
+    "id": "9ef8aca8-bf56-4c2c-a8f6-8f9987760e3d",
     "title": {
       "en": "Reverse Grip Concentration Curl"
     },
@@ -6515,7 +6515,7 @@
     "tags": ["curls", "db", "seated", "dumbbell", "pronated"]
   },
   {
-    "id": "a196efef-2031-4e7c-99e5-c92d0535d096",
+    "id": "2590a872-d17f-4c2c-afcc-f72f000d8dc4",
     "title": {
       "en": "Reverse Hyperextension"
     },
@@ -6536,7 +6536,7 @@
     "tags": ["hip", "back", "hypers"]
   },
   {
-    "id": "772615b7-db7b-4dfe-b0ce-10e04aae30b9",
+    "id": "2dc01684-9e9e-4b6e-9114-f6de6709c023",
     "title": {
       "en": "Reverse Lunge"
     },
@@ -6544,7 +6544,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["hamstrings", "glutes"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Reverse Lunge.",
@@ -6557,7 +6557,7 @@
     "tags": ["lunges", "passada"]
   },
   {
-    "id": "b6c1ef2b-c85a-4e7e-9759-6ee3ecbea3a0",
+    "id": "4f34ec25-6d0a-4ccc-a75e-eeef07602c3c",
     "title": {
       "en": "Reverse Lunge (Barbell)"
     },
@@ -6578,7 +6578,7 @@
     "tags": ["lunges", "passada", "bb", "weighted"]
   },
   {
-    "id": "3cb3db0b-42e3-41d3-b3ec-e7ca1848e361",
+    "id": "a643fb26-8346-4f16-a86a-ebdb8ad385e5",
     "title": {
       "en": "Reverse Lunge (Dumbbell)"
     },
@@ -6599,7 +6599,7 @@
     "tags": ["lunges", "db", "passada", "weighted"]
   },
   {
-    "id": "e4a1b62d-d1aa-475a-b73b-679743e00764",
+    "id": "3a9c3b6e-9e29-4eda-bcb8-ff2984eeadfd",
     "title": {
       "en": "Reverse Plank"
     },
@@ -6607,7 +6607,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": ["triceps"],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Reverse Plank.",
@@ -6620,7 +6620,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "706ed1cb-d3bf-4387-955b-1ee392a40231",
+    "id": "72fb10ed-caab-40be-8530-ad5bbd66c2e6",
     "title": {
       "en": "Ring Dips"
     },
@@ -6628,7 +6628,7 @@
     "muscleGroup": "chest",
     "otherMuscles": ["shoulders", "triceps"],
     "exerciseType": "bodyweightReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Ring Dips.",
@@ -6641,7 +6641,7 @@
     "tags": []
   },
   {
-    "id": "cd8cad82-8910-4d15-8878-b71ec24148de",
+    "id": "4be76aed-55be-4f09-b384-cd799c241be1",
     "title": {
       "en": "Ring Pull Up"
     },
@@ -6662,7 +6662,7 @@
     "tags": ["pullup", "chinup"]
   },
   {
-    "id": "9fd23dc6-a715-4d9b-9cac-14ade8029c21",
+    "id": "06efe7c9-e79a-4cb8-a18b-f6225668a4c7",
     "title": {
       "en": "Ring Push Up"
     },
@@ -6683,7 +6683,7 @@
     "tags": ["pushups", "pressups", "press", "up"]
   },
   {
-    "id": "0c82c3c2-b75b-4b31-b014-3792721675be",
+    "id": "c162fd75-f7d2-4271-8704-b8dd9400a360",
     "title": {
       "en": "Romanian Deadlift (Barbell)"
     },
@@ -6704,7 +6704,7 @@
     "tags": ["rdl", "bb"]
   },
   {
-    "id": "b9a298c2-5479-4bb0-8569-033c9228ebe2",
+    "id": "7bf7ca6d-cc23-479d-a3cc-4f114254489a",
     "title": {
       "en": "Romanian Deadlift (Dumbbell)"
     },
@@ -6725,7 +6725,7 @@
     "tags": ["db", "rdl"]
   },
   {
-    "id": "b483fad5-8a44-4465-9312-daac5c2a6758",
+    "id": "06b094cb-bfa9-470a-ba6e-8b1471d88e13",
     "title": {
       "en": "Rope Cable Curl"
     },
@@ -6746,7 +6746,7 @@
     "tags": ["curls", "standing"]
   },
   {
-    "id": "ce8ee36f-5fd4-41dd-b66c-df27ca88c38c",
+    "id": "7a40717f-bfa5-423f-bc4f-d2bb3007d9e0",
     "title": {
       "en": "Rope Straight Arm Pulldown"
     },
@@ -6767,7 +6767,7 @@
     "tags": ["pullovers", "standing", "cable"]
   },
   {
-    "id": "9d93768f-29d5-4b97-a685-2e32a737b7ae",
+    "id": "919ebf20-1160-4d49-9843-4e835ec534e8",
     "title": {
       "en": "Russian Twist (Bodyweight)"
     },
@@ -6775,7 +6775,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Russian Twist (Bodyweight).",
@@ -6788,7 +6788,7 @@
     "tags": ["abs", "crossovers", "core"]
   },
   {
-    "id": "f9eb8657-22da-43a2-a06a-49a2ed6475da",
+    "id": "4cb13094-f3ce-4645-a660-75f91a6fa581",
     "title": {
       "en": "Russian Twist (Weighted)"
     },
@@ -6809,7 +6809,7 @@
     "tags": ["abs", "db", "crossovers", "dumbbell", "plate", "core"]
   },
   {
-    "id": "b716d813-3611-4c73-9f14-8032c178cdf6",
+    "id": "f07cc82e-1886-4f54-bf75-0dd0133cb711",
     "title": {
       "en": "Scapular Pull Ups"
     },
@@ -6817,7 +6817,7 @@
     "muscleGroup": "upperBack",
     "otherMuscles": ["lats", "forearms"],
     "exerciseType": "bodyweightReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Scapular Pull Ups.",
@@ -6830,7 +6830,7 @@
     "tags": ["pull-Ups"]
   },
   {
-    "id": "2eca82bb-e901-4837-ad6b-9ad73b792cdc",
+    "id": "f97f5f1d-50ae-4cee-9935-41c779f4864a",
     "title": {
       "en": "Seated Cable Row - Bar Wide Grip"
     },
@@ -6851,7 +6851,7 @@
     "tags": ["low", "row"]
   },
   {
-    "id": "7e4b4071-a20d-4312-b14a-7f730993ffde",
+    "id": "29b14dfb-bbea-4d80-832a-486fb11ccb1d",
     "title": {
       "en": "Seated Cable Row - V Grip (Cable)"
     },
@@ -6872,7 +6872,7 @@
     "tags": ["close", "narrow"]
   },
   {
-    "id": "d20966b0-c42d-4b71-8b74-652e29023b9d",
+    "id": "c952a90c-f568-4f32-9be7-245bf35f8777",
     "title": {
       "en": "Seated Chest Flys (Cable)"
     },
@@ -6893,7 +6893,7 @@
     "tags": ["fly", "flyes", "flies"]
   },
   {
-    "id": "992445ac-6414-4f6e-945e-fa6b5f834a2e",
+    "id": "4fd76414-4e86-437a-a791-25ded975a34a",
     "title": {
       "en": "Seated Dip Machine"
     },
@@ -6914,7 +6914,7 @@
     "tags": ["dips", "triceps"]
   },
   {
-    "id": "b4e794e7-cbf5-4986-9a37-a8749576d309",
+    "id": "8e84d938-8409-4acb-b3b4-038360d43e0c",
     "title": {
       "en": "Seated Incline Curl (Dumbbell)"
     },
@@ -6935,7 +6935,7 @@
     "tags": ["curls", "db"]
   },
   {
-    "id": "1944d05a-1ead-476b-8aac-6e6e82caada2",
+    "id": "c84033a9-d6b3-438c-8d85-605742ea5cb4",
     "title": {
       "en": "Seated Lateral Raise (Dumbbell)"
     },
@@ -6956,7 +6956,7 @@
     "tags": ["side", "db"]
   },
   {
-    "id": "69ec549f-ac8f-44c1-ad60-94b3c8690489",
+    "id": "a480bce3-b1fb-46ba-ba31-2e78e61f49f3",
     "title": {
       "en": "Seated Leg Curl (Machine)"
     },
@@ -6977,7 +6977,7 @@
     "tags": ["hamstrings", "ham", "curls"]
   },
   {
-    "id": "c8ac1824-8aa5-41d7-a945-d0daf9cee7f3",
+    "id": "26c024a0-54da-4633-acad-c81167faf081",
     "title": {
       "en": "Seated Overhead Press (Barbell)"
     },
@@ -6998,7 +6998,7 @@
     "tags": ["shoulder", "bb", "ohp"]
   },
   {
-    "id": "a42cdf55-73b5-476e-bf54-26b6c126a944",
+    "id": "ec038308-084f-4eed-aff5-9cb83309bc93",
     "title": {
       "en": "Seated Overhead Press (Dumbbell)"
     },
@@ -7019,7 +7019,7 @@
     "tags": ["db", "shoulder", "ohp"]
   },
   {
-    "id": "a1c468f5-6fec-443b-a357-c9d9717318f4",
+    "id": "745fe17e-54de-43f2-8783-ecc8d8f0749b",
     "title": {
       "en": "Seated Palms Up Wrist Curl"
     },
@@ -7040,7 +7040,7 @@
     "tags": ["db", "dumbbell"]
   },
   {
-    "id": "8d4bb3ae-12c2-48e5-8938-3f7463b5ac5c",
+    "id": "a8dcbb90-4155-4efb-a7e6-491f9ac8a74d",
     "title": {
       "en": "Seated Shoulder Press (Machine)"
     },
@@ -7061,7 +7061,7 @@
     "tags": ["overhead", "ohp"]
   },
   {
-    "id": "183e9ebb-b910-4bee-ab31-9dd5336979fa",
+    "id": "e8290945-e863-443e-8207-69e0445ab061",
     "title": {
       "en": "Seated Triceps Press"
     },
@@ -7082,7 +7082,7 @@
     "tags": ["extension", "overhead", "tricep"]
   },
   {
-    "id": "9aafc13e-fb08-4d02-9d92-fcf2b8c14ae1",
+    "id": "734bfbc3-4eb2-4ac2-9638-63b29bac44b5",
     "title": {
       "en": "Seated Wrist Extension (Barbell)"
     },
@@ -7103,7 +7103,7 @@
     "tags": ["bb"]
   },
   {
-    "id": "ea281281-1877-4052-9f6b-b9b97c60d633",
+    "id": "cc475751-35df-42d7-a2f7-eb9a25d89f86",
     "title": {
       "en": "Shoulder Press (Machine Plates)"
     },
@@ -7124,7 +7124,7 @@
     "tags": ["overhead", "ohp"]
   },
   {
-    "id": "320761b8-64ba-4a35-96e6-8aa6762b05b9",
+    "id": "eb2665f4-7f74-4621-9f0a-755bbca2427e",
     "title": {
       "en": "Shoulder Taps"
     },
@@ -7132,7 +7132,7 @@
     "muscleGroup": "shoulders",
     "otherMuscles": ["chest", "triceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Shoulder Taps.",
@@ -7145,7 +7145,7 @@
     "tags": ["touches"]
   },
   {
-    "id": "90008639-0aa1-4d02-a233-99317b52f8c3",
+    "id": "9cf2614f-1c80-4c8a-88f3-d54ed1113bb5",
     "title": {
       "en": "Shrug (Barbell)"
     },
@@ -7166,7 +7166,7 @@
     "tags": ["shoulders", "shrugs", "standing", "neck", "bb"]
   },
   {
-    "id": "6e4400da-b7aa-4704-b48f-dd3652b01523",
+    "id": "f48c9078-f67d-4e0e-98cd-7cd50579adf0",
     "title": {
       "en": "Shrug (Cable)"
     },
@@ -7187,7 +7187,7 @@
     "tags": ["shoulders", "shrugs", "standing", "neck"]
   },
   {
-    "id": "65fc7fbd-44c9-4c2f-bce8-66ead1c1ce79",
+    "id": "e38e45fb-200a-4e8c-b024-f217b63a9167",
     "title": {
       "en": "Shrug (Machine)"
     },
@@ -7208,7 +7208,7 @@
     "tags": []
   },
   {
-    "id": "21b550b2-c368-4f1d-a0bf-cb8832d8edd2",
+    "id": "11feaa10-e060-4460-88a2-91efc8d132cb",
     "title": {
       "en": "Shrug (Smith Machine)"
     },
@@ -7229,7 +7229,7 @@
     "tags": ["shoulders", "shrugs", "standing", "neck"]
   },
   {
-    "id": "99b3a172-885c-437b-b303-f56bd5fcb8fb",
+    "id": "9dfa7997-d35a-4b1a-ab1e-8d8b3a767eff",
     "title": {
       "en": "Side Bend"
     },
@@ -7237,7 +7237,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Side Bend.",
@@ -7250,7 +7250,7 @@
     "tags": ["abs", "lateral", "obliques", "core"]
   },
   {
-    "id": "52eb9da3-72a9-48b9-8358-33645716b69d",
+    "id": "2c194b9f-b11a-404d-af37-9efd05ecf61a",
     "title": {
       "en": "Side Plank"
     },
@@ -7258,7 +7258,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Side Plank.",
@@ -7271,7 +7271,7 @@
     "tags": ["abs", "lateral", "core"]
   },
   {
-    "id": "1af5843d-4db4-486d-a952-664ebafc2b94",
+    "id": "741f2d06-1197-4480-b157-cbce2dd88b7e",
     "title": {
       "en": "Single Arm Cable Crossover"
     },
@@ -7292,7 +7292,7 @@
     "tags": ["chest", "flys", "flyes", "flies", "one", "unilateral"]
   },
   {
-    "id": "70862d14-5033-436e-834b-eb451327e0b5",
+    "id": "36a49968-fe74-44f8-aebd-34986585243a",
     "title": {
       "en": "Single Arm Cable Row"
     },
@@ -7313,7 +7313,7 @@
     "tags": ["one", "unilateral"]
   },
   {
-    "id": "382038e1-0f67-4b7b-8707-558eb4221d18",
+    "id": "5f493a01-c4e8-4c34-94a5-bc1e519602e0",
     "title": {
       "en": "Single Arm Curl (Cable)"
     },
@@ -7334,7 +7334,7 @@
     "tags": ["one", "unilateral"]
   },
   {
-    "id": "dfcd6861-0efa-4de4-bb3d-7ede9d0dd96a",
+    "id": "025d07af-619e-4316-be0e-fdc6dd072ad4",
     "title": {
       "en": "Single Arm Landmine Press (Barbell)"
     },
@@ -7355,7 +7355,7 @@
     "tags": ["one", "unilateral"]
   },
   {
-    "id": "15a6bb64-2752-4fab-96c6-8301af47aa9f",
+    "id": "8a36bee9-7dbc-4a0d-848f-0f4fa9cb43a1",
     "title": {
       "en": "Single Arm Lat Pulldown"
     },
@@ -7376,7 +7376,7 @@
     "tags": ["front", "one", "seated", "cable", "unilateral"]
   },
   {
-    "id": "d1885247-ed72-4adc-b512-8ad0814a5150",
+    "id": "69a9c435-7fd3-429a-ac19-c2f87c678bee",
     "title": {
       "en": "Single Arm Lateral Raise (Cable)"
     },
@@ -7397,7 +7397,7 @@
     "tags": []
   },
   {
-    "id": "75b121e8-c79f-4988-b3c2-78492750c123",
+    "id": "44ae695e-191a-4cc3-b846-639f9d82235a",
     "title": {
       "en": "Single Arm Triceps Pushdown (Cable)"
     },
@@ -7418,7 +7418,7 @@
     "tags": []
   },
   {
-    "id": "080be848-0d1a-4ac8-a4d3-db6897bf0d9f",
+    "id": "8f510957-3ec2-48c3-b3a2-e98146288792",
     "title": {
       "en": "Single Leg Extensions"
     },
@@ -7439,7 +7439,7 @@
     "tags": ["one", "unilateral", "quad"]
   },
   {
-    "id": "79915da6-89fc-4ef6-9929-bc6efc477b89",
+    "id": "af0661d0-12e8-4882-9835-3608ceed02a7",
     "title": {
       "en": "Single Leg Glute Bridge"
     },
@@ -7447,7 +7447,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings", "quadriceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Single Leg Glute Bridge.",
@@ -7460,7 +7460,7 @@
     "tags": ["hamstring", "butt", "ass", "one", "unilateral"]
   },
   {
-    "id": "4870fcd0-f372-4c2a-9799-047987d4c25b",
+    "id": "a28ac230-9f29-4bb8-8879-3809bf7c6a8f",
     "title": {
       "en": "Single Leg Hip Thrust"
     },
@@ -7468,7 +7468,7 @@
     "muscleGroup": "glutes",
     "otherMuscles": ["hamstrings", "quadriceps"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Single Leg Hip Thrust.",
@@ -7481,7 +7481,7 @@
     "tags": ["one", "butt", "ass", "glutes", "unilateral", "leg"]
   },
   {
-    "id": "d7273e54-cadb-4470-873b-73bbd0f8a820",
+    "id": "caa38163-712a-4141-ba08-13db489332dc",
     "title": {
       "en": "Single Leg Hip Thrust (Dumbbell)"
     },
@@ -7502,7 +7502,7 @@
     "tags": ["bridge", "db", "one", "unilateral"]
   },
   {
-    "id": "5a2e8b22-91e8-4d04-90d1-afb1f9352a93",
+    "id": "6bdf1565-e08a-4580-a210-ec46b2b2b99f",
     "title": {
       "en": "Single Leg Press (Machine)"
     },
@@ -7523,7 +7523,7 @@
     "tags": ["one", "seated", "unilateral"]
   },
   {
-    "id": "a4115a5e-486d-498e-9a11-ee2c6cdb8e1c",
+    "id": "eac14d4f-8e7c-4c28-8899-b86108aaf5c4",
     "title": {
       "en": "Single Leg Romanian Deadlift (Barbell)"
     },
@@ -7544,7 +7544,7 @@
     "tags": ["rdl", "one", "unilateral", "bb"]
   },
   {
-    "id": "a7ed9fa2-f7d0-4569-b0b1-6e7b05b70c8a",
+    "id": "4461ef68-ae79-40ad-93cb-a10e141cb5e2",
     "title": {
       "en": "Single Leg Romanian Deadlift (Dumbbell)"
     },
@@ -7565,7 +7565,7 @@
     "tags": ["db", "rdl", "one", "unilateral"]
   },
   {
-    "id": "2ad940c2-492b-4ac6-b6e1-519ac0d847bf",
+    "id": "9fa29ab5-de02-412d-824f-c4137f83b807",
     "title": {
       "en": "Single Leg Standing Calf Raise"
     },
@@ -7573,7 +7573,7 @@
     "muscleGroup": "calves",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Single Leg Standing Calf Raise.",
@@ -7586,7 +7586,7 @@
     "tags": ["one", "unilateral", "calve", "bodyweight", "bw"]
   },
   {
-    "id": "798eeb07-a077-4eb9-bee2-776f65ec4f80",
+    "id": "fa3db26b-5527-49be-a211-24be6a10729a",
     "title": {
       "en": "Single Leg Standing Calf Raise (Barbell)"
     },
@@ -7607,7 +7607,7 @@
     "tags": ["one", "unilateral", "calve", "bb"]
   },
   {
-    "id": "4b894790-80f8-44c1-952c-069ba59512ab",
+    "id": "47f4c29d-28c2-4eca-bf5e-8fb2161d7f69",
     "title": {
       "en": "Single Leg Standing Calf Raise (Dumbbell)"
     },
@@ -7628,7 +7628,7 @@
     "tags": ["db", "one", "unilateral", "calve"]
   },
   {
-    "id": "4c6b7b63-0bea-4be5-8676-775a1a017529",
+    "id": "1179d75a-54a8-454c-9d02-a5640c381883",
     "title": {
       "en": "Single Leg Standing Calf Raise (Machine)"
     },
@@ -7649,7 +7649,7 @@
     "tags": ["one", "unilateral", "calve"]
   },
   {
-    "id": "18bdf2d3-36d4-4eb4-8683-e3ca1a6fa244",
+    "id": "5e72e5fa-69c2-4ade-bc44-01a71dc66ef6",
     "title": {
       "en": "Sissy Squat (Weighted)"
     },
@@ -7657,7 +7657,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": [],
     "exerciseType": "weightedReps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Sissy Squat (Weighted).",
@@ -7670,7 +7670,7 @@
     "tags": []
   },
   {
-    "id": "6c84e401-961f-4bd2-b53b-9c9b4cb72cef",
+    "id": "e227909c-9fc2-4c3a-9c18-ffc1f18da7be",
     "title": {
       "en": "Skating"
     },
@@ -7678,7 +7678,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Skating.",
@@ -7691,7 +7691,7 @@
     "tags": []
   },
   {
-    "id": "9f620638-4f2c-47fb-9607-6aa2a8d6c489",
+    "id": "6ca50ecb-51fb-45cd-8113-71660114f142",
     "title": {
       "en": "Skiing"
     },
@@ -7699,7 +7699,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Skiing.",
@@ -7712,7 +7712,7 @@
     "tags": []
   },
   {
-    "id": "ae66010f-e28e-4300-9e49-9a192d6aad8f",
+    "id": "5a37e4f6-6853-4522-acab-9a2850c88dce",
     "title": {
       "en": "Skullcrusher (Dumbbell)"
     },
@@ -7733,7 +7733,7 @@
     "tags": ["db", "lying"]
   },
   {
-    "id": "fc2335ae-8396-4604-aa1c-78936ed087ee",
+    "id": "0697ca77-cae2-4e59-982a-c07aa4c5e523",
     "title": {
       "en": "Sled Push"
     },
@@ -7754,7 +7754,7 @@
     "tags": []
   },
   {
-    "id": "cd15f576-9bd8-4b4d-9552-9a8cd73de94e",
+    "id": "07739b35-f807-4a55-90e7-b280de20eba2",
     "title": {
       "en": "Snatch"
     },
@@ -7775,7 +7775,7 @@
     "tags": ["olympic", "snatches"]
   },
   {
-    "id": "d1a83a46-5e3c-4be8-a913-b31b46a1a896",
+    "id": "d422ff91-82d8-474c-b701-4e4835018f7f",
     "title": {
       "en": "Snowboarding"
     },
@@ -7783,7 +7783,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Snowboarding.",
@@ -7796,7 +7796,7 @@
     "tags": []
   },
   {
-    "id": "c0cc1078-9897-4c2c-bc6f-539e2f2fcdd2",
+    "id": "9b2ca6a4-a50c-4f83-9650-379c54ebf927",
     "title": {
       "en": "Spider Curl (Barbell)"
     },
@@ -7817,7 +7817,7 @@
     "tags": ["prone", "supported", "bb"]
   },
   {
-    "id": "f01f9e82-ce3f-4d79-be20-22281da3890a",
+    "id": "334d5fbd-3b7d-43be-bc97-8174cfbb08d5",
     "title": {
       "en": "Spider Curl (Dumbbell)"
     },
@@ -7838,7 +7838,7 @@
     "tags": ["prone", "chest", "supported", "db"]
   },
   {
-    "id": "1a628a0a-af51-4042-82db-986a1a82576f",
+    "id": "f2fa9abf-da30-4556-8906-1d350f9e8332",
     "title": {
       "en": "Spiderman"
     },
@@ -7846,7 +7846,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Spiderman.",
@@ -7859,7 +7859,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "15eff337-d057-431e-8672-091326d81502",
+    "id": "d19d2e6a-1705-4dcf-9aab-7064f64562d9",
     "title": {
       "en": "Spinning"
     },
@@ -7880,7 +7880,7 @@
     "tags": ["cycling", "bicycle", "biking", "bike", "cycle"]
   },
   {
-    "id": "124ee297-ea0d-44ab-bb7a-d878b4f34376",
+    "id": "53e5e333-064c-459c-853c-0e16afca460f",
     "title": {
       "en": "Split Jerk"
     },
@@ -7901,7 +7901,7 @@
     "tags": ["olympic"]
   },
   {
-    "id": "7188a820-ee88-4ec6-895f-52b328d7f86a",
+    "id": "081ce370-7ccf-4117-9aa5-903b0f934bd7",
     "title": {
       "en": "Split Squat (Dumbbell)"
     },
@@ -7922,7 +7922,7 @@
     "tags": ["db", "weighted"]
   },
   {
-    "id": "6b5d7c0e-bfde-48b0-b58b-5c3e1409ccd9",
+    "id": "d08affed-c85e-4570-9d77-4ca9370acd18",
     "title": {
       "en": "Sprints"
     },
@@ -7930,7 +7930,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "distanceDuration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Sprints.",
@@ -7943,7 +7943,7 @@
     "tags": ["running", "runs"]
   },
   {
-    "id": "a3ce85f8-7a55-48a7-9447-ed565583fb4a",
+    "id": "a99c3b8f-db09-4738-a2fe-d6b31c6ca356",
     "title": {
       "en": "Squat (Band)"
     },
@@ -7964,7 +7964,7 @@
     "tags": ["resistance", "squats"]
   },
   {
-    "id": "91873994-aab0-40c4-821c-281bfeb1bc57",
+    "id": "d8a81c61-5239-42d0-924a-50c3c0fbf030",
     "title": {
       "en": "Squat (Machine)"
     },
@@ -7985,7 +7985,7 @@
     "tags": ["squats"]
   },
   {
-    "id": "69f275cf-d942-461f-82ce-9f46080a3e84",
+    "id": "d7d1b6ac-25ec-4057-a7e0-b7c35727a7c4",
     "title": {
       "en": "Squat (Smith Machine)"
     },
@@ -8006,7 +8006,7 @@
     "tags": ["squats"]
   },
   {
-    "id": "def4797c-3119-4ea0-a3af-9919704da0e7",
+    "id": "8f3b843b-faa5-4ea1-aea0-40dd9ed5ed05",
     "title": {
       "en": "Squat (Suspension)"
     },
@@ -8027,7 +8027,7 @@
     "tags": ["trx", "band", "squats"]
   },
   {
-    "id": "401b80e2-8cd3-4701-8918-0538e674c22c",
+    "id": "68c77b15-ec7a-4aaa-9ed5-2e9721beac70",
     "title": {
       "en": "Squat Row"
     },
@@ -8048,7 +8048,7 @@
     "tags": ["squats", "cable"]
   },
   {
-    "id": "18572ebb-2330-4648-87f7-ebf081e9d9ba",
+    "id": "2ee00dc6-cd39-4ee2-a7e6-71401b17843c",
     "title": {
       "en": "Standing Cable Glute Kickbacks"
     },
@@ -8069,7 +8069,7 @@
     "tags": ["standing", "ass", "butt"]
   },
   {
-    "id": "c3626dcf-d244-413e-956f-18c9e4af7506",
+    "id": "6655b9bd-ec54-4d96-8ab7-b0fb81052091",
     "title": {
       "en": "Standing Calf Raise"
     },
@@ -8077,7 +8077,7 @@
     "muscleGroup": "calves",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Standing Calf Raise.",
@@ -8090,7 +8090,7 @@
     "tags": ["calve", "bodyweight", "bw"]
   },
   {
-    "id": "ef869428-d880-4bba-92dc-dc3389333af5",
+    "id": "15f67bf1-bfc3-4417-990a-83ea93bd909b",
     "title": {
       "en": "Standing Calf Raise (Barbell)"
     },
@@ -8111,7 +8111,7 @@
     "tags": ["calve", "bb"]
   },
   {
-    "id": "afb878ab-8243-4f81-b0db-cbbbeade729d",
+    "id": "1962d436-ccce-4e41-8cfd-2bb460db2c32",
     "title": {
       "en": "Standing Calf Raise (Dumbbell)"
     },
@@ -8132,7 +8132,7 @@
     "tags": ["db", "calve"]
   },
   {
-    "id": "3353ea83-cfbd-4ad7-ac79-01ff1011784f",
+    "id": "1a356ba5-e1b8-4eaf-8f76-e16412cf67b3",
     "title": {
       "en": "Standing Calf Raise (Machine)"
     },
@@ -8153,7 +8153,7 @@
     "tags": ["calve"]
   },
   {
-    "id": "8486c998-af9b-4507-add2-9e7ddc8644da",
+    "id": "d4e10f76-98ed-4dbd-8413-20ab73b4eeb6",
     "title": {
       "en": "Standing Calf Raise (Smith)"
     },
@@ -8174,7 +8174,7 @@
     "tags": ["calve"]
   },
   {
-    "id": "d9c14a5f-cae2-4619-a748-ee34b674a241",
+    "id": "ff184ac3-71fa-4b55-b4a4-45b826dc3c43",
     "title": {
       "en": "Standing Leg Curls"
     },
@@ -8195,7 +8195,7 @@
     "tags": ["hamstrings", "ham"]
   },
   {
-    "id": "b965cc65-964f-4bb0-a6a4-80bccb06562b",
+    "id": "25fc1368-a345-4aa0-a4d3-fb34656772b6",
     "title": {
       "en": "Standing Military Press (Barbell)"
     },
@@ -8216,7 +8216,7 @@
     "tags": ["overhead", "bb"]
   },
   {
-    "id": "97226200-beba-4b25-937c-2c7f238a8c3b",
+    "id": "3bdaa2dc-5751-446e-b7f5-52ff566d31b0",
     "title": {
       "en": "Step Up"
     },
@@ -8237,7 +8237,7 @@
     "tags": []
   },
   {
-    "id": "c0c51ef0-b08d-4f4e-8af6-968540fa8a61",
+    "id": "3b5b4f66-dd01-4269-a753-6deaecad983b",
     "title": {
       "en": "Sternum Pull up (Gironda)"
     },
@@ -8258,7 +8258,7 @@
     "tags": ["chest", "to", "bar", "pullups"]
   },
   {
-    "id": "4e674fcb-a501-4c01-9f41-8faaec9ca029",
+    "id": "8b15240a-3a56-4ba4-ae20-3bcdea7f583d",
     "title": {
       "en": "Straight Arm Lat Pulldown (Cable)"
     },
@@ -8279,7 +8279,7 @@
     "tags": ["front", "pullovers", "pull", "over"]
   },
   {
-    "id": "11c1eaee-73fc-4ba6-83a3-90131aff9866",
+    "id": "d918a42f-4960-4a6a-9921-f1e4a5c43ffc",
     "title": {
       "en": "Straight Leg Deadlift"
     },
@@ -8300,7 +8300,7 @@
     "tags": ["legged", "stiff", "dl"]
   },
   {
-    "id": "e648630e-7eda-4e95-886e-0e1fe1dc6521",
+    "id": "191f2615-9f56-42d5-889f-aff19ee5f52b",
     "title": {
       "en": "Stretching"
     },
@@ -8308,7 +8308,7 @@
     "muscleGroup": "other",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Stretching.",
@@ -8321,7 +8321,7 @@
     "tags": ["streches", "mobility"]
   },
   {
-    "id": "ba4eadee-c25c-45bc-b974-51588411e3f9",
+    "id": "97b5415f-7812-4a1e-afa9-8d46f4966d94",
     "title": {
       "en": "Sumo Deadlift"
     },
@@ -8350,7 +8350,7 @@
     "tags": ["deadlifts", "dl", "bb", "barbell"]
   },
   {
-    "id": "5bfae23b-b828-4f6e-a18b-3b606869521c",
+    "id": "3d9f77bc-b39f-411e-8a91-0e10b816a08d",
     "title": {
       "en": "Sumo Squat"
     },
@@ -8358,7 +8358,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["glutes", "adductors", "hamstrings"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Sumo Squat.",
@@ -8371,7 +8371,7 @@
     "tags": ["bb", "barbell", "squats"]
   },
   {
-    "id": "fc4c6f52-6cbd-4b23-a8ab-a969a57f3e0e",
+    "id": "b1b3f74e-4360-4ee7-8918-c8fe763317e9",
     "title": {
       "en": "Sumo Squat (Dumbbell)"
     },
@@ -8392,7 +8392,7 @@
     "tags": ["weighted", "db", "squats"]
   },
   {
-    "id": "0aa5cd3e-b567-4658-896a-01a663655d53",
+    "id": "42b75b2f-da13-4646-9263-4c2daee5eb03",
     "title": {
       "en": "Sumo Squat (Kettlebell)"
     },
@@ -8413,7 +8413,7 @@
     "tags": ["weighted", "kb", "squats"]
   },
   {
-    "id": "94a0cffc-d99c-450d-93c7-7197828386c1",
+    "id": "dae2839f-5133-40a5-90f1-10d067a95252",
     "title": {
       "en": "Superman"
     },
@@ -8421,7 +8421,7 @@
     "muscleGroup": "lowerBack",
     "otherMuscles": ["glutes", "hamstrings"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Superman.",
@@ -8434,7 +8434,7 @@
     "tags": ["back", "extension", "supermans", "lying"]
   },
   {
-    "id": "a739234c-8e0c-40e7-993e-230d9de216d5",
+    "id": "c2bb32fe-7fa6-46bc-bf29-ad5b2fab5d61",
     "title": {
       "en": "Swimming"
     },
@@ -8442,7 +8442,7 @@
     "muscleGroup": "cardio",
     "otherMuscles": [],
     "exerciseType": "distanceDuration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Swimming.",
@@ -8455,7 +8455,7 @@
     "tags": []
   },
   {
-    "id": "1a10196f-46c9-411e-9a9a-dc67a273da93",
+    "id": "b2453510-198f-4488-a7b9-4a58ab34cbbc",
     "title": {
       "en": "T Bar Row"
     },
@@ -8476,7 +8476,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "a9d6c8cd-fa3c-417b-8377-bd901256fd69",
+    "id": "d6d098a5-05cb-4241-9d16-e41e7388ef52",
     "title": {
       "en": "Thruster (Barbell)"
     },
@@ -8497,7 +8497,7 @@
     "tags": ["thrusters"]
   },
   {
-    "id": "11e6e230-1736-42a9-8195-1c46cadd7ade",
+    "id": "5f99a121-fe46-49d9-b909-d1401784ccda",
     "title": {
       "en": "Thruster (Kettlebell)"
     },
@@ -8518,7 +8518,7 @@
     "tags": ["kb", "thrusters"]
   },
   {
-    "id": "5a25f1d1-0161-4ea2-ae5e-29863816b940",
+    "id": "dea94082-2102-4eff-a07b-24338c635670",
     "title": {
       "en": "Toe Touch"
     },
@@ -8526,7 +8526,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Toe Touch.",
@@ -8539,7 +8539,7 @@
     "tags": ["heel", "tap", "feet", "core"]
   },
   {
-    "id": "73dc1a04-7acf-4182-8253-7668fe0d642a",
+    "id": "aed3aef6-2fa2-4f6b-971d-8b8bda584748",
     "title": {
       "en": "Toes to Bar"
     },
@@ -8547,7 +8547,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": ["forearms"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Toes to Bar.",
@@ -8560,7 +8560,7 @@
     "tags": ["hanging", "feet", "raise", "core"]
   },
   {
-    "id": "6859f4f5-3ad7-4593-b115-4b90b8184f67",
+    "id": "358b9f31-cbc8-4d60-a1d1-bc5ab72dd9ab",
     "title": {
       "en": "Torso Rotation"
     },
@@ -8581,7 +8581,7 @@
     "tags": ["abs", "core"]
   },
   {
-    "id": "303f373b-e138-421e-b1f5-fe62cb1c0c2b",
+    "id": "5ca41e6d-e576-4888-a97f-90ad0cd15cdb",
     "title": {
       "en": "Triceps Dip (Assisted)"
     },
@@ -8602,7 +8602,7 @@
     "tags": ["tricep", "dips"]
   },
   {
-    "id": "eb787448-0fb2-4b86-8e0d-cfd388e2b3a1",
+    "id": "45ad22f2-da86-4ae5-8a41-a645a95a3ed7",
     "title": {
       "en": "Triceps Extension (Barbell)"
     },
@@ -8623,7 +8623,7 @@
     "tags": ["tricep", "seated", "overhead", "bb", "bar"]
   },
   {
-    "id": "e57d24c2-a4fd-4df1-8e19-43e2e065b4be",
+    "id": "95eb16b3-8b8a-47ec-869d-fc443fa92523",
     "title": {
       "en": "Triceps Extension (Cable)"
     },
@@ -8644,7 +8644,7 @@
     "tags": ["overhead", "tricep", "standing"]
   },
   {
-    "id": "0a52b22b-8a62-4207-acc5-cefca5e466b8",
+    "id": "af579219-8c52-47f6-b856-ad0bca9d9020",
     "title": {
       "en": "Triceps Extension (Machine)"
     },
@@ -8665,7 +8665,7 @@
     "tags": ["tricep", "seated"]
   },
   {
-    "id": "8e095a2b-068e-4394-82d6-3098252995ba",
+    "id": "18faca86-39df-4f4f-aa90-8e563cea2899",
     "title": {
       "en": "Triceps Extension (Suspension)"
     },
@@ -8686,7 +8686,7 @@
     "tags": ["trx", "band", "standing"]
   },
   {
-    "id": "6c0cdf8a-3e33-420f-957b-79db11bb4449",
+    "id": "a9d97c44-37d7-4765-9b33-1e939ceb368e",
     "title": {
       "en": "Triceps Kickback (Cable)"
     },
@@ -8707,7 +8707,7 @@
     "tags": []
   },
   {
-    "id": "6d0fb197-808b-475b-ab5a-dab026785de2",
+    "id": "b5a0a46e-0b4e-43bf-9366-a1f012ece62e",
     "title": {
       "en": "Triceps Pressdown"
     },
@@ -8728,7 +8728,7 @@
     "tags": ["tricep", "standing", "cable"]
   },
   {
-    "id": "4e612191-d021-446a-b65c-6d96c21fe795",
+    "id": "af9861b2-9f89-4fb7-ac84-c8611c8acc53",
     "title": {
       "en": "Upright Row (Barbell)"
     },
@@ -8749,7 +8749,7 @@
     "tags": ["standing", "bb"]
   },
   {
-    "id": "c67225b3-4226-4783-b795-25e3dca69930",
+    "id": "9d936de0-7f6b-422a-8b3f-3fa9eab4467a",
     "title": {
       "en": "Upright Row (Cable)"
     },
@@ -8770,7 +8770,7 @@
     "tags": ["standing"]
   },
   {
-    "id": "6acf3a9d-a75d-4472-82be-6f026e636b67",
+    "id": "63b86e88-dcca-49d7-8caf-b85e301f8a1d",
     "title": {
       "en": "Upright Row (Dumbbell)"
     },
@@ -8791,7 +8791,7 @@
     "tags": ["db", "standing"]
   },
   {
-    "id": "ddcbeecc-cb7c-4bc1-8c53-d3321326d2ee",
+    "id": "7cc7d96b-6477-42c0-b8c6-7243832f27ee",
     "title": {
       "en": "V Up"
     },
@@ -8799,7 +8799,7 @@
     "muscleGroup": "abdominals",
     "otherMuscles": [],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for V Up.",
@@ -8812,7 +8812,7 @@
     "tags": ["abs", "lying", "core"]
   },
   {
-    "id": "8d7db7ee-d1cd-4bf4-9914-152274a9fa52",
+    "id": "cfd0925b-af8a-4354-88e4-c454cb0857cb",
     "title": {
       "en": "Vertical Traction (Machine)"
     },
@@ -8833,7 +8833,7 @@
     "tags": ["lat", "pulldown", "pull", "down"]
   },
   {
-    "id": "661924a3-a32b-4617-93a7-ec20bf133f08",
+    "id": "09c67656-f3b6-422c-b4ee-85f34a9f1a69",
     "title": {
       "en": "Waiter Curl (Dumbbell)"
     },
@@ -8854,7 +8854,7 @@
     "tags": ["bicep", "biceps", "curls", "db"]
   },
   {
-    "id": "3230500a-568c-4a79-af03-2353ebc79d66",
+    "id": "ddb2c120-cb21-4074-bbd4-a88533198f86",
     "title": {
       "en": "Walking Lunge"
     },
@@ -8862,7 +8862,7 @@
     "muscleGroup": "quadriceps",
     "otherMuscles": ["glutes", "hamstrings"],
     "exerciseType": "reps",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Walking Lunge.",
@@ -8875,7 +8875,7 @@
     "tags": ["lunges", "walk"]
   },
   {
-    "id": "ffbf6e62-c60d-4a08-bd1c-0c0d13818f72",
+    "id": "8b7359e7-2acd-4d0d-b40a-d2ae86da3b3e",
     "title": {
       "en": "Walking Lunge (Dumbbell)"
     },
@@ -8896,7 +8896,7 @@
     "tags": ["weighted", "db", "lunges", "walk"]
   },
   {
-    "id": "99c9bf75-7c2a-43dd-babc-9181869a45d7",
+    "id": "d7e8cf6b-e564-4818-b64b-fbf1ac51646a",
     "title": {
       "en": "Wall Ball"
     },
@@ -8917,7 +8917,7 @@
     "tags": []
   },
   {
-    "id": "9f552098-b952-44ce-a427-d65391af8d48",
+    "id": "82931fa4-72b7-48ba-87cf-efa16ab18bd1",
     "title": {
       "en": "Wall Sit"
     },
@@ -8938,7 +8938,7 @@
     "tags": []
   },
   {
-    "id": "54fe96b3-9005-404f-b5ed-54616bf4b026",
+    "id": "62cdf29c-d631-4279-8e0f-72a756540922",
     "title": {
       "en": "Warm Up"
     },
@@ -8946,7 +8946,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Warm Up.",
@@ -8959,7 +8959,7 @@
     "tags": ["general", "warmup"]
   },
   {
-    "id": "9212de28-62fb-46ca-afef-32b17168193c",
+    "id": "19e97e73-a345-407e-8466-22a6cc8bc364",
     "title": {
       "en": "Wide Pull Up"
     },
@@ -8980,7 +8980,7 @@
     "tags": ["pullups"]
   },
   {
-    "id": "5eab3f26-fa29-42ba-b55a-a810f70b9b08",
+    "id": "d8be0581-0947-4c54-8b26-c47e0a1c850e",
     "title": {
       "en": "Wide-Elbow Triceps Press (Dumbbell)"
     },
@@ -9001,7 +9001,7 @@
     "tags": ["tricep", "flared", "tate", "extension"]
   },
   {
-    "id": "48c35b7d-3bf0-45ca-a214-088cd03d575c",
+    "id": "3af71528-8d8b-4269-99a1-b2d2087666d0",
     "title": {
       "en": "Wrist Roller"
     },
@@ -9022,7 +9022,7 @@
     "tags": []
   },
   {
-    "id": "98f4b85e-93aa-4fc0-be82-291a308b896d",
+    "id": "594ebe3a-b9fb-4f48-9e14-04bb2b4c8516",
     "title": {
       "en": "Yoga"
     },
@@ -9030,7 +9030,7 @@
     "muscleGroup": "fullBody",
     "otherMuscles": [],
     "exerciseType": "duration",
-    "equipment": null,
+    "equipment": "none",
     "instructions": {
       "en": [
         "Instruction 1. for Yoga.",
@@ -9043,7 +9043,7 @@
     "tags": []
   },
   {
-    "id": "43416475-931c-45e7-9ac0-6dfc48e53ef8",
+    "id": "a70fa2f1-2159-4d76-83e6-cbafabe972e9",
     "title": {
       "en": "Zercher Squat"
     },
@@ -9064,7 +9064,7 @@
     "tags": ["squats"]
   },
   {
-    "id": "0a7b5584-49a8-4506-9d6b-1a15c8143404",
+    "id": "2db55c71-75ae-4a9e-af1d-d4ce60aaf132",
     "title": {
       "en": "Zottman Curl (Dumbbell)"
     },

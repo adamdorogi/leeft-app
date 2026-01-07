@@ -18,7 +18,7 @@ _Exercise _$ExerciseFromJson(Map<String, dynamic> json) => _Exercise(
       .map((e) => e as String)
       .toList(),
   exerciseType: json['exerciseType'] as String,
-  equipment: json['equipment'] as String?,
+  equipment: json['equipment'] as String,
   mediaUrl: json['mediaUrl'] as String?,
   thumbnailUrl: json['thumbnailUrl'] as String?,
   instructions: LocalizedField<List<String>>.fromJson(

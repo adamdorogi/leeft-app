@@ -42,20 +42,21 @@ class ExerciseDetailsScreen extends StatelessWidget {
                   spacing: 10,
                   children: [
                     // Exercise equipment.
-                    if (exercise.equipment case final equipment?)
-                      Chip(
-                        avatar: const Icon(Icons.fitness_center),
-                        label: Text(
-                          AppLocalizations.of(context).equipment(equipment),
-                        ),
+                    Chip(
+                      avatar: const Icon(Icons.fitness_center),
+                      label: Text(
+                        AppLocalizations.of(
+                          context,
+                        ).equipmentNameFor(exercise.equipment),
                       ),
+                    ),
                     // Primary muscle group.
                     Chip(
                       avatar: const Icon(Icons.looks_one),
                       label: Text(
                         AppLocalizations.of(
                           context,
-                        ).muscleGroup(exercise.muscleGroup),
+                        ).muscleGroupNameFor(exercise.muscleGroup),
                       ),
                     ),
                     // Secondary muscle groups.
@@ -65,7 +66,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                         label: Text(
                           AppLocalizations.of(
                             context,
-                          ).muscleGroup(muscleGroup),
+                          ).muscleGroupNameFor(muscleGroup),
                         ),
                       ),
                   ],

@@ -16,7 +16,7 @@ abstract class Exercise with _$Exercise {
     required String muscleGroup,
     required List<String> otherMuscles,
     required String exerciseType,
-    required String? equipment,
+    required String equipment,
     required String? mediaUrl,
     required String? thumbnailUrl,
     required LocalizedField<List<String>> instructions,

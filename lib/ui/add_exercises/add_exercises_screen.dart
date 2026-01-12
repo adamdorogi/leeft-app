@@ -7,7 +7,6 @@ import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:leeft/utils/result.dart';
 
 import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 
 /// A screen for adding exercises to a routine during routine creation.
 class AddExercisesScreen extends StatefulWidget {
@@ -165,29 +164,10 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
           );
         }
 
-        // View model is loading or has failed to load, display
-        // skeletonized list.
+        // View model is loading or has failed to load, display empty screen.
         return child!;
       },
-      child: Scaffold(
-        appBar: AppBar(),
-        body: ListView.builder(
-          itemBuilder: (_, _) => Shimmer.fromColors(
-            baseColor: Theme.of(context).highlightColor,
-            highlightColor: Theme.of(context).splashColor,
-            child: ListTile(
-              title: DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: .circular(8),
-                  color: Colors.white,
-                ),
-                child: const SizedBox(height: 16),
-              ),
-              leading: const CircleAvatar(),
-            ),
-          ),
-        ),
-      ),
+      child: const Scaffold(),
     );
   }
 

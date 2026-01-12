@@ -30,4 +30,24 @@ class AssetBundleService {
       return Result.failure(e);
     }
   }
+
+  /// The thumbnail bytes for the exercise with the [exerciseId].
+  Future<Result<Uint8List>> loadThumbnailBytesFor(String exerciseId) async {
+    _log.info('Loading thumbnail bytes for $exerciseId from asset bundle...');
+    try {
+      final thumbnailBytes = await rootBundle.load(
+        Assets.thumbnailFor(exerciseId),
+      );
+      _log.info(
+        'Successfully loaded thumbnail bytes for $exerciseId from asset '
+        'bundle.',
+      );
+      return Result.success(thumbnailBytes.buffer.asUint8List());
+    } on Exception catch (e) {
+      _log.warning(
+        'Failed to load thumbnail bytes for $exerciseId from asset bundle: $e',
+      );
+      return Result.failure(e);
+    }
+  }
 }

@@ -2,7 +2,6 @@ import 'dart:typed_data';
 
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/data/services/asset_bundle_service.dart';
-import 'package:leeft/data/services/remote_data_service.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/utils/memoizer.dart';
 import 'package:leeft/utils/result.dart';
@@ -11,23 +10,17 @@ import 'package:logging/logging.dart';
 
 /// An [ExerciseRepository] for development.
 class ExerciseDevelopmentRepository extends ExerciseRepository {
-  /// Creates a [ExerciseDevelopmentRepository] with an [assetBundleService] and
-  /// [remoteDataService].
+  /// Creates a [ExerciseDevelopmentRepository] with an [assetBundleService].
   ///
-  /// The [assetBundleService] loads the exercises from the exercises asset.
-  ///
-  /// The [remoteDataService] downloads the exercise thumbnail bytes from the
-  /// exercise thumbnail URLs.
+  /// The [assetBundleService] loads the exercises and exercise thumbnail bytes
+  /// from the asset bundle.
   ExerciseDevelopmentRepository({
     required AssetBundleService assetBundleService,
-    required RemoteDataService remoteDataService,
-  }) : _assetBundleService = assetBundleService,
-       _remoteDataService = remoteDataService;
+  }) : _assetBundleService = assetBundleService;
 
   final _log = Logger((ExerciseDevelopmentRepository).toString());
 
   final AssetBundleService _assetBundleService;
-  final RemoteDataService _remoteDataService;
 
   @override
   Future<Result<List<Exercise>>> get exercises async {
@@ -108,10 +101,10 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
   }
 
   late final Memoizer1<Uint8List, String> _thumbnailBytesMemoizer = Memoizer1(
-    _downloadThumbnailBytesFor,
+    _loadThumbnailBytesFor,
   );
 
-  Future<Result<Uint8List>> _downloadThumbnailBytesFor(
+  Future<Result<Uint8List>> _loadThumbnailBytesFor(
     String exerciseId,
   ) async {
     final exerciseResult = await exerciseWith(exerciseId);
@@ -124,7 +117,7 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
             FormatException('No thumbnail URL for exercise $exerciseId.'),
           );
         }
-        return _remoteDataService.downloadBytesFrom(thumbnailUrl);
+        return _assetBundleService.loadThumbnailBytesFor(exerciseId);
       case Failure(:final error):
         return Result.failure(error);
     }

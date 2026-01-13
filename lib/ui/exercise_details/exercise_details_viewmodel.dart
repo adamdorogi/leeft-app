@@ -22,6 +22,9 @@ class ExerciseDetailsViewModel {
   Exercise? get exercise => _exercise;
   Exercise? _exercise;
 
+  /// Whether the media asset at [mediaUrl] is a video.
+  bool isVideo(String mediaUrl) => mediaUrl.split('.').last == 'mp4';
+
   /// The command to load the exercise from the exercise repository.
   late final Command1<Null, String> load = Command1(_load);
   Future<Result<Null>> _load(String exerciseId) async {

@@ -25,7 +25,7 @@ class AddExercisesScreen extends StatefulWidget {
 }
 
 class _AddExercisesScreenState extends State<AddExercisesScreen> {
-  final controller = TextEditingController();
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,17 +45,17 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                   children: [
                     // Search text field.
                     TextField(
-                      controller: controller,
+                      controller: _controller,
                       decoration: InputDecoration(
                         labelText: AppLocalizations.of(context).search,
                         prefixIcon: const Icon(Icons.search),
-                        suffixIcon: controller.text.isEmpty
+                        suffixIcon: _controller.text.isEmpty
                             ? null
                             : IconButton(
                                 onPressed: () {
-                                  controller.clear();
+                                  _controller.clear();
                                   widget._viewModel.setSearchResults(
-                                    controller.text,
+                                    _controller.text,
                                     AppLocalizations.of(
                                       context,
                                     ).localeName,
@@ -65,7 +65,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                               ),
                       ),
                       onChanged: (_) => widget._viewModel.setSearchResults(
-                        controller.text,
+                        _controller.text,
                         AppLocalizations.of(context).localeName,
                       ),
                     ),
@@ -210,7 +210,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                             muscleGroup,
                           );
                           widget._viewModel.setSearchResults(
-                            controller.text,
+                            _controller.text,
                             AppLocalizations.of(
                               context,
                             ).localeName,
@@ -264,7 +264,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                             equipment,
                           );
                           widget._viewModel.setSearchResults(
-                            controller.text,
+                            _controller.text,
                             AppLocalizations.of(
                               context,
                             ).localeName,

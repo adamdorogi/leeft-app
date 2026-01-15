@@ -112,8 +112,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
               keyboardDismissBehavior: .onDrag,
               itemBuilder: (_, index) {
                 final exercise = widget._viewModel.searchResults[index];
-                final thumbnailBytes =
-                    widget._viewModel.thumbnailBytes[exercise.id];
+                final thumbnailUrl = exercise.thumbnailUrl;
                 return ListTile(
                   title: Text(
                     exercise.title.forLocale(
@@ -130,9 +129,9 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                     exercise.id,
                   ),
                   selectedTileColor: Theme.of(context).highlightColor,
-                  leading: thumbnailBytes != null
+                  leading: thumbnailUrl != null
                       ? CircleAvatar(
-                          foregroundImage: MemoryImage(thumbnailBytes),
+                          foregroundImage: AssetImage(thumbnailUrl),
                         )
                       : const CircleAvatar(
                           child: Icon(Icons.fitness_center),

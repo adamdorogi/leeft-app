@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/data/services/asset_bundle_service.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
@@ -12,8 +10,7 @@ import 'package:logging/logging.dart';
 class ExerciseDevelopmentRepository extends ExerciseRepository {
   /// Creates a [ExerciseDevelopmentRepository] with an [assetBundleService].
   ///
-  /// The [assetBundleService] loads the exercises and exercise thumbnail bytes
-  /// from the asset bundle.
+  /// The [assetBundleService] loads the exercises from the asset bundle.
   ExerciseDevelopmentRepository({
     required AssetBundleService assetBundleService,
   }) : _assetBundleService = assetBundleService;
@@ -75,50 +72,6 @@ class ExerciseDevelopmentRepository extends ExerciseRepository {
         return Result.success(exercise);
       case Failure(:final error):
         _log.warning('Failed to retrieve exercise $exerciseId: $error');
-        return Result.failure(error);
-    }
-  }
-
-  @override
-  Future<Result<Uint8List>> thumbnailBytesFor(String exerciseId) async {
-    _log.info(
-      'Retrieving thumbnail bytes for exercise $exerciseId...',
-    );
-    final thumbnailBytesResult = await _thumbnailBytesMemoizer.run(exerciseId);
-
-    switch (thumbnailBytesResult) {
-      case Success(value: final thumbnailBytes):
-        _log.info(
-          'Successfully retrieved thumbnail bytes for exercise $exerciseId.',
-        );
-        return Result.success(thumbnailBytes);
-      case Failure(:final error):
-        _log.warning(
-          'Failed to retrieve thumbnail bytes for exercise $exerciseId: $error',
-        );
-        return Result.failure(error);
-    }
-  }
-
-  late final Memoizer1<Uint8List, String> _thumbnailBytesMemoizer = Memoizer1(
-    _loadThumbnailBytesFor,
-  );
-
-  Future<Result<Uint8List>> _loadThumbnailBytesFor(
-    String exerciseId,
-  ) async {
-    final exerciseResult = await exerciseWith(exerciseId);
-
-    switch (exerciseResult) {
-      case Success(value: final exercise):
-        final thumbnailUrl = exercise.thumbnailUrl;
-        if (thumbnailUrl == null) {
-          return Result.failure(
-            FormatException('No thumbnail URL for exercise $exerciseId.'),
-          );
-        }
-        return _assetBundleService.loadThumbnailBytesFor(exerciseId);
-      case Failure(:final error):
         return Result.failure(error);
     }
   }

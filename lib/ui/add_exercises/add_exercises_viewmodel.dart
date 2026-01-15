@@ -13,8 +13,7 @@ import 'package:logging/logging.dart';
 class AddExercisesViewModel extends ChangeNotifier {
   /// Creates an [AddExercisesViewModel] with an [exerciseRepository].
   ///
-  /// The [exerciseRepository] retrieves the exercises and exercise thumbnail
-  /// bytes.
+  /// The [exerciseRepository] retrieves the exercises.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository;
 
@@ -22,8 +21,7 @@ class AddExercisesViewModel extends ChangeNotifier {
 
   final _log = Logger((AddExercisesViewModel).toString());
 
-  /// The command to load the exercises and exercise thumbnail bytes from the
-  /// exercise repository.
+  /// The command to load the exercises from the exercise repository.
   late final Command0<Null> load = Command0(
     _load,
   );
@@ -39,15 +37,6 @@ class AddExercisesViewModel extends ChangeNotifier {
         _muscleGroups = exercises
             .map((exercise) => exercise.muscleGroup)
             .toSet();
-        final exerciseIds = exercises.map((exercise) => exercise.id);
-        final thumbnailBytesFutures = exercises.map(
-          (exercise) => _exerciseRepository.thumbnailBytesFor(exercise.id),
-        );
-        final thumbnailBytesResult = await Future.wait(thumbnailBytesFutures);
-        final thumbnailBytes = thumbnailBytesResult.map(
-          (result) => result is Success<Uint8List> ? result.value : null,
-        );
-        _thumbnailBytes = Map.fromIterables(exerciseIds, thumbnailBytes);
         _log.info('Successfully loaded view model.');
         return Result.success(null);
       case Failure(:final error):
@@ -89,11 +78,6 @@ class AddExercisesViewModel extends ChangeNotifier {
   UnmodifiableListView<Exercise> get searchResults =>
       UnmodifiableListView(_searchResults);
   List<Exercise> _searchResults = [];
-
-  /// The map of exercise IDs to exercise thumbnail bytes.
-  UnmodifiableMapView<String, Uint8List?> get thumbnailBytes =>
-      UnmodifiableMapView(_thumbnailBytes);
-  Map<String, Uint8List?> _thumbnailBytes = {};
 
   /// The muscle groups.
   UnmodifiableSetView<String> get muscleGroups =>

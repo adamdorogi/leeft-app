@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:leeft/domain/models/exercise/exercise.dart';
+import 'package:leeft/domain/models/exercise_set/exercise_set.dart';
 
 part 'routine_exercise.freezed.dart';
 part 'routine_exercise.g.dart';
@@ -10,8 +10,11 @@ part 'routine_exercise.g.dart';
 abstract class RoutineExercise with _$RoutineExercise {
   /// Creates a [RoutineExercise].
   const factory RoutineExercise({
-    required Exercise exercise,
+    required String exerciseId,
+    String? routineNotes,
+    String? workoutNotes,
     @Default(false) bool shouldSupersetWithNext,
+    @Default([]) List<ExerciseSet> sets,
   }) = _RoutineExercise;
 
   /// The [RoutineExercise] created from [json].

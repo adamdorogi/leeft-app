@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:leeft/domain/models/routine/routine.dart';
 import 'package:leeft/domain/models/routine_exercise/routine_exercise.dart';
 import 'package:leeft/utils/command.dart';
 import 'package:leeft/utils/result.dart';
@@ -23,12 +22,18 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   final _log = Logger((CreateRoutineViewModel).toString());
 
-  /// The routine being created.
-  Routine get routine => _routine;
-  Routine _routine = const Routine(id: 'id', name: 'New Routine');
+  /// The routine exercises.
+  UnmodifiableListView<RoutineExercise> get routineExercises =>
+      UnmodifiableListView(_routineExercises);
+  List<RoutineExercise> _routineExercises = [];
+
+  /// The exercises associated to the [routineExercises].
+  UnmodifiableListView<Exercise> get exercises =>
+      UnmodifiableListView(_exercises);
+  List<Exercise> _exercises = [];
 
   /// The command to load the exercises from the exercise repository and add it
-  /// to the [routine].
+  /// to the routine.
   late final Command1<Null, UnmodifiableSetView<String>?> addExercises =
       Command1(_addExercisesIds);
   Future<Result<Null>> _addExercisesIds(
@@ -44,11 +49,10 @@ class CreateRoutineViewModel extends ChangeNotifier {
     final exercises = exerciseResults.whereType<Success<Exercise>>().map(
       (exerciseResult) => exerciseResult.value,
     );
-    final routineExercises = exercises
-        .map((exercise) => RoutineExercise(exercise: exercise))
+    _routineExercises += exercises
+        .map((exercise) => RoutineExercise(exerciseId: exercise.id))
         .toList();
-    final newRoutineExercises = _routine.routineExercises + routineExercises;
-    _routine = _routine.copyWith(routineExercises: newRoutineExercises);
+    _exercises += exercises.toList();
     _log.info('Successfully added ${exerciseIds.length} exercises to routine.');
     return Result.success(null);
   }

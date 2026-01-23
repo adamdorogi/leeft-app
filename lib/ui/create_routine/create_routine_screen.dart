@@ -60,13 +60,12 @@ class CreateRoutineScreen extends StatelessWidget {
             builder: (_, _) => ListView.builder(
               itemBuilder: (_, index) => ListTile(
                 title: Text(
-                  _viewModel.routine.routineExercises[index].exercise.title
-                      .forLocale(
-                        AppLocalizations.of(context).localeName,
-                      ),
+                  _viewModel.exercises[index].title.forLocale(
+                    AppLocalizations.of(context).localeName,
+                  ),
                 ),
               ),
-              itemCount: _viewModel.routine.routineExercises.length,
+              itemCount: _viewModel.exercises.length,
             ),
           ),
     );

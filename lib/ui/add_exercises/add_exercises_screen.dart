@@ -33,7 +33,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
     return ListenableBuilder(
       listenable: Listenable.merge([widget._viewModel, widget._viewModel.load]),
       builder: (_, child) {
-        if (widget._viewModel.load.result is Success<Null>) {
+        if (widget._viewModel.load.result is Success<void>) {
           // View model has loaded successfully, display the list of
           // exercises.
           return Scaffold(

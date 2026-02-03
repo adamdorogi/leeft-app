@@ -34,9 +34,9 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   /// The command to load the exercises from the exercise repository and add it
   /// to the routine.
-  late final Command1<Null, UnmodifiableSetView<String>?> addExercises =
+  late final Command1<void, UnmodifiableSetView<String>?> addExercises =
       Command1(_addExercisesIds);
-  Future<Result<Null>> _addExercisesIds(
+  Future<Result<void>> _addExercisesIds(
     UnmodifiableSetView<String>? exerciseIds,
   ) async {
     if (exerciseIds == null || exerciseIds.isEmpty) {

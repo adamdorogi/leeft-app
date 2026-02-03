@@ -22,10 +22,10 @@ class AddExercisesViewModel extends ChangeNotifier {
   final _log = Logger((AddExercisesViewModel).toString());
 
   /// The command to load the exercises from the exercise repository.
-  late final Command0<Null> load = Command0(
+  late final Command0<void> load = Command0(
     _load,
   );
-  Future<Result<Null>> _load() async {
+  Future<Result<void>> _load() async {
     _log.info('Loading view model...');
     final exercisesResult = await _exerciseRepository.exercises;
 

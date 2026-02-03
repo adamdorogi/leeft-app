@@ -26,8 +26,8 @@ class ExerciseDetailsViewModel {
   bool isVideo(String mediaUrl) => mediaUrl.split('.').last == 'mp4';
 
   /// The command to load the exercise from the exercise repository.
-  late final Command1<Null, String> load = Command1(_load);
-  Future<Result<Null>> _load(String exerciseId) async {
+  late final Command1<void, String> load = Command1(_load);
+  Future<Result<void>> _load(String exerciseId) async {
     _log.info('Loading view model...');
     final exerciseResult = await _exerciseRepository.exerciseWith(exerciseId);
 

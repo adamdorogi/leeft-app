@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RoutineExercise {
 
- String get exerciseId; String? get routineNotes; String? get workoutNotes; bool get shouldSupersetWithNext; List<ExerciseSet> get sets;
+ String get exerciseId; List<ExerciseSet> get sets; String? get routineNotes; String? get workoutNotes; bool get shouldSupersetWithNext;
 /// Create a copy of RoutineExercise
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $RoutineExerciseCopyWith<RoutineExercise> get copyWith => _$RoutineExerciseCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RoutineExercise&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&(identical(other.routineNotes, routineNotes) || other.routineNotes == routineNotes)&&(identical(other.workoutNotes, workoutNotes) || other.workoutNotes == workoutNotes)&&(identical(other.shouldSupersetWithNext, shouldSupersetWithNext) || other.shouldSupersetWithNext == shouldSupersetWithNext)&&const DeepCollectionEquality().equals(other.sets, sets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RoutineExercise&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&const DeepCollectionEquality().equals(other.sets, sets)&&(identical(other.routineNotes, routineNotes) || other.routineNotes == routineNotes)&&(identical(other.workoutNotes, workoutNotes) || other.workoutNotes == workoutNotes)&&(identical(other.shouldSupersetWithNext, shouldSupersetWithNext) || other.shouldSupersetWithNext == shouldSupersetWithNext));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exerciseId,routineNotes,workoutNotes,shouldSupersetWithNext,const DeepCollectionEquality().hash(sets));
+int get hashCode => Object.hash(runtimeType,exerciseId,const DeepCollectionEquality().hash(sets),routineNotes,workoutNotes,shouldSupersetWithNext);
 
 @override
 String toString() {
-  return 'RoutineExercise(exerciseId: $exerciseId, routineNotes: $routineNotes, workoutNotes: $workoutNotes, shouldSupersetWithNext: $shouldSupersetWithNext, sets: $sets)';
+  return 'RoutineExercise(exerciseId: $exerciseId, sets: $sets, routineNotes: $routineNotes, workoutNotes: $workoutNotes, shouldSupersetWithNext: $shouldSupersetWithNext)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $RoutineExerciseCopyWith<$Res>  {
   factory $RoutineExerciseCopyWith(RoutineExercise value, $Res Function(RoutineExercise) _then) = _$RoutineExerciseCopyWithImpl;
 @useResult
 $Res call({
- String exerciseId, String? routineNotes, String? workoutNotes, bool shouldSupersetWithNext, List<ExerciseSet> sets
+ String exerciseId, List<ExerciseSet> sets, String? routineNotes, String? workoutNotes, bool shouldSupersetWithNext
 });
 
 
@@ -65,14 +65,14 @@ class _$RoutineExerciseCopyWithImpl<$Res>
 
 /// Create a copy of RoutineExercise
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? exerciseId = null,Object? routineNotes = freezed,Object? workoutNotes = freezed,Object? shouldSupersetWithNext = null,Object? sets = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? exerciseId = null,Object? sets = null,Object? routineNotes = freezed,Object? workoutNotes = freezed,Object? shouldSupersetWithNext = null,}) {
   return _then(_self.copyWith(
 exerciseId: null == exerciseId ? _self.exerciseId : exerciseId // ignore: cast_nullable_to_non_nullable
-as String,routineNotes: freezed == routineNotes ? _self.routineNotes : routineNotes // ignore: cast_nullable_to_non_nullable
+as String,sets: null == sets ? _self.sets : sets // ignore: cast_nullable_to_non_nullable
+as List<ExerciseSet>,routineNotes: freezed == routineNotes ? _self.routineNotes : routineNotes // ignore: cast_nullable_to_non_nullable
 as String?,workoutNotes: freezed == workoutNotes ? _self.workoutNotes : workoutNotes // ignore: cast_nullable_to_non_nullable
 as String?,shouldSupersetWithNext: null == shouldSupersetWithNext ? _self.shouldSupersetWithNext : shouldSupersetWithNext // ignore: cast_nullable_to_non_nullable
-as bool,sets: null == sets ? _self.sets : sets // ignore: cast_nullable_to_non_nullable
-as List<ExerciseSet>,
+as bool,
   ));
 }
 
@@ -157,10 +157,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String exerciseId,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext,  List<ExerciseSet> sets)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String exerciseId,  List<ExerciseSet> sets,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RoutineExercise() when $default != null:
-return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext,_that.sets);case _:
+return $default(_that.exerciseId,_that.sets,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext);case _:
   return orElse();
 
 }
@@ -178,10 +178,10 @@ return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.sho
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String exerciseId,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext,  List<ExerciseSet> sets)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String exerciseId,  List<ExerciseSet> sets,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext)  $default,) {final _that = this;
 switch (_that) {
 case _RoutineExercise():
-return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext,_that.sets);case _:
+return $default(_that.exerciseId,_that.sets,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -198,10 +198,10 @@ return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.sho
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String exerciseId,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext,  List<ExerciseSet> sets)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String exerciseId,  List<ExerciseSet> sets,  String? routineNotes,  String? workoutNotes,  bool shouldSupersetWithNext)?  $default,) {final _that = this;
 switch (_that) {
 case _RoutineExercise() when $default != null:
-return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext,_that.sets);case _:
+return $default(_that.exerciseId,_that.sets,_that.routineNotes,_that.workoutNotes,_that.shouldSupersetWithNext);case _:
   return null;
 
 }
@@ -213,20 +213,20 @@ return $default(_that.exerciseId,_that.routineNotes,_that.workoutNotes,_that.sho
 @JsonSerializable()
 
 class _RoutineExercise implements RoutineExercise {
-  const _RoutineExercise({required this.exerciseId, this.routineNotes, this.workoutNotes, this.shouldSupersetWithNext = false, final  List<ExerciseSet> sets = const []}): _sets = sets;
+  const _RoutineExercise({required this.exerciseId, required final  List<ExerciseSet> sets, this.routineNotes, this.workoutNotes, this.shouldSupersetWithNext = false}): _sets = sets;
   factory _RoutineExercise.fromJson(Map<String, dynamic> json) => _$RoutineExerciseFromJson(json);
 
 @override final  String exerciseId;
-@override final  String? routineNotes;
-@override final  String? workoutNotes;
-@override@JsonKey() final  bool shouldSupersetWithNext;
  final  List<ExerciseSet> _sets;
-@override@JsonKey() List<ExerciseSet> get sets {
+@override List<ExerciseSet> get sets {
   if (_sets is EqualUnmodifiableListView) return _sets;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_sets);
 }
 
+@override final  String? routineNotes;
+@override final  String? workoutNotes;
+@override@JsonKey() final  bool shouldSupersetWithNext;
 
 /// Create a copy of RoutineExercise
 /// with the given fields replaced by the non-null parameter values.
@@ -241,16 +241,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RoutineExercise&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&(identical(other.routineNotes, routineNotes) || other.routineNotes == routineNotes)&&(identical(other.workoutNotes, workoutNotes) || other.workoutNotes == workoutNotes)&&(identical(other.shouldSupersetWithNext, shouldSupersetWithNext) || other.shouldSupersetWithNext == shouldSupersetWithNext)&&const DeepCollectionEquality().equals(other._sets, _sets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RoutineExercise&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&const DeepCollectionEquality().equals(other._sets, _sets)&&(identical(other.routineNotes, routineNotes) || other.routineNotes == routineNotes)&&(identical(other.workoutNotes, workoutNotes) || other.workoutNotes == workoutNotes)&&(identical(other.shouldSupersetWithNext, shouldSupersetWithNext) || other.shouldSupersetWithNext == shouldSupersetWithNext));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exerciseId,routineNotes,workoutNotes,shouldSupersetWithNext,const DeepCollectionEquality().hash(_sets));
+int get hashCode => Object.hash(runtimeType,exerciseId,const DeepCollectionEquality().hash(_sets),routineNotes,workoutNotes,shouldSupersetWithNext);
 
 @override
 String toString() {
-  return 'RoutineExercise(exerciseId: $exerciseId, routineNotes: $routineNotes, workoutNotes: $workoutNotes, shouldSupersetWithNext: $shouldSupersetWithNext, sets: $sets)';
+  return 'RoutineExercise(exerciseId: $exerciseId, sets: $sets, routineNotes: $routineNotes, workoutNotes: $workoutNotes, shouldSupersetWithNext: $shouldSupersetWithNext)';
 }
 
 
@@ -261,7 +261,7 @@ abstract mixin class _$RoutineExerciseCopyWith<$Res> implements $RoutineExercise
   factory _$RoutineExerciseCopyWith(_RoutineExercise value, $Res Function(_RoutineExercise) _then) = __$RoutineExerciseCopyWithImpl;
 @override @useResult
 $Res call({
- String exerciseId, String? routineNotes, String? workoutNotes, bool shouldSupersetWithNext, List<ExerciseSet> sets
+ String exerciseId, List<ExerciseSet> sets, String? routineNotes, String? workoutNotes, bool shouldSupersetWithNext
 });
 
 
@@ -278,14 +278,14 @@ class __$RoutineExerciseCopyWithImpl<$Res>
 
 /// Create a copy of RoutineExercise
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? exerciseId = null,Object? routineNotes = freezed,Object? workoutNotes = freezed,Object? shouldSupersetWithNext = null,Object? sets = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? exerciseId = null,Object? sets = null,Object? routineNotes = freezed,Object? workoutNotes = freezed,Object? shouldSupersetWithNext = null,}) {
   return _then(_RoutineExercise(
 exerciseId: null == exerciseId ? _self.exerciseId : exerciseId // ignore: cast_nullable_to_non_nullable
-as String,routineNotes: freezed == routineNotes ? _self.routineNotes : routineNotes // ignore: cast_nullable_to_non_nullable
+as String,sets: null == sets ? _self._sets : sets // ignore: cast_nullable_to_non_nullable
+as List<ExerciseSet>,routineNotes: freezed == routineNotes ? _self.routineNotes : routineNotes // ignore: cast_nullable_to_non_nullable
 as String?,workoutNotes: freezed == workoutNotes ? _self.workoutNotes : workoutNotes // ignore: cast_nullable_to_non_nullable
 as String?,shouldSupersetWithNext: null == shouldSupersetWithNext ? _self.shouldSupersetWithNext : shouldSupersetWithNext // ignore: cast_nullable_to_non_nullable
-as bool,sets: null == sets ? _self._sets : sets // ignore: cast_nullable_to_non_nullable
-as List<ExerciseSet>,
+as bool,
   ));
 }
 

@@ -11,10 +11,10 @@ abstract class RoutineExercise with _$RoutineExercise {
   /// Creates a [RoutineExercise].
   const factory RoutineExercise({
     required String exerciseId,
+    required List<ExerciseSet> sets,
     String? routineNotes,
     String? workoutNotes,
     @Default(false) bool shouldSupersetWithNext,
-    @Default([]) List<ExerciseSet> sets,
   }) = _RoutineExercise;
 
   /// The [RoutineExercise] created from [json].

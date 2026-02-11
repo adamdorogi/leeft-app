@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ExerciseSet {
 
- int get rest; bool get isWarmUp; int? get reps; double? get weight;
+ int get rest; bool get isWarmUp; int? get reps; double? get weight; double? get duration; double? get distance;
 /// Create a copy of ExerciseSet
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ExerciseSetCopyWith<ExerciseSet> get copyWith => _$ExerciseSetCopyWithImpl<Exer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExerciseSet&&(identical(other.rest, rest) || other.rest == rest)&&(identical(other.isWarmUp, isWarmUp) || other.isWarmUp == isWarmUp)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExerciseSet&&(identical(other.rest, rest) || other.rest == rest)&&(identical(other.isWarmUp, isWarmUp) || other.isWarmUp == isWarmUp)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.distance, distance) || other.distance == distance));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,rest,isWarmUp,reps,weight);
+int get hashCode => Object.hash(runtimeType,rest,isWarmUp,reps,weight,duration,distance);
 
 @override
 String toString() {
-  return 'ExerciseSet(rest: $rest, isWarmUp: $isWarmUp, reps: $reps, weight: $weight)';
+  return 'ExerciseSet(rest: $rest, isWarmUp: $isWarmUp, reps: $reps, weight: $weight, duration: $duration, distance: $distance)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ExerciseSetCopyWith<$Res>  {
   factory $ExerciseSetCopyWith(ExerciseSet value, $Res Function(ExerciseSet) _then) = _$ExerciseSetCopyWithImpl;
 @useResult
 $Res call({
- int rest, bool isWarmUp, int? reps, double? weight
+ int rest, bool isWarmUp, int? reps, double? weight, double? duration, double? distance
 });
 
 
@@ -65,12 +65,14 @@ class _$ExerciseSetCopyWithImpl<$Res>
 
 /// Create a copy of ExerciseSet
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? rest = null,Object? isWarmUp = null,Object? reps = freezed,Object? weight = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? rest = null,Object? isWarmUp = null,Object? reps = freezed,Object? weight = freezed,Object? duration = freezed,Object? distance = freezed,}) {
   return _then(_self.copyWith(
 rest: null == rest ? _self.rest : rest // ignore: cast_nullable_to_non_nullable
 as int,isWarmUp: null == isWarmUp ? _self.isWarmUp : isWarmUp // ignore: cast_nullable_to_non_nullable
 as bool,reps: freezed == reps ? _self.reps : reps // ignore: cast_nullable_to_non_nullable
 as int?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as double?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double?,distance: freezed == distance ? _self.distance : distance // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
 }
@@ -156,10 +158,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int rest,  bool isWarmUp,  int? reps,  double? weight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int rest,  bool isWarmUp,  int? reps,  double? weight,  double? duration,  double? distance)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExerciseSet() when $default != null:
-return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
+return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight,_that.duration,_that.distance);case _:
   return orElse();
 
 }
@@ -177,10 +179,10 @@ return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int rest,  bool isWarmUp,  int? reps,  double? weight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int rest,  bool isWarmUp,  int? reps,  double? weight,  double? duration,  double? distance)  $default,) {final _that = this;
 switch (_that) {
 case _ExerciseSet():
-return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
+return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight,_that.duration,_that.distance);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +199,10 @@ return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int rest,  bool isWarmUp,  int? reps,  double? weight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int rest,  bool isWarmUp,  int? reps,  double? weight,  double? duration,  double? distance)?  $default,) {final _that = this;
 switch (_that) {
 case _ExerciseSet() when $default != null:
-return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
+return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight,_that.duration,_that.distance);case _:
   return null;
 
 }
@@ -212,13 +214,15 @@ return $default(_that.rest,_that.isWarmUp,_that.reps,_that.weight);case _:
 @JsonSerializable()
 
 class _ExerciseSet implements ExerciseSet {
-  const _ExerciseSet({required this.rest, this.isWarmUp = false, this.reps, this.weight});
+  const _ExerciseSet({required this.rest, this.isWarmUp = false, this.reps, this.weight, this.duration, this.distance});
   factory _ExerciseSet.fromJson(Map<String, dynamic> json) => _$ExerciseSetFromJson(json);
 
 @override final  int rest;
 @override@JsonKey() final  bool isWarmUp;
 @override final  int? reps;
 @override final  double? weight;
+@override final  double? duration;
+@override final  double? distance;
 
 /// Create a copy of ExerciseSet
 /// with the given fields replaced by the non-null parameter values.
@@ -233,16 +237,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExerciseSet&&(identical(other.rest, rest) || other.rest == rest)&&(identical(other.isWarmUp, isWarmUp) || other.isWarmUp == isWarmUp)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExerciseSet&&(identical(other.rest, rest) || other.rest == rest)&&(identical(other.isWarmUp, isWarmUp) || other.isWarmUp == isWarmUp)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.distance, distance) || other.distance == distance));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,rest,isWarmUp,reps,weight);
+int get hashCode => Object.hash(runtimeType,rest,isWarmUp,reps,weight,duration,distance);
 
 @override
 String toString() {
-  return 'ExerciseSet(rest: $rest, isWarmUp: $isWarmUp, reps: $reps, weight: $weight)';
+  return 'ExerciseSet(rest: $rest, isWarmUp: $isWarmUp, reps: $reps, weight: $weight, duration: $duration, distance: $distance)';
 }
 
 
@@ -253,7 +257,7 @@ abstract mixin class _$ExerciseSetCopyWith<$Res> implements $ExerciseSetCopyWith
   factory _$ExerciseSetCopyWith(_ExerciseSet value, $Res Function(_ExerciseSet) _then) = __$ExerciseSetCopyWithImpl;
 @override @useResult
 $Res call({
- int rest, bool isWarmUp, int? reps, double? weight
+ int rest, bool isWarmUp, int? reps, double? weight, double? duration, double? distance
 });
 
 
@@ -270,12 +274,14 @@ class __$ExerciseSetCopyWithImpl<$Res>
 
 /// Create a copy of ExerciseSet
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? rest = null,Object? isWarmUp = null,Object? reps = freezed,Object? weight = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? rest = null,Object? isWarmUp = null,Object? reps = freezed,Object? weight = freezed,Object? duration = freezed,Object? distance = freezed,}) {
   return _then(_ExerciseSet(
 rest: null == rest ? _self.rest : rest // ignore: cast_nullable_to_non_nullable
 as int,isWarmUp: null == isWarmUp ? _self.isWarmUp : isWarmUp // ignore: cast_nullable_to_non_nullable
 as bool,reps: freezed == reps ? _self.reps : reps // ignore: cast_nullable_to_non_nullable
 as int?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as double?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double?,distance: freezed == distance ? _self.distance : distance // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
 }

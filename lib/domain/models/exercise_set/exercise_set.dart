@@ -12,6 +12,8 @@ abstract class ExerciseSet with _$ExerciseSet {
     @Default(false) bool isWarmUp,
     int? reps,
     double? weight,
+    double? duration,
+    double? distance,
   }) = _ExerciseSet;
 
   /// The [ExerciseSet] created from [json].

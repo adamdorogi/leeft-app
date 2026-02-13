@@ -56,16 +56,107 @@ class CreateRoutineScreen extends StatelessWidget {
       body:
           // Listen to the view model's add exercises command.
           ListenableBuilder(
-            listenable: _viewModel.addExercises,
+            listenable: Listenable.merge([
+              _viewModel.addExercises,
+              _viewModel,
+            ]),
             builder: (_, _) => ListView.builder(
-              itemBuilder: (_, index) => ListTile(
-                title: Text(
-                  _viewModel.exercises[index].title.forLocale(
-                    AppLocalizations.of(context).localeName,
+              itemBuilder: (_, index) {
+                final routineExercise = _viewModel.addedExercises[index].$1;
+                final exercise = _viewModel.addedExercises[index].$2;
+                final thumbnailUrl = exercise.thumbnailUrl;
+
+                return Card(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: thumbnailUrl != null
+                            ? CircleAvatar(
+                                foregroundImage: AssetImage(thumbnailUrl),
+                              )
+                            : const CircleAvatar(
+                                child: Icon(Icons.fitness_center),
+                              ),
+                        title: Text(
+                          exercise.title.forLocale(
+                            AppLocalizations.of(context).localeName,
+                          ),
+                        ),
+                        trailing: MenuAnchor(
+                          builder: (_, controller, _) => IconButton(
+                            onPressed: () => controller.isOpen
+                                ? controller.close()
+                                : controller.open(),
+                            icon: const Icon(Icons.more_horiz),
+                          ),
+                          menuChildren: [
+                            MenuItemButton(
+                              onPressed: () => _viewModel.removeExercise(index),
+                              leadingIcon: const Icon(Icons.delete),
+                              child: Text(AppLocalizations.of(context).remove),
+                            ),
+                            MenuItemButton(
+                              leadingIcon: const Icon(Icons.swap_horiz),
+                              child: Text(AppLocalizations.of(context).replace),
+                            ),
+                          ],
+                        ),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: AppLocalizations.of(context).notes,
+                        ),
+                      ),
+                      for (var i = 0; i < routineExercise.sets.length; i++)
+                        Dismissible(
+                          key: UniqueKey(),
+                          direction: .endToStart,
+                          onDismissed: (_) =>
+                              _viewModel.removeSetFrom(index, i),
+                          child: Row(
+                            children: [
+                              Text('${i + 1}.'),
+                              const Expanded(
+                                child: TextField(),
+                              ),
+                              const Expanded(
+                                child: TextField(),
+                              ),
+                              Checkbox(
+                                value: false,
+                                onChanged: (_) => (),
+                              ),
+                            ],
+                          ),
+                        ),
+                      Row(
+                        mainAxisAlignment: .center,
+                        children: [
+                          ElevatedButton.icon(
+                            label: Text(AppLocalizations.of(context).addSet),
+                            icon: const Icon(Icons.add),
+                            onPressed: () => _viewModel.addSetTo(index),
+                          ),
+                          if (index < _viewModel.addedExercises.length - 1)
+                            ElevatedButton.icon(
+                              label: Text(
+                                AppLocalizations.of(context).superset,
+                              ),
+                              icon: Icon(
+                                routineExercise.shouldSupersetWithNext
+                                    ? Icons.link
+                                    : Icons.link_off,
+                              ),
+                              onPressed: () =>
+                                  _viewModel.toggleSupersetFor(index),
+                            ),
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-              ),
-              itemCount: _viewModel.exercises.length,
+                );
+              },
+              itemCount: _viewModel.addedExercises.length,
             ),
           ),
     );

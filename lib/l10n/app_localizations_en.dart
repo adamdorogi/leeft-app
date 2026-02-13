@@ -80,4 +80,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get muscleGroups => 'Muscle Groups';
+
+  @override
+  String get replace => 'Replace';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get addSet => 'Add Set';
+
+  @override
+  String get superset => 'Superset';
 }

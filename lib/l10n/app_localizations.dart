@@ -153,6 +153,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Muscle Groups'**
   String get muscleGroups;
+
+  /// No description provided for @replace.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace'**
+  String get replace;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @addSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Set'**
+  String get addSet;
+
+  /// No description provided for @superset.
+  ///
+  /// In en, this message translates to:
+  /// **'Superset'**
+  String get superset;
 }
 
 class _AppLocalizationsDelegate

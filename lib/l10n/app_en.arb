@@ -22,5 +22,10 @@
   },
   "search": "Search",
   "equipment": "Equipment",
-  "muscleGroups": "Muscle Groups"
+  "muscleGroups": "Muscle Groups",
+  "replace": "Replace",
+  "remove": "Remove",
+  "notes": "Notes",
+  "addSet": "Add Set",
+  "superset": "Superset"
 }

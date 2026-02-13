@@ -127,4 +127,15 @@ class CreateRoutineViewModel extends ChangeNotifier {
     );
     notifyListeners();
   }
+
+  /// Set the [notes] for the exercise with the [exerciseIndex].
+  void setNotesFor(int exerciseIndex, String notes) {
+    final routineExercise = _addedExercises[exerciseIndex].$1;
+    final exercise = _addedExercises[exerciseIndex].$2;
+    _addedExercises[exerciseIndex] = (
+      routineExercise.copyWith(notes: notes),
+      exercise,
+    );
+    notifyListeners();
+  }
 }

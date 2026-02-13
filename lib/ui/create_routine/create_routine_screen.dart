@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_screen.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:leeft/ui/core/text_field_editor.dart';
 import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
 
 import 'package:provider/provider.dart';
@@ -102,10 +103,11 @@ class CreateRoutineScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: AppLocalizations.of(context).notes,
-                        ),
+                      TextFieldEditor(
+                        initialValue: routineExercise.notes,
+                        labelText: AppLocalizations.of(context).notes,
+                        onChanged: (notes) =>
+                            _viewModel.setNotesFor(index, notes),
                       ),
                       for (var i = 0; i < routineExercise.sets.length; i++)
                         Dismissible(

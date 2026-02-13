@@ -68,8 +68,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   /// Adds a set to the exercise with the [exerciseIndex] in the routine.
   void addSetTo(int exerciseIndex) {
-    final routineExercise = _addedExercises[exerciseIndex].$1;
-    final exercise = _addedExercises[exerciseIndex].$2;
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
     _addedExercises[exerciseIndex] = (
       routineExercise.copyWith(
         // TODO: Get default rest value, or rest value from previous set.
@@ -83,8 +82,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Removes the set with the [setIndex] from the exercise with the
   /// [exerciseIndex] in the routine.
   void removeSetFrom(int exerciseIndex, int setIndex) {
-    final routineExercise = _addedExercises[exerciseIndex].$1;
-    final exercise = _addedExercises[exerciseIndex].$2;
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
     _addedExercises[exerciseIndex] = (
       routineExercise.copyWith(
         sets: routineExercise.sets.toList()..removeAt(setIndex),
@@ -100,8 +98,8 @@ class CreateRoutineViewModel extends ChangeNotifier {
     // the previous exercise.
     if (exerciseIndex > 0) {
       final routineExercise = _addedExercises[exerciseIndex].$1;
-      final previousRoutineExercise = _addedExercises[exerciseIndex - 1].$1;
-      final previousExercise = _addedExercises[exerciseIndex - 1].$2;
+      final (previousRoutineExercise, previousExercise) =
+          _addedExercises[exerciseIndex - 1];
       if (previousRoutineExercise.shouldSupersetWithNext &&
           !routineExercise.shouldSupersetWithNext) {
         _addedExercises[exerciseIndex - 1] = (
@@ -117,8 +115,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Toggles the superset flag for the exercise with the [exerciseIndex] in the
   /// routine.
   void toggleSupersetFor(int exerciseIndex) {
-    final routineExercise = _addedExercises[exerciseIndex].$1;
-    final exercise = _addedExercises[exerciseIndex].$2;
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
     _addedExercises[exerciseIndex] = (
       routineExercise.copyWith(
         shouldSupersetWithNext: !routineExercise.shouldSupersetWithNext,
@@ -130,8 +127,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   /// Set the [notes] for the exercise with the [exerciseIndex].
   void setNotesFor(int exerciseIndex, String notes) {
-    final routineExercise = _addedExercises[exerciseIndex].$1;
-    final exercise = _addedExercises[exerciseIndex].$2;
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
     _addedExercises[exerciseIndex] = (
       routineExercise.copyWith(notes: notes),
       exercise,

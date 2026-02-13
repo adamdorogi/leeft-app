@@ -12,8 +12,7 @@ abstract class RoutineExercise with _$RoutineExercise {
   const factory RoutineExercise({
     required String exerciseId,
     required List<ExerciseSet> sets,
-    String? routineNotes,
-    String? workoutNotes,
+    String? notes,
     @Default(false) bool shouldSupersetWithNext,
   }) = _RoutineExercise;
 

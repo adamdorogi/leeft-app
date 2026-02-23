@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:leeft/l10n/app_localizations.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_screen.dart';
 import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
-import 'package:leeft/ui/core/text_field_editor.dart';
 import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
+import 'package:leeft/ui/exercise_details/exercise_details_screen.dart';
+import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
 
 import 'package:provider/provider.dart';
 
@@ -63,8 +64,8 @@ class CreateRoutineScreen extends StatelessWidget {
             ]),
             builder: (_, _) => ListView.builder(
               itemBuilder: (_, index) {
-                final routineExercise = _viewModel.addedExercises[index].$1;
-                final exercise = _viewModel.addedExercises[index].$2;
+                final (routineExercise, exercise) =
+                    _viewModel.addedExercises[index];
                 final thumbnailUrl = exercise.thumbnailUrl;
 
                 return Card(
@@ -92,6 +93,28 @@ class CreateRoutineScreen extends StatelessWidget {
                           ),
                           menuChildren: [
                             MenuItemButton(
+                              onPressed: () async {
+                                await Navigator.of(context).push(
+                                  MaterialPageRoute<void>(
+                                    builder: (context) {
+                                      final viewModel =
+                                          ExerciseDetailsViewModel(
+                                            exerciseRepository: context.read(),
+                                          );
+                                      // No need to wait for load command to
+                                      // finish.
+                                      // ignore: discarded_futures
+                                      viewModel.load.run(exercise.id);
+                                      return ExerciseDetailsScreen(
+                                        viewModel: viewModel,
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                              leadingIcon: const Icon(Icons.info_outline),
+                            ),
+                            MenuItemButton(
                               onPressed: () => _viewModel.removeExercise(index),
                               leadingIcon: const Icon(Icons.delete),
                               child: Text(AppLocalizations.of(context).remove),
@@ -103,9 +126,12 @@ class CreateRoutineScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      TextFieldEditor(
+                      TextFormField(
+                        key: UniqueKey(),
                         initialValue: routineExercise.notes,
-                        labelText: AppLocalizations.of(context).notes,
+                        decoration: InputDecoration(
+                          hintText: AppLocalizations.of(context).notes,
+                        ),
                         onChanged: (notes) =>
                             _viewModel.setNotesFor(index, notes),
                       ),
@@ -115,18 +141,60 @@ class CreateRoutineScreen extends StatelessWidget {
                           direction: .endToStart,
                           onDismissed: (_) =>
                               _viewModel.removeSetFrom(index, i),
-                          child: Row(
+                          child: Column(
                             children: [
-                              Text('${i + 1}.'),
-                              const Expanded(
-                                child: TextField(),
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () =>
+                                        _viewModel.toggleWarmUpSetFor(index, i),
+                                    icon: routineExercise.sets[i].isWarmUp
+                                        ? const Icon(Icons.fireplace)
+                                        : Text('${i + 1}.'),
+                                  ),
+                                  Expanded(
+                                    child: TextFormField(
+                                      initialValue:
+                                          routineExercise.sets[i].weight == null
+                                          ? null
+                                          : '${routineExercise.sets[i].weight}',
+                                      decoration: InputDecoration(
+                                        hintText: AppLocalizations.of(
+                                          context,
+                                        ).kg,
+                                      ),
+                                      onChanged: (weight) => _viewModel
+                                          .setWeightFor(index, i, weight),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextFormField(
+                                      initialValue:
+                                          routineExercise.sets[i].reps == null
+                                          ? null
+                                          : '${routineExercise.sets[i].reps}',
+                                      decoration: InputDecoration(
+                                        hintText: AppLocalizations.of(
+                                          context,
+                                        ).reps,
+                                      ),
+                                      onChanged: (reps) =>
+                                          _viewModel.setRepsFor(index, i, reps),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              const Expanded(
-                                child: TextField(),
-                              ),
-                              Checkbox(
-                                value: false,
-                                onChanged: (_) => (),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: TextFormField(
+                                      initialValue:
+                                          '${routineExercise.sets[i].rest}',
+                                      onChanged: (rest) =>
+                                          _viewModel.setRestFor(index, i, rest),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

@@ -95,4 +95,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get superset => 'Superset';
+
+  @override
+  String get reps => 'Reps';
+
+  @override
+  String get kg => 'kg';
 }

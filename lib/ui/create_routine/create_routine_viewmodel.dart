@@ -97,7 +97,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
     // If exercise is the last exercise in a superset, remove superset flag from
     // the previous exercise.
     if (exerciseIndex > 0) {
-      final routineExercise = _addedExercises[exerciseIndex].$1;
+      final (routineExercise, _) = _addedExercises[exerciseIndex];
       final (previousRoutineExercise, previousExercise) =
           _addedExercises[exerciseIndex - 1];
       if (previousRoutineExercise.shouldSupersetWithNext &&
@@ -125,6 +125,21 @@ class CreateRoutineViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Toggles the warm up flag for the set with the [setIndex] in the exercise
+  /// with the [exerciseIndex].
+  void toggleWarmUpSetFor(int exerciseIndex, int setIndex) {
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final sets = routineExercise.sets.toList();
+    sets[setIndex] = sets[setIndex].copyWith(
+      isWarmUp: !sets[setIndex].isWarmUp,
+    );
+    _addedExercises[exerciseIndex] = (
+      routineExercise.copyWith(sets: sets),
+      exercise,
+    );
+    notifyListeners();
+  }
+
   /// Set the [notes] for the exercise with the [exerciseIndex].
   void setNotesFor(int exerciseIndex, String notes) {
     final (routineExercise, exercise) = _addedExercises[exerciseIndex];
@@ -132,6 +147,47 @@ class CreateRoutineViewModel extends ChangeNotifier {
       routineExercise.copyWith(notes: notes),
       exercise,
     );
-    notifyListeners();
+  }
+
+  /// Set the [weight] for the set with the [setIndex] in the exercise with the
+  /// [exerciseIndex].
+  void setWeightFor(int exerciseIndex, int setIndex, String weight) {
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final sets = routineExercise.sets.toList();
+    sets[setIndex] = sets[setIndex].copyWith(
+      weight: double.tryParse(weight),
+    );
+    _addedExercises[exerciseIndex] = (
+      routineExercise.copyWith(sets: sets),
+      exercise,
+    );
+  }
+
+  /// Set the [reps] for the set with the [setIndex] in the exercise with the
+  /// [exerciseIndex].
+  void setRepsFor(int exerciseIndex, int setIndex, String reps) {
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final sets = routineExercise.sets.toList();
+    sets[setIndex] = sets[setIndex].copyWith(
+      reps: int.tryParse(reps),
+    );
+    _addedExercises[exerciseIndex] = (
+      routineExercise.copyWith(sets: sets),
+      exercise,
+    );
+  }
+
+  /// Set the [rest] for the set with the [setIndex] in the exercise with the
+  /// [exerciseIndex].
+  void setRestFor(int exerciseIndex, int setIndex, String rest) {
+    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final sets = routineExercise.sets.toList();
+    sets[setIndex] = sets[setIndex].copyWith(
+      rest: int.tryParse(rest) ?? 0,
+    );
+    _addedExercises[exerciseIndex] = (
+      routineExercise.copyWith(sets: sets),
+      exercise,
+    );
   }
 }

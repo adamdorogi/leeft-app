@@ -27,5 +27,7 @@
   "remove": "Remove",
   "notes": "Notes",
   "addSet": "Add Set",
-  "superset": "Superset"
+  "superset": "Superset",
+  "reps": "Reps",
+  "kg": "kg"
 }

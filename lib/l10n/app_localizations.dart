@@ -183,6 +183,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Superset'**
   String get superset;
+
+  /// No description provided for @reps.
+  ///
+  /// In en, this message translates to:
+  /// **'Reps'**
+  String get reps;
+
+  /// No description provided for @kg.
+  ///
+  /// In en, this message translates to:
+  /// **'kg'**
+  String get kg;
 }
 
 class _AppLocalizationsDelegate

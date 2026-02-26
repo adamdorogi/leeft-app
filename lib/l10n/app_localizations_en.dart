@@ -101,4 +101,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get kg => 'kg';
+
+  @override
+  String get newRoutine => 'New Routine';
 }

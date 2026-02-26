@@ -1,14 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:isar/isar.dart';
 
 part 'exercise_set.freezed.dart';
 part 'exercise_set.g.dart';
 
 /// An exercise set.
 @freezed
-abstract class ExerciseSet with _$ExerciseSet {
+@Embedded(ignore: {'copyWith'})
+class ExerciseSet with _$ExerciseSet {
   /// Creates an [ExerciseSet].
   const factory ExerciseSet({
-    required int rest,
+    int? rest,
     @Default(false) bool isWarmUp,
     int? reps,
     double? weight,

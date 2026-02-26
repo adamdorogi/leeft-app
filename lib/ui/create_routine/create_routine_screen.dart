@@ -8,6 +8,7 @@ import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
 import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
 import 'package:leeft/ui/exercise_details/exercise_details_screen.dart';
 import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
+import 'package:leeft/utils/result.dart';
 
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,34 @@ class CreateRoutineScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context).createRoutine)),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context).createRoutine),
+        actions: [
+          ListenableBuilder(
+            listenable: Listenable.merge([
+              _viewModel,
+              _viewModel.saveRoutine,
+              _viewModel.addExercises,
+            ]),
+            builder: (context, _) {
+              return IconButton(
+                icon: const Icon(Icons.check),
+                onPressed:
+                    _viewModel.addedExercises.isNotEmpty &&
+                        !_viewModel.saveRoutine.isRunning
+                    ? () async {
+                        await _viewModel.saveRoutine.run();
+                        if (_viewModel.saveRoutine.result is Success<int> &&
+                            context.mounted) {
+                          Navigator.of(context).pop();
+                        }
+                      }
+                    : null,
+              );
+            },
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.add),
         label: Text(AppLocalizations.of(context).addExercises),
@@ -62,171 +90,202 @@ class CreateRoutineScreen extends StatelessWidget {
               _viewModel.addExercises,
               _viewModel,
             ]),
-            builder: (_, _) => ListView.builder(
-              itemBuilder: (_, index) {
-                final (routineExercise, exercise) =
-                    _viewModel.addedExercises[index];
-                final thumbnailUrl = exercise.thumbnailUrl;
+            builder: (_, _) => Column(
+              children: [
+                TextFormField(
+                  key: UniqueKey(),
+                  initialValue: _viewModel.name,
+                  decoration: InputDecoration(
+                    hintText: AppLocalizations.of(context).newRoutine,
+                  ),
+                  onChanged: (name) => _viewModel.name = name,
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (_, index) {
+                      final (routineExercise, exercise) =
+                          _viewModel.addedExercises[index];
+                      final thumbnailUrl = exercise.thumbnailUrl;
 
-                return Card(
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: thumbnailUrl != null
-                            ? CircleAvatar(
-                                foregroundImage: AssetImage(thumbnailUrl),
-                              )
-                            : const CircleAvatar(
-                                child: Icon(Icons.fitness_center),
+                      return Card(
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: thumbnailUrl != null
+                                  ? CircleAvatar(
+                                      foregroundImage: AssetImage(thumbnailUrl),
+                                    )
+                                  : const CircleAvatar(
+                                      child: Icon(Icons.fitness_center),
+                                    ),
+                              title: Text(
+                                exercise.title.forLocale(
+                                  AppLocalizations.of(context).localeName,
+                                ),
                               ),
-                        title: Text(
-                          exercise.title.forLocale(
-                            AppLocalizations.of(context).localeName,
-                          ),
-                        ),
-                        trailing: MenuAnchor(
-                          builder: (_, controller, _) => IconButton(
-                            onPressed: () => controller.isOpen
-                                ? controller.close()
-                                : controller.open(),
-                            icon: const Icon(Icons.more_horiz),
-                          ),
-                          menuChildren: [
-                            MenuItemButton(
-                              onPressed: () async {
-                                await Navigator.of(context).push(
-                                  MaterialPageRoute<void>(
-                                    builder: (context) {
-                                      final viewModel =
-                                          ExerciseDetailsViewModel(
-                                            exerciseRepository: context.read(),
-                                          );
-                                      // No need to wait for load command to
-                                      // finish.
-                                      // ignore: discarded_futures
-                                      viewModel.load.run(exercise.id);
-                                      return ExerciseDetailsScreen(
-                                        viewModel: viewModel,
+                              trailing: MenuAnchor(
+                                builder: (_, controller, _) => IconButton(
+                                  onPressed: () => controller.isOpen
+                                      ? controller.close()
+                                      : controller.open(),
+                                  icon: const Icon(Icons.more_horiz),
+                                ),
+                                menuChildren: [
+                                  MenuItemButton(
+                                    onPressed: () async {
+                                      await Navigator.of(context).push(
+                                        MaterialPageRoute<void>(
+                                          builder: (context) {
+                                            final viewModel =
+                                                ExerciseDetailsViewModel(
+                                                  exerciseRepository: context
+                                                      .read(),
+                                                );
+                                            // No need to wait for load command to
+                                            // finish.
+                                            // ignore: discarded_futures
+                                            viewModel.load.run(exercise.id);
+                                            return ExerciseDetailsScreen(
+                                              viewModel: viewModel,
+                                            );
+                                          },
+                                        ),
                                       );
                                     },
+                                    leadingIcon: const Icon(Icons.info_outline),
                                   ),
-                                );
-                              },
-                              leadingIcon: const Icon(Icons.info_outline),
+                                  MenuItemButton(
+                                    onPressed: () =>
+                                        _viewModel.removeExercise(index),
+                                    leadingIcon: const Icon(Icons.delete),
+                                    child: Text(
+                                      AppLocalizations.of(context).remove,
+                                    ),
+                                  ),
+                                  MenuItemButton(
+                                    leadingIcon: const Icon(Icons.swap_horiz),
+                                    child: Text(
+                                      AppLocalizations.of(context).replace,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            MenuItemButton(
-                              onPressed: () => _viewModel.removeExercise(index),
-                              leadingIcon: const Icon(Icons.delete),
-                              child: Text(AppLocalizations.of(context).remove),
+                            TextFormField(
+                              key: UniqueKey(),
+                              initialValue: routineExercise.notes,
+                              decoration: InputDecoration(
+                                hintText: AppLocalizations.of(context).notes,
+                              ),
+                              onChanged: (notes) =>
+                                  _viewModel.setNotesFor(index, notes),
                             ),
-                            MenuItemButton(
-                              leadingIcon: const Icon(Icons.swap_horiz),
-                              child: Text(AppLocalizations.of(context).replace),
+                            for (
+                              var i = 0;
+                              i < routineExercise.sets.length;
+                              i++
+                            )
+                              Dismissible(
+                                key: UniqueKey(),
+                                direction: .endToStart,
+                                onDismissed: (_) =>
+                                    _viewModel.removeSetFrom(index, i),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        IconButton(
+                                          onPressed: () => _viewModel
+                                              .toggleWarmUpSetFor(index, i),
+                                          icon: routineExercise.sets[i].isWarmUp
+                                              ? const Icon(Icons.fireplace)
+                                              : Text('${i + 1}.'),
+                                        ),
+                                        Expanded(
+                                          child: TextFormField(
+                                            initialValue:
+                                                routineExercise
+                                                        .sets[i]
+                                                        .weight ==
+                                                    null
+                                                ? null
+                                                : '${routineExercise.sets[i].weight}',
+                                            decoration: InputDecoration(
+                                              hintText: AppLocalizations.of(
+                                                context,
+                                              ).kg,
+                                            ),
+                                            onChanged: (weight) => _viewModel
+                                                .setWeightFor(index, i, weight),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: TextFormField(
+                                            initialValue:
+                                                routineExercise.sets[i].reps ==
+                                                    null
+                                                ? null
+                                                : '${routineExercise.sets[i].reps}',
+                                            decoration: InputDecoration(
+                                              hintText: AppLocalizations.of(
+                                                context,
+                                              ).reps,
+                                            ),
+                                            onChanged: (reps) => _viewModel
+                                                .setRepsFor(index, i, reps),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextFormField(
+                                            initialValue:
+                                                '${routineExercise.sets[i].rest}',
+                                            onChanged: (rest) => _viewModel
+                                                .setRestFor(index, i, rest),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            Row(
+                              mainAxisAlignment: .center,
+                              children: [
+                                ElevatedButton.icon(
+                                  label: Text(
+                                    AppLocalizations.of(context).addSet,
+                                  ),
+                                  icon: const Icon(Icons.add),
+                                  onPressed: () => _viewModel.addSetTo(index),
+                                ),
+                                if (index <
+                                    _viewModel.addedExercises.length - 1)
+                                  ElevatedButton.icon(
+                                    label: Text(
+                                      AppLocalizations.of(context).superset,
+                                    ),
+                                    icon: Icon(
+                                      routineExercise.shouldSupersetWithNext
+                                          ? Icons.link
+                                          : Icons.link_off,
+                                    ),
+                                    onPressed: () =>
+                                        _viewModel.toggleSupersetFor(index),
+                                  ),
+                              ],
                             ),
                           ],
                         ),
-                      ),
-                      TextFormField(
-                        key: UniqueKey(),
-                        initialValue: routineExercise.notes,
-                        decoration: InputDecoration(
-                          hintText: AppLocalizations.of(context).notes,
-                        ),
-                        onChanged: (notes) =>
-                            _viewModel.setNotesFor(index, notes),
-                      ),
-                      for (var i = 0; i < routineExercise.sets.length; i++)
-                        Dismissible(
-                          key: UniqueKey(),
-                          direction: .endToStart,
-                          onDismissed: (_) =>
-                              _viewModel.removeSetFrom(index, i),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  IconButton(
-                                    onPressed: () =>
-                                        _viewModel.toggleWarmUpSetFor(index, i),
-                                    icon: routineExercise.sets[i].isWarmUp
-                                        ? const Icon(Icons.fireplace)
-                                        : Text('${i + 1}.'),
-                                  ),
-                                  Expanded(
-                                    child: TextFormField(
-                                      initialValue:
-                                          routineExercise.sets[i].weight == null
-                                          ? null
-                                          : '${routineExercise.sets[i].weight}',
-                                      decoration: InputDecoration(
-                                        hintText: AppLocalizations.of(
-                                          context,
-                                        ).kg,
-                                      ),
-                                      onChanged: (weight) => _viewModel
-                                          .setWeightFor(index, i, weight),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TextFormField(
-                                      initialValue:
-                                          routineExercise.sets[i].reps == null
-                                          ? null
-                                          : '${routineExercise.sets[i].reps}',
-                                      decoration: InputDecoration(
-                                        hintText: AppLocalizations.of(
-                                          context,
-                                        ).reps,
-                                      ),
-                                      onChanged: (reps) =>
-                                          _viewModel.setRepsFor(index, i, reps),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: TextFormField(
-                                      initialValue:
-                                          '${routineExercise.sets[i].rest}',
-                                      onChanged: (rest) =>
-                                          _viewModel.setRestFor(index, i, rest),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      Row(
-                        mainAxisAlignment: .center,
-                        children: [
-                          ElevatedButton.icon(
-                            label: Text(AppLocalizations.of(context).addSet),
-                            icon: const Icon(Icons.add),
-                            onPressed: () => _viewModel.addSetTo(index),
-                          ),
-                          if (index < _viewModel.addedExercises.length - 1)
-                            ElevatedButton.icon(
-                              label: Text(
-                                AppLocalizations.of(context).superset,
-                              ),
-                              icon: Icon(
-                                routineExercise.shouldSupersetWithNext
-                                    ? Icons.link
-                                    : Icons.link_off,
-                              ),
-                              onPressed: () =>
-                                  _viewModel.toggleSupersetFor(index),
-                            ),
-                        ],
-                      ),
-                    ],
+                      );
+                    },
+                    itemCount: _viewModel.addedExercises.length,
                   ),
-                );
-              },
-              itemCount: _viewModel.addedExercises.length,
+                ),
+              ],
             ),
           ),
     );

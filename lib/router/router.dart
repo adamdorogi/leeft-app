@@ -4,7 +4,10 @@ import 'package:leeft/router/routes.dart';
 import 'package:leeft/ui/navigation/navigation_screen.dart';
 import 'package:leeft/ui/profile/profile_screen.dart';
 import 'package:leeft/ui/routines/routines_screen.dart';
+import 'package:leeft/ui/routines/routines_viewmodel.dart';
 import 'package:leeft/ui/settings/settings_screen.dart';
+
+import 'package:provider/provider.dart';
 
 /// The router configuration defining routes and navigation.
 final router = GoRouter(
@@ -19,7 +22,15 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: Routes.routines,
-              builder: (_, _) => const RoutinesScreen(),
+              builder: (context, _) {
+                final viewModel = RoutinesViewModel(
+                  routineRepository: context.read(),
+                );
+                // No need to wait for load command to finish.
+                // ignore: discarded_futures
+                viewModel.load.run();
+                return RoutinesScreen(viewModel: viewModel);
+              },
             ),
           ],
         ),

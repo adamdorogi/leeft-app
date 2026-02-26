@@ -6,12 +6,18 @@ part of 'localized_field.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LocalizedField<T> _$LocalizedFieldFromJson<T>(
+_$LocalizedFieldImpl<T> _$$LocalizedFieldImplFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
-) => _LocalizedField<T>(en: fromJsonT(json['en']));
+) =>
+    _$LocalizedFieldImpl<T>(
+      en: fromJsonT(json['en']),
+    );
 
-Map<String, dynamic> _$LocalizedFieldToJson<T>(
-  _LocalizedField<T> instance,
+Map<String, dynamic> _$$LocalizedFieldImplToJson<T>(
+  _$LocalizedFieldImpl<T> instance,
   Object? Function(T value) toJsonT,
-) => <String, dynamic>{'en': toJsonT(instance.en)};
+) =>
+    <String, dynamic>{
+      'en': toJsonT(instance.en),
+    };

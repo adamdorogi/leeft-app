@@ -195,6 +195,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'kg'**
   String get kg;
+
+  /// No description provided for @newRoutine.
+  ///
+  /// In en, this message translates to:
+  /// **'New Routine'**
+  String get newRoutine;
 }
 
 class _AppLocalizationsDelegate

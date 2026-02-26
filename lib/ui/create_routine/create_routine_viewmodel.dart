@@ -3,8 +3,10 @@ import 'dart:collection';
 import 'package:flutter/foundation.dart';
 
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
+import 'package:leeft/data/repositories/routine/routine_repository.dart';
 import 'package:leeft/domain/models/exercise/exercise.dart';
 import 'package:leeft/domain/models/exercise_set/exercise_set.dart';
+import 'package:leeft/domain/models/routine/routine.dart';
 import 'package:leeft/domain/models/routine_exercise/routine_exercise.dart';
 import 'package:leeft/utils/command.dart';
 import 'package:leeft/utils/result.dart';
@@ -16,10 +18,14 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Creates a [CreateRoutineViewModel] with an [exerciseRepository].
   ///
   /// The [exerciseRepository] retrieves the exercises and stores the routine.
-  CreateRoutineViewModel({required ExerciseRepository exerciseRepository})
-    : _exerciseRepository = exerciseRepository;
+  CreateRoutineViewModel({
+    required ExerciseRepository exerciseRepository,
+    required RoutineRepository routineRepository,
+  }) : _exerciseRepository = exerciseRepository,
+       _routineRepository = routineRepository;
 
   final ExerciseRepository _exerciseRepository;
+  final RoutineRepository _routineRepository;
 
   final _log = Logger((CreateRoutineViewModel).toString());
 
@@ -27,6 +33,9 @@ class CreateRoutineViewModel extends ChangeNotifier {
   UnmodifiableListView<(RoutineExercise, Exercise)> get addedExercises =>
       UnmodifiableListView(_addedExercises);
   List<(RoutineExercise, Exercise)> _addedExercises = [];
+
+  /// The routine name.
+  String? name;
 
   /// The command to load the exercises from the exercise repository and add it
   /// to the routine.
@@ -64,6 +73,32 @@ class CreateRoutineViewModel extends ChangeNotifier {
         .toList();
     _log.info('Successfully added ${exerciseIds.length} exercises to routine.');
     return Result.success(null);
+  }
+
+  /// The command to save the routine.
+  late final Command0<int> saveRoutine = Command0(_saveRoutine);
+  Future<Result<int>> _saveRoutine() async {
+    _log.info('Saving routine...');
+    var routineName = name?.trim();
+    if (routineName?.isEmpty ?? true) {
+      routineName = null;
+    }
+    final routine = Routine(
+      name: routineName,
+      routineExercises: _addedExercises
+          .map((routineExercise) => routineExercise.$1)
+          .toList(),
+    );
+
+    final result = await _routineRepository.saveRoutine(routine);
+    switch (result) {
+      case Success(value: final routineId):
+        _log.info('Successfully saved routine $routineId.');
+        return Result.success(routineId);
+      case Failure(:final error):
+        _log.warning('Failed to save routine: $error');
+        return Result.failure(error);
+    }
   }
 
   /// Adds a set to the exercise with the [exerciseIndex] in the routine.

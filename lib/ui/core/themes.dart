@@ -12,6 +12,6 @@ abstract final class Themes {
   /// The theme for the dark [ThemeMode].
   static final darkTheme = ThemeData(
     brightness: .dark,
-    textTheme: GoogleFonts.interTextTheme(),
+    textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
   );
 }

@@ -8,6 +8,8 @@ import 'package:logging/logging.dart';
 /// A [RoutineRepository] for development.
 class RoutineDevelopmentRepository extends RoutineRepository {
   /// Creates a [RoutineDevelopmentRepository] with a [databaseService].
+  ///
+  /// The [databaseService] manages the routines in the database.
   RoutineDevelopmentRepository({
     required DatabaseService databaseService,
   }) : _databaseService = databaseService;

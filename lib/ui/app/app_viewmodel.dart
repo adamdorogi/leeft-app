@@ -40,7 +40,7 @@ class AppViewModel extends ChangeNotifier {
       case Success(value: final themeMode):
         _themeMode = themeMode;
         _log.info('Successfully loaded view model.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to load view model: $error');
         return Result.failure(error);

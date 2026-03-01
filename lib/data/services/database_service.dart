@@ -48,7 +48,7 @@ class DatabaseService {
     try {
       final isar = await _isar;
       await isar.writeTxn(() => isar.routines.delete(routineId));
-      return Result.success(null);
+      return const Result.success(null);
     } on Exception catch (e) {
       _log.warning('Failed to delete routine $routineId: $e');
       return Result.failure(e);

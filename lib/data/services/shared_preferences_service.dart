@@ -27,7 +27,7 @@ class SharedPreferencesService {
       final sharedPreferences = await SharedPreferences.getInstance();
       await sharedPreferences.setString(_themeModeKey, themeMode);
       _log.finer('Successfully set theme mode $themeMode.');
-      return Result.success(null);
+      return const Result.success(null);
     } on Exception catch (e) {
       _log.warning('Failed to set theme mode: $e');
       return Result.failure(e);

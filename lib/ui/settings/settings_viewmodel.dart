@@ -34,7 +34,7 @@ class SettingsViewModel extends ChangeNotifier {
       case Success(value: final themeMode):
         _themeMode = themeMode;
         _log.info('Successfully loaded view model.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to load view model: $error');
         return Result.failure(error);
@@ -45,7 +45,7 @@ class SettingsViewModel extends ChangeNotifier {
   late final Command1<void, String?> setThemeMode = Command1(_setThemeMode);
   Future<Result<void>> _setThemeMode(String? themeMode) async {
     if (_themeMode == themeMode || themeMode == null) {
-      return Result.success(null);
+      return const Result.success(null);
     }
 
     _log.info('Setting theme mode to $themeMode...');
@@ -55,7 +55,7 @@ class SettingsViewModel extends ChangeNotifier {
       case Success():
         _themeMode = themeMode;
         _log.info('Successfully set theme mode to $themeMode.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to set theme mode: $error');
         return Result.failure(error);

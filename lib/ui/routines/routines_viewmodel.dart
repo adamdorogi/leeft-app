@@ -35,7 +35,7 @@ class RoutinesViewModel extends ChangeNotifier {
       case Success(value: final routines):
         _routines = routines;
         _log.info('Successfully loaded ${routines.length} routines.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to load routines: $error');
         return Result.failure(error);
@@ -52,7 +52,7 @@ class RoutinesViewModel extends ChangeNotifier {
       case Success():
         _routines.removeWhere((routine) => routine.id == routineId);
         _log.info('Successfully deleted routine $routineId.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to delete routine: $error');
         return Result.failure(error);

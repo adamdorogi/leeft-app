@@ -3,10 +3,10 @@ sealed class Result<T> {
   const Result();
 
   /// Creates a [Success] with a [value].
-  factory Result.success(T value) = Success._;
+  const factory Result.success(T value) = Success._;
 
   /// Creates a [Failure] with an [error].
-  factory Result.failure(Exception error) = Failure._;
+  const factory Result.failure(Exception error) = Failure._;
 }
 
 /// A successful [Result] with a [value].

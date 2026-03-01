@@ -41,7 +41,7 @@ class RoutineDevelopmentRepository extends RoutineRepository {
     switch (result) {
       case Success():
         _log.info('Successfully deleted routine $routineId.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to delete routine: $error');
         return Result.failure(error);

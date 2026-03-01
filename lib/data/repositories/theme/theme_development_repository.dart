@@ -46,7 +46,7 @@ class ThemeDevelopmentRepository extends ThemeRepository {
       case Success():
         _themeModeController.add(themeMode);
         _log.info('Successfully set theme mode $themeMode.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to set theme mode: $error');
         return Result.failure(error);

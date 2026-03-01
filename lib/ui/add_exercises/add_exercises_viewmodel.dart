@@ -38,7 +38,7 @@ class AddExercisesViewModel extends ChangeNotifier {
             .map((exercise) => exercise.muscleGroup)
             .toSet();
         _log.info('Successfully loaded view model.');
-        return Result.success(null);
+        return const Result.success(null);
       case Failure(:final error):
         _log.info('Failed to load view model: $error');
         return Result.failure(error);

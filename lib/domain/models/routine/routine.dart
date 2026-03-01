@@ -19,9 +19,10 @@ class Routine with _$Routine {
   }) = _Routine;
   const Routine._();
 
-  Id get id => Isar.autoIncrement;
-
   /// The [Routine] created from [json].
   factory Routine.fromJson(Map<String, dynamic> json) =>
       _$RoutineFromJson(json);
+
+  @override
+  Id get id => Isar.autoIncrement;
 }

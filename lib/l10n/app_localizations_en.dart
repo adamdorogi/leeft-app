@@ -104,4 +104,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get newRoutine => 'New Routine';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get dark => 'Dark';
 }

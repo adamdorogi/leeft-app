@@ -30,5 +30,8 @@
   "superset": "Superset",
   "reps": "Reps",
   "kg": "kg",
-  "newRoutine": "New Routine"
+  "newRoutine": "New Routine",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark"
 }

@@ -2,8 +2,11 @@ import 'package:leeft/data/repositories/exercise/exercise_development_repository
 import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
 import 'package:leeft/data/repositories/routine/routine_development_repository.dart';
 import 'package:leeft/data/repositories/routine/routine_repository.dart';
+import 'package:leeft/data/repositories/theme/theme_development_repository.dart';
+import 'package:leeft/data/repositories/theme/theme_repository.dart';
 import 'package:leeft/data/services/asset_bundle_service.dart';
 import 'package:leeft/data/services/database_service.dart';
+import 'package:leeft/data/services/shared_preferences_service.dart';
 
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -12,6 +15,7 @@ import 'package:provider/single_child_widget.dart';
 final List<SingleChildWidget> developmentProviders = [
   Provider(create: (_) => AssetBundleService()),
   Provider(create: (_) => DatabaseService()),
+  Provider(create: (_) => SharedPreferencesService()),
   Provider(
     create: (context) =>
         ExerciseDevelopmentRepository(assetBundleService: context.read())
@@ -21,5 +25,10 @@ final List<SingleChildWidget> developmentProviders = [
     create: (context) =>
         RoutineDevelopmentRepository(databaseService: context.read())
             as RoutineRepository,
+  ),
+  Provider(
+    create: (context) =>
+        ThemeDevelopmentRepository(sharedPreferencesService: context.read())
+            as ThemeRepository,
   ),
 ];

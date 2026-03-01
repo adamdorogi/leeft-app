@@ -6,6 +6,7 @@ import 'package:leeft/ui/profile/profile_screen.dart';
 import 'package:leeft/ui/routines/routines_screen.dart';
 import 'package:leeft/ui/routines/routines_viewmodel.dart';
 import 'package:leeft/ui/settings/settings_screen.dart';
+import 'package:leeft/ui/settings/settings_viewmodel.dart';
 
 import 'package:provider/provider.dart';
 
@@ -44,7 +45,15 @@ final router = GoRouter(
                 // The settings screen.
                 GoRoute(
                   path: Routes.settingsRelative,
-                  builder: (_, _) => const SettingsScreen(),
+                  builder: (context, _) {
+                    final viewModel = SettingsViewModel(
+                      themeRepository: context.read(),
+                    );
+                    // No need to wait for load command to finish.
+                    // ignore: discarded_futures
+                    viewModel.load.run();
+                    return SettingsScreen(viewModel: viewModel);
+                  },
                 ),
               ],
             ),

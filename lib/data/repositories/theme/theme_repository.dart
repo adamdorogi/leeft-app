@@ -6,7 +6,7 @@ abstract class ThemeRepository {
   Stream<String> observeThemeMode();
 
   /// The current theme mode.
-  Future<Result<String?>> get themeMode;
+  Future<Result<String>> get themeMode;
 
   /// Sets the current [themeMode].
   Future<Result<void>> setThemeMode(String themeMode);

@@ -10,10 +10,10 @@ class SharedPreferencesService {
   final _log = Logger((SharedPreferencesService).toString());
 
   /// The theme mode stored in the shared preferences.
-  Future<Result<String?>> get themeMode async {
+  Future<Result<String>> get themeMode async {
     try {
       final sharedPreferences = await SharedPreferences.getInstance();
-      final themeMode = sharedPreferences.getString(_themeModeKey);
+      final themeMode = sharedPreferences.getString(_themeModeKey) ?? 'system';
       _log.finer('Successfully retrieved theme mode $themeMode.');
       return Result.success(themeMode);
     } on Exception catch (e) {

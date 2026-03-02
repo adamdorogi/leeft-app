@@ -25,7 +25,7 @@ class ThemeDevelopmentRepository extends ThemeRepository {
   final _themeModeController = StreamController<String>.broadcast();
 
   @override
-  Future<Result<String?>> get themeMode async {
+  Future<Result<String>> get themeMode async {
     final result = await _sharedPreferencesService.themeMode;
 
     switch (result) {

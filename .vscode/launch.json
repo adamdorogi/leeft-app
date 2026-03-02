@@ -5,20 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "leeft",
+      "name": "relift",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart"
     },
     {
-      "name": "leeft (profile mode)",
+      "name": "relift (profile mode)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
       "flutterMode": "profile"
     },
     {
-      "name": "leeft (release mode)",
+      "name": "relift (release mode)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",

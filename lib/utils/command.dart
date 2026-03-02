@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:leeft/utils/result.dart';
+import 'package:relift/utils/result.dart';
 
 /// A command with an action.
 ///

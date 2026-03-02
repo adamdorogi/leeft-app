@@ -1,5 +1,5 @@
-import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/domain/models/exercise/exercise.dart';
+import 'package:relift/utils/result.dart';
 
 /// A repository for managing exercise data.
 abstract class ExerciseRepository {

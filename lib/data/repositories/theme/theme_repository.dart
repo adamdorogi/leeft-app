@@ -1,4 +1,4 @@
-import 'package:leeft/utils/result.dart';
+import 'package:relift/utils/result.dart';
 
 /// A repository for managing theme data.
 abstract class ThemeRepository {

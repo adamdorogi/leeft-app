@@ -1,4 +1,4 @@
-package com.example.leeft
+package app.relift
 
 import io.flutter.embedding.android.FlutterActivity
 

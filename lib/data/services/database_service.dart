@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
 
-import 'package:leeft/domain/models/routine/routine.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/domain/models/routine/routine.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 import 'package:path_provider/path_provider.dart';

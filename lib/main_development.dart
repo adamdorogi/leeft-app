@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:leeft/config/providers.dart';
-import 'package:leeft/ui/app/app.dart';
-import 'package:leeft/ui/app/app_viewmodel.dart';
+import 'package:relift/config/providers.dart';
+import 'package:relift/ui/app/app.dart';
+import 'package:relift/ui/app/app_viewmodel.dart';
 
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';

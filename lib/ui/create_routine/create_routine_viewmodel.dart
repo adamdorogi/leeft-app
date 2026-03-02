@@ -2,14 +2,14 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 
-import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
-import 'package:leeft/data/repositories/routine/routine_repository.dart';
-import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:leeft/domain/models/exercise_set/exercise_set.dart';
-import 'package:leeft/domain/models/routine/routine.dart';
-import 'package:leeft/domain/models/routine_exercise/routine_exercise.dart';
-import 'package:leeft/utils/command.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/data/repositories/exercise/exercise_repository.dart';
+import 'package:relift/data/repositories/routine/routine_repository.dart';
+import 'package:relift/domain/models/exercise/exercise.dart';
+import 'package:relift/domain/models/exercise_set/exercise_set.dart';
+import 'package:relift/domain/models/routine/routine.dart';
+import 'package:relift/domain/models/routine_exercise/routine_exercise.dart';
+import 'package:relift/utils/command.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 

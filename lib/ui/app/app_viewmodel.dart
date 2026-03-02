@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:leeft/data/repositories/theme/theme_repository.dart';
-import 'package:leeft/utils/command.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/data/repositories/theme/theme_repository.dart';
+import 'package:relift/utils/command.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 

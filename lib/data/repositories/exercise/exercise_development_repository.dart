@@ -1,8 +1,8 @@
-import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
-import 'package:leeft/data/services/asset_bundle_service.dart';
-import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:leeft/utils/memoizer.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/data/repositories/exercise/exercise_repository.dart';
+import 'package:relift/data/services/asset_bundle_service.dart';
+import 'package:relift/domain/models/exercise/exercise.dart';
+import 'package:relift/utils/memoizer.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 

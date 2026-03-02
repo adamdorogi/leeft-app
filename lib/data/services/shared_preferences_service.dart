@@ -1,4 +1,4 @@
-import 'package:leeft/utils/result.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 import 'package:shared_preferences/shared_preferences.dart';

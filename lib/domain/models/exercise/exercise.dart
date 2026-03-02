@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:leeft/domain/models/localized_field/localized_field.dart';
+import 'package:relift/domain/models/localized_field/localized_field.dart';
 
 part 'exercise.freezed.dart';
 part 'exercise.g.dart';

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:isar/isar.dart';
 
-import 'package:leeft/domain/models/exercise_set/exercise_set.dart';
-import 'package:leeft/domain/models/routine_exercise/routine_exercise.dart';
+import 'package:relift/domain/models/exercise_set/exercise_set.dart';
+import 'package:relift/domain/models/routine_exercise/routine_exercise.dart';
 
 part 'routine.freezed.dart';
 part 'routine.g.dart';

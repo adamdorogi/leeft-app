@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:leeft/data/repositories/theme/theme_repository.dart';
-import 'package:leeft/data/services/shared_preferences_service.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/data/repositories/theme/theme_repository.dart';
+import 'package:relift/data/services/shared_preferences_service.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 

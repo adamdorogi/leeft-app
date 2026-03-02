@@ -2,13 +2,13 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 
-import 'package:leeft/l10n/app_localizations.dart';
-import 'package:leeft/ui/add_exercises/add_exercises_screen.dart';
-import 'package:leeft/ui/add_exercises/add_exercises_viewmodel.dart';
-import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
-import 'package:leeft/ui/exercise_details/exercise_details_screen.dart';
-import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/add_exercises/add_exercises_screen.dart';
+import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/create_routine/create_routine_viewmodel.dart';
+import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
+import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:provider/provider.dart';
 

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "leeft" "\0"
+            VALUE "CompanyName", "app" "\0"
+            VALUE "FileDescription", "relift" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "leeft" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "leeft.exe" "\0"
-            VALUE "ProductName", "leeft" "\0"
+            VALUE "InternalName", "relift" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 app. All rights reserved." "\0"
+            VALUE "OriginalFilename", "relift.exe" "\0"
+            VALUE "ProductName", "relift" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

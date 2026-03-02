@@ -1,7 +1,7 @@
-import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
-import 'package:leeft/domain/models/exercise/exercise.dart';
-import 'package:leeft/utils/command.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/data/repositories/exercise/exercise_repository.dart';
+import 'package:relift/domain/models/exercise/exercise.dart';
+import 'package:relift/utils/command.dart';
+import 'package:relift/utils/result.dart';
 
 import 'package:logging/logging.dart';
 

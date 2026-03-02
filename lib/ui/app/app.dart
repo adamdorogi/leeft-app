@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:leeft/l10n/app_localizations.dart';
-import 'package:leeft/router/router.dart';
-import 'package:leeft/ui/app/app_viewmodel.dart';
-import 'package:leeft/ui/core/themes.dart';
+import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/router/router.dart';
+import 'package:relift/ui/app/app_viewmodel.dart';
+import 'package:relift/ui/core/themes.dart';
 
 /// A Flutter application for tracking gym workouts.
 class App extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:leeft/l10n/app_localizations.dart';
+import 'package:relift/l10n/app_localizations.dart';
 
 /// A screen with a bottom navigation bar encapsulating a navigation shell.
 class NavigationScreen extends StatelessWidget {

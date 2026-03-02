@@ -1,5 +1,5 @@
-import 'package:leeft/domain/models/routine/routine.dart';
-import 'package:leeft/utils/result.dart';
+import 'package:relift/domain/models/routine/routine.dart';
+import 'package:relift/utils/result.dart';
 
 /// A repository for managing routine data.
 abstract class RoutineRepository {

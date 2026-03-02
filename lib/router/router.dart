@@ -1,12 +1,12 @@
 import 'package:go_router/go_router.dart';
 
-import 'package:leeft/router/routes.dart';
-import 'package:leeft/ui/navigation/navigation_screen.dart';
-import 'package:leeft/ui/profile/profile_screen.dart';
-import 'package:leeft/ui/routines/routines_screen.dart';
-import 'package:leeft/ui/routines/routines_viewmodel.dart';
-import 'package:leeft/ui/settings/settings_screen.dart';
-import 'package:leeft/ui/settings/settings_viewmodel.dart';
+import 'package:relift/router/routes.dart';
+import 'package:relift/ui/navigation/navigation_screen.dart';
+import 'package:relift/ui/profile/profile_screen.dart';
+import 'package:relift/ui/routines/routines_screen.dart';
+import 'package:relift/ui/routines/routines_viewmodel.dart';
+import 'package:relift/ui/settings/settings_screen.dart';
+import 'package:relift/ui/settings/settings_viewmodel.dart';
 
 import 'package:provider/provider.dart';
 

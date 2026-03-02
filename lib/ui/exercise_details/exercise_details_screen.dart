@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:leeft/l10n/app_localizations.dart';
-import 'package:leeft/ui/exercise_details/exercise_details_viewmodel.dart';
+import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 
 import 'package:video_player/video_player.dart';
 

@@ -1,12 +1,12 @@
-import 'package:leeft/data/repositories/exercise/exercise_development_repository.dart';
-import 'package:leeft/data/repositories/exercise/exercise_repository.dart';
-import 'package:leeft/data/repositories/routine/routine_development_repository.dart';
-import 'package:leeft/data/repositories/routine/routine_repository.dart';
-import 'package:leeft/data/repositories/theme/theme_development_repository.dart';
-import 'package:leeft/data/repositories/theme/theme_repository.dart';
-import 'package:leeft/data/services/asset_bundle_service.dart';
-import 'package:leeft/data/services/database_service.dart';
-import 'package:leeft/data/services/shared_preferences_service.dart';
+import 'package:relift/data/repositories/exercise/exercise_development_repository.dart';
+import 'package:relift/data/repositories/exercise/exercise_repository.dart';
+import 'package:relift/data/repositories/routine/routine_development_repository.dart';
+import 'package:relift/data/repositories/routine/routine_repository.dart';
+import 'package:relift/data/repositories/theme/theme_development_repository.dart';
+import 'package:relift/data/repositories/theme/theme_repository.dart';
+import 'package:relift/data/services/asset_bundle_service.dart';
+import 'package:relift/data/services/database_service.dart';
+import 'package:relift/data/services/shared_preferences_service.dart';
 
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';

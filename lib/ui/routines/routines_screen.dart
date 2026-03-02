@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:leeft/l10n/app_localizations.dart';
-import 'package:leeft/ui/create_routine/create_routine_screen.dart';
-import 'package:leeft/ui/create_routine/create_routine_viewmodel.dart';
-import 'package:leeft/ui/routines/routines_viewmodel.dart';
+import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/create_routine/create_routine_screen.dart';
+import 'package:relift/ui/create_routine/create_routine_viewmodel.dart';
+import 'package:relift/ui/routines/routines_viewmodel.dart';
 
 import 'package:provider/provider.dart';
 

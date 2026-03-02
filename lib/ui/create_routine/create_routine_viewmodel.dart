@@ -45,7 +45,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
     UnmodifiableSetView<String>? exerciseIds,
   ) async {
     if (exerciseIds == null || exerciseIds.isEmpty) {
-      return Result.success(null);
+      return const Result.success(null);
     }
     _log.info('Adding ${exerciseIds.length} exercises to routine...');
     final addedExercisesResults = await Future.wait(
@@ -72,7 +72,7 @@ class CreateRoutineViewModel extends ChangeNotifier {
         )
         .toList();
     _log.info('Successfully added ${exerciseIds.length} exercises to routine.');
-    return Result.success(null);
+    return const Result.success(null);
   }
 
   /// The command to save the routine.

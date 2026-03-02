@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import 'package:logging/logging.dart';
+
 import 'package:relift/config/assets.dart';
 import 'package:relift/domain/models/exercise/exercise.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A stateless service for retrieving assets from the asset bundle.
 class AssetBundleService {

@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:logging/logging.dart';
+
 import 'package:relift/data/repositories/theme/theme_repository.dart';
 import 'package:relift/data/services/shared_preferences_service.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A [ThemeRepository] for development.
 class ThemeDevelopmentRepository extends ThemeRepository {

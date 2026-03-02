@@ -1,3 +1,6 @@
+import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
+
 import 'package:relift/data/repositories/exercise/exercise_development_repository.dart';
 import 'package:relift/data/repositories/exercise/exercise_repository.dart';
 import 'package:relift/data/repositories/routine/routine_development_repository.dart';
@@ -7,9 +10,6 @@ import 'package:relift/data/repositories/theme/theme_repository.dart';
 import 'package:relift/data/services/asset_bundle_service.dart';
 import 'package:relift/data/services/database_service.dart';
 import 'package:relift/data/services/shared_preferences_service.dart';
-
-import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
 
 /// The providers exposing services and repositories used during development.
 final List<SingleChildWidget> developmentProviders = [

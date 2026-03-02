@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'package:logging/logging.dart';
+import 'package:provider/provider.dart';
+
 import 'package:relift/config/providers.dart';
 import 'package:relift/ui/app/app.dart';
 import 'package:relift/ui/app/app_viewmodel.dart';
-
-import 'package:logging/logging.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   Logger.root.level = .ALL;

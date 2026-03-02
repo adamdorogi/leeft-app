@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import 'package:logging/logging.dart';
+
 import 'package:relift/data/repositories/theme/theme_repository.dart';
 import 'package:relift/utils/command.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A view model for managing the UI state of the settings screen.
 class SettingsViewModel extends ChangeNotifier {

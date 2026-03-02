@@ -1,9 +1,9 @@
+import 'package:logging/logging.dart';
+
 import 'package:relift/data/repositories/exercise/exercise_repository.dart';
 import 'package:relift/domain/models/exercise/exercise.dart';
 import 'package:relift/utils/command.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A view model for managing the UI state of the exercise details screen.
 class ExerciseDetailsViewModel {

@@ -1,9 +1,9 @@
+import 'package:logging/logging.dart';
+
 import 'package:relift/data/repositories/routine/routine_repository.dart';
 import 'package:relift/data/services/database_service.dart';
 import 'package:relift/domain/models/routine/routine.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A [RoutineRepository] for development.
 class RoutineDevelopmentRepository extends RoutineRepository {

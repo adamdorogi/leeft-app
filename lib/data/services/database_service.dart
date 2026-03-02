@@ -1,10 +1,9 @@
 import 'package:isar/isar.dart';
+import 'package:logging/logging.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'package:relift/domain/models/routine/routine.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
-import 'package:path_provider/path_provider.dart';
 
 /// A stateless service for interacting with the Isar database.
 class DatabaseService {

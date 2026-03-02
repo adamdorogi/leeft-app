@@ -2,6 +2,8 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 
+import 'package:logging/logging.dart';
+
 import 'package:relift/data/repositories/exercise/exercise_repository.dart';
 import 'package:relift/data/repositories/routine/routine_repository.dart';
 import 'package:relift/domain/models/exercise/exercise.dart';
@@ -10,8 +12,6 @@ import 'package:relift/domain/models/routine/routine.dart';
 import 'package:relift/domain/models/routine_exercise/routine_exercise.dart';
 import 'package:relift/utils/command.dart';
 import 'package:relift/utils/result.dart';
-
-import 'package:logging/logging.dart';
 
 /// A view model for managing the UI state of the routine creation screen.
 class CreateRoutineViewModel extends ChangeNotifier {

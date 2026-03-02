@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/create_routine/create_routine_screen.dart';
 import 'package:relift/ui/create_routine/create_routine_viewmodel.dart';
 import 'package:relift/ui/routines/routines_viewmodel.dart';
-
-import 'package:provider/provider.dart';
 
 /// A screen displaying saved routines.
 class RoutinesScreen extends StatelessWidget {

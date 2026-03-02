@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 import 'package:relift/router/routes.dart';
 import 'package:relift/ui/navigation/navigation_screen.dart';
@@ -7,8 +8,6 @@ import 'package:relift/ui/routines/routines_screen.dart';
 import 'package:relift/ui/routines/routines_viewmodel.dart';
 import 'package:relift/ui/settings/settings_screen.dart';
 import 'package:relift/ui/settings/settings_viewmodel.dart';
-
-import 'package:provider/provider.dart';
 
 /// The router configuration defining routes and navigation.
 final router = GoRouter(

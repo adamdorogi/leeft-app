@@ -1,6 +1,7 @@
+import 'package:logging/logging.dart';
+
 import 'package:relift/utils/result.dart';
 
-import 'package:logging/logging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A stateless service for interacting with the shared preferences.

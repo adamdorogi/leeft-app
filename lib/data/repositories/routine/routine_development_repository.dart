@@ -1,5 +1,3 @@
-import 'package:logging/logging.dart';
-
 import 'package:relift/data/repositories/routine/routine_repository.dart';
 import 'package:relift/data/services/database_service.dart';
 import 'package:relift/domain/models/routine/routine.dart';
@@ -14,67 +12,20 @@ class RoutineDevelopmentRepository extends RoutineRepository {
     required DatabaseService databaseService,
   }) : _databaseService = databaseService;
 
-  final _log = Logger((RoutineDevelopmentRepository).toString());
-
   final DatabaseService _databaseService;
 
   @override
-  Future<Result<int>> saveRoutine(Routine routine) async {
-    _log.info('Saving routine...');
-    final result = await _databaseService.saveRoutine(routine);
-
-    switch (result) {
-      case Success(value: final routineId):
-        _log.info('Successfully saved routine $routineId.');
-        return Result.success(routineId);
-      case Failure(:final error):
-        _log.warning('Failed to save routine: $error');
-        return Result.failure(error);
-    }
-  }
+  Future<Result<int>> saveRoutine(Routine routine) =>
+      _databaseService.saveRoutine(routine);
 
   @override
-  Future<Result<void>> deleteRoutine(int routineId) async {
-    _log.info('Deleting routine...');
-    final result = await _databaseService.deleteRoutine(routineId);
-
-    switch (result) {
-      case Success():
-        _log.info('Successfully deleted routine $routineId.');
-        return const Result.success(null);
-      case Failure(:final error):
-        _log.warning('Failed to delete routine: $error');
-        return Result.failure(error);
-    }
-  }
+  Future<Result<void>> deleteRoutine(int routineId) =>
+      _databaseService.deleteRoutine(routineId);
 
   @override
-  Future<Result<Routine?>> routine(int routineId) async {
-    _log.info('Loading routine $routineId...');
-    final result = await _databaseService.loadRoutine(routineId);
-
-    switch (result) {
-      case Success(value: final routine):
-        _log.info('Successfully loaded routine $routineId.');
-        return Result.success(routine);
-      case Failure(:final error):
-        _log.warning('Failed to load routine $routineId: $error');
-        return Result.failure(error);
-    }
-  }
+  Future<Result<Routine?>> routine(int routineId) =>
+      _databaseService.loadRoutine(routineId);
 
   @override
-  Future<Result<List<Routine>>> get routines async {
-    _log.info('Loading routines...');
-    final result = await _databaseService.loadRoutines();
-
-    switch (result) {
-      case Success(value: final routines):
-        _log.info('Successfully loaded ${routines.length} routines.');
-        return Result.success(routines);
-      case Failure(:final error):
-        _log.warning('Failed to load routines: $error');
-        return Result.failure(error);
-    }
-  }
+  Future<Result<List<Routine>>> get routines => _databaseService.loadRoutines();
 }

@@ -21,6 +21,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createRoutine => 'Create Routine';
 
   @override
+  String get editRoutine => 'Edit Routine';
+
+  @override
   String get addExercises => 'Add Exercises';
 
   @override
@@ -113,4 +116,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dark => 'Dark';
+
+  @override
+  String get edit => 'Edit';
 }

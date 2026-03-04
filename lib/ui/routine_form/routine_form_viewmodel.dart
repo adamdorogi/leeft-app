@@ -13,12 +13,13 @@ import 'package:relift/domain/models/routine_exercise/routine_exercise.dart';
 import 'package:relift/utils/command.dart';
 import 'package:relift/utils/result.dart';
 
-/// A view model for managing the UI state of the routine creation screen.
-class CreateRoutineViewModel extends ChangeNotifier {
-  /// Creates a [CreateRoutineViewModel] with an [exerciseRepository].
+/// A view model for managing the UI state of the routine creation and routine
+/// editing screen.
+class RoutineFormViewModel extends ChangeNotifier {
+  /// Creates a [RoutineFormViewModel] with an [exerciseRepository].
   ///
   /// The [exerciseRepository] retrieves the exercises and stores the routine.
-  CreateRoutineViewModel({
+  RoutineFormViewModel({
     required ExerciseRepository exerciseRepository,
     required RoutineRepository routineRepository,
   }) : _exerciseRepository = exerciseRepository,
@@ -27,15 +28,79 @@ class CreateRoutineViewModel extends ChangeNotifier {
   final ExerciseRepository _exerciseRepository;
   final RoutineRepository _routineRepository;
 
-  final _log = Logger((CreateRoutineViewModel).toString());
+  final _log = Logger((RoutineFormViewModel).toString());
 
   /// The routine exercises and their corresponding exercises.
-  UnmodifiableListView<(RoutineExercise, Exercise)> get addedExercises =>
-      UnmodifiableListView(_addedExercises);
-  List<(RoutineExercise, Exercise)> _addedExercises = [];
+  UnmodifiableListView<(RoutineExercise, Exercise)>
+  get mappedRoutineExercises => UnmodifiableListView(_mappedRoutineExercises);
+  List<(RoutineExercise, Exercise)> _mappedRoutineExercises = [];
 
   /// The routine name.
   String? name;
+
+  /// The routine ID.
+  int? id;
+
+  Future<List<(RoutineExercise, Exercise)>> _mapRoutineExercises(
+    List<RoutineExercise> routineExercises,
+  ) async {
+    // Filter routine exercises with a null exercise ID.
+    final validRoutineExercises = routineExercises.where(
+      (routineExercise) => routineExercise.exerciseId != null,
+    );
+
+    // The routine exercises and their corresponding exercise results.
+    final mappedRoutineExerciseResults = await Future.wait(
+      validRoutineExercises.map(
+        (routineExercise) async => (
+          routineExercise,
+          await _exerciseRepository.exerciseWith(
+            routineExercise.exerciseId!,
+          ),
+        ),
+      ),
+    );
+
+    // The routine exercises and their corresponding successful exercise
+    // results.
+    final mappedRoutineExercises = mappedRoutineExerciseResults
+        .whereType<(RoutineExercise, Success<Exercise>)>()
+        .map(
+          (addedExerciseResult) =>
+              (addedExerciseResult.$1, addedExerciseResult.$2.value),
+        )
+        .toList();
+
+    return mappedRoutineExercises;
+  }
+
+  /// The command to load the routine and its exercises.
+  late final Command1<void, int?> load = Command1(_load);
+  Future<Result<void>> _load(int? routineId) async {
+    if (routineId == null) {
+      // No routine needs to be loaded, new routine is being created.
+      return const Result.success(null);
+    }
+
+    final routines = await _routineRepository.routine(routineId);
+
+    switch (routines) {
+      case Success(value: final routine):
+        if (routine == null) {
+          return const Result.success(null);
+        }
+        name = routine.name;
+        id = routine.id;
+        _mappedRoutineExercises = await _mapRoutineExercises(
+          routine.routineExercises,
+        );
+        _log.info('Successfully loaded routine $routineId.');
+        return const Result.success(null);
+      case Failure(:final error):
+        _log.warning('Failed to load routine: $error');
+        return Result.failure(error);
+    }
+  }
 
   /// The command to load the exercises from the exercise repository and add it
   /// to the routine.
@@ -48,10 +113,10 @@ class CreateRoutineViewModel extends ChangeNotifier {
       return const Result.success(null);
     }
     _log.info('Adding ${exerciseIds.length} exercises to routine...');
-    final addedExercisesResults = await Future.wait(
-      exerciseIds.map(
-        (exerciseId) async => (
-          RoutineExercise(
+
+    final routineExercises = exerciseIds
+        .map(
+          (exerciseId) => RoutineExercise(
             exerciseId: exerciseId,
             sets: [
               // TODO: Number of sets from previous log entry for exercise, default to 3.
@@ -60,17 +125,9 @@ class CreateRoutineViewModel extends ChangeNotifier {
               const ExerciseSet(rest: 90),
             ],
           ),
-          await _exerciseRepository.exerciseWith(exerciseId),
-        ),
-      ),
-    );
-    _addedExercises += addedExercisesResults
-        .whereType<(RoutineExercise, Success<Exercise>)>()
-        .map(
-          (addedExerciseResult) =>
-              (addedExerciseResult.$1, addedExerciseResult.$2.value),
         )
         .toList();
+    _mappedRoutineExercises += await _mapRoutineExercises(routineExercises);
     _log.info('Successfully added ${exerciseIds.length} exercises to routine.');
     return const Result.success(null);
   }
@@ -83,12 +140,16 @@ class CreateRoutineViewModel extends ChangeNotifier {
     if (routineName?.isEmpty ?? true) {
       routineName = null;
     }
-    final routine = Routine(
+    var routine = Routine(
       name: routineName,
-      routineExercises: _addedExercises
+      routineExercises: _mappedRoutineExercises
           .map((routineExercise) => routineExercise.$1)
           .toList(),
     );
+    final routineId = id;
+    if (routineId != null) {
+      routine = routine.copyWith(id: routineId);
+    }
 
     final result = await _routineRepository.saveRoutine(routine);
     switch (result) {
@@ -103,8 +164,8 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   /// Adds a set to the exercise with the [exerciseIndex] in the routine.
   void addSetTo(int exerciseIndex) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
-    _addedExercises[exerciseIndex] = (
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(
         // TODO: Get default rest value, or rest value from previous set.
         sets: routineExercise.sets + [const ExerciseSet(rest: 90)],
@@ -117,8 +178,8 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Removes the set with the [setIndex] from the exercise with the
   /// [exerciseIndex] in the routine.
   void removeSetFrom(int exerciseIndex, int setIndex) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
-    _addedExercises[exerciseIndex] = (
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(
         sets: routineExercise.sets.toList()..removeAt(setIndex),
       ),
@@ -132,26 +193,26 @@ class CreateRoutineViewModel extends ChangeNotifier {
     // If exercise is the last exercise in a superset, remove superset flag from
     // the previous exercise.
     if (exerciseIndex > 0) {
-      final (routineExercise, _) = _addedExercises[exerciseIndex];
+      final (routineExercise, _) = _mappedRoutineExercises[exerciseIndex];
       final (previousRoutineExercise, previousExercise) =
-          _addedExercises[exerciseIndex - 1];
+          _mappedRoutineExercises[exerciseIndex - 1];
       if (previousRoutineExercise.shouldSupersetWithNext &&
           !routineExercise.shouldSupersetWithNext) {
-        _addedExercises[exerciseIndex - 1] = (
+        _mappedRoutineExercises[exerciseIndex - 1] = (
           previousRoutineExercise.copyWith(shouldSupersetWithNext: false),
           previousExercise,
         );
       }
     }
-    _addedExercises.removeAt(exerciseIndex);
+    _mappedRoutineExercises.removeAt(exerciseIndex);
     notifyListeners();
   }
 
   /// Toggles the superset flag for the exercise with the [exerciseIndex] in the
   /// routine.
   void toggleSupersetFor(int exerciseIndex) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
-    _addedExercises[exerciseIndex] = (
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(
         shouldSupersetWithNext: !routineExercise.shouldSupersetWithNext,
       ),
@@ -163,12 +224,12 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Toggles the warm up flag for the set with the [setIndex] in the exercise
   /// with the [exerciseIndex].
   void toggleWarmUpSetFor(int exerciseIndex, int setIndex) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
     final sets = routineExercise.sets.toList();
     sets[setIndex] = sets[setIndex].copyWith(
       isWarmUp: !sets[setIndex].isWarmUp,
     );
-    _addedExercises[exerciseIndex] = (
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(sets: sets),
       exercise,
     );
@@ -177,8 +238,8 @@ class CreateRoutineViewModel extends ChangeNotifier {
 
   /// Set the [notes] for the exercise with the [exerciseIndex].
   void setNotesFor(int exerciseIndex, String notes) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
-    _addedExercises[exerciseIndex] = (
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(notes: notes),
       exercise,
     );
@@ -187,12 +248,12 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Set the [weight] for the set with the [setIndex] in the exercise with the
   /// [exerciseIndex].
   void setWeightFor(int exerciseIndex, int setIndex, String weight) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
     final sets = routineExercise.sets.toList();
     sets[setIndex] = sets[setIndex].copyWith(
       weight: double.tryParse(weight),
     );
-    _addedExercises[exerciseIndex] = (
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(sets: sets),
       exercise,
     );
@@ -201,12 +262,12 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Set the [reps] for the set with the [setIndex] in the exercise with the
   /// [exerciseIndex].
   void setRepsFor(int exerciseIndex, int setIndex, String reps) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
     final sets = routineExercise.sets.toList();
     sets[setIndex] = sets[setIndex].copyWith(
       reps: int.tryParse(reps),
     );
-    _addedExercises[exerciseIndex] = (
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(sets: sets),
       exercise,
     );
@@ -215,12 +276,12 @@ class CreateRoutineViewModel extends ChangeNotifier {
   /// Set the [rest] for the set with the [setIndex] in the exercise with the
   /// [exerciseIndex].
   void setRestFor(int exerciseIndex, int setIndex, String rest) {
-    final (routineExercise, exercise) = _addedExercises[exerciseIndex];
+    final (routineExercise, exercise) = _mappedRoutineExercises[exerciseIndex];
     final sets = routineExercise.sets.toList();
     sets[setIndex] = sets[setIndex].copyWith(
       rest: int.tryParse(rest) ?? 0,
     );
-    _addedExercises[exerciseIndex] = (
+    _mappedRoutineExercises[exerciseIndex] = (
       routineExercise.copyWith(sets: sets),
       exercise,
     );

@@ -21,7 +21,7 @@ class RoutineDevelopmentRepository extends RoutineRepository {
   @override
   Future<Result<int>> saveRoutine(Routine routine) async {
     _log.info('Saving routine...');
-    final result = await _databaseService.insertRoutine(routine);
+    final result = await _databaseService.saveRoutine(routine);
 
     switch (result) {
       case Success(value: final routineId):
@@ -44,6 +44,21 @@ class RoutineDevelopmentRepository extends RoutineRepository {
         return const Result.success(null);
       case Failure(:final error):
         _log.warning('Failed to delete routine: $error');
+        return Result.failure(error);
+    }
+  }
+
+  @override
+  Future<Result<Routine?>> routine(int routineId) async {
+    _log.info('Loading routine $routineId...');
+    final result = await _databaseService.loadRoutine(routineId);
+
+    switch (result) {
+      case Success(value: final routine):
+        _log.info('Successfully loaded routine $routineId.');
+        return Result.success(routine);
+      case Failure(:final error):
+        _log.warning('Failed to load routine $routineId: $error');
         return Result.failure(error);
     }
   }

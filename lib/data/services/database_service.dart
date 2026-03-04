@@ -16,7 +16,7 @@ class DatabaseService {
   }
 
   /// Adds a [routine] to the database.
-  Future<Result<int>> insertRoutine(Routine routine) async {
+  Future<Result<int>> saveRoutine(Routine routine) async {
     _log.info('Adding routine to Isar database...');
     try {
       final isar = await _isar;
@@ -37,6 +37,19 @@ class DatabaseService {
       return Result.success(routines);
     } on Exception catch (e) {
       _log.warning('Failed to load routines: $e');
+      return Result.failure(e);
+    }
+  }
+
+  /// Retrieves the routine with [routineId] from the database.
+  Future<Result<Routine?>> loadRoutine(int routineId) async {
+    _log.info('Loading routine $routineId from Isar database...');
+    try {
+      final isar = await _isar;
+      final routine = await isar.routines.get(routineId);
+      return Result.success(routine);
+    } on Exception catch (e) {
+      _log.warning('Failed to load routine $routineId: $e');
       return Result.failure(e);
     }
   }

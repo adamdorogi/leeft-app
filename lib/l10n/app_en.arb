@@ -3,6 +3,7 @@
   "profile": "Profile",
   "settings": "Settings",
   "createRoutine": "Create Routine",
+  "editRoutine": "Edit Routine",
   "addExercises": "Add Exercises",
   "muscleGroupNameFor": "{muscleGroup, select, lowerBack{Lower Back} hamstrings{Hamstrings} glutes{Glutes} chest{Chest} triceps{Triceps} shoulders{Shoulders} upperBack{Upper Back} lats{Lats} biceps{Biceps} forearms{Forearms} abdominals{Abdominals} quadriceps{Quadriceps} traps{Traps} calves{Calves} cardio{Cardio} neck{Neck} adductors{Adductors} fullBody{Full Body} abductors{Abductors} other{Other}}",
   "@muscleGroupNameFor": {
@@ -33,5 +34,6 @@
   "newRoutine": "New Routine",
   "system": "System",
   "light": "Light",
-  "dark": "Dark"
+  "dark": "Dark",
+  "edit": "Edit"
 }

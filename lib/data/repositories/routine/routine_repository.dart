@@ -9,6 +9,9 @@ abstract class RoutineRepository {
   /// Deletes the routine with [routineId].
   Future<Result<void>> deleteRoutine(int routineId);
 
+  /// Retrieves the routine with [routineId].
+  Future<Result<Routine?>> routine(int routineId);
+
   /// All saved routines.
   Future<Result<List<Routine>>> get routines;
 }

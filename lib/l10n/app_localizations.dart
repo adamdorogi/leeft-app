@@ -118,6 +118,12 @@ abstract class AppLocalizations {
   /// **'Create Routine'**
   String get createRoutine;
 
+  /// No description provided for @editRoutine.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Routine'**
+  String get editRoutine;
+
   /// No description provided for @addExercises.
   ///
   /// In en, this message translates to:
@@ -219,6 +225,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Dark'**
   String get dark;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
 }
 
 class _AppLocalizationsDelegate

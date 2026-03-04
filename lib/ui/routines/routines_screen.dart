@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
-import 'package:relift/ui/create_routine/create_routine_screen.dart';
-import 'package:relift/ui/create_routine/create_routine_viewmodel.dart';
+import 'package:relift/ui/routine_form/routine_form_screen.dart';
+import 'package:relift/ui/routine_form/routine_form_viewmodel.dart';
 import 'package:relift/ui/routines/routines_viewmodel.dart';
 
 /// A screen displaying saved routines.
@@ -46,6 +46,31 @@ class RoutinesScreen extends StatelessWidget {
                       AppLocalizations.of(context).remove,
                     ),
                   ),
+                  MenuItemButton(
+                    onPressed: () async {
+                      await Navigator.of(context, rootNavigator: true).push(
+                        MaterialPageRoute<void>(
+                          fullscreenDialog: true,
+                          builder: (_) {
+                            final viewModel = RoutineFormViewModel(
+                              exerciseRepository: context.read(),
+                              routineRepository: context.read(),
+                            );
+                            // No need to wait for load command to finish.
+                            // ignore: discarded_futures
+                            viewModel.load.run(routine.id);
+                            return RoutineFormScreen(
+                              viewModel: viewModel,
+                            );
+                          },
+                        ),
+                      );
+                      // Reload page after pop.
+                      await _viewModel.load.run();
+                    },
+                    leadingIcon: const Icon(Icons.edit),
+                    child: Text(AppLocalizations.of(context).edit),
+                  ),
                 ],
               ),
             );
@@ -60,14 +85,21 @@ class RoutinesScreen extends StatelessWidget {
           await Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute<void>(
               fullscreenDialog: true,
-              builder: (_) => CreateRoutineScreen(
-                viewModel: CreateRoutineViewModel(
+              builder: (_) {
+                final viewModel = RoutineFormViewModel(
                   exerciseRepository: context.read(),
                   routineRepository: context.read(),
-                ),
-              ),
+                );
+                // No need to wait for load command to finish.
+                // ignore: discarded_futures
+                viewModel.load.run(null);
+                return RoutineFormScreen(
+                  viewModel: viewModel,
+                );
+              },
             ),
           );
+          // Reload page after pop.
           await _viewModel.load.run();
         },
       ),

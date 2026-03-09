@@ -13,13 +13,17 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context).profile),
-        actions: [
-          // Link to settings page.
-          IconButton(
-            onPressed: () => context.go(Routes.settings),
-            icon: const Icon(Icons.settings),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: Text(AppLocalizations.of(context).profile),
+            actions: [
+              // Link to settings page.
+              IconButton(
+                onPressed: () => context.go(Routes.settings),
+                icon: const Icon(Icons.settings),
+              ),
+            ],
           ),
         ],
       ),

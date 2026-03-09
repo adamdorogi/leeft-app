@@ -79,67 +79,71 @@ class _ExerciseDetailsScreenState extends State<ExerciseDetailsScreen> {
         final exercise = widget._viewModel.exercise;
         if (exercise != null) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text(
-                exercise.title.forLocale(
-                  AppLocalizations.of(context).localeName,
+            body: CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  title: Text(
+                    exercise.title.forLocale(
+                      AppLocalizations.of(context).localeName,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            body: ListView(
-              children: [
-                if (_controller case final controller?)
-                  AspectRatio(
-                    aspectRatio: 643 / 404,
-                    child: VideoPlayer(controller),
-                  )
-                else if (_image case final image?)
-                  Image(image: image),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Wrap(
-                    spacing: 10,
-                    children: [
-                      // Exercise equipment.
-                      Chip(
-                        avatar: const Icon(Icons.fitness_center),
-                        label: Text(
-                          AppLocalizations.of(
-                            context,
-                          ).equipmentNameFor(exercise.equipment),
-                        ),
-                      ),
-                      // Primary muscle group.
-                      Chip(
-                        avatar: const Icon(Icons.looks_one),
-                        label: Text(
-                          AppLocalizations.of(
-                            context,
-                          ).muscleGroupNameFor(exercise.muscleGroup),
-                        ),
-                      ),
-                      // Secondary muscle groups.
-                      for (final muscleGroup in exercise.otherMuscles)
-                        Chip(
-                          avatar: const Icon(Icons.looks_two),
-                          label: Text(
-                            AppLocalizations.of(
-                              context,
-                            ).muscleGroupNameFor(muscleGroup),
+                SliverList.list(
+                  children: [
+                    if (_controller case final controller?)
+                      AspectRatio(
+                        aspectRatio: 643 / 404,
+                        child: VideoPlayer(controller),
+                      )
+                    else if (_image case final image?)
+                      Image(image: image),
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Wrap(
+                        spacing: 10,
+                        children: [
+                          // Exercise equipment.
+                          Chip(
+                            avatar: const Icon(Icons.fitness_center),
+                            label: Text(
+                              AppLocalizations.of(
+                                context,
+                              ).equipmentNameFor(exercise.equipment),
+                            ),
                           ),
-                        ),
-                    ],
-                  ),
+                          // Primary muscle group.
+                          Chip(
+                            avatar: const Icon(Icons.looks_one),
+                            label: Text(
+                              AppLocalizations.of(
+                                context,
+                              ).muscleGroupNameFor(exercise.muscleGroup),
+                            ),
+                          ),
+                          // Secondary muscle groups.
+                          for (final muscleGroup in exercise.otherMuscles)
+                            Chip(
+                              avatar: const Icon(Icons.looks_two),
+                              label: Text(
+                                AppLocalizations.of(
+                                  context,
+                                ).muscleGroupNameFor(muscleGroup),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                    // Instructions.
+                    for (final (i, instruction)
+                        in exercise.instructions
+                            .forLocale(AppLocalizations.of(context).localeName)
+                            .indexed)
+                      ListTile(
+                        leading: Text('${i + 1}.'),
+                        title: Text(instruction),
+                      ),
+                  ],
                 ),
-                // Instructions.
-                for (final (i, instruction)
-                    in exercise.instructions
-                        .forLocale(AppLocalizations.of(context).localeName)
-                        .indexed)
-                  ListTile(
-                    leading: Text('${i + 1}.'),
-                    title: Text(instruction),
-                  ),
               ],
             ),
           );

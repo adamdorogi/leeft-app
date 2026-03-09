@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/core/exercise_thumbnail.dart';
 import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:relift/utils/result.dart';
@@ -144,13 +145,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                             exercise.id,
                           ),
                       selectedTileColor: Theme.of(context).highlightColor,
-                      leading: thumbnailUrl != null
-                          ? CircleAvatar(
-                              foregroundImage: AssetImage(thumbnailUrl),
-                            )
-                          : const CircleAvatar(
-                              child: Icon(Icons.fitness_center),
-                            ),
+                      leading: ExerciseThumbnail(thumbnailUrl: thumbnailUrl),
                       trailing: IconButton(
                         onPressed: () async {
                           await Navigator.of(context).push(

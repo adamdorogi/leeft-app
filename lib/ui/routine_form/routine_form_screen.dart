@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/add_exercises/add_exercises_screen.dart';
 import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/core/exercise_thumbnail.dart';
 import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:relift/ui/routine_form/routine_form_viewmodel.dart';
@@ -107,13 +108,7 @@ class RoutineFormScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       ListTile(
-                        leading: thumbnailUrl != null
-                            ? CircleAvatar(
-                                foregroundImage: AssetImage(thumbnailUrl),
-                              )
-                            : const CircleAvatar(
-                                child: Icon(Icons.fitness_center),
-                              ),
+                        leading: ExerciseThumbnail(thumbnailUrl: thumbnailUrl),
                         title: Text(
                           exercise.title.forLocale(
                             AppLocalizations.of(context).localeName,

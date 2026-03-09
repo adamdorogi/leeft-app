@@ -28,6 +28,12 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
   final _controller = TextEditingController();
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Listen to the view model and its load command.
     return ListenableBuilder(

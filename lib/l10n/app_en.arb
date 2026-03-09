@@ -35,5 +35,6 @@
   "system": "System",
   "light": "Light",
   "dark": "Dark",
-  "edit": "Edit"
+  "edit": "Edit",
+  "themeMode": "Theme Mode"
 }

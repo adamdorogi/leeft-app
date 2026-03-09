@@ -14,41 +14,43 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListenableBuilder(
-        listenable: Listenable.merge([
-          _viewModel.load,
-          _viewModel.setThemeMode,
-        ]),
-        builder: (_, _) => CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              title: Text(AppLocalizations.of(context).settings),
-            ),
-            SliverToBoxAdapter(
-              child: DropdownMenu(
-                onSelected: _viewModel.setThemeMode.run,
-                initialSelection: _viewModel.themeMode,
-                dropdownMenuEntries: [
-                  DropdownMenuEntry(
-                    value: ThemeMode.system.name,
-                    label: AppLocalizations.of(context).system,
-                    leadingIcon: const Icon(Icons.sunny_snowing),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: Text(AppLocalizations.of(context).settings),
+          ),
+          SliverList.list(
+            children: [
+              ListTile(
+                title: Text(AppLocalizations.of(context).themeMode),
+                trailing: ListenableBuilder(
+                  listenable: _viewModel.load,
+                  builder: (context, _) => DropdownMenu(
+                    onSelected: _viewModel.setThemeMode.run,
+                    initialSelection: _viewModel.themeMode,
+                    dropdownMenuEntries: [
+                      DropdownMenuEntry(
+                        value: ThemeMode.system.name,
+                        label: AppLocalizations.of(context).system,
+                        leadingIcon: const Icon(Icons.sunny_snowing),
+                      ),
+                      DropdownMenuEntry(
+                        value: ThemeMode.dark.name,
+                        label: AppLocalizations.of(context).dark,
+                        leadingIcon: const Icon(Icons.dark_mode),
+                      ),
+                      DropdownMenuEntry(
+                        value: ThemeMode.light.name,
+                        label: AppLocalizations.of(context).light,
+                        leadingIcon: const Icon(Icons.light_mode),
+                      ),
+                    ],
                   ),
-                  DropdownMenuEntry(
-                    value: ThemeMode.dark.name,
-                    label: AppLocalizations.of(context).dark,
-                    leadingIcon: const Icon(Icons.dark_mode),
-                  ),
-                  DropdownMenuEntry(
-                    value: ThemeMode.light.name,
-                    label: AppLocalizations.of(context).light,
-                    leadingIcon: const Icon(Icons.light_mode),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }

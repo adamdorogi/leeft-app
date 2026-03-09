@@ -16,11 +16,14 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          // App bar.
           SliverAppBar(
             title: Text(AppLocalizations.of(context).settings),
           ),
+          // Settings.
           SliverList.list(
             children: [
+              // Theme mode.
               ListTile(
                 title: Text(AppLocalizations.of(context).themeMode),
                 trailing: ListenableBuilder(

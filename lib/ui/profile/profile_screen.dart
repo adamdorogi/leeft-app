@@ -15,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          // App bar.
           SliverAppBar(
             title: Text(AppLocalizations.of(context).profile),
             actions: [

@@ -20,7 +20,9 @@ class RoutinesScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          // App bar.
           SliverAppBar(title: Text(AppLocalizations.of(context).routines)),
+          // Routines.
           ListenableBuilder(
             listenable: Listenable.merge([
               _viewModel.load,
@@ -98,9 +100,7 @@ class RoutinesScreen extends StatelessWidget {
                 // No need to wait for load command to finish.
                 // ignore: discarded_futures
                 viewModel.load.run(null);
-                return RoutineFormScreen(
-                  viewModel: viewModel,
-                );
+                return RoutineFormScreen(viewModel: viewModel);
               },
             ),
           );

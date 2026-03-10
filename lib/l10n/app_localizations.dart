@@ -237,6 +237,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Theme Mode'**
   String get themeMode;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
 }
 
 class _AppLocalizationsDelegate

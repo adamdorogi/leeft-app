@@ -36,5 +36,6 @@
   "light": "Light",
   "dark": "Dark",
   "edit": "Edit",
-  "themeMode": "Theme Mode"
+  "themeMode": "Theme Mode",
+  "delete": "Delete"
 }

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
-import 'package:relift/ui/core/exercise_thumbnail.dart';
+import 'package:relift/ui/core/widgets/exercise_thumbnail.dart';
 import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:relift/utils/result.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
-import 'package:relift/ui/core/routine_options_menu.dart';
+import 'package:relift/ui/core/widgets/routine_options_menu.dart';
 import 'package:relift/ui/routine_form/routine_form_screen.dart';
 import 'package:relift/ui/routine_form/routine_form_viewmodel.dart';
 import 'package:relift/ui/routines/routines_viewmodel.dart';

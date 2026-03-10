@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/core/dimens.dart';
 import 'package:relift/ui/core/widgets/routine_options_menu.dart';
 import 'package:relift/ui/routine_form/routine_form_screen.dart';
 import 'package:relift/ui/routine_form/routine_form_viewmodel.dart';
@@ -33,45 +34,55 @@ class RoutinesScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final routine = _viewModel.routines[index];
                 // Routine.
-                return Card(
-                  clipBehavior: .hardEdge,
-                  child: InkWell(
-                    child: Row(
-                      mainAxisAlignment: .spaceBetween,
-                      children: [
-                        Text(
-                          routine.name ??
-                              AppLocalizations.of(context).newRoutine,
+                return Padding(
+                  padding: const .symmetric(
+                    horizontal: Dimens.padding,
+                    vertical: Dimens.padding / 2,
+                  ),
+                  child: Card(
+                    clipBehavior: .hardEdge,
+                    child: InkWell(
+                      child: Padding(
+                        padding: const .all(Dimens.padding),
+                        child: Row(
+                          mainAxisAlignment: .spaceBetween,
+                          children: [
+                            Text(
+                              routine.name ??
+                                  AppLocalizations.of(context).newRoutine,
+                            ),
+                            RoutineOptionsMenu(
+                              onEdit: () async {
+                                await Navigator.of(
+                                  context,
+                                  rootNavigator: true,
+                                ).push(
+                                  MaterialPageRoute<void>(
+                                    fullscreenDialog: true,
+                                    builder: (_) {
+                                      final viewModel = RoutineFormViewModel(
+                                        exerciseRepository: context.read(),
+                                        routineRepository: context.read(),
+                                      );
+                                      // No need to wait for load command to
+                                      // finish.
+                                      // ignore: discarded_futures
+                                      viewModel.load.run(routine.id);
+                                      return RoutineFormScreen(
+                                        viewModel: viewModel,
+                                      );
+                                    },
+                                  ),
+                                );
+                                // Reload page after pop.
+                                await _viewModel.load.run();
+                              },
+                              onDelete: () =>
+                                  _viewModel.deleteRoutine.run(routine.id),
+                            ),
+                          ],
                         ),
-                        RoutineOptionsMenu(
-                          onEdit: () async {
-                            await Navigator.of(
-                              context,
-                              rootNavigator: true,
-                            ).push(
-                              MaterialPageRoute<void>(
-                                fullscreenDialog: true,
-                                builder: (_) {
-                                  final viewModel = RoutineFormViewModel(
-                                    exerciseRepository: context.read(),
-                                    routineRepository: context.read(),
-                                  );
-                                  // No need to wait for load command to finish.
-                                  // ignore: discarded_futures
-                                  viewModel.load.run(routine.id);
-                                  return RoutineFormScreen(
-                                    viewModel: viewModel,
-                                  );
-                                },
-                              ),
-                            );
-                            // Reload page after pop.
-                            await _viewModel.load.run();
-                          },
-                          onDelete: () =>
-                              _viewModel.deleteRoutine.run(routine.id),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 );

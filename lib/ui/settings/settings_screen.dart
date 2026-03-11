@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
                       DropdownMenuEntry(
                         value: ThemeMode.system.name,
                         label: AppLocalizations.of(context).system,
-                        leadingIcon: const Icon(Icons.sunny_snowing),
+                        leadingIcon: const Icon(Icons.brightness_4),
                       ),
                       DropdownMenuEntry(
                         value: ThemeMode.dark.name,

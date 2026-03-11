@@ -15,19 +15,22 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListenableBuilder(
-      listenable: Listenable.merge([_viewModel, _viewModel.load]),
-      builder: (_, _) => MaterialApp.router(
-        routerConfig: router,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        theme: Themes.lightTheme,
-        darkTheme: Themes.darkTheme,
-        themeMode: switch (_viewModel.themeMode) {
-          'dark' => ThemeMode.dark,
-          'light' => ThemeMode.light,
-          _ => ThemeMode.system,
-        },
+    return TooltipVisibility(
+      visible: false,
+      child: ListenableBuilder(
+        listenable: Listenable.merge([_viewModel, _viewModel.load]),
+        builder: (_, _) => MaterialApp.router(
+          routerConfig: router,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          theme: Themes.lightTheme,
+          darkTheme: Themes.darkTheme,
+          themeMode: switch (_viewModel.themeMode) {
+            'dark' => ThemeMode.dark,
+            'light' => ThemeMode.light,
+            _ => ThemeMode.system,
+          },
+        ),
       ),
     );
   }

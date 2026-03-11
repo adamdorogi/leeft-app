@@ -23,6 +23,7 @@ class NavigationScreen extends StatelessWidget {
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
+        labelBehavior: .alwaysHide,
         destinations: [
           // The routines tab.
           NavigationDestination(

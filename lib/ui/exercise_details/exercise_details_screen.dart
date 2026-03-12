@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/core/dimens.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 
 import 'package:video_player/video_player.dart';
 
 /// A screen for viewing exercise details.
-class ExerciseDetailsScreen extends StatefulWidget {
+class ExerciseDetailsScreen extends StatelessWidget {
   /// Creates an [ExerciseDetailsScreen] with a [viewModel].
   ///
   /// The [viewModel] manages the UI state of this screen.
@@ -18,141 +19,92 @@ class ExerciseDetailsScreen extends StatefulWidget {
   final ExerciseDetailsViewModel _viewModel;
 
   @override
-  State<ExerciseDetailsScreen> createState() => _ExerciseDetailsScreenState();
-}
-
-class _ExerciseDetailsScreenState extends State<ExerciseDetailsScreen> {
-  VideoPlayerController? _controller;
-  AssetImage? _image;
-
-  @override
-  void initState() {
-    super.initState();
-    widget._viewModel.load.addListener(_onLoaded);
-  }
-
-  void _onLoaded() {
-    final exercise = widget._viewModel.exercise;
-    if (exercise == null) {
-      return;
-    }
-    // Exercise has loaded.
-
-    final mediaUrl = exercise.mediaUrl;
-    if (mediaUrl == null) {
-      return;
-    }
-    // Exercise has media URL.
-
-    if (widget._viewModel.isVideo(mediaUrl)) {
-      // Media is video.
-      _controller = VideoPlayerController.asset(mediaUrl)
-        // No need to wait for controller setup to complete.
-        // ignore: discarded_futures
-        ..setLooping(true)
-        // No need to wait for controller setup to complete.
-        // ignore: discarded_futures
-        ..initialize()
-        // No need to wait for controller setup to complete.
-        // ignore: discarded_futures
-        ..play();
-    } else {
-      // Media is image.
-      _image = AssetImage(mediaUrl);
-    }
-  }
-
-  @override
-  void dispose() {
-    widget._viewModel.load.removeListener(_onLoaded);
-    // No need to wait for controller disposal to complete.
-    // ignore: discarded_futures
-    _controller?.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return ListenableBuilder(
-      listenable: widget._viewModel.load,
-      builder: (_, child) {
-        final exercise = widget._viewModel.exercise;
-        if (exercise != null) {
-          return Scaffold(
-            body: CustomScrollView(
-              slivers: [
-                SliverAppBar(
-                  title: Text(
-                    exercise.title.forLocale(
-                      AppLocalizations.of(context).localeName,
-                    ),
+    return Scaffold(
+      body: ListenableBuilder(
+        listenable: Listenable.merge([_viewModel.load, _viewModel.loadMedia]),
+        builder: (_, child) {
+          final exercise = _viewModel.exercise;
+          if (exercise == null) {
+            // Exercise hasn't been loaded yet.
+            return child!;
+          }
+          return CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                title: Text(
+                  exercise.title.forLocale(
+                    AppLocalizations.of(context).localeName,
                   ),
                 ),
-                SliverList.list(
+              ),
+              // Media.
+              if (_viewModel.videoController case final controller?)
+                SliverToBoxAdapter(
+                  child: AspectRatio(
+                    aspectRatio: Dimens.mediaAspectRatio,
+                    child: VideoPlayer(controller),
+                  ),
+                )
+              else if (_viewModel.imagePath case final imagePath?)
+                SliverToBoxAdapter(child: Image.asset(imagePath)),
+              // Metadata.
+              SliverToBoxAdapter(
+                child: Wrap(
                   children: [
-                    if (_controller case final controller?)
-                      AspectRatio(
-                        aspectRatio: 643 / 404,
-                        child: VideoPlayer(controller),
-                      )
-                    else if (_image case final image?)
-                      Image(image: image),
-                    Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Wrap(
-                        spacing: 10,
-                        children: [
-                          // Exercise equipment.
-                          Chip(
-                            avatar: const Icon(Icons.fitness_center),
-                            label: Text(
-                              AppLocalizations.of(
-                                context,
-                              ).equipmentNameFor(exercise.equipment),
-                            ),
-                          ),
-                          // Primary muscle group.
-                          Chip(
-                            avatar: const Icon(Icons.looks_one),
-                            label: Text(
-                              AppLocalizations.of(
-                                context,
-                              ).muscleGroupNameFor(exercise.muscleGroup),
-                            ),
-                          ),
-                          // Secondary muscle groups.
-                          for (final muscleGroup in exercise.otherMuscles)
-                            Chip(
-                              avatar: const Icon(Icons.looks_two),
-                              label: Text(
-                                AppLocalizations.of(
-                                  context,
-                                ).muscleGroupNameFor(muscleGroup),
-                              ),
-                            ),
-                        ],
+                    // Exercise equipment.
+                    Chip(
+                      materialTapTargetSize: .shrinkWrap,
+                      avatar: const Icon(Icons.fitness_center),
+                      label: Text(
+                        AppLocalizations.of(
+                          context,
+                        ).equipmentNameFor(exercise.equipment),
                       ),
                     ),
-                    // Instructions.
-                    for (final (i, instruction)
-                        in exercise.instructions
-                            .forLocale(AppLocalizations.of(context).localeName)
-                            .indexed)
-                      ListTile(
-                        leading: Text('${i + 1}.'),
-                        title: Text(instruction),
+                    // Primary muscle group.
+                    Chip(
+                      materialTapTargetSize: .shrinkWrap,
+                      avatar: const Icon(Icons.looks_one),
+                      label: Text(
+                        AppLocalizations.of(
+                          context,
+                        ).muscleGroupNameFor(exercise.muscleGroup),
+                      ),
+                    ),
+                    // Secondary muscle groups.
+                    for (final muscleGroup in exercise.otherMuscles)
+                      Chip(
+                        materialTapTargetSize: .shrinkWrap,
+                        avatar: const Icon(Icons.looks_two),
+                        label: Text(
+                          AppLocalizations.of(
+                            context,
+                          ).muscleGroupNameFor(muscleGroup),
+                        ),
                       ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              // Instructions.
+              SliverList.builder(
+                itemBuilder: (_, index) => ListTile(
+                  leading: Text('${index + 1}.'),
+                  title: Text(
+                    exercise.instructions.forLocale(
+                      AppLocalizations.of(context).localeName,
+                    )[index],
+                  ),
+                ),
+                itemCount: exercise.instructions
+                    .forLocale(AppLocalizations.of(context).localeName)
+                    .length,
+              ),
+            ],
           );
-        }
-
-        // Exercise hasn't been loaded yet.
-        return child!;
-      },
-      child: const Scaffold(),
+        },
+        child: const CustomScrollView(),
+      ),
     );
   }
 }

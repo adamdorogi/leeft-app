@@ -157,6 +157,9 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                                 // No need to wait for load command to finish.
                                 // ignore: discarded_futures
                                 viewModel.load.run(exercise.id);
+                                // No need to wait for load command to finish.
+                                // ignore: discarded_futures
+                                viewModel.loadMedia.run(exercise.mediaUrl);
                                 return ExerciseDetailsScreen(
                                   viewModel: viewModel,
                                 );

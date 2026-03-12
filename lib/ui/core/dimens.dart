@@ -5,4 +5,7 @@ abstract final class Dimens {
 
   /// Size of exercise thumbnails.
   static const thumbnailSize = 64.0;
+
+  /// Aspect ratio of exercise media.
+  static const double mediaAspectRatio = 643 / 404;
 }

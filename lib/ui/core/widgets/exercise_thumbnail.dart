@@ -18,6 +18,9 @@ class ExerciseThumbnail extends StatelessWidget {
             foregroundImage: AssetImage(thumbnailUrl),
             radius: Dimens.thumbnailSize / 2,
           )
-        : const CircleAvatar(child: Icon(Icons.fitness_center));
+        : const CircleAvatar(
+            radius: Dimens.thumbnailSize / 2,
+            child: Icon(Icons.fitness_center),
+          );
   }
 }

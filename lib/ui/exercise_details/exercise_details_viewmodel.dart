@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import 'package:logging/logging.dart';
+import 'package:mime/mime.dart';
 
 import 'package:relift/data/repositories/exercise/exercise_repository.dart';
 import 'package:relift/domain/models/exercise/exercise.dart';
@@ -33,7 +34,15 @@ class ExerciseDetailsViewModel extends ChangeNotifier {
   VideoPlayerController? videoController;
 
   /// Whether the media asset at [mediaUrl] is a video.
-  bool _isVideo(String mediaUrl) => mediaUrl.split('.').last == 'mp4';
+  bool _isVideoAsset(String mediaUrl) => _hasMediaType(mediaUrl, 'video');
+
+  /// Whether the media asset at [mediaUrl] is an image.
+  bool _isImageAsset(String mediaUrl) => _hasMediaType(mediaUrl, 'image');
+
+  bool _hasMediaType(String mediaUrl, String mediaType) {
+    final mimeType = lookupMimeType(mediaUrl);
+    return mimeType != null && mimeType.startsWith('$mediaType/');
+  }
 
   /// The command to load the exercise from the exercise repository.
   late final Command1<void, String> load = Command1(_load);
@@ -61,13 +70,13 @@ class ExerciseDetailsViewModel extends ChangeNotifier {
       return const Result.success(null);
     }
 
-    if (_isVideo(mediaUrl)) {
+    if (_isVideoAsset(mediaUrl)) {
       final controller = VideoPlayerController.asset(mediaUrl);
       await controller.setLooping(true);
       await controller.initialize();
       await controller.play();
       videoController = controller;
-    } else {
+    } else if (_isImageAsset(mediaUrl)) {
       imagePath = mediaUrl;
     }
 

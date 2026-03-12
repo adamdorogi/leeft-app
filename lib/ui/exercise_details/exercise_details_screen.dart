@@ -22,12 +22,12 @@ class ExerciseDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListenableBuilder(
-        listenable: Listenable.merge([_viewModel.load, _viewModel.loadMedia]),
-        builder: (_, child) {
+        listenable: _viewModel.load,
+        builder: (context, child) {
           final exercise = _viewModel.exercise;
           if (exercise == null) {
             // Exercise hasn't been loaded yet.
-            return child!;
+            return const CustomScrollView();
           }
           return CustomScrollView(
             slivers: [
@@ -39,15 +39,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                 ),
               ),
               // Media.
-              if (_viewModel.videoController case final controller?)
-                SliverToBoxAdapter(
-                  child: AspectRatio(
-                    aspectRatio: Dimens.mediaAspectRatio,
-                    child: VideoPlayer(controller),
-                  ),
-                )
-              else if (_viewModel.imagePath case final imagePath?)
-                SliverToBoxAdapter(child: Image.asset(imagePath)),
+              child!,
               // Metadata.
               SliverToBoxAdapter(
                 child: Wrap(
@@ -103,7 +95,30 @@ class ExerciseDetailsScreen extends StatelessWidget {
             ],
           );
         },
-        child: const CustomScrollView(),
+        child: SliverToBoxAdapter(
+          child: ListenableBuilder(
+            listenable: _viewModel.loadMedia,
+            builder: (_, _) {
+              // Video.
+              final videoController = _viewModel.videoController;
+              if (videoController != null) {
+                return AspectRatio(
+                  aspectRatio: Dimens.mediaAspectRatio,
+                  child: VideoPlayer(videoController),
+                );
+              }
+
+              // Image.
+              final imagePath = _viewModel.imagePath;
+              if (imagePath != null) {
+                return Image.asset(imagePath);
+              }
+
+              // No media.
+              return const SizedBox();
+            },
+          ),
+        ),
       ),
     );
   }

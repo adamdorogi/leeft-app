@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import 'package:logging/logging.dart';
 
@@ -20,6 +20,9 @@ class AddExercisesViewModel extends ChangeNotifier {
   final ExerciseRepository _exerciseRepository;
 
   final _log = Logger((AddExercisesViewModel).toString());
+
+  /// The search text field controller.
+  final searchController = TextEditingController();
 
   /// The command to load the exercises from the exercise repository.
   late final Command0<void> load = Command0(
@@ -142,4 +145,10 @@ class AddExercisesViewModel extends ChangeNotifier {
   /// Whether the [exerciseId] is selected.
   bool isExerciseIdSelected(String exerciseId) =>
       _selectedExerciseIds.contains(exerciseId);
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 }

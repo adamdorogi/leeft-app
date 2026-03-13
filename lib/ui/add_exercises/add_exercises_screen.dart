@@ -10,7 +10,7 @@ import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:relift/utils/result.dart';
 
 /// A screen for adding exercises to a routine during routine creation.
-class AddExercisesScreen extends StatefulWidget {
+class AddExercisesScreen extends StatelessWidget {
   /// Creates an [AddExercisesScreen] with a [viewModel].
   ///
   /// The [viewModel] manages the UI state of this screen.
@@ -22,25 +22,12 @@ class AddExercisesScreen extends StatefulWidget {
   final AddExercisesViewModel _viewModel;
 
   @override
-  State<AddExercisesScreen> createState() => _AddExercisesScreenState();
-}
-
-class _AddExercisesScreenState extends State<AddExercisesScreen> {
-  final _controller = TextEditingController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     // Listen to the view model and its load command.
     return ListenableBuilder(
-      listenable: Listenable.merge([widget._viewModel, widget._viewModel.load]),
+      listenable: Listenable.merge([_viewModel, _viewModel.load]),
       builder: (_, child) {
-        if (widget._viewModel.load.result is Success<void>) {
+        if (_viewModel.load.result is Success<void>) {
           // View model has loaded successfully, display the list of
           // exercises.
           return Scaffold(
@@ -55,17 +42,17 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                       children: [
                         // Search text field.
                         TextField(
-                          controller: _controller,
+                          controller: _viewModel.searchController,
                           decoration: InputDecoration(
                             labelText: AppLocalizations.of(context).search,
                             prefixIcon: const Icon(Icons.search),
-                            suffixIcon: _controller.text.isEmpty
+                            suffixIcon: _viewModel.searchController.text.isEmpty
                                 ? null
                                 : IconButton(
                                     onPressed: () {
-                                      _controller.clear();
-                                      widget._viewModel.setSearchResults(
-                                        _controller.text,
+                                      _viewModel.searchController.clear();
+                                      _viewModel.setSearchResults(
+                                        _viewModel.searchController.text,
                                         AppLocalizations.of(
                                           context,
                                         ).localeName,
@@ -74,8 +61,8 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                                     icon: const Icon(Icons.clear),
                                   ),
                           ),
-                          onChanged: (_) => widget._viewModel.setSearchResults(
-                            _controller.text,
+                          onChanged: (_) => _viewModel.setSearchResults(
+                            _viewModel.searchController.text,
                             AppLocalizations.of(context).localeName,
                           ),
                         ),
@@ -87,22 +74,18 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                               label: Text(
                                 AppLocalizations.of(context).muscleGroups,
                               ),
-                              selected: widget
-                                  ._viewModel
-                                  .selectedMuscleGroups
-                                  .isNotEmpty,
-                              onSelected: (_) => _showMuscleGroupFilters(),
+                              selected:
+                                  _viewModel.selectedMuscleGroups.isNotEmpty,
+                              onSelected: (_) =>
+                                  _showMuscleGroupFilters(context),
                             ),
                             // Equipment filter chip.
                             FilterChip(
                               label: Text(
                                 AppLocalizations.of(context).equipment,
                               ),
-                              selected: widget
-                                  ._viewModel
-                                  .selectedEquipment
-                                  .isNotEmpty,
-                              onSelected: (_) => _showEquipmentFilters(),
+                              selected: _viewModel.selectedEquipment.isNotEmpty,
+                              onSelected: (_) => _showEquipmentFilters(context),
                             ),
                           ],
                         ),
@@ -112,19 +95,19 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                   actions: [
                     IconButton(
                       icon: const Icon(Icons.done),
-                      onPressed: widget._viewModel.selectedExerciseIds.isEmpty
+                      onPressed: _viewModel.selectedExerciseIds.isEmpty
                           ? null
                           : () =>
                                 // Return the selected exercise IDs on pop.
                                 Navigator.of(
                                   context,
-                                ).pop(widget._viewModel.selectedExerciseIds),
+                                ).pop(_viewModel.selectedExerciseIds),
                     ),
                   ],
                 ),
                 SliverList.builder(
                   itemBuilder: (_, index) {
-                    final exercise = widget._viewModel.searchResults[index];
+                    final exercise = _viewModel.searchResults[index];
                     final thumbnailUrl = exercise.thumbnailUrl;
                     return ListTile(
                       title: Text(
@@ -137,13 +120,12 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                           context,
                         ).muscleGroupNameFor(exercise.muscleGroup),
                       ),
-                      selected: widget._viewModel.isExerciseIdSelected(
+                      selected: _viewModel.isExerciseIdSelected(
                         exercise.id,
                       ),
-                      onTap: () =>
-                          widget._viewModel.toggleExerciseIdSelectionFor(
-                            exercise.id,
-                          ),
+                      onTap: () => _viewModel.toggleExerciseIdSelectionFor(
+                        exercise.id,
+                      ),
                       selectedTileColor: Theme.of(context).highlightColor,
                       leading: ExerciseThumbnail(thumbnailUrl: thumbnailUrl),
                       trailing: IconButton(
@@ -171,7 +153,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                       ),
                     );
                   },
-                  itemCount: widget._viewModel.searchResults.length,
+                  itemCount: _viewModel.searchResults.length,
                 ),
               ],
             ),
@@ -185,12 +167,12 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
     );
   }
 
-  Future<void> _showMuscleGroupFilters() async {
+  Future<void> _showMuscleGroupFilters(BuildContext context) async {
     await showModalBottomSheet<void>(
       context: context,
       showDragHandle: true,
       builder: (context) => ListenableBuilder(
-        listenable: widget._viewModel,
+        listenable: _viewModel,
         builder: (_, child) => Padding(
           padding: const .symmetric(horizontal: 20),
           child: ListView(
@@ -206,7 +188,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
               ),
               Wrap(
                 spacing: 8,
-                children: widget._viewModel.muscleGroups
+                children: _viewModel.muscleGroups
                     .map(
                       (muscleGroup) => FilterChip(
                         label: Text(
@@ -216,15 +198,15 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                             muscleGroup,
                           ),
                         ),
-                        selected: widget._viewModel.isMuscleGroupSelected(
+                        selected: _viewModel.isMuscleGroupSelected(
                           muscleGroup,
                         ),
                         onSelected: (_) {
-                          widget._viewModel.toggleMuscleGroupSelectionFor(
+                          _viewModel.toggleMuscleGroupSelectionFor(
                             muscleGroup,
                           );
-                          widget._viewModel.setSearchResults(
-                            _controller.text,
+                          _viewModel.setSearchResults(
+                            _viewModel.searchController.text,
                             AppLocalizations.of(
                               context,
                             ).localeName,
@@ -241,12 +223,12 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
     );
   }
 
-  Future<void> _showEquipmentFilters() async {
+  Future<void> _showEquipmentFilters(BuildContext context) async {
     await showModalBottomSheet<void>(
       context: context,
       showDragHandle: true,
       builder: (context) => ListenableBuilder(
-        listenable: widget._viewModel,
+        listenable: _viewModel,
         builder: (_, child) => Padding(
           padding: const .symmetric(horizontal: 20),
           child: ListView(
@@ -262,7 +244,7 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
               ),
               Wrap(
                 spacing: 8,
-                children: widget._viewModel.equipment
+                children: _viewModel.equipment
                     .map(
                       (equipment) => FilterChip(
                         label: Text(
@@ -270,15 +252,15 @@ class _AddExercisesScreenState extends State<AddExercisesScreen> {
                             context,
                           ).equipmentNameFor(equipment),
                         ),
-                        selected: widget._viewModel.isEquipmentSelected(
+                        selected: _viewModel.isEquipmentSelected(
                           equipment,
                         ),
                         onSelected: (_) {
-                          widget._viewModel.toggleEquipmentSelectionFor(
+                          _viewModel.toggleEquipmentSelectionFor(
                             equipment,
                           );
-                          widget._viewModel.setSearchResults(
-                            _controller.text,
+                          _viewModel.setSearchResults(
+                            _viewModel.searchController.text,
                             AppLocalizations.of(
                               context,
                             ).localeName,

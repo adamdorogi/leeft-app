@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
+import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 import 'package:relift/ui/settings/settings_viewmodel.dart';
 
 /// A screen displaying application settings.
@@ -17,9 +18,7 @@ class SettingsScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           // App bar.
-          SliverAppBar(
-            title: Text(AppLocalizations.of(context).settings),
-          ),
+          AppSliverAppBar(title: Text(AppLocalizations.of(context).settings)),
           // Settings.
           SliverList.list(
             children: [

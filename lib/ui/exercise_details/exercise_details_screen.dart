@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/core/dimens.dart';
+import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 
 import 'package:video_player/video_player.dart';
@@ -31,7 +32,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
           }
           return CustomScrollView(
             slivers: [
-              SliverAppBar(
+              AppSliverAppBar(
                 title: Text(
                   exercise.title.forLocale(
                     AppLocalizations.of(context).localeName,

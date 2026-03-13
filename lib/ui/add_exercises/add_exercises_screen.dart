@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 import 'package:relift/ui/core/widgets/exercise_thumbnail.dart';
 import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
@@ -34,7 +35,7 @@ class AddExercisesScreen extends StatelessWidget {
             body: CustomScrollView(
               keyboardDismissBehavior: .onDrag,
               slivers: [
-                SliverAppBar(
+                AppSliverAppBar(
                   title: Text(AppLocalizations.of(context).addExercises),
                   bottom: PreferredSize(
                     preferredSize: const Size.fromHeight(103),

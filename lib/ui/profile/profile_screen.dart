@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/router/routes.dart';
+import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 
 /// A screen displaying the user profile.
 class ProfileScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           // App bar.
-          SliverAppBar(
+          AppSliverAppBar(
             title: Text(AppLocalizations.of(context).profile),
             actions: [
               // Link to settings page.

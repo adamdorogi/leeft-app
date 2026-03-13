@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
 import 'package:relift/ui/core/dimens.dart';
+import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 import 'package:relift/ui/core/widgets/routine_options_menu.dart';
 import 'package:relift/ui/routine_form/routine_form_screen.dart';
 import 'package:relift/ui/routine_form/routine_form_viewmodel.dart';
@@ -23,7 +24,7 @@ class RoutinesScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           // App bar.
-          SliverAppBar(title: Text(AppLocalizations.of(context).routines)),
+          AppSliverAppBar(title: Text(AppLocalizations.of(context).routines)),
           // Routines.
           ListenableBuilder(
             listenable: Listenable.merge([

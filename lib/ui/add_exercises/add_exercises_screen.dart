@@ -29,7 +29,7 @@ class AddExercisesScreen extends StatelessWidget {
     return Scaffold(
       body: ListenableBuilder(
         listenable: _viewModel,
-        builder: (_, child) => CustomScrollView(
+        builder: (context, child) => CustomScrollView(
           keyboardDismissBehavior: .onDrag,
           slivers: [
             AppSliverAppBar(
@@ -119,7 +119,7 @@ class AddExercisesScreen extends StatelessWidget {
         ),
         child: ListenableBuilder(
           listenable: Listenable.merge([_viewModel.load, _viewModel]),
-          builder: (_, _) {
+          builder: (context, _) {
             if (_viewModel.load.result is! Success<void>) {
               // View model hasn't loaded yet.
               return const SliverToBoxAdapter();
@@ -132,7 +132,7 @@ class AddExercisesScreen extends StatelessWidget {
             );
             return SliverList.builder(
               itemCount: filteredExercises.length,
-              itemBuilder: (_, index) {
+              itemBuilder: (context, index) {
                 // Exercise.
                 final exercise = filteredExercises[index];
                 return ListTile(

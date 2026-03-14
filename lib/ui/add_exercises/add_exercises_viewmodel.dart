@@ -15,7 +15,10 @@ class AddExercisesViewModel extends ChangeNotifier {
   ///
   /// The [exerciseRepository] retrieves the exercises.
   AddExercisesViewModel({required ExerciseRepository exerciseRepository})
-    : _exerciseRepository = exerciseRepository;
+    : _exerciseRepository = exerciseRepository {
+    // Notify of state change when controller value changes.
+    searchController.addListener(notifyListeners);
+  }
 
   final ExerciseRepository _exerciseRepository;
 
@@ -25,9 +28,7 @@ class AddExercisesViewModel extends ChangeNotifier {
   final searchController = TextEditingController();
 
   /// The command to load the exercises from the exercise repository.
-  late final Command0<void> load = Command0(
-    _load,
-  );
+  late final Command0<void> load = Command0(_load);
   Future<Result<void>> _load() async {
     _log.info('Loading view model...');
     final exercisesResult = await _exerciseRepository.exercises;
@@ -35,7 +36,6 @@ class AddExercisesViewModel extends ChangeNotifier {
     switch (exercisesResult) {
       case Success(value: final exercises):
         _exercises = exercises;
-        _searchResults = exercises;
         _equipment = exercises.map((exercise) => exercise.equipment).toSet();
         _muscleGroups = exercises
             .map((exercise) => exercise.muscleGroup)
@@ -48,39 +48,53 @@ class AddExercisesViewModel extends ChangeNotifier {
     }
   }
 
-  /// The exercises filtered based on the search query for the given
+  /// The exercises filtered based on the [searchController] value for the given
   /// [localeName], the [selectedMuscleGroups], and the [selectedEquipment].
-  void setSearchResults(
-    String searchQuery,
-    String localeName,
-  ) {
-    Iterable<Exercise> result = _exercises;
+  UnmodifiableListView<Exercise> filteredExercises(String localeName) {
+    Iterable<Exercise> exercises = _exercises;
+
+    // Filter title.
+    final searchQuery = searchController.text;
     if (searchQuery.isNotEmpty) {
-      result = result.where(
+      exercises = exercises.where(
         (exercise) => exercise.title
             .forLocale(localeName)
             .toLowerCase()
             .contains(searchQuery.toLowerCase()),
       );
     }
+
+    // Filter equipment.
     if (_selectedEquipment.isNotEmpty) {
-      result = result.where(
+      exercises = exercises.where(
         (exercise) => _selectedEquipment.contains(exercise.equipment),
       );
     }
+
+    // Filter muscle groups.
     if (_selectedMuscleGroups.isNotEmpty) {
-      result = result.where(
+      exercises = exercises.where(
         (exercise) => _selectedMuscleGroups.contains(exercise.muscleGroup),
       );
     }
-    _searchResults = result.toList();
-    notifyListeners();
+
+    return UnmodifiableListView(exercises);
   }
 
-  /// The results of [setSearchResults].
-  UnmodifiableListView<Exercise> get searchResults =>
-      UnmodifiableListView(_searchResults);
-  List<Exercise> _searchResults = [];
+  List<Exercise> _exercises = [];
+
+  /// The selected exercises' IDs.
+  UnmodifiableSetView<String> get selectedExerciseIds =>
+      UnmodifiableSetView(_selectedExerciseIds);
+  final Set<String> _selectedExerciseIds = {};
+
+  /// Selects or unselects the [exerciseId].
+  void toggleExerciseIdSelectionFor(String exerciseId) {
+    _selectedExerciseIds.contains(exerciseId)
+        ? _selectedExerciseIds.remove(exerciseId)
+        : _selectedExerciseIds.add(exerciseId);
+    notifyListeners();
+  }
 
   /// The muscle groups.
   UnmodifiableSetView<String> get muscleGroups =>
@@ -92,18 +106,19 @@ class AddExercisesViewModel extends ChangeNotifier {
       UnmodifiableSetView(_selectedMuscleGroups);
   final Set<String> _selectedMuscleGroups = {};
 
-  /// Selects or unselects the [muscleGroup] filter to be used in
-  /// [setSearchResults].
+  /// Selects or unselects the [muscleGroup] filter.
   void toggleMuscleGroupSelectionFor(String muscleGroup) {
-    isMuscleGroupSelected(muscleGroup)
+    _selectedMuscleGroups.contains(muscleGroup)
         ? _selectedMuscleGroups.remove(muscleGroup)
         : _selectedMuscleGroups.add(muscleGroup);
     notifyListeners();
   }
 
-  /// Whether the [muscleGroup] filter is selected.
-  bool isMuscleGroupSelected(String muscleGroup) =>
-      _selectedMuscleGroups.contains(muscleGroup);
+  /// Unselects all muscle groups.
+  void clearSelectedMuscleGroups() {
+    _selectedMuscleGroups.clear();
+    notifyListeners();
+  }
 
   /// The equipment.
   UnmodifiableSetView<String> get equipment => UnmodifiableSetView(_equipment);
@@ -114,37 +129,19 @@ class AddExercisesViewModel extends ChangeNotifier {
       UnmodifiableSetView(_selectedEquipment);
   final Set<String> _selectedEquipment = {};
 
-  /// Selects or unselects the [equipment] filter to be used in
-  /// [setSearchResults].
+  /// Selects or unselects the [equipment] filter.
   void toggleEquipmentSelectionFor(String equipment) {
-    isEquipmentSelected(equipment)
+    _selectedEquipment.contains(equipment)
         ? _selectedEquipment.remove(equipment)
         : _selectedEquipment.add(equipment);
     notifyListeners();
   }
 
-  /// Whether the [equipment] filter is selected.
-  bool isEquipmentSelected(String equipment) =>
-      _selectedEquipment.contains(equipment);
-
-  List<Exercise> _exercises = [];
-
-  /// The selected exercises' IDs.
-  UnmodifiableSetView<String> get selectedExerciseIds =>
-      UnmodifiableSetView(_selectedExerciseIds);
-  final Set<String> _selectedExerciseIds = {};
-
-  /// Selects or unselects the [exerciseId].
-  void toggleExerciseIdSelectionFor(String exerciseId) {
-    isExerciseIdSelected(exerciseId)
-        ? _selectedExerciseIds.remove(exerciseId)
-        : _selectedExerciseIds.add(exerciseId);
+  /// Unselects all equipment.
+  void clearSelectedEquipment() {
+    _selectedEquipment.clear();
     notifyListeners();
   }
-
-  /// Whether the [exerciseId] is selected.
-  bool isExerciseIdSelected(String exerciseId) =>
-      _selectedExerciseIds.contains(exerciseId);
 
   @override
   void dispose() {

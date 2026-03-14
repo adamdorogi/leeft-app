@@ -49,69 +49,74 @@ class AddExercisesScreen extends StatelessWidget {
             ),
             // Search bar.
             PinnedHeaderSliver(
-              child: Column(
-                children: [
-                  // Search text field.
-                  TextField(
-                    controller: _viewModel.searchController,
-                    decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context).search,
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: _viewModel.searchController.text.isEmpty
-                          ? null
-                          : IconButton(
-                              onPressed: _viewModel.searchController.clear,
-                              icon: const Icon(Icons.clear),
-                            ),
+              child: ColoredBox(
+                color: Theme.of(context).colorScheme.surface,
+                child: Column(
+                  children: [
+                    // Search text field.
+                    TextField(
+                      controller: _viewModel.searchController,
+                      decoration: InputDecoration(
+                        labelText: AppLocalizations.of(context).search,
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: _viewModel.searchController.text.isEmpty
+                            ? null
+                            : IconButton(
+                                onPressed: _viewModel.searchController.clear,
+                                icon: const Icon(Icons.clear),
+                              ),
+                      ),
                     ),
-                  ),
-                  // Filter chips.
-                  Row(
-                    mainAxisAlignment: .spaceEvenly,
-                    children: [
-                      // Muscle group filter chip.
-                      BottomSheetFilterChip(
-                        label: AppLocalizations.of(context).muscleGroups,
-                        selectedCount: _viewModel.selectedMuscleGroups.length,
-                        onClear: _viewModel.clearSelectedMuscleGroups,
-                        builder: (context) => FilterBottomSheet(
-                          listenable: _viewModel,
-                          title: Text(
-                            AppLocalizations.of(context).muscleGroups,
+                    // Filter chips.
+                    Row(
+                      mainAxisAlignment: .spaceEvenly,
+                      children: [
+                        // Muscle group filter chip.
+                        BottomSheetFilterChip(
+                          label: AppLocalizations.of(context).muscleGroups,
+                          selectedCount: _viewModel.selectedMuscleGroups.length,
+                          onClear: _viewModel.clearSelectedMuscleGroups,
+                          builder: (context) => FilterBottomSheet(
+                            listenable: _viewModel,
+                            title: Text(
+                              AppLocalizations.of(context).muscleGroups,
+                            ),
+                            items: _viewModel.muscleGroups,
+                            labelBuilder: (item) => Text(
+                              AppLocalizations.of(
+                                context,
+                              ).muscleGroupNameFor(item),
+                            ),
+                            isSelected:
+                                _viewModel.selectedMuscleGroups.contains,
+                            onSelected:
+                                _viewModel.toggleMuscleGroupSelectionFor,
                           ),
-                          items: _viewModel.muscleGroups,
-                          labelBuilder: (item) => Text(
-                            AppLocalizations.of(
-                              context,
-                            ).muscleGroupNameFor(item),
-                          ),
-                          isSelected: _viewModel.selectedMuscleGroups.contains,
-                          onSelected: _viewModel.toggleMuscleGroupSelectionFor,
                         ),
-                      ),
-                      // Equipment filter chip.
-                      BottomSheetFilterChip(
-                        label: AppLocalizations.of(context).equipment,
-                        selectedCount: _viewModel.selectedEquipment.length,
-                        onClear: _viewModel.clearSelectedEquipment,
-                        builder: (context) => FilterBottomSheet(
-                          listenable: _viewModel,
-                          title: Text(
-                            AppLocalizations.of(context).equipment,
+                        // Equipment filter chip.
+                        BottomSheetFilterChip(
+                          label: AppLocalizations.of(context).equipment,
+                          selectedCount: _viewModel.selectedEquipment.length,
+                          onClear: _viewModel.clearSelectedEquipment,
+                          builder: (context) => FilterBottomSheet(
+                            listenable: _viewModel,
+                            title: Text(
+                              AppLocalizations.of(context).equipment,
+                            ),
+                            items: _viewModel.equipment,
+                            labelBuilder: (item) => Text(
+                              AppLocalizations.of(
+                                context,
+                              ).equipmentNameFor(item),
+                            ),
+                            isSelected: _viewModel.selectedEquipment.contains,
+                            onSelected: _viewModel.toggleEquipmentSelectionFor,
                           ),
-                          items: _viewModel.equipment,
-                          labelBuilder: (item) => Text(
-                            AppLocalizations.of(
-                              context,
-                            ).equipmentNameFor(item),
-                          ),
-                          isSelected: _viewModel.selectedEquipment.contains,
-                          onSelected: _viewModel.toggleEquipmentSelectionFor,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             // Exercise list.

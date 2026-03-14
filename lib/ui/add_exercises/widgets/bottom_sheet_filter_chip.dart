@@ -31,6 +31,7 @@ class BottomSheetFilterChip extends StatelessWidget {
       selected: selectedCount != 0,
       onSelected: (_) async => showModalBottomSheet(
         context: context,
+        useSafeArea: true,
         showDragHandle: true,
         builder: builder,
       ),

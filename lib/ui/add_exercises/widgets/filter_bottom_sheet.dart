@@ -35,7 +35,12 @@ class FilterBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        PinnedHeaderSliver(child: title),
+        PinnedHeaderSliver(
+          child: ColoredBox(
+            color: Theme.of(context).colorScheme.surfaceContainerLow,
+            child: title,
+          ),
+        ),
         ListenableBuilder(
           listenable: listenable,
           builder: (_, _) => SliverToBoxAdapter(

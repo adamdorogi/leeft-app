@@ -32,6 +32,7 @@ class AddExercisesScreen extends StatelessWidget {
         builder: (context, child) => CustomScrollView(
           keyboardDismissBehavior: .onDrag,
           slivers: [
+            // App bar.
             AppSliverAppBar(
               title: Text(AppLocalizations.of(context).addExercises),
               actions: [

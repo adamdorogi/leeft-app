@@ -32,6 +32,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
           }
           return CustomScrollView(
             slivers: [
+              // App bar.
               AppSliverAppBar(
                 title: Text(
                   exercise.title.forLocale(

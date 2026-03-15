@@ -44,40 +44,45 @@ class ExerciseDetailsScreen extends StatelessWidget {
               child!,
               // Metadata.
               SliverToBoxAdapter(
-                child: Wrap(
-                  children: [
-                    // Exercise equipment.
-                    Chip(
-                      materialTapTargetSize: .shrinkWrap,
-                      avatar: const Icon(Icons.fitness_center),
-                      label: Text(
-                        AppLocalizations.of(
-                          context,
-                        ).equipmentNameFor(exercise.equipment),
-                      ),
-                    ),
-                    // Primary muscle group.
-                    Chip(
-                      materialTapTargetSize: .shrinkWrap,
-                      avatar: const Icon(Icons.looks_one),
-                      label: Text(
-                        AppLocalizations.of(
-                          context,
-                        ).muscleGroupNameFor(exercise.muscleGroup),
-                      ),
-                    ),
-                    // Secondary muscle groups.
-                    for (final muscleGroup in exercise.otherMuscles)
+                child: Padding(
+                  padding: const .all(Dimens.padding2),
+                  child: Wrap(
+                    spacing: Dimens.padding1,
+                    runSpacing: Dimens.padding1,
+                    children: [
+                      // Exercise equipment.
                       Chip(
                         materialTapTargetSize: .shrinkWrap,
-                        avatar: const Icon(Icons.looks_two),
+                        avatar: const Icon(Icons.fitness_center),
                         label: Text(
                           AppLocalizations.of(
                             context,
-                          ).muscleGroupNameFor(muscleGroup),
+                          ).equipmentNameFor(exercise.equipment),
                         ),
                       ),
-                  ],
+                      // Primary muscle group.
+                      Chip(
+                        materialTapTargetSize: .shrinkWrap,
+                        avatar: const Icon(Icons.looks_one),
+                        label: Text(
+                          AppLocalizations.of(
+                            context,
+                          ).muscleGroupNameFor(exercise.muscleGroup),
+                        ),
+                      ),
+                      // Secondary muscle groups.
+                      for (final muscleGroup in exercise.otherMuscles)
+                        Chip(
+                          materialTapTargetSize: .shrinkWrap,
+                          avatar: const Icon(Icons.looks_two),
+                          label: Text(
+                            AppLocalizations.of(
+                              context,
+                            ).muscleGroupNameFor(muscleGroup),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
               // Instructions.

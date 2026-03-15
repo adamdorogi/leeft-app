@@ -37,14 +37,14 @@ class RoutinesScreen extends StatelessWidget {
                 // Routine.
                 return Padding(
                   padding: const .symmetric(
-                    horizontal: Dimens.padding,
-                    vertical: Dimens.padding / 2,
+                    horizontal: Dimens.padding2,
+                    vertical: Dimens.padding1,
                   ),
                   child: Card(
                     clipBehavior: .hardEdge,
                     child: InkWell(
                       child: Padding(
-                        padding: const .all(Dimens.padding),
+                        padding: const .all(Dimens.padding2),
                         child: Row(
                           mainAxisAlignment: .spaceBetween,
                           children: [

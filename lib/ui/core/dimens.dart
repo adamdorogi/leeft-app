@@ -1,7 +1,10 @@
 /// A collection of dimensions.
 abstract final class Dimens {
-  /// General padding used to separate UI items.
-  static const padding = 16.0;
+  /// Second smallest padding size.
+  static const padding2 = 16.0;
+
+  /// Smallest padding size.
+  static const padding1 = 8.0;
 
   /// Size of exercise thumbnails.
   static const thumbnailSize = 64.0;

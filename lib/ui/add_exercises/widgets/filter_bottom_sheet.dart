@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relift/ui/core/dimens.dart';
 
 /// A bottom sheet for displaying search filters.
 class FilterBottomSheet extends StatelessWidget {
@@ -44,16 +45,22 @@ class FilterBottomSheet extends StatelessWidget {
         ListenableBuilder(
           listenable: listenable,
           builder: (_, _) => SliverToBoxAdapter(
-            child: Wrap(
-              children: items
-                  .map(
-                    (item) => FilterChip(
-                      label: labelBuilder(item),
-                      selected: isSelected(item),
-                      onSelected: (_) => onSelected(item),
-                    ),
-                  )
-                  .toList(),
+            child: Padding(
+              padding: const .all(Dimens.padding2),
+              child: Wrap(
+                spacing: Dimens.padding1,
+                runSpacing: Dimens.padding1,
+                children: items
+                    .map(
+                      (item) => FilterChip(
+                        materialTapTargetSize: .shrinkWrap,
+                        label: labelBuilder(item),
+                        selected: isSelected(item),
+                        onSelected: (_) => onSelected(item),
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
           ),
         ),

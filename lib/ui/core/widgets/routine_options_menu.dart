@@ -6,20 +6,19 @@ import 'package:relift/l10n/app_localizations.dart';
 class RoutineOptionsMenu extends StatelessWidget {
   /// Creates a [RoutineOptionsMenu].
   const RoutineOptionsMenu({
-    required this.onDelete,
     required this.onEdit,
+    required this.onDelete,
     super.key,
   });
 
-  /// Called when delete is selected.
-  final VoidCallback onDelete;
-
   /// Called when edit is selected.
-  final VoidCallback onEdit;
+  final void Function() onEdit;
+
+  /// Called when delete is selected.
+  final void Function() onDelete;
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context);
     return MenuAnchor(
       builder: (_, controller, _) => IconButton(
         onPressed: () =>
@@ -31,13 +30,13 @@ class RoutineOptionsMenu extends StatelessWidget {
         MenuItemButton(
           onPressed: onEdit,
           leadingIcon: const Icon(Icons.edit),
-          child: Text(localizations.edit),
+          child: Text(AppLocalizations.of(context).edit),
         ),
         // Delete.
         MenuItemButton(
           onPressed: onDelete,
           leadingIcon: const Icon(Icons.delete),
-          child: Text(localizations.delete),
+          child: Text(AppLocalizations.of(context).delete),
         ),
       ],
     );

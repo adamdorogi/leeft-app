@@ -52,12 +52,7 @@ int _routineEstimateSize(
   Map<Type, List<int>> allOffsets,
 ) {
   var bytesCount = offsets.last;
-  {
-    final value = object.name;
-    if (value != null) {
-      bytesCount += 3 + value.length * 3;
-    }
-  }
+  bytesCount += 3 + object.name.length * 3;
   bytesCount += 3 + object.routineExercises.length * 3;
   {
     final offsets = allOffsets[RoutineExercise]!;
@@ -93,7 +88,7 @@ Routine _routineDeserialize(
 ) {
   final object = Routine(
     id: id,
-    name: reader.readStringOrNull(offsets[0]),
+    name: reader.readString(offsets[0]),
     routineExercises: reader.readObjectList<RoutineExercise>(
           offsets[1],
           RoutineExerciseSchema.deserialize,
@@ -113,7 +108,7 @@ P _routineDeserializeProp<P>(
 ) {
   switch (propertyId) {
     case 0:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readString(offset)) as P;
     case 1:
       return (reader.readObjectList<RoutineExercise>(
             offset,
@@ -266,24 +261,8 @@ extension RoutineQueryFilter
     });
   }
 
-  QueryBuilder<Routine, Routine, QAfterFilterCondition> nameIsNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'name',
-      ));
-    });
-  }
-
-  QueryBuilder<Routine, Routine, QAfterFilterCondition> nameIsNotNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'name',
-      ));
-    });
-  }
-
   QueryBuilder<Routine, Routine, QAfterFilterCondition> nameEqualTo(
-    String? value, {
+    String value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -296,7 +275,7 @@ extension RoutineQueryFilter
   }
 
   QueryBuilder<Routine, Routine, QAfterFilterCondition> nameGreaterThan(
-    String? value, {
+    String value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -311,7 +290,7 @@ extension RoutineQueryFilter
   }
 
   QueryBuilder<Routine, Routine, QAfterFilterCondition> nameLessThan(
-    String? value, {
+    String value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -326,8 +305,8 @@ extension RoutineQueryFilter
   }
 
   QueryBuilder<Routine, Routine, QAfterFilterCondition> nameBetween(
-    String? lower,
-    String? upper, {
+    String lower,
+    String upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -574,7 +553,7 @@ extension RoutineQueryProperty
     });
   }
 
-  QueryBuilder<Routine, String?, QQueryOperations> nameProperty() {
+  QueryBuilder<Routine, String, QQueryOperations> nameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'name');
     });
@@ -594,8 +573,8 @@ extension RoutineQueryProperty
 
 _$RoutineImpl _$$RoutineImplFromJson(Map<String, dynamic> json) =>
     _$RoutineImpl(
-      name: json['name'] as String?,
       id: (json['id'] as num?)?.toInt() ?? Isar.autoIncrement,
+      name: json['name'] as String? ?? '',
       routineExercises: (json['routineExercises'] as List<dynamic>?)
               ?.map((e) => RoutineExercise.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -604,7 +583,7 @@ _$RoutineImpl _$$RoutineImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RoutineImplToJson(_$RoutineImpl instance) =>
     <String, dynamic>{
-      'name': instance.name,
       'id': instance.id,
+      'name': instance.name,
       'routineExercises': instance.routineExercises,
     };

@@ -49,8 +49,9 @@ class RoutinesScreen extends StatelessWidget {
                           mainAxisAlignment: .spaceBetween,
                           children: [
                             Text(
-                              routine.name ??
-                                  AppLocalizations.of(context).newRoutine,
+                              routine.name.isNotEmpty
+                                  ? routine.name
+                                  : AppLocalizations.of(context).unnamedRoutine,
                             ),
                             RoutineOptionsMenu(
                               onEdit: () async {

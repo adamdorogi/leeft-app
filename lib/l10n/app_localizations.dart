@@ -202,11 +202,11 @@ abstract class AppLocalizations {
   /// **'kg'**
   String get kg;
 
-  /// No description provided for @newRoutine.
+  /// No description provided for @unnamedRoutine.
   ///
   /// In en, this message translates to:
-  /// **'New Routine'**
-  String get newRoutine;
+  /// **'Unnamed Routine'**
+  String get unnamedRoutine;
 
   /// No description provided for @system.
   ///

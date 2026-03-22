@@ -106,7 +106,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kg => 'kg';
 
   @override
-  String get newRoutine => 'New Routine';
+  String get unnamedRoutine => 'Unnamed Routine';
 
   @override
   String get system => 'System';

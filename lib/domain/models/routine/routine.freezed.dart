@@ -20,8 +20,8 @@ Routine _$RoutineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Routine {
-  String? get name => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   List<RoutineExercise> get routineExercises =>
       throw _privateConstructorUsedError;
 
@@ -35,7 +35,7 @@ abstract class $RoutineCopyWith<$Res> {
   factory $RoutineCopyWith(Routine value, $Res Function(Routine) then) =
       _$RoutineCopyWithImpl<$Res, Routine>;
   @useResult
-  $Res call({String? name, int id, List<RoutineExercise> routineExercises});
+  $Res call({int id, String name, List<RoutineExercise> routineExercises});
 }
 
 /// @nodoc
@@ -51,19 +51,19 @@ class _$RoutineCopyWithImpl<$Res, $Val extends Routine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
     Object? id = null,
+    Object? name = null,
     Object? routineExercises = null,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       routineExercises: null == routineExercises
           ? _value.routineExercises
           : routineExercises // ignore: cast_nullable_to_non_nullable
@@ -79,7 +79,7 @@ abstract class _$$RoutineImplCopyWith<$Res> implements $RoutineCopyWith<$Res> {
       __$$RoutineImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, int id, List<RoutineExercise> routineExercises});
+  $Res call({int id, String name, List<RoutineExercise> routineExercises});
 }
 
 /// @nodoc
@@ -93,19 +93,19 @@ class __$$RoutineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
     Object? id = null,
+    Object? name = null,
     Object? routineExercises = null,
   }) {
     return _then(_$RoutineImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       routineExercises: null == routineExercises
           ? _value._routineExercises
           : routineExercises // ignore: cast_nullable_to_non_nullable
@@ -118,8 +118,8 @@ class __$$RoutineImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RoutineImpl extends _Routine {
   const _$RoutineImpl(
-      {this.name,
-      this.id = Isar.autoIncrement,
+      {this.id = Isar.autoIncrement,
+      this.name = '',
       final List<RoutineExercise> routineExercises = const []})
       : _routineExercises = routineExercises,
         super._();
@@ -128,10 +128,11 @@ class _$RoutineImpl extends _Routine {
       _$$RoutineImplFromJson(json);
 
   @override
-  final String? name;
-  @override
   @JsonKey()
   final int id;
+  @override
+  @JsonKey()
+  final String name;
   final List<RoutineExercise> _routineExercises;
   @override
   @JsonKey()
@@ -144,7 +145,7 @@ class _$RoutineImpl extends _Routine {
 
   @override
   String toString() {
-    return 'Routine(name: $name, id: $id, routineExercises: $routineExercises)';
+    return 'Routine(id: $id, name: $name, routineExercises: $routineExercises)';
   }
 
   @override
@@ -152,15 +153,15 @@ class _$RoutineImpl extends _Routine {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RoutineImpl &&
-            (identical(other.name, name) || other.name == name) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._routineExercises, _routineExercises));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, id,
+  int get hashCode => Object.hash(runtimeType, id, name,
       const DeepCollectionEquality().hash(_routineExercises));
 
   @JsonKey(ignore: true)
@@ -179,17 +180,17 @@ class _$RoutineImpl extends _Routine {
 
 abstract class _Routine extends Routine {
   const factory _Routine(
-      {final String? name,
-      final int id,
+      {final int id,
+      final String name,
       final List<RoutineExercise> routineExercises}) = _$RoutineImpl;
   const _Routine._() : super._();
 
   factory _Routine.fromJson(Map<String, dynamic> json) = _$RoutineImpl.fromJson;
 
   @override
-  String? get name;
-  @override
   int get id;
+  @override
+  String get name;
   @override
   List<RoutineExercise> get routineExercises;
   @override

@@ -6,14 +6,16 @@ part 'exercise_set.g.dart';
 
 /// An exercise set.
 @freezed
-@Embedded(ignore: {'copyWith'})
+// Ignore ID for database storage, as it's only used for state management.
+@Embedded(ignore: {'copyWith', 'id'})
 class ExerciseSet with _$ExerciseSet {
   /// Creates an [ExerciseSet].
   const factory ExerciseSet({
-    int? rest,
+    String? id,
     @Default(false) bool isWarmUp,
     int? reps,
     double? weight,
+    int? rest,
     double? duration,
     double? distance,
   }) = _ExerciseSet;

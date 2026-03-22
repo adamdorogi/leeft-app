@@ -13,8 +13,8 @@ part 'routine.g.dart';
 class Routine with _$Routine {
   /// Creates a [Routine].
   const factory Routine({
-    String? name,
     @Default(Isar.autoIncrement) Id id,
+    @Default('') String name,
     @Default([]) List<RoutineExercise> routineExercises,
   }) = _Routine;
   const Routine._();

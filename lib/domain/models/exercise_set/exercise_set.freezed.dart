@@ -20,10 +20,11 @@ ExerciseSet _$ExerciseSetFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExerciseSet {
-  int? get rest => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   bool get isWarmUp => throw _privateConstructorUsedError;
   int? get reps => throw _privateConstructorUsedError;
   double? get weight => throw _privateConstructorUsedError;
+  int? get rest => throw _privateConstructorUsedError;
   double? get duration => throw _privateConstructorUsedError;
   double? get distance => throw _privateConstructorUsedError;
 
@@ -40,10 +41,11 @@ abstract class $ExerciseSetCopyWith<$Res> {
       _$ExerciseSetCopyWithImpl<$Res, ExerciseSet>;
   @useResult
   $Res call(
-      {int? rest,
+      {String? id,
       bool isWarmUp,
       int? reps,
       double? weight,
+      int? rest,
       double? duration,
       double? distance});
 }
@@ -61,18 +63,19 @@ class _$ExerciseSetCopyWithImpl<$Res, $Val extends ExerciseSet>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rest = freezed,
+    Object? id = freezed,
     Object? isWarmUp = null,
     Object? reps = freezed,
     Object? weight = freezed,
+    Object? rest = freezed,
     Object? duration = freezed,
     Object? distance = freezed,
   }) {
     return _then(_value.copyWith(
-      rest: freezed == rest
-          ? _value.rest
-          : rest // ignore: cast_nullable_to_non_nullable
-              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       isWarmUp: null == isWarmUp
           ? _value.isWarmUp
           : isWarmUp // ignore: cast_nullable_to_non_nullable
@@ -85,6 +88,10 @@ class _$ExerciseSetCopyWithImpl<$Res, $Val extends ExerciseSet>
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
               as double?,
+      rest: freezed == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int?,
       duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -106,10 +113,11 @@ abstract class _$$ExerciseSetImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? rest,
+      {String? id,
       bool isWarmUp,
       int? reps,
       double? weight,
+      int? rest,
       double? duration,
       double? distance});
 }
@@ -125,18 +133,19 @@ class __$$ExerciseSetImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rest = freezed,
+    Object? id = freezed,
     Object? isWarmUp = null,
     Object? reps = freezed,
     Object? weight = freezed,
+    Object? rest = freezed,
     Object? duration = freezed,
     Object? distance = freezed,
   }) {
     return _then(_$ExerciseSetImpl(
-      rest: freezed == rest
-          ? _value.rest
-          : rest // ignore: cast_nullable_to_non_nullable
-              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       isWarmUp: null == isWarmUp
           ? _value.isWarmUp
           : isWarmUp // ignore: cast_nullable_to_non_nullable
@@ -149,6 +158,10 @@ class __$$ExerciseSetImplCopyWithImpl<$Res>
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
               as double?,
+      rest: freezed == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int?,
       duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -165,10 +178,11 @@ class __$$ExerciseSetImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ExerciseSetImpl implements _ExerciseSet {
   const _$ExerciseSetImpl(
-      {this.rest,
+      {this.id,
       this.isWarmUp = false,
       this.reps,
       this.weight,
+      this.rest,
       this.duration,
       this.distance});
 
@@ -176,7 +190,7 @@ class _$ExerciseSetImpl implements _ExerciseSet {
       _$$ExerciseSetImplFromJson(json);
 
   @override
-  final int? rest;
+  final String? id;
   @override
   @JsonKey()
   final bool isWarmUp;
@@ -185,13 +199,15 @@ class _$ExerciseSetImpl implements _ExerciseSet {
   @override
   final double? weight;
   @override
+  final int? rest;
+  @override
   final double? duration;
   @override
   final double? distance;
 
   @override
   String toString() {
-    return 'ExerciseSet(rest: $rest, isWarmUp: $isWarmUp, reps: $reps, weight: $weight, duration: $duration, distance: $distance)';
+    return 'ExerciseSet(id: $id, isWarmUp: $isWarmUp, reps: $reps, weight: $weight, rest: $rest, duration: $duration, distance: $distance)';
   }
 
   @override
@@ -199,11 +215,12 @@ class _$ExerciseSetImpl implements _ExerciseSet {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExerciseSetImpl &&
-            (identical(other.rest, rest) || other.rest == rest) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.isWarmUp, isWarmUp) ||
                 other.isWarmUp == isWarmUp) &&
             (identical(other.reps, reps) || other.reps == reps) &&
             (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.rest, rest) || other.rest == rest) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             (identical(other.distance, distance) ||
@@ -213,7 +230,7 @@ class _$ExerciseSetImpl implements _ExerciseSet {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, rest, isWarmUp, reps, weight, duration, distance);
+      runtimeType, id, isWarmUp, reps, weight, rest, duration, distance);
 
   @JsonKey(ignore: true)
   @override
@@ -231,10 +248,11 @@ class _$ExerciseSetImpl implements _ExerciseSet {
 
 abstract class _ExerciseSet implements ExerciseSet {
   const factory _ExerciseSet(
-      {final int? rest,
+      {final String? id,
       final bool isWarmUp,
       final int? reps,
       final double? weight,
+      final int? rest,
       final double? duration,
       final double? distance}) = _$ExerciseSetImpl;
 
@@ -242,13 +260,15 @@ abstract class _ExerciseSet implements ExerciseSet {
       _$ExerciseSetImpl.fromJson;
 
   @override
-  int? get rest;
+  String? get id;
   @override
   bool get isWarmUp;
   @override
   int? get reps;
   @override
   double? get weight;
+  @override
+  int? get rest;
   @override
   double? get duration;
   @override

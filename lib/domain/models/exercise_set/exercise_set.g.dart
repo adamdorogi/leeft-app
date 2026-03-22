@@ -520,20 +520,22 @@ extension ExerciseSetQueryObject
 
 _$ExerciseSetImpl _$$ExerciseSetImplFromJson(Map<String, dynamic> json) =>
     _$ExerciseSetImpl(
-      rest: (json['rest'] as num?)?.toInt(),
+      id: json['id'] as String?,
       isWarmUp: json['isWarmUp'] as bool? ?? false,
       reps: (json['reps'] as num?)?.toInt(),
       weight: (json['weight'] as num?)?.toDouble(),
+      rest: (json['rest'] as num?)?.toInt(),
       duration: (json['duration'] as num?)?.toDouble(),
       distance: (json['distance'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$ExerciseSetImplToJson(_$ExerciseSetImpl instance) =>
     <String, dynamic>{
-      'rest': instance.rest,
+      'id': instance.id,
       'isWarmUp': instance.isWarmUp,
       'reps': instance.reps,
       'weight': instance.weight,
+      'rest': instance.rest,
       'duration': instance.duration,
       'distance': instance.distance,
     };

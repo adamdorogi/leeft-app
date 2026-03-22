@@ -561,6 +561,7 @@ extension RoutineExerciseQueryObject
 _$RoutineExerciseImpl _$$RoutineExerciseImplFromJson(
         Map<String, dynamic> json) =>
     _$RoutineExerciseImpl(
+      id: json['id'] as String?,
       exerciseId: json['exerciseId'] as String?,
       sets: (json['sets'] as List<dynamic>?)
               ?.map((e) => ExerciseSet.fromJson(e as Map<String, dynamic>))
@@ -573,6 +574,7 @@ _$RoutineExerciseImpl _$$RoutineExerciseImplFromJson(
 Map<String, dynamic> _$$RoutineExerciseImplToJson(
         _$RoutineExerciseImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'exerciseId': instance.exerciseId,
       'sets': instance.sets,
       'notes': instance.notes,

@@ -20,6 +20,7 @@ RoutineExercise _$RoutineExerciseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RoutineExercise {
+  String? get id => throw _privateConstructorUsedError;
   String? get exerciseId => throw _privateConstructorUsedError;
   List<ExerciseSet> get sets => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
@@ -38,7 +39,8 @@ abstract class $RoutineExerciseCopyWith<$Res> {
       _$RoutineExerciseCopyWithImpl<$Res, RoutineExercise>;
   @useResult
   $Res call(
-      {String? exerciseId,
+      {String? id,
+      String? exerciseId,
       List<ExerciseSet> sets,
       String? notes,
       bool shouldSupersetWithNext});
@@ -57,12 +59,17 @@ class _$RoutineExerciseCopyWithImpl<$Res, $Val extends RoutineExercise>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? exerciseId = freezed,
     Object? sets = null,
     Object? notes = freezed,
     Object? shouldSupersetWithNext = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       exerciseId: freezed == exerciseId
           ? _value.exerciseId
           : exerciseId // ignore: cast_nullable_to_non_nullable
@@ -92,7 +99,8 @@ abstract class _$$RoutineExerciseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? exerciseId,
+      {String? id,
+      String? exerciseId,
       List<ExerciseSet> sets,
       String? notes,
       bool shouldSupersetWithNext});
@@ -109,12 +117,17 @@ class __$$RoutineExerciseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? exerciseId = freezed,
     Object? sets = null,
     Object? notes = freezed,
     Object? shouldSupersetWithNext = null,
   }) {
     return _then(_$RoutineExerciseImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       exerciseId: freezed == exerciseId
           ? _value.exerciseId
           : exerciseId // ignore: cast_nullable_to_non_nullable
@@ -139,7 +152,8 @@ class __$$RoutineExerciseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RoutineExerciseImpl implements _RoutineExercise {
   const _$RoutineExerciseImpl(
-      {this.exerciseId,
+      {this.id,
+      this.exerciseId,
       final List<ExerciseSet> sets = const [],
       this.notes,
       this.shouldSupersetWithNext = false})
@@ -148,6 +162,8 @@ class _$RoutineExerciseImpl implements _RoutineExercise {
   factory _$RoutineExerciseImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoutineExerciseImplFromJson(json);
 
+  @override
+  final String? id;
   @override
   final String? exerciseId;
   final List<ExerciseSet> _sets;
@@ -167,7 +183,7 @@ class _$RoutineExerciseImpl implements _RoutineExercise {
 
   @override
   String toString() {
-    return 'RoutineExercise(exerciseId: $exerciseId, sets: $sets, notes: $notes, shouldSupersetWithNext: $shouldSupersetWithNext)';
+    return 'RoutineExercise(id: $id, exerciseId: $exerciseId, sets: $sets, notes: $notes, shouldSupersetWithNext: $shouldSupersetWithNext)';
   }
 
   @override
@@ -175,6 +191,7 @@ class _$RoutineExerciseImpl implements _RoutineExercise {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RoutineExerciseImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.exerciseId, exerciseId) ||
                 other.exerciseId == exerciseId) &&
             const DeepCollectionEquality().equals(other._sets, _sets) &&
@@ -187,6 +204,7 @@ class _$RoutineExerciseImpl implements _RoutineExercise {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       exerciseId,
       const DeepCollectionEquality().hash(_sets),
       notes,
@@ -209,7 +227,8 @@ class _$RoutineExerciseImpl implements _RoutineExercise {
 
 abstract class _RoutineExercise implements RoutineExercise {
   const factory _RoutineExercise(
-      {final String? exerciseId,
+      {final String? id,
+      final String? exerciseId,
       final List<ExerciseSet> sets,
       final String? notes,
       final bool shouldSupersetWithNext}) = _$RoutineExerciseImpl;
@@ -217,6 +236,8 @@ abstract class _RoutineExercise implements RoutineExercise {
   factory _RoutineExercise.fromJson(Map<String, dynamic> json) =
       _$RoutineExerciseImpl.fromJson;
 
+  @override
+  String? get id;
   @override
   String? get exerciseId;
   @override

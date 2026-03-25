@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
-import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/add_exercises/exercise_selection_viewmodel.dart';
 import 'package:relift/ui/add_exercises/widgets/bottom_sheet_filter_chip.dart';
 import 'package:relift/ui/add_exercises/widgets/filter_bottom_sheet.dart';
 import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
@@ -13,16 +13,16 @@ import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
 import 'package:relift/utils/result.dart';
 
 /// A screen for adding exercises to a routine during routine creation.
-class AddExercisesScreen extends StatelessWidget {
-  /// Creates an [AddExercisesScreen] with a [viewModel].
+class ExerciseSelectionScreen extends StatelessWidget {
+  /// Creates an [ExerciseSelectionScreen] with a [viewModel].
   ///
   /// The [viewModel] manages the UI state of this screen.
-  const AddExercisesScreen({
-    required AddExercisesViewModel viewModel,
+  const ExerciseSelectionScreen({
+    required ExerciseSelectionViewModel viewModel,
     super.key,
   }) : _viewModel = viewModel;
 
-  final AddExercisesViewModel _viewModel;
+  final ExerciseSelectionViewModel _viewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +34,22 @@ class AddExercisesScreen extends StatelessWidget {
           slivers: [
             // App bar.
             AppSliverAppBar(
-              title: Text(AppLocalizations.of(context).addExercises),
+              title: Text(
+                _viewModel.shouldReplace
+                    ? AppLocalizations.of(context).replaceExercise
+                    : AppLocalizations.of(context).addExercises,
+              ),
               actions: [
-                IconButton(
-                  icon: const Icon(Icons.done),
-                  // Return the selected exercise IDs on pop.
-                  onPressed: _viewModel.selectedExerciseIds.isEmpty
-                      ? null
-                      : () => Navigator.of(
-                          context,
-                        ).pop(_viewModel.selectedExerciseIds),
-                ),
+                if (!_viewModel.shouldReplace)
+                  IconButton(
+                    icon: const Icon(Icons.done),
+                    // Return the selected exercise IDs on pop.
+                    onPressed: _viewModel.selectedExerciseIds.isEmpty
+                        ? null
+                        : () => Navigator.of(
+                            context,
+                          ).pop(_viewModel.selectedExerciseIds),
+                  ),
               ],
             ),
             // Search bar.
@@ -155,9 +160,9 @@ class AddExercisesScreen extends StatelessWidget {
                   selected: _viewModel.selectedExerciseIds.contains(
                     exercise.id,
                   ),
-                  onTap: () => _viewModel.toggleExerciseIdSelectionFor(
-                    exercise.id,
-                  ),
+                  onTap: () => _viewModel.shouldReplace
+                      ? Navigator.of(context).pop(exercise.id)
+                      : _viewModel.toggleExerciseIdSelectionFor(exercise.id),
                   selectedTileColor: Theme.of(context).highlightColor,
                   leading: ExerciseThumbnail(
                     thumbnailUrl: exercise.thumbnailUrl,

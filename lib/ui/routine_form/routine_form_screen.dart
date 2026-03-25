@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:relift/l10n/app_localizations.dart';
-import 'package:relift/ui/add_exercises/add_exercises_screen.dart';
-import 'package:relift/ui/add_exercises/add_exercises_viewmodel.dart';
+import 'package:relift/ui/add_exercises/exercise_selection_screen.dart';
+import 'package:relift/ui/add_exercises/exercise_selection_viewmodel.dart';
 import 'package:relift/ui/core/widgets/app_sliver_app_bar.dart';
 import 'package:relift/ui/exercise_details/exercise_details_screen.dart';
 import 'package:relift/ui/exercise_details/exercise_details_viewmodel.dart';
@@ -42,13 +42,13 @@ class RoutineFormScreen extends StatelessWidget {
                 MaterialPageRoute<UnmodifiableSetView<String>>(
                   fullscreenDialog: true,
                   builder: (context) {
-                    final viewModel = AddExercisesViewModel(
+                    final viewModel = ExerciseSelectionViewModel(
                       exerciseRepository: context.read(),
                     );
                     // No need to wait for load command to finish.
                     // ignore: discarded_futures
                     viewModel.load.run();
-                    return AddExercisesScreen(viewModel: viewModel);
+                    return ExerciseSelectionScreen(viewModel: viewModel);
                   },
                 ),
               );
@@ -62,6 +62,7 @@ class RoutineFormScreen extends StatelessWidget {
           _viewModel,
           _viewModel.saveRoutine,
           _viewModel.addExercises,
+          _viewModel.replaceExercise,
           _viewModel.load,
         ]),
         builder: (context, _) => CustomScrollView(
@@ -141,7 +142,31 @@ class RoutineFormScreen extends StatelessWidget {
                     );
                   },
                   onRemove: () => _viewModel.removeExercise(index),
-                  onReplace: () => (),
+                  onReplace: () async {
+                    // Get the selected exercise ID from the exercise selection
+                    // screen.
+                    final selectedExerciseId =
+                        await Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute<String>(
+                            fullscreenDialog: true,
+                            builder: (context) {
+                              final viewModel = ExerciseSelectionViewModel(
+                                exerciseRepository: context.read(),
+                              );
+                              // No need to wait for load command to finish.
+                              // ignore: discarded_futures
+                              viewModel.load.run();
+                              viewModel.shouldReplace = true;
+                              return ExerciseSelectionScreen(
+                                viewModel: viewModel,
+                              );
+                            },
+                          ),
+                        );
+                    // No need to wait for replace command to finish.
+                    // ignore: unawaited_futures
+                    _viewModel.replaceExercise.run((index, selectedExerciseId));
+                  },
                   onNotesChanged: (notes) =>
                       _viewModel.setNotesFor(index, notes),
                   onSetDismissed: (setIndex) =>

@@ -37,5 +37,6 @@
   "dark": "Dark",
   "edit": "Edit",
   "themeMode": "Theme Mode",
-  "delete": "Delete"
+  "delete": "Delete",
+  "replaceExercise": "Replace Exercise"
 }

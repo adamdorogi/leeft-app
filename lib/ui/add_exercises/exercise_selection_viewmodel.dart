@@ -10,11 +10,11 @@ import 'package:relift/utils/command.dart';
 import 'package:relift/utils/result.dart';
 
 /// A view model for managing the UI state of the exercise addition screen.
-class AddExercisesViewModel extends ChangeNotifier {
-  /// Creates an [AddExercisesViewModel] with an [exerciseRepository].
+class ExerciseSelectionViewModel extends ChangeNotifier {
+  /// Creates an [ExerciseSelectionViewModel] with an [exerciseRepository].
   ///
   /// The [exerciseRepository] retrieves the exercises.
-  AddExercisesViewModel({required ExerciseRepository exerciseRepository})
+  ExerciseSelectionViewModel({required ExerciseRepository exerciseRepository})
     : _exerciseRepository = exerciseRepository {
     // Notify of state change when controller value changes.
     searchController.addListener(notifyListeners);
@@ -22,7 +22,11 @@ class AddExercisesViewModel extends ChangeNotifier {
 
   final ExerciseRepository _exerciseRepository;
 
-  final _log = Logger((AddExercisesViewModel).toString());
+  final _log = Logger((ExerciseSelectionViewModel).toString());
+
+  /// Whether the exercise selection is for replacing an exercise in the
+  /// routine.
+  bool shouldReplace = false;
 
   /// The search text field controller.
   final searchController = TextEditingController();

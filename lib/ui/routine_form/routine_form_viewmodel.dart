@@ -148,6 +148,43 @@ class RoutineFormViewModel extends ChangeNotifier {
     return const Result.success(null);
   }
 
+  /// The command to load the exercises from the exercise repository and add it
+  /// to the routine.
+  late final Command1<void, (int, String?)> replaceExercise = Command1(
+    _replaceExercise,
+  );
+  Future<Result<void>> _replaceExercise((int, String?) args) async {
+    final (exerciseIndex, exerciseId) = args;
+
+    if (exerciseId == null ||
+        exerciseId == _mappedRoutineExercises[exerciseIndex].exercise.id) {
+      return const Result.success(null);
+    }
+
+    _log.info(
+      'Replacing exercise at index $exerciseIndex with exercise ID '
+      '$exerciseId...',
+    );
+
+    final routineExercise = RoutineExercise(
+      exerciseId: exerciseId,
+      sets: [
+        // TODO: Number of sets from previous log entry for exercise, default to 3.
+        const ExerciseSet(rest: 90),
+        const ExerciseSet(rest: 90),
+        const ExerciseSet(rest: 90),
+      ],
+    );
+    final mappedRoutineExercises = await _mapRoutineExercises([
+      routineExercise,
+    ]);
+    if (mappedRoutineExercises.isNotEmpty) {
+      _mappedRoutineExercises[exerciseIndex] = mappedRoutineExercises.first;
+      _log.info('Successfully replaced exercise at index $exerciseIndex.');
+    }
+    return const Result.success(null);
+  }
+
   /// The command to save the routine.
   late final Command0<int> saveRoutine = Command0(_saveRoutine);
   Future<Result<int>> _saveRoutine() async {
